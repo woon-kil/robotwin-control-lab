@@ -67,7 +67,9 @@ Adapter  Adapter Adapter Adapter
      Evidence / HMI
 ```
 
-Operator / HMI는 Task-Level Command 또는 Canonical Robot Command로 요청한다. Motion / Control Core는 시뮬레이터 SDK를 호출하지 않는다. Pre-Execution Validator의 결과가 PASS인 동작 명령만 `IRobotController`로 넘어간다. FAIL은 REJECT이며 컨트롤러 실행으로 이어지지 않는다.
+Operator / HMI는 Task-Level Command 또는 Canonical Robot Command로 요청한다. Motion / Control Core는 시뮬레이터 SDK를 호출하지 않는다. 동작과 작업 실행 명령은 Pre-Execution Validator의 적용 가능한 required 결과가 PASS일 때만 `IRobotController`로 넘어간다. FAIL은 REJECT이며 그 명령의 컨트롤러 실행으로 이어지지 않는다.
+
+Unity, Isaac, ROS2, PMAC는 `IRobotController` 아래의 독립 어댑터다. PMAC Adapter는 ROS2 Adapter에 종속되지 않는다. 이후 배치에서 Control Core에서 ROS2를 거쳐 외부 컨트롤러로 가는 경로나 다른 전송을 쓸 수는 있다. 그 경로는 Canonical Architecture의 의존성으로 고정하지 않는다.
 
 Feedback은 어댑터에서 Digital Twin으로 돌아온다. 명령을 보냈다는 기록은 Feedback이 아니다.
 
@@ -193,7 +195,7 @@ PMAC에만 있는 표현은 Canonical API를 바꾸지 않는다. 가상 컨트�
 - **Inputs:** `IRobotController` 호출, ROS2에서 도착한 상태.
 - **Outputs:** Canonical Feedback.
 - **Dependencies:** Controller Abstraction, Coordinate Convention.
-- **Must NOT Do:** ROS2 메시지를 Canonical 명령의 정의로 둔다. 패키지를 이 게이트에서 만든다. PMAC 비공개 프로토콜을 ROS2 메시지에 추정해 넣는다.
+- **Must NOT Do:** ROS2 메시지를 Canonical 명령의 정의로 둔다. 패키지를 이 게이트에서 만든다. PMAC Adapter를 자신의 하위로 둔다. PMAC 비공개 프로토콜을 ROS2 메시지에 추정해 넣는다.
 - **Related Requirements:** REQ-013, REQ-006, REQ-012
 
 ### PMAC Adapter
@@ -202,7 +204,7 @@ PMAC에만 있는 표현은 Canonical API를 바꾸지 않는다. 가상 컨트�
 - **Inputs:** 논리 컨트롤러 호출.
 - **Outputs:** 가상 컨트롤러의 통신과 상태 전이 결과. 실제 하드웨어 결과는 이 게이트의 출력이 아니다.
 - **Dependencies:** Controller Abstraction, PMAC Boundary.
-- **Must NOT Do:** 레지스터 주소, 명령 문법, 메모리 맵, 모션 프로그램 문법, 비공개 상태, Core Robotics 전용 프로토콜을 추정한다. Canonical API를 PMAC 표현에 맞추어 바꾼다.
+- **Must NOT Do:** ROS2 Adapter를 거쳐야만 호출되는 구조로 둔다. 레지스터 주소, 명령 문법, 메모리 맵, 모션 프로그램 문법, 비공개 상태, Core Robotics 전용 프로토콜을 추정한다. Canonical API를 PMAC 표현에 맞추어 바꾼다.
 - **Related Requirements:** REQ-010, REQ-007, REQ-011
 
 ### Digital Twin State
@@ -243,7 +245,7 @@ PMAC에만 있는 표현은 Canonical API를 바꾸지 않는다. 가상 컨트�
 
 ## 4. Execution rule
 
-동작 명령은 HOME, MOVE_JOINT, MOVE_TCP다.
+동작과 작업 실행 명령은 HOME, MOVE_JOINT, MOVE_TCP, HANDLE_FILTER, PICK_OBJECT, PLACE_OBJECT다. 이 명령은 적용 가능한 required validator의 PASS 없이 컨트롤러 실행으로 진행하지 않는다.
 
 ```text
 Validation FAIL
@@ -253,9 +255,27 @@ Validation PASS
 → execution may be approved
 ```
 
-PASS는 실행을 허가할 수 있다는 뜻이다. 산업 현장의 안전 인증이 아니다.
+PASS는 실행을 허가할 수 있다는 뜻이다. 산업 안전 인증이 아니다.
 
-STOP과 ESTOP은 동작 권한을 거두는 명령이다. 이 계약은 두 명령을 reachability 실패 때문에 보류하지 않는 쪽으로 적는다. REQ-021의 문장은 이 예외를 따로 적지 않는다. 요구사항 문장은 바꾸지 않았고, 확인은 8절 Open Issue로 남긴다.
+STOP과 ESTOP은 보호 및 종료 명령이다. 동작 가능성을 묻는 명령이 아니므로 Pre-Execution Motion Validation의 PASS를 요구하지 않는다.
+
+```text
+ESTOP
+→ Pre-Execution Validation
+→ NOT_EVALUATED
+→ BLOCKED
+```
+
+위 경로는 이 아키텍처의 명령 의미가 아니다.
+
+```text
+STOP / ESTOP
+→ protective/termination control path
+```
+
+이 구분은 RoboTwin 소프트웨어의 command semantics다. 인증된 비상정지 구현, 기능 안전 적합성, 하드웨어 안전 회로와의 등가, ISO/IEC 안전 인증, 실제 PMAC E-stop 동작을 주장하지 않는다.
+
+SERVO_OFF, HOLD, RESET에 동작 검증을 적용할지는 정하지 않는다. 8절 Open Issue로 둔다. REQ-001–REQ-022의 문장은 바꾸지 않는다.
 
 ## 5. P-001 intent
 
@@ -284,16 +304,15 @@ P-001을 시작할 때 Source Selection과 Pinning을 먼저 한다. 이 문서�
 
 진단, 진동, 베어링, 잔여수명, 정비 추천, maintenance agent는 이 아키텍처의 컴포넌트가 아니다. 책임은 Maintenance-Agentic-Twin에 있다. 통합은 이 게이트의 작업이 아니다.
 
-## 7. Charter diagram note
+## 7. Adapter independence
 
-`docs/PROJECT_CHARTER.md` 3절의 그림은 PMAC-compatible Controller를 ROS2 아래에 둔다. 이 계약의 그림은 Unity, Isaac, ROS2, PMAC를 `IRobotController` 아래의 대등한 어댑터로 둔다. 차터 파일은 수정하지 않았다. 두 그림의 정합은 8절의 Open Issue다.
+`docs/PROJECT_CHARTER.md` 3절과 7절은 이 문서와 같이 Unity, Isaac, ROS2, PMAC를 `IRobotController` 아래의 독립 어댑터로 둔다. PMAC를 ROS2의 하위로 두지 않는다.
 
 ## 8. Open items
 
 이 게이트가 결정하지 않은 항목이다. 추정으로 채우지 않는다.
 
-- 차터 3절 그림과 이 문서의 어댑터 배치가 다르다. 차터는 수정하지 않았다.
-- REQ-021은 FAIL 때 컨트롤러 실행을 막는다. STOP과 ESTOP을 그 규칙의 예외로 둘지는 요구사항 문장에 없다.
+- SERVO_OFF, HOLD, RESET에 Pre-Execution Motion Validation을 적용할지는 정하지 않았다.
 - 작업별로 어떤 validator가 required인지는 아직 목록이 없다.
 - 타임스탬프의 epoch와 시계 종류는 정하지 않았다.
 - Quaternion의 부호 정규화는 정하지 않았다.

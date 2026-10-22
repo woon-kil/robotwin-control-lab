@@ -64,16 +64,13 @@ Control / Validation Core
      ▼
 IRobotController
      │
- ┌───┼────────────┐
- ▼   ▼            ▼
-Unity Isaac       ROS2
-                  │
-                  ▼
-            PMAC-compatible
-              Controller
+ ┌────┼────┬────┐
+ ▼    ▼    ▼    ▼
+Unity Isaac ROS2 PMAC
+Adapter Adapter Adapter Adapter
 ```
 
-Operator HMI는 Canonical Robot API만 호출한다. Control / Validation Core는 명령, 상태, 기구학, 검증 기록을 담당한다. `IRobotController` 아래의 Unity, Isaac Sim, ROS2, PMAC-compatible Controller는 각각의 어댑터이며, 이 중 하나의 API가 프로젝트의 제어 구조가 되지 않는다.
+Operator HMI는 Canonical Robot API만 호출한다. Control / Validation Core는 명령, 상태, 기구학, 검증 기록을 담당한다. `IRobotController` 아래의 Unity, Isaac, ROS2, PMAC는 서로 독립된 어댑터 경계다. PMAC Adapter는 ROS2 Adapter 아래에 두지 않는다. 이후 어떤 배치에서는 Control Core에서 ROS2를 거쳐 외부 컨트롤러로 가거나, 다른 전송을 쓸 수 있다. 그 배치는 Canonical Architecture의 의존성으로 고정하지 않는다. 어느 어댑터의 API도 프로젝트의 제어 구조가 되지 않는다.
 
 ## 4. Golden Reference Strategy
 
@@ -191,9 +188,17 @@ Canonical Robot API
 IRobotController
  ↓
 Ros2Adapter
+
+HMI
  ↓
-PmacCompatibleController
+Canonical Robot API
+ ↓
+IRobotController
+ ↓
+PmacAdapter
 ```
+
+ROS2 Adapter와 PMAC Adapter는 Canonical Controller Architecture에서 독립된 경계다. PMAC를 ROS2의 하위 단계로 두지 않는다.
 
 Control / Validation Core는 특정 시뮬레이터 SDK, 씬 그래프, 또는 벤더 모션 API의 자료형에 직접 의존하지 않는다. 변환은 어댑터 경계에서 일어난다.
 

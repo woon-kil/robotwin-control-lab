@@ -137,7 +137,48 @@ get_state
 
 이것은 개념 인터페이스다. 메서드의 언어별 시그니처, 예외 타입, 전송 형식은 만들지 않는다.
 
-`execute_command`는 Canonical 명령을 어댑터에 맡기는 자리다. HOME, MOVE_JOINT, MOVE_TCP는 Pre-Execution Validation의 전체 결과가 PASS일 때만 이 인터페이스의 실행으로 넘긴다. PASS는 실행을 허용할 수 있다는 내부 판정이다.
+`execute_command`는 Canonical 명령을 어댑터에 맡기는 자리다. 명령은 아래로 구분한다.
+
+Motion / Task Execution Commands:
+
+```text
+HOME
+MOVE_JOINT
+MOVE_TCP
+
+HANDLE_FILTER
+PICK_OBJECT
+PLACE_OBJECT
+```
+
+이 명령은 적용 가능한 required validator의 PASS 없이 Controller execution으로 진행할 수 없다. 작업 명령을 MOVE_TCP로 분해해도 그 관문을 건너뛰지 않는다. PASS는 실행을 허용할 수 있다는 내부 판정이다.
+
+Protective / Termination Commands:
+
+```text
+STOP
+ESTOP
+```
+
+STOP과 ESTOP은 동작 가능성을 요청하지 않는다. Pre-Execution Motion Validation의 PASS를 요구하지 않는다. 다음 경로는 이 계약이 아니다.
+
+```text
+ESTOP
+→ Pre-Execution Validation
+→ NOT_EVALUATED
+→ BLOCKED
+```
+
+소프트웨어 명령 계약에서는 다음 경로로 취급한다.
+
+```text
+STOP / ESTOP
+→ protective/termination control path
+```
+
+이 구분은 RoboTwin software architecture의 command semantics다. 인증된 비상정지 구현, 기능 안전 적합성, 하드웨어 안전 회로와의 등가, ISO/IEC 안전 인증, 실제 PMAC E-stop 동작을 주장하지 않는다.
+
+SERVO_OFF, HOLD, RESET의 검증 적용 범위는 정하지 않는다.
 
 `get_state`의 결과는 1절의 RobotState 개념이다. 어댑터의 네이티브 객체를 그대로 반환하지 않는다.
 
