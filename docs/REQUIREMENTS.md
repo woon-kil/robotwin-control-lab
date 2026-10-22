@@ -12,7 +12,7 @@ RoboTwin Control Lab — P-000A Requirements Baseline
 
 요구사항 ID는 `REQ-XXX`와 `NFR-XXX`를 사용한다. 이 문서는 검증 가능한 문장만 고정한다. 테스트 코드, 증거 파일, Phase 일정은 만들지 않으며 추적 행렬에서 `TBD`로 둔다.
 
-숫자 목표는 12절의 초기 Engineering Target이다. 최종 보증값이 아니다.
+숫자 목표는 4절의 초기 Engineering Target이다. 최종 보증값이 아니다.
 
 ## 1. Functional Requirements
 
@@ -40,7 +40,7 @@ Isaac Sim에만 있는 관절 이름, 축, 관성 기본값을 기준 모델로 
 
 시뮬레이터 API와 독립된 FK 구현으로 TCP Pose를 계산할 수 있어야 한다.
 
-FK는 Unity 또는 Isaac Sim의 포즈 조회 결과를 재포장한 값이 아니어야 한다. 입력은 캐노니컬 모델과 관절 위치이고, 출력은 TCP 위치와 자세이다. 비교 기준은 12절의 FK Engineering Target을 사용한다. 그 수치는 보증값이 아니다.
+FK는 Unity 또는 Isaac Sim의 포즈 조회 결과를 재포장한 값이 아니어야 한다. 입력은 캐노니컬 모델과 관절 위치이고, 출력은 TCP 위치와 자세이다. 비교 기준은 4절의 FK Engineering Target을 사용한다. 그 수치는 보증값이 아니다.
 
 ### REQ-005 — IK
 
@@ -48,7 +48,7 @@ Target TCP Pose로부터 Joint target을 계산할 수 있어야 한다.
 
 IK 결과는 관절 목표이며, 그 목표를 다시 독립 FK에 넣었을 때의 TCP와 목표 TCP의 관계는 측정 가능해야 한다. 해가 없거나 한계를 넘는 경우는 실패로 보고한다. 실패를 가장 가까운 성공 포즈로 바꾸어 PASS로 기록하지 않는다.
 
-관절 목표 오차의 초기 기준은 12절의 Joint Target Error이다.
+관절 목표 오차의 초기 기준은 4절의 Joint Target Error이다.
 
 ### REQ-006 — Canonical Robot Command
 
@@ -84,7 +84,7 @@ Control / Validation Core는 이 추상화에 의존한다. Unity, Isaac Sim, RO
 
 동일한 명령에 대해 Unity, Isaac Sim, 독립 FK 결과를 비교할 수 있어야 한다.
 
-비교 대상에는 TCP 위치가 포함된다. 초기 기준은 12절의 Cross-Simulator TCP Position Error이다. 비교 기록에는 명령 식별자, 모델 식별자, 좌표계, 단위가 포함되어야 한다. 셋 중 하나의 출력이 없으면 그 실행은 비교 PASS가 될 수 없다.
+비교 대상에는 TCP 위치가 포함된다. 초기 기준은 4절의 Cross-Simulator TCP Position Error이다. 비교 기록에는 명령 식별자, 모델 식별자, 좌표계, 단위가 포함되어야 한다. 셋 중 하나의 출력이 없으면 그 실행은 비교 PASS가 될 수 없다.
 
 ### REQ-009 — Physics Validation
 
@@ -97,13 +97,13 @@ Control / Validation Core는 이 추상화에 의존한다. Unity, Isaac Sim, RO
 - friction
 - collision
 
-측정값은 사용한 파라미터와 그 출처를 함께 남긴다. 엔진이 채워 넣은 기본값을 측정 대상으로 쓸 때는 기본값임을 표시한다. 기대하지 않은 충돌의 초기 기준은 12절의 Unexpected Collision이다.
+측정값은 사용한 파라미터와 그 출처를 함께 남긴다. 엔진이 채워 넣은 기본값을 측정 대상으로 쓸 때는 기본값임을 표시한다. 기대하지 않은 충돌의 초기 기준은 4절의 Unexpected Collision이다.
 
 ### REQ-010 — Virtual PMAC-compatible Controller
 
 실제 PMAC 하드웨어가 없어도 컨트롤러 통신과 상태 전이를 검증할 수 있어야 한다.
 
-이 요구사항의 범위는 추상화와 가상 컨트롤러이다. 적용 가정은 4절과 같다. 비공개 프로토콜, 레지스터 맵, FilterBot 내부 제어 변수를 재현할 것을 요구하지 않는다. 공개적으로 검증 가능한 정보가 생기기 전에는 그 정보를 추정해 채우지 않는다.
+이 요구사항의 범위는 추상화와 가상 컨트롤러이다. 적용 가정은 3절과 같다. 비공개 프로토콜, 레지스터 맵, FilterBot 내부 제어 변수를 재현할 것을 요구하지 않는다. 공개적으로 검증 가능한 정보가 생기기 전에는 그 정보를 추정해 채우지 않는다.
 
 ### REQ-011 — Controller State Machine
 
@@ -199,7 +199,7 @@ Latency의 PASS 임계값은 이 기준선에서 정하지 않는다. 측정 결
 500 cycles
 ```
 
-이 횟수는 12절의 초기 Engineering Target이다. 자동 실행은 사이클 번호, 명령, 종료 상태, 오류, 충돌을 남긴다. 중간 실패가 있는 실행을 500회 도달로 집계하지 않는다. 실패 사이클은 원인과 함께 증거에 포함한다.
+이 횟수는 4절의 초기 Engineering Target이다. 자동 실행은 사이클 번호, 명령, 종료 상태, 오류, 충돌을 남긴다. 중간 실패가 있는 실행을 500회 도달로 집계하지 않는다. 실패 사이클은 원인과 함께 증거에 포함한다.
 
 ## 2. Non-Functional Requirements
 
@@ -213,7 +213,7 @@ Latency의 PASS 임계값은 이 기준선에서 정하지 않는다. 측정 결
 
 Requirement → Test → Evidence 관계를 추적할 수 있어야 한다.
 
-각 요구사항은 13절 행렬의 Requirement, Component, Test, Evidence, Gate로 연결한다. 아직 없는 Test와 Evidence는 `TBD`로 둔다. 존재하지 않는 테스트 이름이나 증거 경로를 미리 합격란에 적지 않는다.
+각 요구사항은 5절 행렬의 Requirement, Component, Test, Evidence, Gate로 연결한다. 아직 없는 Test와 Evidence는 `TBD`로 둔다. 존재하지 않는 테스트 이름이나 증거 경로를 미리 합격란에 적지 않는다.
 
 ### NFR-003 — Simulator Independence
 
