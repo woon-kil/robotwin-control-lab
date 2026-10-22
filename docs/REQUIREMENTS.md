@@ -1,16 +1,19 @@
 # Requirements
 
-RoboTwin Control Lab — P-000A Requirements Baseline
+RoboTwin Control Lab — P-000A.1 Requirements Amendment
 
 | 항목 | 값 |
 | --- | --- |
 | 문서 | Requirements Baseline |
-| 단계 | P-000A |
+| P-000A baseline | `bf876d22abdfb567b800ad49c966f27e4c5d7b92` |
+| 현재 Gate | P-000A.1 — Requirements Amendment |
 | 구현 | NOT STARTED |
 | 작성일 | 2026-10-23 |
 | 관련 문서 | `docs/PROJECT_CHARTER.md` |
 
 요구사항 ID는 `REQ-XXX`와 `NFR-XXX`를 사용한다. 이 문서는 검증 가능한 문장만 고정한다. 테스트 코드, 증거 파일, Phase 일정은 만들지 않으며 추적 행렬에서 `TBD`로 둔다.
+
+P-000A.1은 REQ-001–REQ-018과 NFR-001–NFR-007의 문장을 바꾸지 않는다. REQ-019–REQ-022를 추가한다. 이 개정은 구현 Phase가 아니다.
 
 숫자 목표는 4절의 초기 Engineering Target이다. 최종 보증값이 아니다.
 
@@ -201,6 +204,204 @@ Latency의 PASS 임계값은 이 기준선에서 정하지 않는다. 측정 결
 
 이 횟수는 4절의 초기 Engineering Target이다. 자동 실행은 사이클 번호, 명령, 종료 상태, 오류, 충돌을 남긴다. 중간 실패가 있는 실행을 500회 도달로 집계하지 않는다. 실패 사이클은 원인과 함께 증거에 포함한다.
 
+### REQ-019 — Workcell Simulation
+
+로봇 단독이 아니라 다음 관계를 검증할 수 있는 Workcell을 표현한다.
+
+```text
+Robot + Environment + Task
+```
+
+Workcell은 최소한 다음 개념을 표현할 수 있어야 한다.
+
+- Robot Base
+- Work Object
+- Task Target
+- Destination / Disposal Area
+- Obstacles
+- Restricted Zones
+- Virtual Camera
+- Lighting
+
+대표 시나리오로 다음 일반화된 산업 작업을 사용할 수 있다.
+
+```text
+Hazardous Filter Handling Simulation
+```
+
+```text
+The workcell is a generic hazardous filter-handling simulation inspired by industrial remote-manipulation tasks. It is not a replica of Core Robotics FilterBot or any proprietary robot system.
+```
+
+실제 FilterBot의 다음 항목을 추정해서는 안 된다.
+
+- Link Length
+- DH Parameter
+- Joint Range
+- Mass
+- Inertia
+- Payload
+- Controller Protocol
+- Motor Specification
+- Safety Logic
+
+P-000A.1은 Workcell 모델과 시나리오 자산을 만들지 않는다.
+
+### REQ-020 — Task-Level Command
+
+REQ-006의 Canonical Robot Command 위에 산업 작업 단위의 명령 계층을 정의한다.
+
+최소 후보:
+
+```text
+HANDLE_FILTER
+PICK_OBJECT
+PLACE_OBJECT
+```
+
+Task-Level Command는 Motor나 Joint를 직접 제어하지 않는다.
+
+```text
+Task-Level Command
+        ↓
+Task Decomposition
+        ↓
+Canonical Robot Command
+        ↓
+Motion / Validation
+        ↓
+Controller Interface
+```
+
+예:
+
+```text
+HANDLE_FILTER
+   ↓
+MOVE_TCP approach
+   ↓
+MOVE_TCP grasp
+   ↓
+tool action
+   ↓
+MOVE_TCP extract
+   ↓
+MOVE_TCP destination
+   ↓
+tool release
+```
+
+이 예의 `tool action`과 `tool release`는 분해 흐름의 자리다. REQ-006의 명령 목록에 이름을 추가하지 않는다. command schema와 코드는 이 게이트에서 만들지 않는다. 이 계층을 Core Robotics 또는 PMAC의 실제 Task Protocol이라고 주장하지 않는다.
+
+### REQ-021 — Pre-Execution Validation
+
+Controller에 명령을 전달하기 전에 Digital Twin에서 실행 가능성과 위험 요소를 검사한다.
+
+```text
+Task / Robot Command
+        ↓
+Pre-Execution Validator
+        ↓
++---------------------------+
+| Reachability              |
+| IK Feasibility            |
+| Joint Limits              |
+| Collision                 |
+| Self Collision            |
+| Safety Zone               |
+| Trajectory                |
+| TCP Target                |
+| Physics when applicable   |
++---------------------------+
+        ↓
+     PASS / FAIL
+       /     \
+      /       \
+   FAIL       PASS
+    ↓           ↓
+ REJECT     APPROVE
+                ↓
+             EXECUTE
+                ↓
+           Controller
+```
+
+최소 검사는 다음과 같다.
+
+#### Reachability
+
+목표 TCP pose가 robot workspace 안에서 실현 가능한지 검사한다.
+
+#### IK Feasibility
+
+목표 pose에 대해 유효한 joint solution이 존재하는지 검사한다.
+
+#### Joint Limit
+
+계산된 trajectory가 정의된 joint limit을 위반하는지 검사한다.
+
+#### Collision
+
+Robot과 Environment의 collision 가능성을 검사한다.
+
+#### Self Collision
+
+Robot link 간 충돌 가능성을 검사한다.
+
+#### Safety Zone
+
+작업 경로가 정의된 restricted zone 정책을 위반하는지 검사한다. Zone의 종류는 REQ-022이다.
+
+#### Trajectory
+
+Trajectory가 정의된 motion constraints를 만족하는지 검사한다.
+
+#### TCP Target
+
+최종 TCP pose가 target tolerance를 만족하는지 검사한다.
+
+#### Physics
+
+필요한 경우 payload, gravity, inertia처럼 모델링된 물리 조건을 이용해 검증한다. 출처가 없는 물리 파라미터는 PASS 근거로 사용하지 않는다.
+
+실행 정책:
+
+```text
+Validation FAIL
+→ Controller execution prohibited
+
+Validation PASS
+→ execution may be approved
+```
+
+PASS는 실제 산업 안전 인증이 아니다. RoboTwin 내부의 engineering validation result이다.
+
+이 요구사항은 REQ-004, REQ-005, REQ-006, REQ-009의 문장을 바꾸지 않는다. 그 검사들을 실행 전 관문으로 묶는다. P-000A.1은 validator를 구현하지 않는다.
+
+### REQ-022 — Safety Zone
+
+Workcell에 다음 세 가지 논리적 Safety Zone을 정의할 수 있어야 한다.
+
+```text
+NORMAL
+WARNING
+PROHIBITED
+```
+
+#### NORMAL
+
+정상 작업 허용 영역.
+
+#### WARNING
+
+위험 가능성이 있는 영역. 향후 구현에서는 warning 표시 또는 reduced-velocity policy의 입력으로 사용할 수 있다.
+
+#### PROHIBITED
+
+작업 경로가 진입해서는 안 되는 영역. Pre-Execution Validation에서 trajectory reject 조건으로 사용할 수 있다.
+
+이 세 상태는 RoboTwin의 시뮬레이션 정책 모델이다. 실제 산업 안전 규격의 준수나 인증 기능이라고 주장하지 않는다. REQ-011의 컨트롤러 상태와 다른 축이다. P-000A.1은 Zone의 기하와 정책을 구현하지 않는다.
+
 ## 2. Non-Functional Requirements
 
 ### NFR-001 — Reproducibility
@@ -300,7 +501,7 @@ Max
 
 Test와 Evidence는 아직 없다. 만들지 않은 테스트와 증거 경로 대신 `TBD`를 적는다.
 
-Gate도 `TBD`이다. 추적 행렬 예시의 `P-001`은 열 형식을 보여 주기 위한 표기이며, 이 기준선은 Phase를 배정하지 않는다. P-000A는 다음 Phase를 시작하지 않는다.
+Gate도 `TBD`이다. 추적 행렬 예시의 `P-001`은 열 형식을 보여 주기 위한 표기이며, 이 기준선은 Phase를 배정하지 않는다. P-000A.1도 Test, Evidence, Gate를 만들지 않으며 P-000B 또는 P-001을 시작하지 않는다.
 
 Component 열은 이후 구현이 놓일 논리적 위치이다. 해당 경로의 코드는 아직 없다.
 
@@ -324,6 +525,10 @@ Component 열은 이후 구현이 놓일 논리적 위치이다. 해당 경로�
 | REQ-016 HMI | hmi | TBD | TBD | TBD |
 | REQ-017 Telemetry | evidence | TBD | TBD | TBD |
 | REQ-018 Reliability Test | tests | TBD | TBD | TBD |
+| REQ-019 Workcell Simulation | core | TBD | TBD | TBD |
+| REQ-020 Task-Level Command | core | TBD | TBD | TBD |
+| REQ-021 Pre-Execution Validation | core | TBD | TBD | TBD |
+| REQ-022 Safety Zone | core | TBD | TBD | TBD |
 | NFR-001 Reproducibility | evidence | TBD | TBD | TBD |
 | NFR-002 Traceability | docs | TBD | TBD | TBD |
 | NFR-003 Simulator Independence | core | TBD | TBD | TBD |

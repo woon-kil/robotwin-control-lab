@@ -1,16 +1,16 @@
 # RoboTwin Control Lab
 
-Industrial Robot Digital Twin & Control Validation Platform
+Industrial Robot Digital Twin & Pre-Execution Validation Platform
 
 | 항목 | 값 |
 | --- | --- |
 | 문서 | Project Charter |
-| 단계 | P-000A — Architecture Baseline |
-| 현재 Gate | P-000A |
+| P-000A baseline | `bf876d22abdfb567b800ad49c966f27e4c5d7b92` |
+| 현재 Gate | P-000A.1 — Requirements Amendment |
 | 구현 | NOT STARTED |
 | 작성일 | 2026-10-23 |
 
-이 문서는 프로젝트의 목적, 범위, 구조 원칙, 가정, 초기 위험을 고정한다. 로봇 소스, 시뮬레이터 프로젝트, 제어 코드는 만들지 않는다. P-000A 완료가 다음 단계를 자동으로 시작하지 않는다.
+이 문서는 프로젝트의 목적, 범위, 구조 원칙, 가정, 초기 위험을 고정한다. 로봇 소스, 시뮬레이터 프로젝트, 제어 코드는 만들지 않는다. P-000A.1은 요구사항 개정이다. 구현 Phase가 아니며 P-000B와 P-001을 시작하지 않는다.
 
 ## 1. Project Name
 
@@ -21,7 +21,7 @@ RoboTwin Control Lab
 Subtitle:
 
 ```text
-Industrial Robot Digital Twin & Control Validation Platform
+Industrial Robot Digital Twin & Pre-Execution Validation Platform
 ```
 
 이 프로젝트는 로봇 애니메이션이나 단일 시뮬레이터 데모가 아니다. Unity와 NVIDIA Isaac Sim에서 같은 로봇 모델과 표준 Robot Command를 실행하고, 시뮬레이터 API와 분리된 Kinematics/Validation 계층으로 결과를 검증하며, ROS2 및 PMAC-compatible Controller와 연동할 수 있는 산업용 로봇 Digital Twin 및 제어 검증 플랫폼을 만든다.
@@ -289,6 +289,17 @@ MVP에서 필수 요구사항으로 두지 않는 항목:
 - HMI 구현
 - P-000B 및 P-001 이후 작업
 
+### 9.4 P-000A.1에서 범위에 추가하는 것
+
+P-000A의 9.1 목록은 유지한다. P-000A.1은 다음을 프로젝트 범위에 추가한다.
+
+- Workcell simulation (`Robot + Environment + Task`)
+- Task-Level Command
+- Pre-Execution Validation
+- Safety Zone (`NORMAL`, `WARNING`, `PROHIBITED`)
+
+진단, 고장 분류, 정비 판단은 이 추가 범위에 포함되지 않는다. 책임 경계의 정본은 13절과 14절이다.
+
 ## 10. Assumptions
 
 다음 가정은 요구사항 해석과 이후 구현 범위에 적용된다. 가정이 깨지면 해당 요구사항의 범위를 다시 문서화한 뒤에만 구현을 넓힌다.
@@ -303,7 +314,7 @@ MVP에서 필수 요구사항으로 두지 않는 항목:
 
 ## 11. Risk Register
 
-각 위험의 Validation은 이후 단계에서 수행할 확인이다. P-000A에서는 테스트를 실행하지 않았고, 증거 파일도 없다.
+각 위험의 Validation은 이후 단계에서 수행할 확인이다. P-000A와 P-000A.1에서는 테스트를 실행하지 않았고, 증거 파일도 없다. RISK-008의 기존 항목은 유지한다. P-000A.1은 RISK-009를 추가한다.
 
 ### RISK-001 — Unity/Isaac coordinate convention mismatch
 
@@ -361,6 +372,22 @@ MVP에서 필수 요구사항으로 두지 않는 항목:
 - **Mitigation:** MVP Out of Scope와 향후 확장 목록을 게이트마다 대조한다. 시뮬레이터가 해당 기능을 제공한다는 이유만으로 착수하지 않는다. P-000A는 다음 Phase를 열지 않는다.
 - **Validation:** 각 게이트의 변경 범위가 9절과 요구사항 ID 안에 있는지 검토한다. 목록 밖 작업은 범위 변경 기록 없이 병합하지 않는다.
 
+### RISK-009 — Cross-project scope contamination
+
+- **Description:** Maintenance-Agentic-Twin의 진단 기능이 RoboTwin에 유입되는 위험이다. 대상은 FFT, vibration diagnosis, bearing diagnosis, predictive maintenance, fault classification, remaining useful life, maintenance recommendation, maintenance agent, AIDE-like diagnostics이다.
+- **Impact:** RoboTwin의 핵심 질문이 모션, 제어, 시뮬레이션, 실행 전 검증에서 설비 건전성 판단으로 흐려진다.
+- **Mitigation:** 두 프로젝트의 책임을 분리해 유지한다. 명시적인 Integration Gate 없이 기능을 공유하지 않는다. P-000A.1은 그 통합을 수행하지 않는다.
+
+```text
+RoboTwin
+Motion / Control / Simulation / Validation
+
+Maintenance-Agentic-Twin
+Health / Diagnosis / Maintenance Decision
+```
+
+- **Validation:** 변경 범위에 14절의 진단·정비 기능이 포함되면 그 변경은 RoboTwin 요구사항으로 수용하지 않는다. 통합 데모는 양쪽 프로젝트가 각각 완료된 뒤의 별도 검토이며, 이 게이트의 산출물이 아니다.
+
 ## 12. Baseline Boundary
 
 P-000A가 잠그는 것:
@@ -382,3 +409,72 @@ P-000A가 잠그지 않는 것:
 - 의존성 버전 핀 (핀을 기록해야 한다는 요구만 둔다)
 
 요구사항의 식별자와 추적 행렬은 `docs/REQUIREMENTS.md`가 정본이다.
+
+P-000A.1은 위 잠금을 해제하지 않는다. REQ-001–REQ-018과 NFR-001–NFR-007의 문장은 유지한다. 이 개정이 추가하는 범위, REQ-019–REQ-022, RISK-009, 책임 경계는 9.4절과 13절, 14절에 기록한다.
+
+## 13. RoboTwin Responsibility Boundary
+
+P-000A.1에서 명확히 하는 핵심 질문은 다음이다.
+
+```text
+Can the robot perform this task safely and accurately before execution?
+```
+
+컨트롤러에 명령을 전달하기 전에, 이 작업을 로봇이 안전하고 정확하게 수행할 수 있는지를 Digital Twin에서 검사한다. 이 검사의 프로젝트 내부 이름은 Pre-Execution Validation이다.
+
+Inputs:
+
+- Robot Command
+- Joint
+- Pose
+- Controller Feedback
+- Workcell State
+
+Core Responsibilities:
+
+- Robot Model
+- Coordinate Frames
+- FK / IK
+- Trajectory
+- Physics
+- Collision
+- Workcell
+- Controller Interface
+- ROS2
+- PMAC-compatible abstraction
+- Unity
+- Isaac Sim
+- Digital Twin
+- Pre-Execution Validation
+- Operator HMI
+- Reliability Evidence
+
+Outputs:
+
+- Motion Result
+- Validation Result
+- Controller Command
+- Execution Feedback
+- Quantitative Evidence
+
+PMAC-compatible abstraction은 공개적으로 검증 가능한 정보가 생기기 전까지 가상 컨트롤러와 추상화이다. 비공개 프로토콜을 이 책임 목록으로 재현하지 않는다.
+
+Pre-Execution Validation의 PASS는 RoboTwin 내부의 engineering validation result이다. 실제 산업 안전 규격의 준수나 인증을 의미하지 않는다.
+
+## 14. Maintenance-Agentic-Twin Boundary
+
+다음 기능은 RoboTwin에 포함하지 않는다.
+
+- FFT
+- Vibration Diagnosis
+- Bearing Diagnosis
+- Predictive Maintenance
+- Fault Classification
+- Remaining Useful Life
+- Maintenance Recommendation
+- Maintenance Agent
+- AIDE-like diagnostics
+
+이 기능은 별도 프로젝트 `Maintenance-Agentic-Twin`의 책임이다. 두 프로젝트를 현재 단계에서 통합하지 않는다.
+
+향후 양쪽 프로젝트가 각각 완료된 이후 telemetry schema 수준의 integration demo는 검토할 수 있다. 그 검토는 P-000A.1의 범위가 아니다. 명시적인 별도 Integration Gate 없이 기능을 가져오지 않는다.

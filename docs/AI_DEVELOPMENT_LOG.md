@@ -58,3 +58,60 @@ Elapsed Time
 2026-10-23 08:07 KST 수신, 08:11 KST 산출물 확인. 약 4분.
 로컬 커밋은 이 기록 직후 1회. 구현 사이클 시간은 측정하지 않았다.
 ```
+
+## P-000A.1 — Workcell & Pre-Execution Validation Requirements Amendment
+
+```text
+Task
+P-000A.1. P-000A FINAL PASS 기준선 bf876d22abdfb567b800ad49c966f27e4c5d7b92 위에
+Workcell, Task-Level Command, Pre-Execution Validation, Safety Zone 요구사항을 추가한다.
+구현 Phase가 아니다.
+
+Problem
+기존 기준선은 모델, 명령, 시뮬레이터, 컨트롤러 추상화를 정의한다.
+산업용 로봇 업무에서 필요한 질문, 즉 컨트롤러에 명령을 전달하기 전에
+작업을 안전하고 정확하게 수행할 수 있는지가 요구사항으로 분리되어 있지 않았다.
+동시에 진단·정비 기능이 RoboTwin으로 섞이면 그 질문이 흐려진다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. REQ-001–REQ-018과 NFR-001–NFR-007의 본문은 유지하고 REQ-019–REQ-022만 추가한다.
+2. 추적 행렬에 네 행을 추가하고 Test, Evidence, Gate는 TBD로 둔다.
+3. PROJECT_CHARTER에 책임 경계, Maintenance-Agentic-Twin 경계, RISK-009를 추가한다.
+   RISK-008의 기존 항목은 고치지 않는다. 7절과 10절 번호는 유지한다.
+4. README의 현재 Gate를 P-000A.1로 바꾸고 실행 전 검증 질문을 적는다.
+5. 거부한 제안: 기존 요구사항 문장 수정, 테스트 파일명 창작, FilterBot 파라미터 추정,
+   PMAC 비공개 프로토콜 추정, 산업 안전 인증 주장, 진단 기능 편입,
+   구현 파일 생성, P-000B 또는 P-001 착수, .cursor/ 커밋.
+
+Developer Decision
+개발자 지시에 따라 문서 네 개만 개정한다. 기존 기능 요구사항과 비기능 요구사항의 문장은 유지한다.
+Hazardous Filter Handling Simulation은 일반화된 시나리오이며 독점 시스템의 복제가 아니다.
+Pre-Execution Validation의 PASS는 프로젝트 내부 공학 검증 결과이다.
+진단과 정비 판단은 Maintenance-Agentic-Twin에 둔다.
+이 개정 초안의 최종 수용은 Developer 검수에 둔다.
+
+Accepted / Rejected
+Accepted — 지정된 네 요구사항, TBD 추적 행, 프로젝트 경계, RISK-009, README Gate 표기.
+Rejected — 구현, 기존 REQ/NFR 본문 변경, 시험·증거 경로 창작, 프로젝트 통합, 인증 주장.
+Pending — P-000A.1 초안에 대한 Developer 검수.
+
+Reason
+요구사항 본문을 바꾸면 P-000A FINAL PASS 기준선이 개정 범위 밖으로 움직인다.
+AI가 시험 이름이나 물리 값을 채우면 아직 없는 증거를 있는 것처럼 만든다.
+진단 기능을 같은 문서의 책임으로 넣으면 핵심 질문이 바뀐다.
+
+Verification
+2026-10-23 08:36 KST에 작업 트리에서 확인했다.
+기준 HEAD는 bf876d22abdfb567b800ad49c966f27e4c5d7b92.
+REQ 22, NFR 7, RISK 9.
+REQUIREMENTS.md에서 삭제된 기존 REQ/NFR 본문 줄은 없다.
+구현 파일은 0개다. git diff --check 는 공백 오류가 없다.
+런타임, FK, IK, 충돌, 안전 영역은 측정하거나 구현하지 않았다.
+
+Elapsed Time
+2026-10-23 08:33 KST 수신, 08:36 KST 산출물 확인. 약 3분.
+로컬 커밋은 이 기록 직후 1회. 구현 사이클 시간은 측정하지 않았다.
+```
