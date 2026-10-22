@@ -115,3 +115,88 @@ Elapsed Time
 2026-10-23 08:33 KST 수신, 08:36 KST 산출물 확인. 약 3분.
 로컬 커밋은 이 기록 직후 1회. 구현 사이클 시간은 측정하지 않았다.
 ```
+
+## P-000B — Architecture / Coordinate / Canonical API Baseline
+
+```text
+Task
+P-000B. 기준선 62b9a624083cb6ac584e4eb6fd6a69c8c56197ee 위에서
+REQ-001–REQ-022를 구현 가능한 아키텍처 계약으로 옮긴다.
+로봇 모델과 시뮬레이터는 구현하지 않는다. P-001을 시작하지 않는다.
+
+Problem
+요구사항은 명령, 좌표계 일치, 실행 전 검증, 증거를 요구하지만
+프레임 표기, 회전 저장 형식, Core와 Adapter의 경계, 검증 집계, 증거 보존이
+한 계약으로 고정되어 있지 않다.
+엔진 좌표를 추정해 섞으면 이후 교차 검증이 성립하지 않는다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. Canonical coordinate convention.
+   ROS REP-103 (https://reps.openrobotics.org/rep-0103/ , 조회 2026-10-23)의
+   SI 단위, 오른손, 몸체 축 x forward / y left / z up,
+   optical 축 z forward / x right / y down을 계약으로 명시한다.
+   Unity와 Isaac의 변환 행렬은 만들지 않는다.
+2. Transform notation.
+   T_A_B는 source B, destination A다.
+   p_A = T_A_B * p_B 이고 T_A_C = T_A_B * T_B_C 다.
+3. Quaternion policy.
+   저장과 전송은 Hamilton quaternion (x, y, z, w)다.
+   Euler는 HMI 표시에만 쓰고, 축 순서와 intrinsic/extrinsic과 단위를 매번 적는다.
+   기본 Euler 순서는 잠그지 않는다. q와 -q의 대표 부호는 잠그지 않는다.
+4. Core / Adapter boundary.
+   core는 네 SDK에 종속되지 않는다.
+   Unity, Isaac, ROS2, PMAC는 IRobotController 아래의 대등한 adapter다.
+   시뮬레이터와 PMAC는 Canonical State의 정의자가 아니다.
+5. Controller abstraction.
+   IRobotController는 개념 인터페이스다. 언어 파일은 만들지 않는다.
+   상태 어휘만 고정하고 완전한 전이표는 만들지 않는다.
+   PMAC 레지스터, 문법, 메모리 맵, 비공개 상태는 추정하지 않는다.
+6. Validation aggregation.
+   required FAIL은 전체 FAIL이고 실행을 막는다.
+   required NOT_EVALUATED는 전체 PASS를 금지한다.
+   required 목록이 없으면 전체 PASS를 주지 않는다.
+   측정값과 threshold를 만들지 않는다.
+7. Evidence policy.
+   동작했다는 서술만으로 PASS하지 않는다.
+   PASS 파일을 덮어쓰지 않고 실패 기록을 지우지 않는다.
+   myCobot 계열 숫자와 20 ms 한도를 이 저장소의 PASS로 쓰지 않는다.
+8. 거부한 제안: 기존 REQ/NFR 수정, 차터 그림 수정, UR10e 소스 선택,
+   변환 행렬 작성, 구현 파일, 테스트 실행, P-001 착수.
+
+Developer Decision
+개발자 지시에 따라 새 문서 다섯 개와 이 로그만 변경한다.
+좌표 계약은 REP-103을 프로젝트 규칙으로 명시하되 엔진 행렬은 비운다.
+T_A_B의 방향은 source B에서 destination A로 잠근다.
+Quaternion을 저장 표현으로 두고 Euler는 표시용으로 제한한다.
+기존 요구사항 문장은 바꾸지 않는다.
+차터 3절 그림과의 어댑터 배치 차이는 Open Issue로 남긴다.
+이 초안의 최종 수용은 Developer 검수에 둔다.
+
+Accepted / Rejected
+Accepted — 위 일곱 계약, TBD에 해당하는 수치와 소스의 공백, Evidence 불변 규칙.
+Rejected — 엔진 좌표 추정, PMAC 프로토콜 추정, 지연 한도 창작, myCobot 증거 재사용,
+           요구사항 파일 수정, 구현, P-001 시작.
+Pending — P-000B 초안에 대한 Developer 검수.
+           STOP/ESTOP을 검증 FAIL의 예외로 둘지, required validator 목록,
+           Trajectory Completion과 Joint Limit Violation을 요구사항 목표 표에 넣을지.
+
+Reason
+표기 방향을 비우면 이후 구현이 서로 다른 행렬을 같은 이름으로 부른다.
+REP-103에 없는 Unity 행렬을 지금 적으면 실측 전의 추정이 계약이 된다.
+기존 요구사항을 고쳐 새 목표를 넣으면 P-000A.1 PASS 문장이 이 게이트에서 바뀐다.
+AI 제안은 개발자 지시와 원문 규칙을 문서에 옮긴 것이며, 측정으로 검증된 설계가 아니다.
+
+Verification
+기준 HEAD는 62b9a624083cb6ac584e4eb6fd6a69c8c56197ee.
+허용 변경은 docs 다섯 개 신규와 이 로그다.
+REQ와 NFR 파일은 수정하지 않는다.
+구현 파일은 만들지 않는다.
+FK, 좌표 변환, 지연은 측정하지 않았다.
+
+Elapsed Time
+2026-10-23 08:40 KST 수신. 문서 작성과 확인은 한 세션이다.
+로컬 커밋은 이 기록 직후 1회. 구현 사이클 시간은 측정하지 않았다.
+```
