@@ -1,0 +1,67 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt2",
+  "rows": [
+    {
+      "parameter": "Gravity",
+      "unity": "DynamicsManager m_Gravity (0, -9.81, 0), Unity Y-up. Runner does not override it.",
+      "isaac": "UsdPhysics.Scene /PhysicsScene created by the runner, direction (0, 0, -1), magnitude 9.81. Measured gravity-compensation shoulder_lift torque -121.28190612792969 Nm at A-zero."
+    },
+    {
+      "parameter": "Physics dt",
+      "unity": "TimeManager Fixed Timestep 0.02 s",
+      "isaac": "SimulationManager.get_physics_dt 0.016666666666666666 s"
+    },
+    {
+      "parameter": "Drive mode",
+      "unity": "ArticulationDrive position target. Runner sets stiffness, damping, target, targetVelocity 0. It does not assign forceLimit.",
+      "isaac": "URDFImporterConfig joint_drive_type force, joint_target_type position"
+    },
+    {
+      "parameter": "Stiffness",
+      "unity": "Ur10eProjectTestParameters.DriveStiffness 1000000. Unchanged.",
+      "isaac_before": "URDFImporterConfig override_joint_stiffness 100000 Nm/rad. get_dof_gains readback 100000.",
+      "isaac_after": "override_joint_stiffness 200000 Nm/rad. A-zero readback in the diagnostic was 200000."
+    },
+    {
+      "parameter": "Damping",
+      "unity": "Ur10eProjectTestParameters.DriveDamping 2000. Unchanged.",
+      "isaac": "override_joint_damping 1000. Unchanged. Diagnostic readback stayed 1000."
+    },
+    {
+      "parameter": "Max force/effort",
+      "unity": "NOT READ THIS ATTEMPT. Runner does not assign ArticulationDrive.forceLimit.",
+      "isaac": "get_dof_max_efforts [330.0, 330.0, 150.0, 54.0, 54.0, 54.0] Nm. get_dof_efforts returned [0, 0, 0, 0, 0, 0]. Gravity-compensation shoulder_lift is 121.28190612792969 Nm, below the 330 Nm limit."
+    },
+    {
+      "parameter": "Position iterations",
+      "unity": "Runner ApplyProjectSolverIterations sets ArticulationBody.solverIterations to 24. ProjectSettings default is 6 and is overridden.",
+      "isaac": "physxArticulation:solverPositionIterationCount is not authored on the articulation root. get_solver_iteration_counts raised TypeError because the attribute value is None. No stage prim had a readable value. set_solver_iteration_counts failed: empty typeName on the root joint attribute."
+    },
+    {
+      "parameter": "Velocity iterations",
+      "unity": "Runner sets ArticulationBody.solverVelocityIterations to 1.",
+      "isaac": "physxArticulation:solverVelocityIterationCount is not authored. Same read failure as position iterations. NOT EXPOSED."
+    },
+    {
+      "parameter": "Settling velocity",
+      "unity": "0.001 rad/s",
+      "isaac": "0.001 rad/s"
+    },
+    {
+      "parameter": "Position delta epsilon",
+      "unity": "1e-5 rad",
+      "isaac": "1e-5 rad"
+    },
+    {
+      "parameter": "Stable steps",
+      "unity": "20",
+      "isaac": "20"
+    },
+    {
+      "parameter": "Timeout",
+      "unity": "8 s",
+      "isaac": "8 s"
+    }
+  ]
+}

@@ -576,3 +576,52 @@ PYTHONPATH=. python3 -m pytest tests/unit -q → 23 passed.
 Elapsed Time
 2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-004 Fix Attempt 2 — settled joint alignment
+
+```text
+Task
+P-004 Fix Attempt 2. 같은 canonical target에서 Unity와 Isaac의 settled actual joint가
+왜 달라지고, 그 차이가 Unity ↔ Isaac 1.2526456740680483 mm를 설명하는지 측정한다.
+P-005는 시작하지 않는다.
+
+Problem
+Fix Attempt 1 이후 Python ↔ Unity와 Python ↔ Isaac transform은 PASS다.
+남은 차이는 두 simulator의 TCP다. A-zero shoulder_lift는 Unity 0.0002858018851839006 rad,
+Isaac 0.0012141603510826826 rad다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+Isaac은 p620, VERSION 6.2.0-rc.14+release.52805.02189a84.gl.
+
+AI Proposal
+1. FK(actual q)와 simulator TCP의 벡터 차로 joint settling을 먼저 귀속한다.
+2. Gravity OFF와 stiffness step은 diagnostic으로만 측정하고, gravity OFF로 PASS하지 않는다.
+3. 거절: TCP tolerance 증가, target offset, FK 수정, solver 기본값을 추측해 적기, P-005.
+
+Developer Decision
+위 1–3을 수용한다. 측정된 원인은 gravity 아래 shoulder_lift PD equilibrium이다.
+Isaac importer stiffness만 100000에서 200000 Nm/rad로 올린다. Damping은 1000을 유지한다.
+
+Accepted / Rejected
+Accepted — override_joint_stiffness 200000.
+Rejected — empirical TCP offset, tolerance 변경, solver iteration 숫자를 만들지 않은 채 기록, gravity OFF acceptance.
+
+Reason
+Attribution residual 최대는 0.003836883818283858 mm다.
+A-zero gravity compensation shoulder_lift는 -121.28190612792969 Nm이고 max effort는 330 Nm이다.
+Gravity magnitude 0에서 joint error는 0이다.
+Stiffness 200000에서 A-zero shoulder_lift error는 0.0005065396544523537 rad이고 timeout은 false다.
+Solver iteration attribute는 authoring되어 있지 않고 set은 typeName이 비어 실패했다.
+재측정 Unity ↔ Isaac position 최대는 0.29056228373221366 mm다.
+
+Verification
+evidence/P-004/fix-attempt2. evidence/P-004와 fix-attempt1은 덮어쓰지 않았다.
+A-zero rerun difference는 0이다. Timeout은 0이다.
+Unity joint error 최대 0.035251026523152325 deg, Isaac 0.029022584356134966 deg.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 23 passed.
+이 결과는 실제 UR10e controller tuning이 아니다.
+
+Elapsed Time
+2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

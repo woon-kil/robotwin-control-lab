@@ -1,0 +1,983 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt2",
+  "source": "evidence/P-004/fix-attempt1 comparison_results.json",
+  "note": "baseline before any parameter change",
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "joints": [
+        {
+          "joint": "shoulder_pan_joint",
+          "target_rad": 0,
+          "unity_actual_rad": 1.66761012110328e-07,
+          "isaac_actual_rad": 1.2451645261535305e-06,
+          "unity_target_error_rad": 1.66761012110328e-07,
+          "isaac_target_error_rad": 1.2451645261535305e-06,
+          "unity_minus_isaac_rad": -1.0784035140432024e-06,
+          "unity_minus_isaac_deg": -6.17879699667525e-05
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "target_rad": 0,
+          "unity_actual_rad": 0.0002858018851839006,
+          "isaac_actual_rad": 0.0012141603510826826,
+          "unity_target_error_rad": 0.0002858018851839006,
+          "isaac_target_error_rad": 0.0012141603510826826,
+          "unity_minus_isaac_rad": -0.000928358465898782,
+          "unity_minus_isaac_deg": -0.05319102197123997
+        },
+        {
+          "joint": "elbow_joint",
+          "target_rad": 0,
+          "unity_actual_rad": 0.00012600418995134532,
+          "isaac_actual_rad": 0.0003736567741725594,
+          "unity_target_error_rad": 0.00012600418995134532,
+          "isaac_target_error_rad": 0.0003736567741725594,
+          "unity_minus_isaac_rad": -0.00024765258422121406,
+          "unity_minus_isaac_deg": -0.01418944786138373
+        },
+        {
+          "joint": "wrist_1_joint",
+          "target_rad": 0,
+          "unity_actual_rad": 0.0006152464775368571,
+          "isaac_actual_rad": 1.6105264876387082e-05,
+          "unity_target_error_rad": 0.0006152464775368571,
+          "isaac_target_error_rad": 1.6105264876387082e-05,
+          "unity_minus_isaac_rad": 0.00059914121266047,
+          "unity_minus_isaac_deg": 0.03432826281779506
+        },
+        {
+          "joint": "wrist_2_joint",
+          "target_rad": 0,
+          "unity_actual_rad": 6.051500349713024e-06,
+          "isaac_actual_rad": -6.883540493163309e-08,
+          "unity_target_error_rad": 6.051500349713024e-06,
+          "isaac_target_error_rad": -6.883540493163309e-08,
+          "unity_minus_isaac_rad": 6.120335754644657e-06,
+          "unity_minus_isaac_deg": 0.00035066940794415454
+        },
+        {
+          "joint": "wrist_3_joint",
+          "target_rad": 0,
+          "unity_actual_rad": -1.123689230553282e-07,
+          "isaac_actual_rad": 1.7798072349251015e-08,
+          "unity_target_error_rad": -1.123689230553282e-07,
+          "isaac_target_error_rad": 1.7798072349251015e-08,
+          "unity_minus_isaac_rad": -1.301669954045792e-07,
+          "unity_minus_isaac_deg": -7.458019468581171e-06
+        }
+      ],
+      "simulator_tcp_difference_m": [
+        -7.367134094260486e-05,
+        -8.940702811432999e-08,
+        -0.0012407526373862734
+      ],
+      "simulator_tcp_difference_mm": 1.2429378832632352,
+      "fk_of_actual_joint_difference_m": [
+        -7.126322225281534e-05,
+        1.2768806136320698e-06,
+        -0.0012408621054789126
+      ],
+      "fk_of_actual_joint_difference_mm": 1.242907414928206,
+      "attribution_residual_m": [
+        -2.408118689789518e-06,
+        -1.3662876417463998e-06,
+        1.0946809263917556e-07
+      ],
+      "attribution_residual_mm": 0.0027708772631440362,
+      "single_joint_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "delta_tcp_mm": [
+            0.0003134928030501527,
+            -0.0012768905660043295,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0013148107297687752
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "delta_tcp_mm": [
+            0.11228648480154924,
+            1.4004064574635322e-07,
+            1.0992811593047436
+          ],
+          "delta_tcp_norm_mm": 1.1050010506200838
+        },
+        {
+          "joint": "elbow_joint",
+          "delta_tcp_mm": [
+            0.029888351358531295,
+            3.724492936285628e-08,
+            0.14150174952143324
+          ],
+          "delta_tcp_norm_mm": 0.1446238523361857
+        },
+        {
+          "joint": "wrist_1_joint",
+          "delta_tcp_mm": [
+            -0.07180694316555325,
+            -8.941142271012836e-08,
+            0.00013668898526247864
+          ],
+          "delta_tcp_norm_mm": 0.07180707326348625
+        },
+        {
+          "joint": "wrist_2_joint",
+          "delta_tcp_mm": [
+            0.0007133242145851426,
+            -1.2456147224781944e-09,
+            -1.144117661722177e-06
+          ],
+          "delta_tcp_norm_mm": 0.0007133251321243953
+        },
+        {
+          "joint": "wrist_3_joint",
+          "delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0
+        }
+      ],
+      "jacobian_fd_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "expected_delta_tcp_mm": [
+            0.00031349412996576427,
+            -0.00127689024026819,
+            -0.0
+          ],
+          "norm_mm": 0.001314810729806822
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "expected_delta_tcp_mm": [
+            0.11279728974900305,
+            1.406369606015021e-07,
+            1.0992289029075828
+          ],
+          "norm_mm": 1.1050010902990768
+        },
+        {
+          "joint": "elbow_joint",
+          "expected_delta_tcp_mm": [
+            0.029905943617249468,
+            3.725567095044735e-08,
+            0.14149803288279672
+          ],
+          "norm_mm": 0.14462385271227052
+        },
+        {
+          "joint": "wrist_1_joint",
+          "expected_delta_tcp_mm": [
+            -0.07180698196504272,
+            -8.940024163358281e-08,
+            0.00011521363015276284
+          ],
+          "norm_mm": 0.07180707439463424
+        },
+        {
+          "joint": "wrist_2_joint",
+          "expected_delta_tcp_mm": [
+            0.0007133242141125834,
+            5.806274241786212e-10,
+            -1.1441176757984398e-06
+          ],
+          "norm_mm": 0.000713325131651008
+        },
+        {
+          "joint": "wrist_3_joint",
+          "expected_delta_tcp_mm": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "norm_mm": 0.0
+        }
+      ]
+    },
+    {
+      "test_id": "B-positive-1",
+      "joints": [
+        {
+          "joint": "shoulder_pan_joint",
+          "target_rad": 0.2,
+          "unity_actual_rad": 0.200001060962677,
+          "isaac_actual_rad": 0.20001822710037231,
+          "unity_target_error_rad": 1.060962676990851e-06,
+          "isaac_target_error_rad": 1.822710037230335e-05,
+          "unity_minus_isaac_rad": -1.71661376953125e-05,
+          "unity_minus_isaac_deg": -0.0009835472404818362
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "target_rad": 0.3,
+          "unity_actual_rad": 0.30018681287765503,
+          "isaac_actual_rad": 0.300989031791687,
+          "unity_target_error_rad": 0.0001868128776550404,
+          "isaac_target_error_rad": 0.0009890317916870228,
+          "unity_minus_isaac_rad": -0.0008022189140319824,
+          "unity_minus_isaac_deg": -0.04596375801960081
+        },
+        {
+          "joint": "elbow_joint",
+          "target_rad": 0.4,
+          "unity_actual_rad": 0.4000825881958008,
+          "isaac_actual_rad": 0.4002585709095001,
+          "unity_target_error_rad": 8.258819580075905e-05,
+          "isaac_target_error_rad": 0.00025857090950009987,
+          "unity_minus_isaac_rad": -0.00017598271369934082,
+          "unity_minus_isaac_deg": -0.010083066762231323
+        },
+        {
+          "joint": "wrist_1_joint",
+          "target_rad": 0.5,
+          "unity_actual_rad": 0.5000287890434265,
+          "isaac_actual_rad": 0.4999001920223236,
+          "unity_target_error_rad": 2.8789043426513672e-05,
+          "isaac_target_error_rad": -9.98079776763916e-05,
+          "unity_minus_isaac_rad": 0.00012859702110290527,
+          "unity_minus_isaac_deg": 0.007368066567151255
+        },
+        {
+          "joint": "wrist_2_joint",
+          "target_rad": 0.6,
+          "unity_actual_rad": 0.6000015139579773,
+          "isaac_actual_rad": 0.6000047922134399,
+          "unity_target_error_rad": 1.5139579773171263e-06,
+          "isaac_target_error_rad": 4.792213439963611e-06,
+          "unity_minus_isaac_rad": -3.2782554626464844e-06,
+          "unity_minus_isaac_deg": -0.00018783020217535065
+        },
+        {
+          "joint": "wrist_3_joint",
+          "target_rad": 0.7,
+          "unity_actual_rad": 0.6999999284744263,
+          "isaac_actual_rad": 0.699999988079071,
+          "unity_target_error_rad": -7.152557368605983e-08,
+          "isaac_target_error_rad": -1.1920928910669204e-08,
+          "unity_minus_isaac_rad": -5.960464477539063e-08,
+          "unity_minus_isaac_deg": -3.4150945850063755e-06
+        }
+      ],
+      "simulator_tcp_difference_m": [
+        -0.0005917550269887162,
+        -0.00010559231366913391,
+        -0.0008204860730800512
+      ],
+      "simulator_tcp_difference_mm": 1.0171141257453562,
+      "fk_of_actual_joint_difference_m": [
+        -0.0005907042098500792,
+        -0.00010360562569072806,
+        -0.0008224090157041286
+      ],
+      "fk_of_actual_joint_difference_mm": 1.017851746729752,
+      "attribution_residual_m": [
+        -1.0508171386369725e-06,
+        -1.9866879784058433e-06,
+        1.9229426240774394e-06
+      ],
+      "attribution_residual_mm": 0.0029578461957798477,
+      "single_joint_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "delta_tcp_mm": [
+            0.007733205599547155,
+            -0.014789219299926604,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.016689022630046044
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "delta_tcp_mm": [
+            0.514727264788517,
+            0.10435014981957647,
+            0.7493729946475569
+          ],
+          "delta_tcp_norm_mm": 0.9150917964833275
+        },
+        {
+          "joint": "elbow_joint",
+          "delta_tcp_mm": [
+            0.08164611132488453,
+            0.016552035467298776,
+            0.061373798493025156
+          ],
+          "delta_tcp_norm_mm": 0.1034736706319468
+        },
+        {
+          "joint": "wrist_1_joint",
+          "delta_tcp_mm": [
+            -0.013190515328664887,
+            -0.0026741001333263625,
+            0.011314635643910886
+          ],
+          "delta_tcp_norm_mm": 0.017582988537596732
+        },
+        {
+          "joint": "wrist_2_joint",
+          "delta_tcp_mm": [
+            -0.00015452329893417271,
+            0.0001888023307694553,
+            0.0002940439959298047
+          ],
+          "delta_tcp_norm_mm": 0.0003820806741512131
+        },
+        {
+          "joint": "wrist_3_joint",
+          "delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0
+        }
+      ],
+      "jacobian_fd_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "expected_delta_tcp_mm": [
+            0.007733339929350011,
+            -0.014789149059024405,
+            -0.0
+          ],
+          "norm_mm": 0.016689022630247755
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "expected_delta_tcp_mm": [
+            0.5150221920889162,
+            0.1044099400990679,
+            0.7491620296781097
+          ],
+          "norm_mm": 0.9150918208830131
+        },
+        {
+          "joint": "elbow_joint",
+          "expected_delta_tcp_mm": [
+            0.0816514339090103,
+            0.016553114505519526,
+            0.06136642636998921
+          ],
+          "norm_mm": 0.10347367077983473
+        },
+        {
+          "joint": "wrist_1_joint",
+          "expected_delta_tcp_mm": [
+            -0.013191222772844334,
+            -0.0026742435483680673,
+            0.011313776981105424
+          ],
+          "norm_mm": 0.017582988550783572
+        },
+        {
+          "joint": "wrist_2_joint",
+          "expected_delta_tcp_mm": [
+            -0.00015452326967385705,
+            0.0001888030248810131,
+            0.0002940435655128251
+          ],
+          "norm_mm": 0.00038208067406558924
+        },
+        {
+          "joint": "wrist_3_joint",
+          "expected_delta_tcp_mm": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "norm_mm": 0.0
+        }
+      ]
+    },
+    {
+      "test_id": "C-mixed-1",
+      "joints": [
+        {
+          "joint": "shoulder_pan_joint",
+          "target_rad": 0.5,
+          "unity_actual_rad": 0.4999995231628418,
+          "isaac_actual_rad": 0.4999902546405792,
+          "unity_target_error_rad": -4.76837158203125e-07,
+          "isaac_target_error_rad": -9.745359420776367e-06,
+          "unity_minus_isaac_rad": 9.268522262573242e-06,
+          "unity_minus_isaac_deg": 0.0005310472079684914
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "target_rad": -0.4,
+          "unity_actual_rad": -0.3996905982494354,
+          "isaac_actual_rad": -0.3988417387008667,
+          "unity_target_error_rad": 0.0003094017505645974,
+          "isaac_target_error_rad": 0.001158261299133323,
+          "unity_minus_isaac_rad": -0.0008488595485687256,
+          "unity_minus_isaac_deg": -0.0486360695323683
+        },
+        {
+          "joint": "elbow_joint",
+          "target_rad": 0.3,
+          "unity_actual_rad": 0.3001907467842102,
+          "isaac_actual_rad": 0.30039799213409424,
+          "unity_target_error_rad": 0.00019074678421021618,
+          "isaac_target_error_rad": 0.0003979921340942494,
+          "unity_minus_isaac_rad": -0.0002072453498840332,
+          "unity_minus_isaac_deg": -0.011874283872067168
+        },
+        {
+          "joint": "wrist_1_joint",
+          "target_rad": -0.2,
+          "unity_actual_rad": -0.19992537796497345,
+          "isaac_actual_rad": -0.19995759427547455,
+          "unity_target_error_rad": 7.46220350265614e-05,
+          "isaac_target_error_rad": 4.240572452546276e-05,
+          "unity_minus_isaac_rad": 3.221631050109863e-05,
+          "unity_minus_isaac_deg": 0.001845858623195946
+        },
+        {
+          "joint": "wrist_2_joint",
+          "target_rad": 0.6,
+          "unity_actual_rad": 0.6000020503997803,
+          "isaac_actual_rad": 0.5999988317489624,
+          "unity_target_error_rad": 2.050399780295642e-06,
+          "isaac_target_error_rad": -1.1682510375754518e-06,
+          "unity_minus_isaac_rad": 3.2186508178710938e-06,
+          "unity_minus_isaac_deg": 0.00018441510759034427
+        },
+        {
+          "joint": "wrist_3_joint",
+          "target_rad": -0.7,
+          "unity_actual_rad": -0.7000001668930054,
+          "isaac_actual_rad": -0.7000003457069397,
+          "unity_target_error_rad": -1.6689300541550267e-07,
+          "isaac_target_error_rad": -3.4570693974167455e-07,
+          "unity_minus_isaac_rad": 1.7881393432617188e-07,
+          "unity_minus_isaac_deg": 1.0245283755019126e-05
+        }
+      ],
+      "simulator_tcp_difference_m": [
+        0.00014972703547710964,
+        6.765338816250299e-05,
+        -0.0011816915276205986
+      ],
+      "simulator_tcp_difference_mm": 1.1930591068899035,
+      "fk_of_actual_joint_difference_m": [
+        0.0001515828559662813,
+        7.004465542392868e-05,
+        -0.0011804729139436865
+      ],
+      "fk_of_actual_joint_difference_mm": 1.1922247760095617,
+      "attribution_residual_m": [
+        -1.8558204891716557e-06,
+        -2.391267261425689e-06,
+        -1.218613676912117e-06
+      ],
+      "attribution_residual_mm": 0.0032630121202889984,
+      "single_joint_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "delta_tcp_mm": [
+            -0.007671274248721716,
+            0.008815874258605305,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.01168623496009902
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "delta_tcp_mm": [
+            -0.14856799584561653,
+            -0.08116118585344001,
+            1.0453229534789221
+          ],
+          "delta_tcp_norm_mm": 1.0589427107018663
+        },
+        {
+          "joint": "elbow_joint",
+          "delta_tcp_mm": [
+            0.007086322310390081,
+            0.003871185885517825,
+            0.13821658883439447
+          ],
+          "delta_tcp_norm_mm": 0.1384522570168613
+        },
+        {
+          "joint": "wrist_1_joint",
+          "delta_tcp_mm": [
+            -0.002691773833385369,
+            -0.0014704886869276734,
+            -0.00316152168705619
+          ],
+          "delta_tcp_norm_mm": 0.004404906664868968
+        },
+        {
+          "joint": "wrist_2_joint",
+          "delta_tcp_mm": [
+            0.0003612517412987515,
+            -4.401427466937946e-05,
+            9.102337938937666e-05
+          ],
+          "delta_tcp_norm_mm": 0.00037513375289556934
+        },
+        {
+          "joint": "wrist_3_joint",
+          "delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0
+        }
+      ],
+      "jacobian_fd_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "expected_delta_tcp_mm": [
+            -0.007671237800526315,
+            0.008815905972941658,
+            0.0
+          ],
+          "norm_mm": 0.011686234958958005
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "expected_delta_tcp_mm": [
+            -0.14817817255455717,
+            -0.08094822941129265,
+            1.0453948275032183
+          ],
+          "norm_mm": 1.0589427425677533
+        },
+        {
+          "joint": "elbow_joint",
+          "expected_delta_tcp_mm": [
+            0.007098951998043792,
+            0.0038780853960671477,
+            0.1382157475761915
+          ],
+          "norm_mm": 0.13845225727251692
+        },
+        {
+          "joint": "wrist_1_joint",
+          "expected_delta_tcp_mm": [
+            -0.002691730521799356,
+            -0.0014704650282071686,
+            -0.0031615695604370305
+          ],
+          "norm_mm": 0.00440490666037869
+        },
+        {
+          "joint": "wrist_2_joint",
+          "expected_delta_tcp_mm": [
+            0.000361251773753344,
+            -4.40138654139769e-05,
+            9.102344837260386e-05
+          ],
+          "norm_mm": 0.0003751337528699024
+        },
+        {
+          "joint": "wrist_3_joint",
+          "expected_delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "norm_mm": 0.0
+        }
+      ]
+    },
+    {
+      "test_id": "E-fixed-1",
+      "joints": [
+        {
+          "joint": "shoulder_pan_joint",
+          "target_rad": 0.1,
+          "unity_actual_rad": 0.10000011324882507,
+          "isaac_actual_rad": 0.09999728947877884,
+          "unity_target_error_rad": 1.1324882506769107e-07,
+          "isaac_target_error_rad": -2.7105212211664398e-06,
+          "unity_minus_isaac_rad": 2.823770046234131e-06,
+          "unity_minus_isaac_deg": 0.00016179010596467704
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "target_rad": -0.2,
+          "unity_actual_rad": -0.1996885985136032,
+          "isaac_actual_rad": -0.19880349934101105,
+          "unity_target_error_rad": 0.00031140148639680065,
+          "isaac_target_error_rad": 0.0011965006589889637,
+          "unity_minus_isaac_rad": -0.0008850991725921631,
+          "unity_minus_isaac_deg": -0.05071244704005217
+        },
+        {
+          "joint": "elbow_joint",
+          "target_rad": 0.3,
+          "unity_actual_rad": 0.3001995384693146,
+          "isaac_actual_rad": 0.3004150390625,
+          "unity_target_error_rad": 0.0001995384693145863,
+          "isaac_target_error_rad": 0.0004150390625000111,
+          "unity_minus_isaac_rad": -0.0002155005931854248,
+          "unity_minus_isaac_deg": -0.01234727447209055
+        },
+        {
+          "joint": "wrist_1_joint",
+          "target_rad": -0.4,
+          "unity_actual_rad": -0.3998816907405853,
+          "isaac_actual_rad": -0.3999336361885071,
+          "unity_target_error_rad": 0.00011830925941469506,
+          "isaac_target_error_rad": 6.636381149294213e-05,
+          "unity_minus_isaac_rad": 5.194544792175293e-05,
+          "unity_minus_isaac_deg": 0.0029762549308330563
+        },
+        {
+          "joint": "wrist_2_joint",
+          "target_rad": 0.5,
+          "unity_actual_rad": 0.5000028014183044,
+          "isaac_actual_rad": 0.4999977648258209,
+          "unity_target_error_rad": 2.8014183044433594e-06,
+          "isaac_target_error_rad": -2.2351741790771484e-06,
+          "unity_minus_isaac_rad": 5.036592483520508e-06,
+          "unity_minus_isaac_deg": 0.00028857549243303874
+        },
+        {
+          "joint": "wrist_3_joint",
+          "target_rad": -0.6,
+          "unity_actual_rad": -0.6000002026557922,
+          "isaac_actual_rad": -0.6000000238418579,
+          "unity_target_error_rad": -2.0265579225853259e-07,
+          "isaac_target_error_rad": -2.384185793236071e-08,
+          "unity_minus_isaac_rad": -1.7881393432617188e-07,
+          "unity_minus_isaac_deg": -1.0245283755019126e-05
+        }
+      ],
+      "simulator_tcp_difference_m": [
+        -6.0916974246039146e-05,
+        -1.0820805876665673e-05,
+        -0.001251116787981954
+      ],
+      "simulator_tcp_difference_mm": 1.2526456740680483,
+      "fk_of_actual_joint_difference_m": [
+        -5.807748413344527e-05,
+        -9.114116111208492e-06,
+        -0.0012505626292390881
+      ],
+      "fk_of_actual_joint_difference_mm": 1.2519436692300256,
+      "attribution_residual_m": [
+        -2.8394901125938787e-06,
+        -1.706689765457181e-06,
+        -5.541587428659067e-07
+      ],
+      "attribution_residual_mm": 0.0033589560829712273,
+      "single_joint_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "delta_tcp_mm": [
+            -0.0011312788035233723,
+            0.003456260365741759,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.003636691827347848
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "delta_tcp_mm": [
+            0.030424411423313202,
+            0.0030525402768821763,
+            1.1133521243288924
+          ],
+          "delta_tcp_norm_mm": 1.1137719315731809
+        },
+        {
+          "joint": "elbow_joint",
+          "delta_tcp_mm": [
+            0.03345842328261739,
+            0.0033569483550155432,
+            0.141638514913639
+          ],
+          "delta_tcp_norm_mm": 0.14557542408579194
+        },
+        {
+          "joint": "wrist_1_joint",
+          "delta_tcp_mm": [
+            -0.005072227175384469,
+            -0.0005089063646046554,
+            -0.004604038174649272
+          ],
+          "delta_tcp_norm_mm": 0.006869034991923657
+        },
+        {
+          "joint": "wrist_2_joint",
+          "delta_tcp_mm": [
+            0.0005180356346112802,
+            -0.0002308675015605388,
+            0.00015141240661264987
+          ],
+          "delta_tcp_norm_mm": 0.0005870148540540961
+        },
+        {
+          "joint": "wrist_3_joint",
+          "delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0
+        }
+      ],
+      "jacobian_fd_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "expected_delta_tcp_mm": [
+            -0.0011312756513199137,
+            0.0034562613975110917,
+            0.0
+          ],
+          "norm_mm": 0.003636691827361045
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "expected_delta_tcp_mm": [
+            0.030915215225120946,
+            0.0031017836405920563,
+            1.113338504209848
+          ],
+          "norm_mm": 1.1137719679316724
+        },
+        {
+          "joint": "elbow_joint",
+          "expected_delta_tcp_mm": [
+            0.033473678949687564,
+            0.003358479000435494,
+            0.1416348742871386
+          ],
+          "norm_mm": 0.1455754243612454
+        },
+        {
+          "joint": "wrist_1_joint",
+          "expected_delta_tcp_mm": [
+            -0.005072110473916955,
+            -0.0005088946591761214,
+            -0.004604168026316381
+          ],
+          "norm_mm": 0.006869034986685549
+        },
+        {
+          "joint": "wrist_2_joint",
+          "expected_delta_tcp_mm": [
+            0.0005180360708911287,
+            -0.00023086641288294196,
+            0.00015141257350459269
+          ],
+          "norm_mm": 0.0005870148539492329
+        },
+        {
+          "joint": "wrist_3_joint",
+          "expected_delta_tcp_mm": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "norm_mm": 0.0
+        }
+      ]
+    },
+    {
+      "test_id": "E-fixed-3",
+      "joints": [
+        {
+          "joint": "shoulder_pan_joint",
+          "target_rad": 0.01,
+          "unity_actual_rad": 0.010000184178352356,
+          "isaac_actual_rad": 0.01000163983553648,
+          "unity_target_error_rad": 1.8417835235574886e-07,
+          "isaac_target_error_rad": 1.6398355364797418e-06,
+          "unity_minus_isaac_rad": -1.455657184123993e-06,
+          "unity_minus_isaac_deg": -8.340301306820258e-05
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "target_rad": 0.02,
+          "unity_actual_rad": 0.02028193324804306,
+          "isaac_actual_rad": 0.02121180295944214,
+          "unity_target_error_rad": 0.0002819332480430599,
+          "isaac_target_error_rad": 0.0012118029594421383,
+          "unity_minus_isaac_rad": -0.0009298697113990784,
+          "unity_minus_isaac_deg": -0.053277609960215085
+        },
+        {
+          "joint": "elbow_joint",
+          "target_rad": -0.03,
+          "unity_actual_rad": -0.02987382560968399,
+          "isaac_actual_rad": -0.029629210010170937,
+          "unity_target_error_rad": 0.0001261743903160084,
+          "isaac_target_error_rad": 0.0003707899898290623,
+          "unity_minus_isaac_rad": -0.0002446155995130539,
+          "unity_minus_isaac_deg": -0.014015441455160383
+        },
+        {
+          "joint": "wrist_1_joint",
+          "target_rad": 0.04,
+          "unity_actual_rad": 0.04056822508573532,
+          "isaac_actual_rad": 0.0400085523724556,
+          "unity_target_error_rad": 0.0005682250857353202,
+          "isaac_target_error_rad": 8.552372455596091e-06,
+          "unity_minus_isaac_rad": 0.0005596727132797241,
+          "unity_minus_isaac_deg": 0.032066884379563614
+        },
+        {
+          "joint": "wrist_2_joint",
+          "target_rad": -0.05,
+          "unity_actual_rad": -0.049994032829999924,
+          "isaac_actual_rad": -0.04999983310699463,
+          "unity_target_error_rad": 5.9671700000790695e-06,
+          "isaac_target_error_rad": 1.668930053738693e-07,
+          "unity_minus_isaac_rad": 5.8002769947052e-06,
+          "unity_minus_isaac_deg": 0.0003323313918034329
+        },
+        {
+          "joint": "wrist_3_joint",
+          "target_rad": 0.06,
+          "unity_actual_rad": 0.0599997378885746,
+          "isaac_actual_rad": 0.060000013560056686,
+          "unity_target_error_rad": -2.6211142539755983e-07,
+          "isaac_target_error_rad": 1.3560056688621813e-08,
+          "unity_minus_isaac_rad": -2.7567148208618164e-07,
+          "unity_minus_isaac_deg": -1.5794812455654485e-05
+        }
+      ],
+      "simulator_tcp_difference_m": [
+        -8.380404752661441e-05,
+        -3.8881286845704466e-07,
+        -0.0012362562141826558
+      ],
+      "simulator_tcp_difference_mm": 1.2390934979502242,
+      "fk_of_actual_joint_difference_m": [
+        -8.042251267825762e-05,
+        8.71677895586398e-07,
+        -0.0012349531168961425
+      ],
+      "fk_of_actual_joint_difference_mm": 1.2375692874741744,
+      "attribution_residual_m": [
+        -3.381534848356793e-06,
+        -1.2604907640434426e-06,
+        -1.3030972865132884e-06
+      ],
+      "attribution_residual_mm": 0.003836883818283858,
+      "single_joint_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "delta_tcp_mm": [
+            0.0004400241044866249,
+            -0.0017053310797932042,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0017611857665328528
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "delta_tcp_mm": [
+            0.11831509144144547,
+            0.0011833846150777205,
+            1.092172376893061
+          ],
+          "delta_tcp_norm_mm": 1.0985628621568193
+        },
+        {
+          "joint": "elbow_joint",
+          "delta_tcp_mm": [
+            0.028062504942250044,
+            0.00028068045460072355,
+            0.1374583290464082
+          ],
+          "delta_tcp_norm_mm": 0.14029388863875017
+        },
+        {
+          "joint": "wrist_1_joint",
+          "delta_tcp_mm": [
+            -0.06693547601721583,
+            -0.0006694868459611314,
+            0.0053959081575682966
+          ],
+          "delta_tcp_norm_mm": 0.06715595273044007
+        },
+        {
+          "joint": "wrist_2_joint",
+          "delta_tcp_mm": [
+            0.0006744689977633556,
+            4.053267210757383e-05,
+            -2.1326084002903922e-05
+          ],
+          "delta_tcp_norm_mm": 0.0006760222838863999
+        },
+        {
+          "joint": "wrist_3_joint",
+          "delta_tcp_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "delta_tcp_norm_mm": 0.0
+        }
+      ],
+      "jacobian_fd_tcp_contribution": [
+        {
+          "joint": "shoulder_pan_joint",
+          "expected_delta_tcp_mm": [
+            0.00044002619907859464,
+            -0.0017053305393830405,
+            -0.0
+          ],
+          "norm_mm": 0.0017611857665868207
+        },
+        {
+          "joint": "shoulder_lift_joint",
+          "expected_delta_tcp_mm": [
+            0.11882339252656633,
+            0.001188468659781376,
+            1.0921172272257123
+          ],
+          "norm_mm": 1.0985629017368352
+        },
+        {
+          "joint": "elbow_joint",
+          "expected_delta_tcp_mm": [
+            0.028079384951151077,
+            0.0002808492948496055,
+            0.13745488188375235
+          ],
+          "norm_mm": 0.14029388899463033
+        },
+        {
+          "joint": "wrist_1_joint",
+          "expected_delta_tcp_mm": [
+            -0.0669369814723219,
+            -0.0006695019211559289,
+            0.005377209572285705
+          ],
+          "norm_mm": 0.06715595360228814
+        },
+        {
+          "joint": "wrist_2_joint",
+          "expected_delta_tcp_mm": [
+            0.0006744689005342947,
+            4.053429141530845e-05,
+            -2.13260814349167e-05
+          ],
+          "norm_mm": 0.000676022283891478
+        },
+        {
+          "joint": "wrist_3_joint",
+          "expected_delta_tcp_mm": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "norm_mm": 0.0
+        }
+      ]
+    }
+  ]
+}

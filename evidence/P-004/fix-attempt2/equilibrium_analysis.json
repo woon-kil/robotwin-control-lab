@@ -1,0 +1,384 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt2",
+  "acceptance_run": false,
+  "configuration": "A-zero",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "articulation_root": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+  "articulation_root_relocated_count": 1,
+  "physics_dt_s": 0.016666666666666666,
+  "baseline_stiffness": 100000.0,
+  "baseline_damping": 1000.0,
+  "solver_attribute_before_sweep": {
+    "prim_path": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+    "exists": true,
+    "position": {
+      "authored": false,
+      "value": null
+    },
+    "velocity": {
+      "authored": false,
+      "value": null
+    }
+  },
+  "rows": [
+    {
+      "actual_joint_rad": [
+        1.2451645261535305e-06,
+        0.0012141603510826826,
+        0.0003736567741725594,
+        1.6105264876387082e-05,
+        -6.883540493163309e-08,
+        1.7798072349251015e-08
+      ],
+      "target_error_rad": [
+        1.2451645261535305e-06,
+        0.0012141603510826826,
+        0.0003736567741725594,
+        1.6105264876387082e-05,
+        -6.883540493163309e-08,
+        1.7798072349251015e-08
+      ],
+      "velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_abs_velocity_rad_s": 0.0,
+      "settling_steps": 43,
+      "timed_out": false,
+      "non_finite": false,
+      "stiffness_readback": [
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0
+      ],
+      "damping_readback": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "solver_iteration_readback": {
+        "position": null,
+        "velocity": null,
+        "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'"
+      },
+      "efforts": {
+        "dof_efforts": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_efforts": [
+          330.0,
+          330.0,
+          150.0,
+          54.0,
+          54.0,
+          54.0
+        ],
+        "gravity_compensation": [
+          -4.138247459195554e-05,
+          -121.28190612792969,
+          -39.29335403442383,
+          0.005268891341984272,
+          -0.0014366303803399205,
+          0.0
+        ],
+        "abs_effort_over_limit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "name": "baseline",
+      "family": "baseline",
+      "gravity_magnitude": 9.8100004196167
+    },
+    {
+      "actual_joint_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_error_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_abs_velocity_rad_s": 0.0,
+      "settling_steps": 20,
+      "timed_out": false,
+      "non_finite": false,
+      "stiffness_readback": [
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0,
+        100000.0
+      ],
+      "damping_readback": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "solver_iteration_readback": {
+        "position": null,
+        "velocity": null,
+        "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'"
+      },
+      "efforts": {
+        "dof_efforts": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_efforts": [
+          330.0,
+          330.0,
+          150.0,
+          54.0,
+          54.0,
+          54.0
+        ],
+        "gravity_compensation": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "abs_effort_over_limit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "name": "gravity_off",
+      "family": "gravity",
+      "gravity_magnitude": 0.0
+    },
+    {
+      "actual_joint_rad": [
+        1.40560064210149e-06,
+        0.0005065396544523537,
+        0.00016371588571928442,
+        1.133204932557419e-05,
+        -3.658245617543798e-08,
+        1.163635321432821e-08
+      ],
+      "target_error_rad": [
+        1.40560064210149e-06,
+        0.0005065396544523537,
+        0.00016371588571928442,
+        1.133204932557419e-05,
+        -3.658245617543798e-08,
+        1.163635321432821e-08
+      ],
+      "velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_abs_velocity_rad_s": 0.0,
+      "settling_steps": 43,
+      "timed_out": false,
+      "non_finite": false,
+      "stiffness_readback": [
+        200000.0,
+        200000.0,
+        200000.0,
+        200000.0,
+        200000.0,
+        200000.0
+      ],
+      "damping_readback": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "solver_iteration_readback": {
+        "position": null,
+        "velocity": null,
+        "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'"
+      },
+      "efforts": {
+        "dof_efforts": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_efforts": [
+          330.0,
+          330.0,
+          150.0,
+          54.0,
+          54.0,
+          54.0
+        ],
+        "gravity_compensation": [
+          -4.1383398638572544e-05,
+          -121.28500366210938,
+          -39.296417236328125,
+          0.002237980719655752,
+          -0.0006099314196035266,
+          0.0
+        ],
+        "abs_effort_over_limit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "name": "stiffness_200000",
+      "family": "stiffness",
+      "gravity_magnitude": 9.8100004196167
+    },
+    {
+      "actual_joint_rad": [
+        1.6750376516938559e-06,
+        0.0001482409716118127,
+        4.86294120491948e-05,
+        4.33624927609344e-06,
+        -4.856798074825974e-09,
+        3.91551058243067e-09
+      ],
+      "target_error_rad": [
+        1.6750376516938559e-06,
+        0.0001482409716118127,
+        4.86294120491948e-05,
+        4.33624927609344e-06,
+        -4.856798074825974e-09,
+        3.91551058243067e-09
+      ],
+      "velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_abs_velocity_rad_s": 0.0,
+      "settling_steps": 43,
+      "timed_out": false,
+      "non_finite": false,
+      "stiffness_readback": [
+        400000.0,
+        400000.0,
+        400000.0,
+        400000.0,
+        400000.0,
+        400000.0
+      ],
+      "damping_readback": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0
+      ],
+      "solver_iteration_readback": {
+        "position": null,
+        "velocity": null,
+        "error": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'"
+      },
+      "efforts": {
+        "dof_efforts": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_efforts": [
+          330.0,
+          330.0,
+          150.0,
+          54.0,
+          54.0,
+          54.0
+        ],
+        "gravity_compensation": [
+          -1.520698242529761e-05,
+          -121.28660583496094,
+          -39.29800796508789,
+          0.0006564155337400734,
+          -0.0001791127579053864,
+          0.0
+        ],
+        "abs_effort_over_limit": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "name": "stiffness_400000",
+      "family": "stiffness",
+      "gravity_magnitude": 9.8100004196167
+    },
+    {
+      "name": "solver_position_8",
+      "family": "solver_position_iterations",
+      "error": "ErrorException: \n\tError in 'pxrInternal_v0_25_11__pxrReserved__::UsdStage::_GetAttributeValueType' at line 7012 in file ./builds/omniverse/usd-ci/conan/src/0.25.11.kit.5/pxr/usd/usd/stage.cpp : 'Empty typeName for </ur10e/Physics/tn__base_linkbase_link_inertia_kc0.physxArticulation:solverPositionIterationCount>'",
+      "solver_prims_with_value": []
+    }
+  ]
+}

@@ -48,7 +48,9 @@ URDF_RELATIVE = Path("robot_description/generated") / SOURCE_COMMIT / "ur10e.urd
 PACKAGE_RELATIVE = Path("robot_description/upstream") / SOURCE_COMMIT
 EVIDENCE = Path(args.evidence_dir).resolve() if args.evidence_dir else REPO / "evidence" / "P-004" / "raw"
 USD_DIR = REPO / "isaac" / "generated" / "ur10e"
-DRIVE_STIFFNESS = 100000.0
+# 100000 Nm/rad에서는 A-zero shoulder_lift가 gravity torque 121 Nm의 PD equilibrium에 남았다.
+# 200000 Nm/rad는 damping을 유지한 채 그 잔차를 줄인 측정값이다. UR10e controller 사양이 아니다.
+DRIVE_STIFFNESS = 200000.0
 DRIVE_DAMPING = 1000.0
 TIMEOUT_SECONDS = 8.0
 SETTLED_STEPS = 20

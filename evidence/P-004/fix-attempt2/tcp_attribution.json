@@ -1,0 +1,158 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt2",
+  "baseline": "evidence/P-004/fix-attempt1 before stiffness change",
+  "definition": "attribution_residual is the vector (p_isaac-p_unity) minus (p_fk(q_isaac)-p_fk(q_unity)), then its Euclidean norm",
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "simulator_tcp_difference_mm": 1.2429378832632352,
+      "fk_of_actual_joint_difference_mm": 1.242907414928206,
+      "attribution_residual_mm": 0.0027708772631440362,
+      "simulator_tcp_difference_m": [
+        -7.367134094260486e-05,
+        -8.940702811432999e-08,
+        -0.0012407526373862734
+      ],
+      "fk_of_actual_joint_difference_m": [
+        -7.126322225281534e-05,
+        1.2768806136320698e-06,
+        -0.0012408621054789126
+      ],
+      "attribution_residual_m": [
+        -2.408118689789518e-06,
+        -1.3662876417463998e-06,
+        1.0946809263917556e-07
+      ],
+      "dominant_joint": {
+        "joint": "shoulder_lift_joint",
+        "delta_tcp_mm": [
+          0.11228648480154924,
+          1.4004064574635322e-07,
+          1.0992811593047436
+        ],
+        "delta_tcp_norm_mm": 1.1050010506200838
+      }
+    },
+    {
+      "test_id": "B-positive-1",
+      "simulator_tcp_difference_mm": 1.0171141257453562,
+      "fk_of_actual_joint_difference_mm": 1.017851746729752,
+      "attribution_residual_mm": 0.0029578461957798477,
+      "simulator_tcp_difference_m": [
+        -0.0005917550269887162,
+        -0.00010559231366913391,
+        -0.0008204860730800512
+      ],
+      "fk_of_actual_joint_difference_m": [
+        -0.0005907042098500792,
+        -0.00010360562569072806,
+        -0.0008224090157041286
+      ],
+      "attribution_residual_m": [
+        -1.0508171386369725e-06,
+        -1.9866879784058433e-06,
+        1.9229426240774394e-06
+      ],
+      "dominant_joint": {
+        "joint": "shoulder_lift_joint",
+        "delta_tcp_mm": [
+          0.514727264788517,
+          0.10435014981957647,
+          0.7493729946475569
+        ],
+        "delta_tcp_norm_mm": 0.9150917964833275
+      }
+    },
+    {
+      "test_id": "C-mixed-1",
+      "simulator_tcp_difference_mm": 1.1930591068899035,
+      "fk_of_actual_joint_difference_mm": 1.1922247760095617,
+      "attribution_residual_mm": 0.0032630121202889984,
+      "simulator_tcp_difference_m": [
+        0.00014972703547710964,
+        6.765338816250299e-05,
+        -0.0011816915276205986
+      ],
+      "fk_of_actual_joint_difference_m": [
+        0.0001515828559662813,
+        7.004465542392868e-05,
+        -0.0011804729139436865
+      ],
+      "attribution_residual_m": [
+        -1.8558204891716557e-06,
+        -2.391267261425689e-06,
+        -1.218613676912117e-06
+      ],
+      "dominant_joint": {
+        "joint": "shoulder_lift_joint",
+        "delta_tcp_mm": [
+          -0.14856799584561653,
+          -0.08116118585344001,
+          1.0453229534789221
+        ],
+        "delta_tcp_norm_mm": 1.0589427107018663
+      }
+    },
+    {
+      "test_id": "E-fixed-1",
+      "simulator_tcp_difference_mm": 1.2526456740680483,
+      "fk_of_actual_joint_difference_mm": 1.2519436692300256,
+      "attribution_residual_mm": 0.0033589560829712273,
+      "simulator_tcp_difference_m": [
+        -6.0916974246039146e-05,
+        -1.0820805876665673e-05,
+        -0.001251116787981954
+      ],
+      "fk_of_actual_joint_difference_m": [
+        -5.807748413344527e-05,
+        -9.114116111208492e-06,
+        -0.0012505626292390881
+      ],
+      "attribution_residual_m": [
+        -2.8394901125938787e-06,
+        -1.706689765457181e-06,
+        -5.541587428659067e-07
+      ],
+      "dominant_joint": {
+        "joint": "shoulder_lift_joint",
+        "delta_tcp_mm": [
+          0.030424411423313202,
+          0.0030525402768821763,
+          1.1133521243288924
+        ],
+        "delta_tcp_norm_mm": 1.1137719315731809
+      }
+    },
+    {
+      "test_id": "E-fixed-3",
+      "simulator_tcp_difference_mm": 1.2390934979502242,
+      "fk_of_actual_joint_difference_mm": 1.2375692874741744,
+      "attribution_residual_mm": 0.003836883818283858,
+      "simulator_tcp_difference_m": [
+        -8.380404752661441e-05,
+        -3.8881286845704466e-07,
+        -0.0012362562141826558
+      ],
+      "fk_of_actual_joint_difference_m": [
+        -8.042251267825762e-05,
+        8.71677895586398e-07,
+        -0.0012349531168961425
+      ],
+      "attribution_residual_m": [
+        -3.381534848356793e-06,
+        -1.2604907640434426e-06,
+        -1.3030972865132884e-06
+      ],
+      "dominant_joint": {
+        "joint": "shoulder_lift_joint",
+        "delta_tcp_mm": [
+          0.11831509144144547,
+          0.0011833846150777205,
+          1.092172376893061
+        ],
+        "delta_tcp_norm_mm": 1.0985628621568193
+      }
+    }
+  ]
+}
