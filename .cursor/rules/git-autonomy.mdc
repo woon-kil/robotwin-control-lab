@@ -1,0 +1,23 @@
+---
+description: Git autonomy — robotwin-control-lab
+alwaysApply: true
+---
+
+# Git autonomy — robotwin-control-lab
+
+워크스페이스: **`robotwin-control-lab`**
+
+- **글로벌:** `~/.cursor/rules/git-autonomy.mdc`
+- **프로젝트 상세:** `.cursor/rules/git-autonomy.mdc` (본 파일)
+
+**이 프로젝트 push:** `git push origin main` (작업 완료 직후, 확인 없음). GitHub public `woon-kil/robotwin-control-lab`.
+
+**트리거:** 「자율 커밋」, 「자율 푸시」, 「자율 커밋 푸시」, 「커밋」, 「푸시」, 「진행」
+
+**커밋 전:** 앱/테스트가 있으면 해당 테스트를 통과한 뒤 커밋한다. 문서·규칙만이면 문서 정합으로 충분하다.
+
+**금지:** `.env`/시크릿, `--force`, 테스트·검증 실패, 측정하지 않은 PASS, `.cursor/hooks/` 상태 파일
+
+**MD 커밋:** `docs/`·`README.md`·`AGENTS.md`·`.cursor/rules/` **커밋 대상**
+
+**다음 Gate:** 트리거만으로 P-001 이후 단계를 시작하지 않는다. 시작한 Gate의 산출물을 커밋하고 푸시한다.
