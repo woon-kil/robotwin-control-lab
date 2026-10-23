@@ -13,13 +13,14 @@ namespace Robotwin.Ur10e.Tests
             var result = Ur10eJointBaselineRunner.Run();
             Assert.AreEqual("2022.3.62f2", result.UnityVersion);
             Assert.GreaterOrEqual(result.ConfigurationCount, 5);
-            if (result.GlobalMaxJointErrorRad >= Ur10eProjectTestParameters.EngineeringTargetRadians)
+            var underTarget = result.GlobalMaxJointErrorRad < Ur10eProjectTestParameters.EngineeringTargetRadians;
+            if (underTarget && result.TimeoutCount == 0)
             {
-                Assert.AreEqual("FAIL", result.Result, result.FailureSummary);
+                Assert.AreEqual("PASS", result.Result, result.FailureSummary);
             }
             else
             {
-                Assert.AreEqual("PASS", result.Result, result.FailureSummary);
+                Assert.AreEqual("FAIL", result.Result, result.FailureSummary);
             }
         }
     }

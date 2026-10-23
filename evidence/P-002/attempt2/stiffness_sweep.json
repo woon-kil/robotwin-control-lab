@@ -1,0 +1,11 @@
+{"marker":"DIAGNOSTIC ONLY","configuration":"A-zero","gravity_on":true,"root_fixed":true,"colliders_disabled":true,"reason":"measured A-zero shoulder_lift equilibrium is 0.150046 deg at stiffness 1000000 and damping 2000; candidates scale that operating point","rows":[
+{"stiffness":1000000,"damping":500,"error_deg":0.14024350049550491,"reported_velocity_rad_s":-0.014911174774169922,"drive_force_nm":-156.08473205566406,"force_limit":330,"position_settled_step":48},
+{"stiffness":1000000,"damping":2000,"error_deg":0.15004586249110458,"reported_velocity_rad_s":-0.014925450086593628,"drive_force_nm":-156.08306884765625,"force_limit":330,"position_settled_step":49},
+{"stiffness":1000000,"damping":8000,"error_deg":0.18925078814122073,"reported_velocity_rad_s":-0.014967203140258789,"drive_force_nm":-156.07630920410156,"force_limit":330,"position_settled_step":46},
+{"stiffness":2000000,"damping":500,"error_deg":0.13550736461569607,"reported_velocity_rad_s":-0.015017777681350708,"drive_force_nm":-156.08555603027344,"force_limit":330,"position_settled_step":48},
+{"stiffness":2000000,"damping":2000,"error_deg":0.14040935936650251,"reported_velocity_rad_s":-0.015021383762359619,"drive_force_nm":-156.08464050292969,"force_limit":330,"position_settled_step":48},
+{"stiffness":2000000,"damping":8000,"error_deg":0.16001579090499432,"reported_velocity_rad_s":-0.01503404974937439,"drive_force_nm":-156.08132934570313,"force_limit":330,"position_settled_step":44},
+{"stiffness":3000000,"damping":500,"error_deg":0.13393144520706107,"reported_velocity_rad_s":-0.015053808689117432,"drive_force_nm":-156.08584594726563,"force_limit":330,"position_settled_step":48},
+{"stiffness":3000000,"damping":2000,"error_deg":0.13719957066299318,"reported_velocity_rad_s":-0.015055567026138306,"drive_force_nm":-156.0853271484375,"force_limit":330,"position_settled_step":48},
+{"stiffness":3000000,"damping":8000,"error_deg":0.15027123205328854,"reported_velocity_rad_s":-0.015061467885971069,"drive_force_nm":-156.08316040039063,"force_limit":330,"position_settled_step":43}
+]}

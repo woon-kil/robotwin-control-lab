@@ -316,3 +316,54 @@ Elapsed Time
 2026-10-23 09:37 KST 수신. 문서 개정은 한 세션이다.
 구현 사이클 시간은 측정하지 않았다.
 ```
+
+## P-002 Fix Attempt 2 — Unity joint accuracy
+
+```text
+Task
+P-002 Fix Attempt 2. Unity UR10e joint error를 진단하고, 설명 가능한 수정 뒤
+같은 5개 configuration을 다시 측정한다. P-003은 시작하지 않는다.
+
+Problem
+Attempt 2A의 global max는 0.0026187931653112173 rad, 0.15004579579003846 deg였다.
+Engineering Target은 Joint Target Error < 0.1 deg다. 5개 configuration이 모두 timeout이었다.
+가장 큰 오차는 shoulder_lift_joint였다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. Parameter를 바꾸기 전에 G-ON, G-OFF, root movable, collider enabled를 측정한다.
+2. driveForce와 forceLimit을 비교한다. 값이 없으면 만들지 않는다.
+3. stiffness/damping은 관측 뒤 3×3 유한 행렬만 본다.
+4. 거절: gravity OFF를 최종 PASS로 쓰기, 무한 stiffness, 무한 force limit,
+   actual=target, timeout 연장, 실패 configuration 제외, Engineering Target 변경.
+
+Developer Decision
+진단 측정 뒤에 solver position iterations만 6에서 24로 바꾼다.
+stiffness 1000000, damping 2000, URDF force limit, gravity ON, timeout 8 s,
+settle 규칙은 유지한다. base_link immovable은 prefab에 명시한다.
+collider 7개는 진단에서 오차가 같았으므로 끈 상태를 유지한다.
+
+Accepted / Rejected
+Accepted — solver position iterations 24. base_link immovable을 prefab에 기록.
+Rejected — gravity OFF PASS, force limit 변경, stiffness/damping 변경,
+timestep 0.005를 최종 조건으로 사용, velocity iterations 4, 무한 강성, 무한 force limit.
+
+Reason
+G-OFF에서 shoulder_lift 오차와 -156 Nm drive force가 사라졌다.
+G-ON에서 |drive force| / 330 = 0.473이라 saturation이 아니었다.
+stiffness 1000000–3000000, damping 500–8000은 오차 바닥을 0.134 deg 아래로 내리지 못했다.
+solver iterations 6, 12, 24에서 A-zero 오차는 0.150, 0.053, 0.016 deg였다.
+iterations 24만 reported velocity도 0.001 rad/s 아래였다.
+timestep 0.005는 오차를 줄였지만 velocity 기준을 넘지 못했다.
+
+Verification
+최종 5개 configuration, timeout 0, global max 0.0006152464775368571 rad,
+0.035251026523152325 deg. gravity ON. feedback은 articulation jointPosition이다.
+Attempt 1의 0.014747420325875282 rad와 Attempt 2A의 0.0026187931653112173 rad는 유지했다.
+이 결과는 UR10e controller 재현이 아니다.
+
+Elapsed Time
+2026-10-23 진단과 재시험은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

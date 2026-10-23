@@ -157,10 +157,24 @@ namespace Robotwin.Ur10e
 
         public void SetJointTargetsRadians(double[] jointsRadians)
         {
+            SetJointTargetsRadians(
+                jointsRadians,
+                Ur10eProjectTestParameters.DriveStiffness,
+                Ur10eProjectTestParameters.DriveDamping);
+        }
+
+        public void SetJointTargetsRadians(double[] jointsRadians, float stiffness, float damping)
+        {
             if (jointsRadians == null || jointsRadians.Length != CanonicalOrder.Length)
             {
                 var length = jointsRadians == null ? "null" : jointsRadians.Length.ToString(CultureInfo.InvariantCulture);
                 throw new Ur10eAdapterException("JOINT_COUNT", "expected 6 joints, got " + length);
+            }
+
+            if (float.IsNaN(stiffness) || float.IsInfinity(stiffness) || stiffness <= 0f
+                || float.IsNaN(damping) || float.IsInfinity(damping) || damping <= 0f)
+            {
+                throw new Ur10eAdapterException("NON_FINITE", "drive stiffness and damping must be finite and positive");
             }
 
             for (var index = 0; index < jointsRadians.Length; index++)
@@ -175,8 +189,8 @@ namespace Robotwin.Ur10e
             {
                 var body = _joints[index].Body;
                 var drive = body.xDrive;
-                drive.stiffness = Ur10eProjectTestParameters.DriveStiffness;
-                drive.damping = Ur10eProjectTestParameters.DriveDamping;
+                drive.stiffness = stiffness;
+                drive.damping = damping;
                 drive.target = (float)(jointsRadians[index] * RadiansToDegrees);
                 drive.targetVelocity = 0f;
                 body.xDrive = drive;
@@ -221,6 +235,86 @@ namespace Robotwin.Ur10e
             return new Ur10eTool0Pose("unity_world", _tool0.position, _tool0.rotation);
         }
 
+        public Ur10eJointSample[] SampleJoints(double[] targetRadians)
+        {
+            var samples = new Ur10eJointSample[_joints.Length];
+            for (var index = 0; index < _joints.Length; index++)
+            {
+                var joint = _joints[index];
+                var body = joint.Body;
+                var drive = body.xDrive;
+                var driveForceReadable = false;
+                var driveForce = 0.0;
+                var driveForceNote = "";
+                try
+                {
+                    driveForce = body.driveForce[0];
+                    driveForceReadable = true;
+                }
+                catch (Exception exception)
+                {
+                    driveForceNote = exception.GetType().Name;
+                }
+
+                var jointForceReadable = false;
+                var jointForce = 0.0;
+                var jointForceNote = "";
+                try
+                {
+                    jointForce = body.jointForce[0];
+                    jointForceReadable = true;
+                }
+                catch (Exception exception)
+                {
+                    jointForceNote = exception.GetType().Name;
+                }
+
+                var inertia = body.inertiaTensor;
+                samples[index] = new Ur10eJointSample
+                {
+                    Name = joint.CanonicalName,
+                    TargetRadians = targetRadians[index],
+                    ActualRadians = body.jointPosition[0],
+                    VelocityRadiansPerSecond = body.jointVelocity[0],
+                    Stiffness = drive.stiffness,
+                    Damping = drive.damping,
+                    ForceLimit = drive.forceLimit,
+                    DriveForceNewtonMeters = driveForce,
+                    DriveForceReadable = driveForceReadable,
+                    DriveForceNote = driveForceNote,
+                    JointForceNewtonMeters = jointForce,
+                    JointForceReadable = jointForceReadable,
+                    JointForceNote = jointForceNote,
+                    Mass = body.mass,
+                    InertiaX = inertia.x,
+                    InertiaY = inertia.y,
+                    InertiaZ = inertia.z,
+                };
+            }
+
+            return samples;
+        }
+
+        public Vector3 RootWorldPosition()
+        {
+            return RootBody().transform.position;
+        }
+
+        public string RootName()
+        {
+            return RootBody().name;
+        }
+
+        public bool RootImmovable()
+        {
+            return RootBody().immovable;
+        }
+
+        public void SetRootImmovable(bool immovable)
+        {
+            RootBody().immovable = immovable;
+        }
+
         public int DisableColliders()
         {
             var colliders = _robot.GetComponentsInChildren<Collider>(true);
@@ -232,7 +326,25 @@ namespace Robotwin.Ur10e
             return colliders.Length;
         }
 
+        public void ApplyProjectSolverIterations()
+        {
+            var bodies = _robot.GetComponentsInChildren<ArticulationBody>(true);
+            for (var index = 0; index < bodies.Length; index++)
+            {
+                bodies[index].solverIterations = Ur10eProjectTestParameters.SolverIterations;
+                bodies[index].solverVelocityIterations = Ur10eProjectTestParameters.SolverVelocityIterations;
+            }
+        }
+
         public bool EnsureRootImmovable()
+        {
+            var root = RootBody();
+            var wasImmovable = root.immovable;
+            root.immovable = true;
+            return wasImmovable;
+        }
+
+        ArticulationBody RootBody()
         {
             ArticulationBody root = null;
             var bodies = _robot.GetComponentsInChildren<ArticulationBody>(true);
@@ -256,9 +368,7 @@ namespace Robotwin.Ur10e
                 throw new Ur10eAdapterException("INVALID_MODEL", "articulation root is missing");
             }
 
-            var wasImmovable = root.immovable;
-            root.immovable = true;
-            return wasImmovable;
+            return root;
         }
 
         public string DescribeMapping()
@@ -304,5 +414,26 @@ namespace Robotwin.Ur10e
 
             return builder.ToString();
         }
+    }
+
+    public sealed class Ur10eJointSample
+    {
+        public string Name;
+        public double TargetRadians;
+        public double ActualRadians;
+        public double VelocityRadiansPerSecond;
+        public double Stiffness;
+        public double Damping;
+        public double ForceLimit;
+        public double DriveForceNewtonMeters;
+        public bool DriveForceReadable;
+        public string DriveForceNote;
+        public double JointForceNewtonMeters;
+        public bool JointForceReadable;
+        public string JointForceNote;
+        public double Mass;
+        public double InertiaX;
+        public double InertiaY;
+        public double InertiaZ;
     }
 }

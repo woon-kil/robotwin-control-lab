@@ -5,6 +5,8 @@ namespace Robotwin.Ur10e
     {
         public const float DriveStiffness = 1000000f;
         public const float DriveDamping = 2000f;
+        public const int SolverIterations = 24;
+        public const int SolverVelocityIterations = 1;
         public const float TimeoutSeconds = 8f;
         public const int SettledFramesRequired = 20;
         public const double VelocityEpsilonRadPerSec = 0.001;

@@ -1,0 +1,9 @@
+{"marker":"DIAGNOSTIC ONLY","configuration":"A-zero","stiffness":1000000,"damping":2000,"rows":[
+{"dt":0.019999999552965164,"solver_iterations":6,"velocity_iterations":1,"steps":100,"error_deg":0.15003548380521733,"reported_velocity_rad_s":-0.014926344156265259,"drive_force_nm":-156.0765380859375},
+{"dt":0.0099999997764825821,"solver_iterations":6,"velocity_iterations":1,"steps":200,"error_deg":0.045507179216894629,"reported_velocity_rad_s":-0.007200971245765686,"drive_force_nm":-156.11663818359375},
+{"dt":0.004999999888241291,"solver_iterations":6,"velocity_iterations":1,"steps":400,"error_deg":0.017906353097866697,"reported_velocity_rad_s":-0.0031798630952835083,"drive_force_nm":-156.12899780273438},
+{"dt":0.019999999552965164,"solver_iterations":12,"velocity_iterations":1,"steps":100,"error_deg":0.053104657430836331,"reported_velocity_rad_s":-0.0046243667602539063,"drive_force_nm":-156.25733947753906},
+{"dt":0.019999999552965164,"solver_iterations":24,"velocity_iterations":1,"steps":100,"error_deg":0.016375241797920038,"reported_velocity_rad_s":-0.00061303377151489258,"drive_force_nm":-156.100830078125},
+{"dt":0.019999999552965164,"solver_iterations":6,"velocity_iterations":4,"steps":100,"error_deg":0.12542065597525495,"reported_velocity_rad_s":-0.040335595607757568,"drive_force_nm":-156.08975219726563},
+{"dt":0.0099999997764825821,"solver_iterations":12,"velocity_iterations":4,"steps":200,"error_deg":0.018625102108458271,"reported_velocity_rad_s":-0.0060607194900512695,"drive_force_nm":-156.1202392578125}
+]}

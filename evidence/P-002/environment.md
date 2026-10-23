@@ -59,12 +59,16 @@ drive stiffness
 1000000
 drive damping
 2000
+solver iterations
+24
+solver velocity iterations
+1
 force limit
 imported URDF effort, unchanged
 colliders disabled
 7
 root was immovable before test
-false
+true
 settled frames
 20
 velocity epsilon rad/s

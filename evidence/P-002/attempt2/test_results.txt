@@ -1,0 +1,11 @@
+/Applications/Unity/Hub/Editor/2022.3.62f2/Unity.app/Contents/MacOS/Unity -batchmode -nographics -projectPath unity/UR10eJointBaseline -runTests -testPlatform EditMode -testCategory Ur10eJointBaseline -testResults evidence/P-002/unity-test-results.xml
+
+result PASS
+global_max_joint_error_rad 0.00061524647753685713
+invalid_joint_count_rejected true
+deterministic_rerun_max_abs_rad 0
+A-zero PASS steps=33 max_abs_error_rad=0.00061524647753685713 timed_out=false
+B-positive-1 PASS steps=270 max_abs_error_rad=0.0001868128776550404 timed_out=false
+C-mixed-1 PASS steps=180 max_abs_error_rad=0.0003094017505645974 timed_out=false
+E-fixed-1 PASS steps=129 max_abs_error_rad=0.00031140148639680065 timed_out=false
+E-fixed-3 PASS steps=50 max_abs_error_rad=0.00056822508573532021 timed_out=false

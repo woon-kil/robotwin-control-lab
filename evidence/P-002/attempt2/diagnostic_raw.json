@@ -1,0 +1,301 @@
+{
+  "gate": "P-002 Fix Attempt 2",
+  "stage": "root-cause before parameter change",
+  "fixed_timestep": 0.019999999552965164,
+  "drive_stiffness": 1000000,
+  "drive_damping": 2000,
+  "timeout_seconds": 8,
+  "velocity_epsilon_rad_s": 0.001,
+  "position_delta_epsilon_rad": 1.0000000000000001E-05,
+  "settled_frames": 20,
+  "cases": [
+    {
+      "case_id": "G-ON",
+      "purpose": "current failing condition",
+      "diagnostic_only": false,
+      "marker": "CURRENT CONDITION",
+      "gravity_enabled": true,
+      "gravity_xyz": [0, -9.8100004196166992, 0],
+      "root_fixed_by_runner": true,
+      "colliders_disabled": true,
+      "configurations": [
+        {
+          "test_id": "A-zero",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0, "actual_rad": 9.6492340162512846E-07, "error_rad": 9.6492340162512846E-07, "error_deg": 5.5286038466526743E-05, "velocity_rad_s": -7.3402770794928074E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.00057792931329458952, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.751300949377544E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0, "actual_rad": 0.0026187931653112173, "error_rad": 0.0026187931653112173, "error_deg": 0.15004579579003846, "velocity_rad_s": -0.014925509691238403, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -156.0831298828125, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.47297918146306817, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0, "actual_rad": 0.00014870465383864939, "error_rad": 0.00014870465383864939, "error_deg": 0.0085201490589084869, "velocity_rad_s": 0.001592487096786499, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -56.079288482666016, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.37386192321777345, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0, "actual_rad": 0.00085739092901349068, "error_rad": 0.00085739092901349068, "error_deg": 0.049124881625273779, "velocity_rad_s": 0.011952407658100128, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.02460094541311264, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00045557306320578964, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0, "actual_rad": 8.4495823102770373E-06, "error_rad": 8.4495823102770373E-06, "error_deg": 0.00048412540502727389, "velocity_rad_s": 0.00011643419566098601, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.015751415863633156, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00029169288636357696, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0, "actual_rad": -2.0544739243177901E-07, "error_rad": -2.0544739243177901E-07, "error_deg": -1.1771268498308908E-05, "velocity_rad_s": 9.3560665845870972E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00020653083629440516, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 3.8246451165630587E-06, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.0026187931653112173
+        },
+        {
+          "test_id": "B-positive-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.20000000000000001, "actual_rad": 0.2000199556350708, "error_rad": 1.9955635070789679E-05, "error_deg": 0.0011433736670594984, "velocity_rad_s": -0.00014631869271397591, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -7.8324228525161743E-05, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 2.3734614704594467E-07, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.30111274123191833, "error_rad": 0.0011127412319183461, "error_deg": 0.063755376279109155, "velocity_rad_s": -0.0078030824661254883, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -132.89503479003906, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.40271222663648198, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.40000000000000002, "actual_rad": 0.40026575326919556, "error_rad": 0.00026575326919553444, "error_deg": 0.015226540716708153, "velocity_rad_s": 0.0022598505020141602, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -37.391128540039063, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.24927419026692707, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0.5, "actual_rad": 0.50020849704742432, "error_rad": 0.00020849704742431641, "error_deg": 0.011946000858352301, "velocity_rad_s": 0.0010424479842185974, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 5.4692606925964355, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.10128260541845251, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.59999999999999998, "actual_rad": 0.59999203681945801, "error_rad": -7.963180541969983E-06, "error_deg": -0.00045625663655557956, "velocity_rad_s": -5.0490634748712182E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -3.327272891998291, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.061616164666635019, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0.69999999999999996, "actual_rad": 0.69999945163726807, "error_rad": -5.4836273188918483E-07, "error_deg": -3.1418870179514209E-05, "velocity_rad_s": 2.4405308067798615E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00053498207125812769, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 9.9070753936690319E-06, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.0011127412319183461
+        },
+        {
+          "test_id": "C-mixed-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.5, "actual_rad": 0.49998584389686584, "error_rad": -1.4156103134155273E-05, "error_deg": -0.00081108496393901422, "velocity_rad_s": 0.00013699475675821304, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.00050207599997520447, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.5214424241672864E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": -0.40000000000000002, "actual_rad": -0.39790353178977966, "error_rad": 0.0020964682102203591, "error_deg": 0.12011878032897201, "velocity_rad_s": -0.011930167675018311, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -152.35702514648438, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.46168795498934662, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.30087965726852417, "error_rad": 0.00087965726852418102, "error_deg": 0.050400648904441729, "velocity_rad_s": 0.0016438066959381104, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -60.165744781494141, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.40110496520996092, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": -0.20000000000000001, "actual_rad": -0.19959217309951782, "error_rad": 0.00040782690048218884, "error_deg": 0.023366760169531257, "velocity_rad_s": 0.0013928581029176712, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -4.3259077072143555, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.080109401985451023, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.59999999999999998, "actual_rad": 0.60001647472381592, "error_rad": 1.6474723815940173E-05, "error_deg": 0.00094393214329703437, "velocity_rad_s": 5.5764336138963699E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 1.0426956415176392, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.019309178546622948, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": -0.69999999999999996, "actual_rad": -0.700001060962677, "error_rad": -1.060962677046362E-06, "error_deg": -6.0788683615657925E-05, "velocity_rad_s": 4.8805028200149536E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.0010869964025914669, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 2.0129563010953091E-05, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.0020964682102203591
+        },
+        {
+          "test_id": "E-fixed-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.10000000000000001, "actual_rad": 0.099996559321880341, "error_rad": -3.4406781196649749E-06, "error_deg": -0.00019713633491981109, "velocity_rad_s": 5.045207217335701E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.00040691811591386795, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.2330851997389938E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": -0.20000000000000001, "actual_rad": -0.19788907468318939, "error_rad": 0.002110925316810619, "error_deg": 0.12094711152056467, "velocity_rad_s": -0.012309014797210693, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -157.83233642578125, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.47827980735085229, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.30080750584602356, "error_rad": 0.00080750584602357067, "error_deg": 0.04626667690929151, "velocity_rad_s": 0.0019669234752655029, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -59.780002593994141, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.39853335062662759, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": -0.40000000000000002, "actual_rad": -0.39948663115501404, "error_rad": 0.00051336884498598412, "error_deg": 0.029413868151202685, "velocity_rad_s": 0.0028301142156124115, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -3.9731817245483398, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.073577439343487774, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.5, "actual_rad": 0.5000159740447998, "error_rad": 1.5974044799804688E-05, "error_deg": 0.00091524534878170867, "velocity_rad_s": 8.9663546532392502E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 1.1085891723632813, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.020529429117838543, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": -0.59999999999999998, "actual_rad": -0.60000097751617432, "error_rad": -9.7751617433861071E-07, "error_deg": -5.6007551195376777E-05, "velocity_rad_s": 4.3375417590141296E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00098396383691579103, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.8221552535477611E-05, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.002110925316810619
+        },
+        {
+          "test_id": "E-fixed-3",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.01, "actual_rad": 0.010001563467085361, "error_rad": 1.5634670853612725E-06, "error_deg": 8.9580065398820927E-05, "velocity_rad_s": -3.6650162655860186E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.00056663993746042252, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.717090719577038E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0.02, "actual_rad": 0.022595802322030067, "error_rad": 0.002595802322030067, "error_deg": 0.14872851750258184, "velocity_rad_s": -0.014918625354766846, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -155.63677978515625, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.47162660540956441, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": -0.029999999999999999, "actual_rad": -0.029861733317375183, "error_rad": 0.00013826668262481578, "error_deg": 0.0079220973616767765, "velocity_rad_s": 0.0018121600151062012, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -55.658199310302734, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.37105466206868487, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0.040000000000000001, "actual_rad": 0.04084208607673645, "error_rad": 0.00084208607673644936, "error_deg": 0.048247978183728127, "velocity_rad_s": 0.01160382479429245, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.44443216919898987, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.008230225355536849, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": -0.050000000000000003, "actual_rad": -0.049991194158792496, "error_rad": 8.805841207507048E-06, "error_deg": 0.00050453753625253847, "velocity_rad_s": 0.00011859353980980814, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.14501580595970154, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.002685477888142621, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0.059999999999999998, "actual_rad": 0.059999778866767883, "error_rad": -2.2113323211447877E-07, "error_deg": -1.2670000910246431E-05, "velocity_rad_s": 1.0155141353607178E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00022161006927490234, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 4.1038901717574506E-06, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.002595802322030067
+        }
+      ]
+    },
+    {
+      "case_id": "G-OFF",
+      "purpose": "gravity contribution",
+      "diagnostic_only": true,
+      "marker": "DIAGNOSTIC ONLY",
+      "gravity_enabled": false,
+      "gravity_xyz": [0, 0, 0],
+      "root_fixed_by_runner": true,
+      "colliders_disabled": true,
+      "configurations": [
+        {
+          "test_id": "A-zero",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 20,
+          "settling_time": 0.39999999105930328,
+          "timed_out": false,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0, "actual_rad": 0, "error_rad": 0, "error_deg": 0, "velocity_rad_s": 0, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0
+        },
+        {
+          "test_id": "B-positive-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 229,
+          "settling_time": 4.5799998976290226,
+          "timed_out": false,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.20000000000000001, "actual_rad": 0.19999992847442627, "error_rad": -7.152557374157098E-08, "error_deg": -4.0981135026437618E-06, "velocity_rad_s": -1.5407056253025075E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.017787592485547066, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 5.3901795410748684E-05, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.29999661445617676, "error_rad": -3.3855438232310853E-06, "error_deg": -0.00019397737242772602, "velocity_rad_s": -6.2444101786240935E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.19742809236049652, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00059826694654695916, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.40000000000000002, "actual_rad": 0.39999720454216003, "error_rad": -2.7954578399880248E-06, "error_deg": -0.00016016793603807123, "velocity_rad_s": -5.0618873501662165E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": 0.11700892448425293, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00078005949656168624, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0.5, "actual_rad": 0.49999797344207764, "error_rad": -2.0265579223632813E-06, "error_deg": -0.00011611321589021677, "velocity_rad_s": -3.7044723285362124E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.051971595734357834, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00096243695804366361, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.59999999999999998, "actual_rad": 0.60000014305114746, "error_rad": 1.4305114748314196E-07, "error_deg": 8.1962270052875236E-06, "velocity_rad_s": 1.8665614334167913E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.00098690693266689777, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.8276054308646257E-05, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0.69999999999999996, "actual_rad": 0.69999992847442627, "error_rad": -7.1525573686059829E-08, "error_deg": -4.0981134994632065E-06, "velocity_rad_s": -1.9666035768750589E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.043267618864774704, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00080125220119953156, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 3.3855438232310853E-06
+        },
+        {
+          "test_id": "C-mixed-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 160,
+          "settling_time": 3.1999999284744263,
+          "timed_out": false,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.5, "actual_rad": 0.50000005960464478, "error_rad": 5.9604644775390625E-08, "error_deg": 3.4150945850063755E-06, "velocity_rad_s": -9.599098120816052E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.0046578049659729004, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.4114560502948184E-05, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": -0.40000000000000002, "actual_rad": -0.39999493956565857, "error_rad": 5.0604343414528685E-06, "error_deg": 0.00028994153026831352, "velocity_rad_s": 0.00017481805116403848, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -0.26272034645080566, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00079612226197213834, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.30000418424606323, "error_rad": 4.1842460632435241E-06, "error_deg": 0.00023973963986808367, "velocity_rad_s": 0.00014333911531139165, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -0.15406863391399384, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0010271242260932922, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": -0.20000000000000001, "actual_rad": -0.19999776780605316, "error_rad": 2.2321939468494811E-06, "error_deg": 0.00012789529220912487, "velocity_rad_s": 7.6740165241062641E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.067011453211307526, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0012409528372464356, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.59999999999999998, "actual_rad": 0.60000014305114746, "error_rad": 1.4305114748314196E-07, "error_deg": 8.1962270052875236E-06, "velocity_rad_s": 4.1918478927982505E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.0010247206082567573, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.8976307560310318E-05, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": -0.69999999999999996, "actual_rad": -0.69999992847442627, "error_rad": 7.1525573686059829E-08, "error_deg": 4.0981134994632065E-06, "velocity_rad_s": 2.27433406507771E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.050034277141094208, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00092656068779804084, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 5.0604343414528685E-06
+        },
+        {
+          "test_id": "E-fixed-1",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 164,
+          "settling_time": 3.2799999266862869,
+          "timed_out": false,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.10000000000000001, "actual_rad": 0.099999994039535522, "error_rad": -5.9604644830901776E-09, "error_deg": -3.4150945881869301E-07, "velocity_rad_s": 9.5629218321846565E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.0025954665616154671, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 7.8650501867135361E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": -0.20000000000000001, "actual_rad": -0.20001018047332764, "error_rad": -1.0180473327625617E-05, "error_deg": -0.0005832981551184528, "velocity_rad_s": 0.00080760585842654109, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.40781685709953308, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0012358086578773729, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0.29999999999999999, "actual_rad": 0.29999077320098877, "error_rad": -9.2267990112193665E-06, "error_deg": -0.00052865664175835085, "velocity_rad_s": 0.00073332723695784807, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": 0.24512068927288055, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0016341379284858704, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": -0.40000000000000002, "actual_rad": -0.40000748634338379, "error_rad": -7.486343383766858E-06, "error_deg": -0.00042893587987552853, "velocity_rad_s": 0.00059402134502306581, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.11369285732507706, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0021054232837977231, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0.5, "actual_rad": 0.49999982118606567, "error_rad": -1.7881393432617188E-07, "error_deg": -1.0245283755019126E-05, "velocity_rad_s": 1.9825811250484549E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.002999819116666913, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 5.5552205864202095E-05, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": -0.59999999999999998, "actual_rad": -0.60000014305114746, "error_rad": -1.4305114748314196E-07, "error_deg": -8.1962270052875236E-06, "velocity_rad_s": 6.7660585045814514E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.089571796357631683, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.001658736969585772, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 1.0180473327625617E-05
+        },
+        {
+          "test_id": "E-fixed-3",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 7,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0.01, "actual_rad": 0.0099999280646443367, "error_rad": -7.1935355663507727E-08, "error_deg": -4.1215922772914965E-06, "velocity_rad_s": 2.2801193608756876E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.015782395377755165, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 4.7825440538652016E-05, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0.02, "actual_rad": 0.019985510036349297, "error_rad": -1.4489963650703847E-05, "error_deg": -0.00083021376248330501, "velocity_rad_s": 0.0004735692054964602, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.47931215167045593, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0014524610656680482, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": -0.029999999999999999, "actual_rad": -0.030028050765395164, "error_rad": -2.80507653951656E-05, "error_deg": -0.0016071904692546077, "velocity_rad_s": 0.00091595813864842057, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": 0.3890632688999176, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0025937551259994506, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0.040000000000000001, "actual_rad": 0.039780035614967346, "error_rad": -0.00021996438503265464, "error_deg": -0.012603030905561726, "velocity_rad_s": 0.0072022434324026108, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.31744188070297241, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0058785533463513407, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": -0.050000000000000003, "actual_rad": -0.050002247095108032, "error_rad": -2.247095108029451E-06, "error_deg": -0.00012874906585458133, "velocity_rad_s": 7.3593233537394553E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.002625743392854929, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 4.862487764546165E-05, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0.059999999999999998, "actual_rad": 0.059999715536832809, "error_rad": -2.8446316718833131E-07, "error_deg": -1.6298538906815706E-05, "velocity_rad_s": 7.285966603376437E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.30916395783424377, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.0057252584784119216, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.00021996438503265464
+        }
+      ]
+    },
+    {
+      "case_id": "A-zero-root-movable",
+      "purpose": "base fixation",
+      "diagnostic_only": true,
+      "marker": "DIAGNOSTIC ONLY",
+      "gravity_enabled": true,
+      "gravity_xyz": [0, -9.8100004196166992, 0],
+      "root_fixed_by_runner": false,
+      "colliders_disabled": true,
+      "configurations": [
+        {
+          "test_id": "A-zero",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": false,
+          "root_displacement_m": 0.82257258892059326,
+          "colliders_disabled_count": 7,
+          "settling_steps": 20,
+          "settling_time": 0.39999999105930328,
+          "timed_out": false,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0, "actual_rad": -7.0863830359257918E-09, "error_rad": -7.0863830359257918E-09, "error_deg": -4.0601983997165111E-07, "velocity_rad_s": 1.2271286209397658E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -6.3516679801978171E-05, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.9247478727872173E-07, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0, "actual_rad": -7.6980961694061989E-07, "error_rad": -7.6980961694061989E-07, "error_deg": -4.410684207928012E-05, "velocity_rad_s": 1.3523735105991364E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -0.011429237201809883, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 3.4634052126696616E-05, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0, "actual_rad": -6.7596727149066282E-07, "error_rad": -6.7596727149066282E-07, "error_deg": -3.8730071745388876E-05, "velocity_rad_s": -1.0980293154716492E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": 0.087554536759853363, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00058369691173235571, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0, "actual_rad": -5.783579581475351E-06, "error_rad": -5.783579581475351E-06, "error_deg": -0.00033137470049657665, "velocity_rad_s": -1.1370982974767685E-05, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.0056905178353190422, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00010537995991331559, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0, "actual_rad": -5.4619807343669891E-08, "error_rad": -5.4619807343669891E-08, "error_deg": -3.1294844386099446E-06, "velocity_rad_s": -1.0703067943040878E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00015641363279428333, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 2.8965487554496911E-06, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0, "actual_rad": -4.6786228224959814E-09, "error_rad": -4.6786228224959814E-09, "error_deg": -2.6806534166260463E-07, "velocity_rad_s": -5.3496478358283639E-08, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.0055965296924114227, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00010363943874835968, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 5.783579581475351E-06
+        }
+      ]
+    },
+    {
+      "case_id": "A-zero-colliders-enabled",
+      "purpose": "collider contribution",
+      "diagnostic_only": true,
+      "marker": "DIAGNOSTIC ONLY",
+      "gravity_enabled": true,
+      "gravity_xyz": [0, -9.8100004196166992, 0],
+      "root_fixed_by_runner": true,
+      "colliders_disabled": false,
+      "configurations": [
+        {
+          "test_id": "A-zero",
+          "root_name": "base_link",
+          "root_imported_immovable": false,
+          "root_immovable_during_test": true,
+          "root_displacement_m": 0,
+          "colliders_disabled_count": 0,
+          "settling_steps": 401,
+          "settling_time": 8.0199998207390308,
+          "timed_out": true,
+          "joints": [
+            {"name": "shoulder_pan_joint", "target_rad": 0, "actual_rad": 9.6492340162512846E-07, "error_rad": 9.6492340162512846E-07, "error_deg": 5.5286038466526743E-05, "velocity_rad_s": -7.3402770794928074E-07, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": 0.00057792931329458952, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 1.751300949377544E-06, "mass_kg": 7.3689999580383301, "inertia_xyz": [0.020253170281648636, 0.035290244966745377, 0.035386580973863602]},
+            {"name": "shoulder_lift_joint", "target_rad": 0, "actual_rad": 0.0026187931653112173, "error_rad": 0.0026187931653112173, "error_deg": 0.15004579579003846, "velocity_rad_s": -0.014925509691238403, "stiffness": 1000000, "damping": 2000, "force_limit": 330, "drive_force_nm": -156.0831298828125, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.47297918146306817, "mass_kg": 13.050999641418457, "inertia_xyz": [0.027811402454972267, 0.76976180076599121, 0.77067673206329346]},
+            {"name": "elbow_joint", "target_rad": 0, "actual_rad": 0.00014870465383864939, "error_rad": 0.00014870465383864939, "error_deg": 0.0085201490589084869, "velocity_rad_s": 0.001592487096786499, "stiffness": 1000000, "damping": 2000, "force_limit": 150, "drive_force_nm": -56.079288482666016, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.37386192321777345, "mass_kg": 3.9890000820159912, "inertia_xyz": [0.0098570967093110085, 0.30674177408218384, 0.30928114056587219]},
+            {"name": "wrist_1_joint", "target_rad": 0, "actual_rad": 0.00085739092901349068, "error_rad": 0.00085739092901349068, "error_deg": 0.049124881625273779, "velocity_rad_s": 0.011952407658100128, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": 0.02460094541311264, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00045557306320578964, "mass_kg": 2.0999999046325684, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_2_joint", "target_rad": 0, "actual_rad": 8.4495823102770373E-06, "error_rad": 8.4495823102770373E-06, "error_deg": 0.00048412540502727389, "velocity_rad_s": 0.00011643419566098601, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.015751415863633156, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 0.00029169288636357696, "mass_kg": 1.9800000190734863, "inertia_xyz": [0.0020999070256948471, 0.0026999234687536955, 0.0029601696878671646]},
+            {"name": "wrist_3_joint", "target_rad": 0, "actual_rad": -2.0544739243177901E-07, "error_rad": -2.0544739243177901E-07, "error_deg": -1.1771268498308908E-05, "velocity_rad_s": 9.3560665845870972E-06, "stiffness": 1000000, "damping": 2000, "force_limit": 54, "drive_force_nm": -0.00020653083629440516, "drive_force_readable": true, "drive_force_note": "", "joint_force_nm": 0, "joint_force_readable": true, "abs_drive_force_over_limit": 3.8246451165630587E-06, "mass_kg": 0.61500000953674316, "inertia_xyz": [0.00041000000783242285, 0.00033999999868683517, 0.00039999998989515007]}
+          ],
+          "max_abs_error_rad": 0.0026187931653112173
+        }
+      ]
+    }
+  ]
+}
