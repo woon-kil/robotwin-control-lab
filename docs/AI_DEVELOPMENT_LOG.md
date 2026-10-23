@@ -476,3 +476,53 @@ Attempt 1, 1b, 2와 루트 joint_results.json은 덮어쓰지 않았다.
 Elapsed Time
 2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-004 — Cross-simulator tool0 TCP
+
+```text
+Task
+P-004. 같은 UR10e Golden Reference와 같은 5개 canonical joint configuration에서
+독립 Python FK, Unity, Isaac의 tool0 pose를 base_link 기준으로 비교한다.
+P-005는 시작하지 않는다.
+
+Problem
+P-001B는 FK 구현, P-002는 Unity joint, P-003은 Isaac joint와 tool0 자유낙하를 봤다.
+세 TCP가 같은 canonical pose인지는 아직 측정하지 않았다.
+P-003은 joint metric이 맞아도 tool0 world pose가 틀릴 수 있음을 남겼다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+Unity는 이 Mac의 2022.3.62f2. Isaac은 p620, VERSION 6.2.0-rc.14+release.52805.02189a84.gl.
+
+AI Proposal
+1. raw pose는 각 runtime이 만들고, 비교 스크립트는 raw를 수정하지 않는다.
+2. Unity는 importer hash 90f353e4352aae4df52fa2c05e49b804631d2a63의 Unity2Ros로
+   canonical 오른손 Z-up에 맞춘다. Isaac tool0는 XformCache만 읽는다.
+3. 거절: Python FK로 simulator pose를 대체, 0.5 mm 또는 1.0 mm 완화, FK 파라미터 수정, P-005.
+
+Developer Decision
+위 1–3을 수용한다. Python↔simulator는 FK Position < 0.5 mm, FK Orientation < 0.1 deg를
+actual joint 입력에 적용한다. Unity↔Isaac position은 < 1.0 mm다.
+Unity↔Isaac orientation acceptance는 REQUIREMENTS와 VALIDATION_PLAN에 없어 만들지 않는다.
+
+Accepted / Rejected
+Accepted — actual joint FK와 target joint end-to-end를 분리해 기록한다.
+Rejected — tolerance 완화, silent offset, RigidPrim(tool0), P-005.
+
+Reason
+Unity TCP와 Python FK(Unity actual joint)의 최대 위치 오차는 0.004052324538793909 mm다.
+Isaac XformCache tool0와 Python FK(Isaac actual joint)의 최대 위치 오차는
+1.4705603411282602 mm이고 자세는 0.066672609317108195 deg다.
+축이 바뀐 크기가 아니다. Unity↔Isaac 최대 위치 오차는 3.1548989314166063 mm다.
+0.5 mm와 1.0 mm를 넘으므로 P-004는 FAIL이다.
+
+Verification
+evidence/P-004. configuration 5.
+A-zero rerun의 joint, tool0 position, tool0 orientation 차이는 Unity와 Isaac 모두 0.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 22 passed.
+P-001B, P-002, P-003 evidence는 수정하지 않았다.
+이 결과는 실제 UR10e 정확도가 아니다.
+
+Elapsed Time
+2026-10-23 측정과 비교는 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

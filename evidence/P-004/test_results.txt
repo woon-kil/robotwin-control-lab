@@ -1,0 +1,13 @@
+result FAIL
+A-zero Python ↔ Isaac position UNKNOWN
+A-zero Unity ↔ Isaac position UNKNOWN
+B-positive-1 Python ↔ Isaac position UNKNOWN
+B-positive-1 Unity ↔ Isaac position UNKNOWN
+C-mixed-1 Python ↔ Isaac position UNKNOWN
+C-mixed-1 Unity ↔ Isaac position UNKNOWN
+E-fixed-1 Python ↔ Isaac position UNKNOWN
+E-fixed-1 Unity ↔ Isaac position UNKNOWN
+E-fixed-3 Python ↔ Isaac position UNKNOWN
+E-fixed-3 Unity ↔ Isaac position UNKNOWN
+PYTHONPATH=. python3 -m pytest tests/unit -q
+22 passed

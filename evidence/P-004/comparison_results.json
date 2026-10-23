@@ -1,0 +1,512 @@
+{
+  "gate": "P-004",
+  "result": "FAIL",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "tcp_frame": "tool0",
+  "reference_frame": "base_link",
+  "unity_convention_id": "Unity.Robotics.UrdfImporter.BuiltInExtensions.Unity2Ros@90f353e4352aae4df52fa2c05e49b804631d2a63",
+  "isaac_convention_id": "UsdGeom.XformCache.GetLocalToWorldTransform right-handed Z-up wxyz to Hamilton xyzw",
+  "targets": {
+    "python_vs_unity_position_mm": 0.5,
+    "python_vs_unity_orientation_deg": 0.1,
+    "python_vs_isaac_position_mm": 0.5,
+    "python_vs_isaac_orientation_deg": 0.1,
+    "unity_vs_isaac_position_mm": 1.0,
+    "unity_vs_isaac_orientation_deg": null,
+    "unity_vs_isaac_orientation_note": "REQUIREMENTS and VALIDATION_PLAN specify cross-simulator position only"
+  },
+  "max_python_unity_position_error_mm": 0.004052324538793909,
+  "max_python_unity_orientation_error_deg": 0.0006247173259805493,
+  "max_python_isaac_position_error_mm": 1.4705603411282602,
+  "max_python_isaac_orientation_error_deg": 0.0666726093171082,
+  "max_unity_isaac_position_error_mm": 3.1548989314166063,
+  "max_unity_isaac_orientation_error_deg": 0.14790147537513967,
+  "max_python_target_vs_unity_position_error_mm": 0.5351886432975693,
+  "max_python_target_vs_unity_orientation_error_deg": 0.05867121701028598,
+  "max_python_target_vs_isaac_position_error_mm": 3.686507493489817,
+  "max_python_target_vs_isaac_orientation_error_deg": 0.18393686732531384,
+  "unity_rerun": {
+    "joint_rerun_max_abs_rad": 0.0,
+    "tool0_position_rerun_m": 0.0,
+    "tool0_orientation_rerun_deg": 0.0
+  },
+  "isaac_rerun": {
+    "joint_rerun_max_abs_rad": 0.0,
+    "tool0_position_rerun_m": 0.0,
+    "tool0_orientation_rerun_deg": 0.0
+  },
+  "failures": [
+    "A-zero Python \u2194 Isaac position UNKNOWN",
+    "A-zero Unity \u2194 Isaac position UNKNOWN",
+    "B-positive-1 Python \u2194 Isaac position UNKNOWN",
+    "B-positive-1 Unity \u2194 Isaac position UNKNOWN",
+    "C-mixed-1 Python \u2194 Isaac position UNKNOWN",
+    "C-mixed-1 Unity \u2194 Isaac position UNKNOWN",
+    "E-fixed-1 Python \u2194 Isaac position UNKNOWN",
+    "E-fixed-1 Unity \u2194 Isaac position UNKNOWN",
+    "E-fixed-3 Python \u2194 Isaac position UNKNOWN",
+    "E-fixed-3 Unity \u2194 Isaac position UNKNOWN"
+  ],
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "target_joint_rad": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unity_actual_joint_rad": [
+        1.66761012110328e-07,
+        0.0002858018851839006,
+        0.00012600418995134532,
+        0.0006152464775368571,
+        6.051500349713024e-06,
+        -1.123689230553282e-07
+      ],
+      "isaac_actual_joint_rad": [
+        4.328478826209903e-05,
+        0.001469684997573495,
+        0.00042205449426546693,
+        -2.3555612642667256e-06,
+        5.999867767059186e-07,
+        1.895583778832588e-08
+      ],
+      "python_fk_target": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.18425,
+        "y": 0.29069999995083656,
+        "z": 0.06084999994037644,
+        "qx": 8.659560565463116e-17,
+        "qy": 0.7071067812590626,
+        "qz": 0.7071067811140325,
+        "qw": -4.329780281177465e-17
+      },
+      "python_fk_unity_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1841274911113169,
+        "y": 0.29070019741492126,
+        "z": 0.06043958385883303,
+        "qx": 0.0003651587372526717,
+        "qy": 0.7071066891702074,
+        "qz": 0.7071066867669816,
+        "qw": -0.00036099759863582396
+      },
+      "python_fk_isaac_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.184009358997461,
+        "y": 0.29075124981716954,
+        "z": 0.05886851499124197,
+        "qx": 0.00065291334767606,
+        "qy": 0.7071064802231093,
+        "qz": 0.7071064507628515,
+        "qw": -0.0006830960466521873
+      },
+      "unity_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.184130072593689,
+        "y": 0.29070141911506653,
+        "z": 0.0604398176074028,
+        "qx": 0.0003641318654653218,
+        "qy": 0.707106688503579,
+        "qz": 0.707106688503579,
+        "qw": -0.00035993747975198706
+      },
+      "isaac_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1840670108795746,
+        "y": 0.290816962106665,
+        "z": 0.05750801414253482,
+        "qx": 0.0010340215120729932,
+        "qy": 0.7071186159411188,
+        "qz": 0.707093331219085,
+        "qw": -0.0011021499564641294
+      },
+      "python_vs_unity_actual_joint_position_error_mm": 0.0028655262825922276,
+      "python_vs_unity_actual_joint_orientation_error_deg": 0.00016911615969489332,
+      "python_vs_isaac_actual_joint_position_error_mm": 1.3633064233087309,
+      "python_vs_isaac_actual_joint_orientation_error_deg": 0.06494107157454851,
+      "unity_vs_isaac_position_error_mm": 2.934756977895525,
+      "unity_vs_isaac_orientation_error_deg": 0.11458882386516614,
+      "python_target_vs_unity_position_error_mm": 0.4273571610436698,
+      "python_target_vs_unity_orientation_error_deg": 0.05867121701028598,
+      "python_target_vs_isaac_position_error_mm": 3.349034821715833,
+      "python_target_vs_isaac_orientation_error_deg": 0.17319089400218457
+    },
+    {
+      "test_id": "B-positive-1",
+      "target_joint_rad": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "unity_actual_joint_rad": [
+        0.200001060962677,
+        0.30018681287765503,
+        0.4000825881958008,
+        0.5000287890434265,
+        0.6000015139579773,
+        0.6999999284744263
+      ],
+      "isaac_actual_joint_rad": [
+        0.2001873254776001,
+        0.3012223541736603,
+        0.4003024697303772,
+        0.4998801052570343,
+        0.6000057458877563,
+        0.699999988079071
+      ],
+      "python_fk_target": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.8622827187040447,
+        "y": 0.45063468791363825,
+        "z": -0.4733330617171708,
+        "qx": 0.7038040288365,
+        "qy": 0.517488469893148,
+        "qz": 0.3048943961953703,
+        "qw": -0.3793480983079002
+      },
+      "python_fk_unity_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.8621213051820603,
+        "y": 0.45060287770296964,
+        "z": -0.4735340932989793,
+        "qx": 0.703859878123851,
+        "qy": 0.5174425333795227,
+        "qz": 0.3047758795896519,
+        "qw": -0.37940237194515924
+      },
+      "python_fk_isaac_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.8612863318324604,
+        "y": 0.45061078111901837,
+        "z": -0.47459153139319216,
+        "qx": 0.7040196207274442,
+        "qy": 0.5173359436910755,
+        "qz": 0.3043014153983761,
+        "qw": -0.3796321161105774
+      },
+      "unity_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.8621228337287903,
+        "y": 0.4506044089794159,
+        "z": -0.4735356569290161,
+        "qx": 0.7038597915143724,
+        "qy": 0.5174428749075954,
+        "qz": 0.3047757841527426,
+        "qw": -0.37940214349788237
+      },
+      "isaac_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.8608286977121026,
+        "y": 0.4506002969998936,
+        "z": -0.4754112665479662,
+        "qx": 0.7041616950949868,
+        "qy": 0.5172005426216535,
+        "qz": 0.3039521347622787,
+        "qw": -0.37983286541092726
+      },
+      "python_vs_unity_actual_joint_position_error_mm": 0.0026694946249522307,
+      "python_vs_unity_actual_joint_orientation_error_deg": 4.9312357564982754e-05,
+      "python_vs_isaac_actual_joint_position_error_mm": 0.9388847793217048,
+      "python_vs_isaac_actual_joint_orientation_error_deg": 0.051351317757529824,
+      "unity_vs_isaac_position_error_mm": 2.278753251399131,
+      "unity_vs_isaac_orientation_error_deg": 0.11537898980938711,
+      "python_target_vs_unity_position_error_mm": 0.25985541947858376,
+      "python_target_vs_unity_orientation_error_deg": 0.017065325690704104,
+      "python_target_vs_isaac_position_error_mm": 2.5365912360287677,
+      "python_target_vs_isaac_orientation_error_deg": 0.132336292350499
+    },
+    {
+      "test_id": "C-mixed-1",
+      "target_joint_rad": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "unity_actual_joint_rad": [
+        0.4999995231628418,
+        -0.3996905982494354,
+        0.3001907467842102,
+        -0.19992537796497345,
+        0.6000020503997803,
+        -0.7000001668930054
+      ],
+      "isaac_actual_joint_rad": [
+        0.500053882598877,
+        -0.39849230647087097,
+        0.30043885111808777,
+        -0.19996115565299988,
+        0.5999988913536072,
+        -0.699999988079071
+      ],
+      "python_fk_target": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.9509727146435579,
+        "y": 0.8275728158109183,
+        "z": 0.38130724234666324,
+        "qx": -0.272302625616159,
+        "qy": 0.585166343817156,
+        "qz": 0.6649683404056946,
+        "qw": 0.3758307283928555
+      },
+      "python_fk_unity_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.9510151252189473,
+        "y": 0.8275951619903301,
+        "z": 0.3807917669506607,
+        "qx": -0.2721858281755773,
+        "qy": 0.5853529118190096,
+        "qz": 0.6649560706356237,
+        "qw": 0.3756464663619416
+      },
+      "python_fk_isaac_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.9511738689905668,
+        "y": 0.8277584082949498,
+        "z": 0.3791540481755706,
+        "qx": -0.2719182514288527,
+        "qy": 0.5858025397751673,
+        "qz": 0.6649369448861168,
+        "qw": 0.3751729044831947
+      },
+      "unity_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.9510170817375183,
+        "y": 0.8275975584983826,
+        "z": 0.38079261779785156,
+        "qx": -0.27218564885697294,
+        "qy": 0.58535276407406,
+        "qz": 0.6649562472289954,
+        "qw": 0.37564651391740306
+      },
+      "isaac_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 0.9515947103148312,
+        "y": 0.827844976935842,
+        "z": 0.3779478966444301,
+        "qx": -0.27162232981948314,
+        "qy": 0.5860887674724207,
+        "qz": 0.664990563710517,
+        "qw": 0.3748450570063099
+      },
+      "python_vs_unity_actual_joint_position_error_mm": 0.003208606661232651,
+      "python_vs_unity_actual_joint_orientation_error_deg": 3.387233291403388e-05,
+      "python_vs_isaac_actual_joint_position_error_mm": 1.280391762651978,
+      "python_vs_isaac_actual_joint_orientation_error_deg": 0.06062043439491869,
+      "unity_vs_isaac_position_error_mm": 2.913298662555354,
+      "unity_vs_isaac_orientation_error_deg": 0.14046421516203508,
+      "python_target_vs_unity_position_error_mm": 0.5171257737234422,
+      "python_target_vs_unity_orientation_error_deg": 0.032917368797966494,
+      "python_target_vs_isaac_position_error_mm": 3.4272662342039566,
+      "python_target_vs_isaac_orientation_error_deg": 0.1732459966470293
+    },
+    {
+      "test_id": "E-fixed-1",
+      "target_joint_rad": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "unity_actual_joint_rad": [
+        0.10000011324882507,
+        -0.1996885985136032,
+        0.3001995384693146,
+        -0.3998816907405853,
+        0.5000028014183044,
+        -0.6000002026557922
+      ],
+      "isaac_actual_joint_rad": [
+        0.10003442317247391,
+        -0.198471337556839,
+        0.3004571795463562,
+        -0.39993780851364136,
+        0.4999980330467224,
+        -0.6000000238418579
+      ],
+      "python_fk_target": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.2240990607143456,
+        "y": 0.40063976917202687,
+        "z": 0.14738062775452626,
+        "qx": -0.15701235935851435,
+        "qy": 0.6360087672062059,
+        "qz": 0.6135765337509058,
+        "qw": 0.4408671050052821
+      },
+      "python_fk_unity_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.2240465419755922,
+        "y": 0.40063448557430953,
+        "z": 0.14684729493228374,
+        "qx": -0.15683316000032374,
+        "qy": 0.6361659739706708,
+        "qz": 0.6136053379383535,
+        "qw": 0.4406639340130067
+      },
+      "python_fk_isaac_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.2239557959842002,
+        "y": 0.4006690216628907,
+        "z": 0.14515160211385877,
+        "qx": -0.15644387942348842,
+        "qy": 0.6365176822647565,
+        "qz": 0.6136789699322982,
+        "qw": 0.4401916339710069
+      },
+      "unity_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.2240493297576904,
+        "y": 0.4006357789039612,
+        "z": 0.14684776961803436,
+        "qx": -0.15683290737303368,
+        "qy": 0.6361659312893502,
+        "qz": 0.6136052768228314,
+        "qw": 0.440664170641149
+      },
+      "isaac_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.224150179997351,
+        "y": 0.4006291905479394,
+        "z": 0.14369448988255593,
+        "qx": -0.15608956299532176,
+        "qy": 0.6367975784035679,
+        "qz": 0.6137384308757927,
+        "qw": 0.43982954758565423
+      },
+      "python_vs_unity_actual_joint_position_error_mm": 0.0031096233175698686,
+      "python_vs_unity_actual_joint_orientation_error_deg": 4.0569972557770575e-05,
+      "python_vs_isaac_actual_joint_position_error_mm": 1.4705603411282602,
+      "python_vs_isaac_actual_joint_orientation_error_deg": 0.0666726093171082,
+      "unity_vs_isaac_position_error_mm": 3.1548989314166063,
+      "unity_vs_isaac_orientation_error_deg": 0.14790147537513967,
+      "python_target_vs_unity_position_error_mm": 0.5351886432975693,
+      "python_target_vs_unity_orientation_error_deg": 0.03603937963525878,
+      "python_target_vs_isaac_position_error_mm": 3.686507493489817,
+      "python_target_vs_isaac_orientation_error_deg": 0.18393686732531384
+    },
+    {
+      "test_id": "E-fixed-3",
+      "target_joint_rad": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "unity_actual_joint_rad": [
+        0.010000184178352356,
+        0.02028193324804306,
+        -0.02987382560968399,
+        0.04056822508573532,
+        -0.049994032829999924,
+        0.0599997378885746
+      ],
+      "isaac_actual_joint_rad": [
+        0.010044264607131481,
+        0.021458977833390236,
+        -0.02958015166223049,
+        0.03998926654458046,
+        -0.049999140202999115,
+        0.060000013560056686
+      ],
+      "python_fk_target": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.171717246444075,
+        "y": 0.30228643417354173,
+        "z": 0.054540876008467486,
+        "qx": 0.010592948989876247,
+        "qy": 0.7064971439737061,
+        "qz": 0.7056489055497279,
+        "qw": -0.05300185926140125
+      },
+      "python_fk_unity_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1715999108113642,
+        "y": 0.30228551187699043,
+        "z": 0.054144157842066644,
+        "qx": 0.010939616729474912,
+        "qy": 0.706474667116681,
+        "qz": 0.7056402976775557,
+        "qw": -0.053344538630656496
+      },
+      "python_fk_isaac_actual": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1714717296239894,
+        "y": 0.3023359727845526,
+        "z": 0.0525911516876799,
+        "qx": 0.011237188683785388,
+        "qy": 0.7064541766895757,
+        "qz": 0.7056309302190092,
+        "qw": -0.05367692378102941
+      },
+      "unity_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1716034412384033,
+        "y": 0.30228689312934875,
+        "z": 0.05414558947086334,
+        "qx": 0.010935859649432358,
+        "qy": 0.7064747736767545,
+        "qz": 0.7056405471475515,
+        "qw": -0.05334059761017134
+      },
+      "isaac_tcp_base": {
+        "frame": "tool0",
+        "reference_frame": "base_link",
+        "x": 1.1715254784921376,
+        "y": 0.3023835995183416,
+        "z": 0.05124436318525982,
+        "qx": 0.011623443265281948,
+        "qy": 0.7064383776207006,
+        "qz": 0.7056090217164271,
+        "qw": -0.054089025353374086
+      },
+      "python_vs_unity_actual_joint_position_error_mm": 0.004052324538793909,
+      "python_vs_unity_actual_joint_orientation_error_deg": 0.0006247173259805493,
+      "python_vs_isaac_actual_joint_position_error_mm": 1.348701789444036,
+      "python_vs_isaac_actual_joint_orientation_error_deg": 0.06479743922037583,
+      "unity_vs_isaac_position_error_mm": 2.903884342695852,
+      "unity_vs_isaac_orientation_error_deg": 0.11659283890436886,
+      "python_target_vs_unity_position_error_mm": 0.41134326576411595,
+      "python_target_vs_unity_orientation_error_deg": 0.055301758999730846,
+      "python_target_vs_isaac_position_error_mm": 3.303515225512501,
+      "python_target_vs_isaac_orientation_error_deg": 0.17184505627166574
+    }
+  ]
+}

@@ -235,6 +235,33 @@ namespace Robotwin.Ur10e
             return new Ur10eTool0Pose("unity_world", _tool0.position, _tool0.rotation);
         }
 
+        public Ur10eTool0Pose ReadFramePose(string frameName)
+        {
+            Transform match = null;
+            var transforms = _robot.GetComponentsInChildren<Transform>(true);
+            for (var index = 0; index < transforms.Length; index++)
+            {
+                if (transforms[index].name != frameName)
+                {
+                    continue;
+                }
+
+                if (match != null)
+                {
+                    throw new Ur10eAdapterException("MAPPING", frameName + " is not unique");
+                }
+
+                match = transforms[index];
+            }
+
+            if (match == null)
+            {
+                throw new Ur10eAdapterException("MAPPING", frameName + " is missing");
+            }
+
+            return new Ur10eTool0Pose("unity_world", match.position, match.rotation);
+        }
+
         public Ur10eJointSample[] SampleJoints(double[] targetRadians)
         {
             var samples = new Ur10eJointSample[_joints.Length];
