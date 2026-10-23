@@ -728,3 +728,52 @@ PYTHONPATH=. python3 -m pytest tests/unit -q → 37 passed.
 Elapsed Time
 2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-007 — ROS 2 controller adapter baseline
+
+```text
+Task
+P-007. Ros2ControllerAdapter로 ROS 2 transport와 VirtualPmacController를 연결한다.
+P-006 command semantics는 유지한다. P-008은 시작하지 않는다.
+
+Problem
+이 Mac에는 ROS 2가 없다. JointState에는 command_id, controller_state, fault가 없다.
+P-006의 MOVE_JOINT와 REQ-011 상태를 ROS 메시지 정의로 바꾸면 안 된다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+JointState 필드: https://github.com/ros2/common_interfaces/blob/jazzy/sensor_msgs/msg/JointState.msg
+QoS default: https://raw.githubusercontent.com/ros2/rmw/jazzy/rmw/include/rmw/qos_profiles.h
+rmw_qos_profile_default는 KEEP_LAST, depth 10, RELIABLE, VOLATILE이다.
+
+AI Proposal
+1. 실행 호스트는 p620 Ubuntu 24.04 / ROS 2 Jazzy로 실측한다.
+2. /joint_states는 actual_q만, target은 다른 topic에 둔다.
+3. command_id와 controller state는 std_msgs/String JSON으로 옮기고 canonical type은 MOVE_JOINT로 둔다.
+4. QoS는 rmw_qos_profile_default를 측정 전에 고정한다. sensor_data best effort는 쓰지 않는다.
+5. 거절: ros2_control, MoveIt, Isaac, 카메라, 실제 로봇, real-time 인증, PMAC protocol.
+
+Developer Decision
+위 1–5를 수용한다. step dt는 0.01 s로 주입한다. wall clock은 latency와 feedback rate 측정에만 쓴다.
+shutdown은 disconnect이며 E-stop이 아니다. fault reset destination은 CONNECTED다.
+
+Accepted / Rejected
+Accepted — 별도 프로세스 publisher와 adapter, 이름 기준 joint reorder, REJECT_BUSY, TEST_FAULT.
+Rejected — ROS 메시지를 command model로 두는 것, target을 /joint_states에 싣는 것, P-008.
+
+Reason
+다섯 configuration의 최종 joint error는 0 rad다.
+/robotwin/state published 200, received 200, lost 0.
+/joint_states도 published 200, received 200, lost 0.
+observed rate는 100.00364838337862 Hz이고 configured rate 100 Hz는 결과에 맞춰 바꾸지 않았다.
+Latency 100표본의 정의는 command publish에서 ACCEPTED feedback까지다.
+
+Verification
+evidence/P-007. 실행 호스트는 Ubuntu 24.04.4, ROS_DISTRO jazzy, Python 3.12.3이다.
+Isaac Sim과 Unity는 다시 실행하지 않았다. evidence/P-001B부터 P-006은 수정하지 않았다.
+p620에서 PYTHONPATH=. python3 -m pytest tests/unit -q → 41 passed.
+이 결과는 real-time 인증도, 실제 UR10e 검증도, 실제 Power PMAC 검증도 아니다.
+
+Elapsed Time
+2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

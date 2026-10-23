@@ -1,0 +1,27 @@
+{
+  "claim": "PROJECT TEST MEASUREMENT. NOT AN INDUSTRIAL SAFETY GUARANTEE.",
+  "configured_rate_hz": 100.0,
+  "duration_s": 1.9999270349944709,
+  "lost": 0,
+  "message_count": 200,
+  "observed_rate_hz": 100.00364838337862,
+  "published": 200,
+  "qos": {
+    "depth": 10,
+    "durability": "VOLATILE",
+    "history": "KEEP_LAST",
+    "profile": "rmw_qos_profile_default",
+    "reason": "Default reliable profile so localhost delivery can be counted. sensor_data best effort can drop samples. This is not a safety guarantee.",
+    "reliability": "RELIABLE",
+    "source": "https://raw.githubusercontent.com/ros2/rmw/jazzy/rmw/include/rmw/qos_profiles.h"
+  },
+  "received": 200,
+  "state_topic": {
+    "lost": 0,
+    "published": 200,
+    "received": 200,
+    "sequence_gaps": 0,
+    "topic": "/robotwin/state"
+  },
+  "topic": "/joint_states"
+}

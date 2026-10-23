@@ -1,0 +1,31 @@
+{
+  "active_command_aborted": true,
+  "command_accepted": true,
+  "command_trace": [
+    "ACCEPTED"
+  ],
+  "controller_state": "ERROR",
+  "fault_injected": "TEST_FAULT",
+  "joint_position_after_reset": [
+    0.47905604897606807,
+    -0.3790560489760681,
+    0.3314159265358979,
+    -0.1685840734641021,
+    0.6,
+    -0.668584073464102
+  ],
+  "joint_position_before_reset": [
+    0.47905604897606807,
+    -0.3790560489760681,
+    0.3314159265358979,
+    -0.1685840734641021,
+    0.6,
+    -0.668584073464102
+  ],
+  "joint_position_preserved": true,
+  "new_command_code": "ILLEGAL_STATE",
+  "new_command_result": "REJECTED",
+  "reset_successful": true,
+  "result": "PASS",
+  "state_after_reset": "CONNECTED"
+}

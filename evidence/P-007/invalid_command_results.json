@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "command_id": "unknown-joint",
+      "controller_stayed_ready": true,
+      "error_code": "UNKNOWN_JOINT",
+      "expected_error_code": "UNKNOWN_JOINT",
+      "result": "PASS"
+    },
+    {
+      "command_id": "duplicate-joint",
+      "controller_stayed_ready": true,
+      "error_code": "DUPLICATE_JOINT",
+      "expected_error_code": "DUPLICATE_JOINT",
+      "result": "PASS"
+    },
+    {
+      "command_id": "missing-joint",
+      "controller_stayed_ready": true,
+      "error_code": "MISSING_JOINT",
+      "expected_error_code": "MISSING_JOINT",
+      "result": "PASS"
+    },
+    {
+      "command_id": "extra-joint",
+      "controller_stayed_ready": true,
+      "error_code": "EXTRA_JOINT",
+      "expected_error_code": "EXTRA_JOINT",
+      "result": "PASS"
+    },
+    {
+      "command_id": "nan-joint",
+      "controller_stayed_ready": true,
+      "error_code": "NON_FINITE",
+      "expected_error_code": "NON_FINITE",
+      "result": "PASS"
+    },
+    {
+      "command_id": "inf-joint",
+      "controller_stayed_ready": true,
+      "error_code": "NON_FINITE",
+      "expected_error_code": "NON_FINITE",
+      "result": "PASS"
+    },
+    {
+      "command_id": "joint-limit",
+      "controller_stayed_ready": true,
+      "error_code": "JOINT_LIMIT",
+      "expected_error_code": "JOINT_LIMIT",
+      "result": "PASS"
+    },
+    {
+      "command_id": "move-tcp",
+      "controller_stayed_ready": true,
+      "error_code": "UNSUPPORTED_COMMAND",
+      "expected_error_code": "UNSUPPORTED_COMMAND",
+      "result": "PASS"
+    }
+  ]
+}

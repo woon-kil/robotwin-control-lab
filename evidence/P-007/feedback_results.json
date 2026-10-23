@@ -1,0 +1,58 @@
+{
+  "actual_q": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "controller_state": "RUNNING",
+  "difference": [
+    0.17905604897606806,
+    0.27905604897606806,
+    0.3685840734641021,
+    0.4685840734641021,
+    0.568584073464102,
+    0.668584073464102
+  ],
+  "execution_state": "EXECUTING",
+  "joint_state_pair": {
+    "actual_q": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "difference": [
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "source": "sensor_msgs/JointState /joint_states position versus /robotwin/target_joint_states position",
+    "target_q": [
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ]
+  },
+  "simulation_time_s": 7.0799999999998935,
+  "source": "/robotwin/state",
+  "target_differs_from_actual": true,
+  "target_q": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ]
+}

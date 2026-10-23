@@ -1,0 +1,66 @@
+{
+  "adapter_implementation": "Ros2ControllerAdapter",
+  "canonical_joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "claim": "PROJECT ROS 2 CONTROLLER ADAPTER",
+  "claim_boundary": [
+    "NOT A ROS 2 REAL-TIME CERTIFIED CONTROLLER",
+    "NOT ros2_control HARDWARE DRIVER",
+    "NOT A UNIVERSAL ROBOTS PRODUCTION DRIVER",
+    "NOT A POWER PMAC ROS DRIVER",
+    "NOT INDUSTRIAL SAFETY-CERTIFIED COMMUNICATION",
+    "NOT REAL ROBOT VALIDATED",
+    "PROJECT TEST LATENCY",
+    "NOT HARD REAL-TIME GUARANTEE"
+  ],
+  "completion_tolerance_class": "PROJECT TEST PARAMETER",
+  "completion_tolerance_rad": 1e-09,
+  "configured_feedback_hz": 100.0,
+  "controller_backend": "VirtualPmacController",
+  "joint_state_source": "https://github.com/ros2/common_interfaces/blob/jazzy/sensor_msgs/msg/JointState.msg",
+  "message_choice": "sensor_msgs/JointState carries named joint positions in radians. /joint_states publishes actual_q only. /robotwin/target_joint_states publishes target_q only. command_id, controller_state, fault, and execution_state are not JointState fields. Those values use a JSON object in std_msgs/String so the ROS message is not the canonical command model. header.frame_id is not used as command_id.",
+  "nodes": [
+    "p007_command_client",
+    "ros2_controller_adapter"
+  ],
+  "p008_started": false,
+  "qos": {
+    "depth": 10,
+    "durability": "VOLATILE",
+    "history": "KEEP_LAST",
+    "profile": "rmw_qos_profile_default",
+    "reason": "Default reliable profile so localhost delivery can be counted. sensor_data best effort can drop samples. This is not a safety guarantee.",
+    "reliability": "RELIABLE",
+    "source": "https://raw.githubusercontent.com/ros2/rmw/jazzy/rmw/include/rmw/qos_profiles.h"
+  },
+  "real_pmac_compatibility_claimed": false,
+  "real_robot_used": false,
+  "ros_distro": "jazzy",
+  "shutdown_policy": "Adapter shutdown calls disconnect() on the controller. An active MOVE_JOINT is aborted with execution REJECTED and error_code DISCONNECTED. controller_state becomes DISCONNECTED. actual joint positions are left where they are. This is session teardown, not an E-stop and not a safety-certified stop.",
+  "step_dt_s": 0.01,
+  "supported_command": "MOVE_JOINT",
+  "test_hooks": [
+    "/robotwin/test/inject_fault",
+    "/robotwin/test/reset_fault",
+    "/robotwin/test/servo_on",
+    "/robotwin/test/count_window",
+    "/robotwin/test/shutdown"
+  ],
+  "topics": {
+    "/joint_states": "sensor_msgs/msg/JointState",
+    "/robotwin/command/joint": "std_msgs/msg/String",
+    "/robotwin/command/result": "std_msgs/msg/String",
+    "/robotwin/state": "std_msgs/msg/String",
+    "/robotwin/target_joint_states": "sensor_msgs/msg/JointState"
+  },
+  "units": {
+    "angle": "radian",
+    "time": "second"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "claim_boundary": [
+    "PROJECT TEST LATENCY",
+    "NOT HARD REAL-TIME GUARANTEE"
+  ],
+  "definition": "command_publish_to_accepted_feedback",
+  "end": "time.perf_counter when the result String with the same command_id and result ACCEPTED is received",
+  "max_ms": 2.200997005274985,
+  "mean_ms": 1.0758933496981626,
+  "not_mixed_with": "adapter receipt time is not a sample and is not added to this interval",
+  "p50_ms": 1.0724149979068898,
+  "p95_ms": 1.0901190034928732,
+  "p99_ms": 1.1603910024859942,
+  "sample_count": 100,
+  "start": "time.perf_counter immediately before publishing the command String"
+}
