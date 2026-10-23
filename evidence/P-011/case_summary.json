@@ -1,0 +1,67 @@
+{
+  "A-zero": {
+    "actual_count": 100,
+    "completed_count": 100,
+    "correct_count": 100,
+    "expected_count": 100,
+    "failure_count": 0,
+    "non_finite_count": 0,
+    "reject_count": 0,
+    "safe_count": 100,
+    "settled_count": 100,
+    "submitted_count": 100,
+    "timeout_count": 0
+  },
+  "B-positive-1": {
+    "actual_count": 100,
+    "completed_count": 100,
+    "correct_count": 100,
+    "expected_count": 100,
+    "failure_count": 0,
+    "non_finite_count": 0,
+    "reject_count": 0,
+    "safe_count": 100,
+    "settled_count": 100,
+    "submitted_count": 100,
+    "timeout_count": 0
+  },
+  "C-mixed-1": {
+    "actual_count": 100,
+    "completed_count": 100,
+    "correct_count": 100,
+    "expected_count": 100,
+    "failure_count": 0,
+    "non_finite_count": 0,
+    "reject_count": 0,
+    "safe_count": 100,
+    "settled_count": 100,
+    "submitted_count": 100,
+    "timeout_count": 0
+  },
+  "E-fixed-1": {
+    "actual_count": 100,
+    "completed_count": 0,
+    "correct_count": 100,
+    "expected_count": 100,
+    "failure_count": 0,
+    "non_finite_count": 0,
+    "reject_count": 100,
+    "safe_count": 0,
+    "settled_count": 0,
+    "submitted_count": 0,
+    "timeout_count": 0
+  },
+  "E-fixed-3": {
+    "actual_count": 100,
+    "completed_count": 100,
+    "correct_count": 100,
+    "expected_count": 100,
+    "failure_count": 0,
+    "non_finite_count": 0,
+    "reject_count": 0,
+    "safe_count": 100,
+    "settled_count": 100,
+    "submitted_count": 100,
+    "timeout_count": 0
+  }
+}

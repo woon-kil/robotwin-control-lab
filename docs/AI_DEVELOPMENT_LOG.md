@@ -1012,3 +1012,49 @@ PYTHONPATH=. python3 -m pytest tests/unit/test_p006_controller.py tests/unit/tes
 Elapsed Time
 2026-10-23 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-011 — 500-cycle reliability baseline
+
+```text
+Task
+같은 controller session에서 A-zero, B-positive-1, C-mixed-1, E-fixed-1, E-fixed-3를 100회 교차 실행하고 판정·제출·수렴을 센다.
+P-012는 시작하지 않는다.
+
+Problem
+cycle마다 새 controller를 만들면 state leakage가 가려진다.
+settling_time은 project clock 뺄셈이라 긴 session에서 약 1e-13 s가 움직인다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. reliability 패키지가 기존 gate, controller, monitor, view model을 반복한다. Core는 수정하지 않는다.
+2. 시작 pose가 zero가 아니면 같은 controller에서 검증된 MOVE_JOINT로 zero에 되돌린다. 이 restore는 500 cycle에 넣지 않는다.
+3. E-fixed-1이 controller에 전달되면 즉시 중단한다. Recovery 10회는 primary 500과 따로 기록한다.
+4. Drift는 sample count와 final error를 정확히 비교하고, settling subtraction만 1e-9 s 이내로 본다. Controller settling rule은 바꾸지 않는다.
+
+Developer Decision
+위 1–4를 수용한다. controller, validator, digital_twin, hmi는 수정하지 않는다.
+
+Accepted / Rejected
+Accepted — 500/500 correct, safe 400/400, reject 100/100, recovery 10/10.
+Rejected — settling delta를 0으로 고치기 위해 clock이나 tolerance를 바꾸지 않는다.
+
+Reason
+Unsafe submission 0, false reject 0, timeout 0, non-finite 0, state leakage 0, unexpected fault 0.
+Rejected tracking started 0. Completed 400/400. Settled 400/400.
+Execution duration P95는 0.260000000000133 s, settling P95는 0.2500000000001279 s다.
+Final joint error P99는 0.0 rad, TCP position error P99는 0.0 m, TCP orientation error P99는 2.1073424255447017e-08 rad다.
+Settling drift max는 1.27675647831893e-13 s다. Sample count delta는 0이다.
+RSS는 24051712에서 31178752 byte다. Delta는 7127040 byte다. Unbounded monotonic growth는 아니다.
+Primary wall runtime은 1054.1445243339986 s다.
+Regression은 44 passed in 21.94s다.
+
+Verification
+evidence/P-011. evidence/P-001부터 P-010은 수정하지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit/test_p006_controller.py tests/unit/test_p008_validator.py tests/unit/test_p009_monitor.py tests/unit/test_p010_hmi.py tests/unit/test_p011_reliability.py -q → 44 passed.
+이 결과는 500-cycle deterministic project workload validation이다. 산업 신뢰성 인증, MTBF, 실제 UR10e 신뢰도가 아니다.
+
+Elapsed Time
+2026-10-23 측정은 한 세션이다. Primary wall runtime은 1054.1445243339986 s다.
+```

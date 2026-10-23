@@ -1,0 +1,71 @@
+{
+  "note": "observed process RSS. Growth is not by itself a memory leak.",
+  "oom": false,
+  "process_failed": false,
+  "rss_delta_bytes": 7127040,
+  "rss_end_bytes": 31178752,
+  "rss_start_bytes": 24051712,
+  "samples": [
+    {
+      "correct": 0,
+      "cycles_completed": 0,
+      "elapsed_sec": 0.0034817499108612537,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 24051712,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    },
+    {
+      "correct": 100,
+      "cycles_completed": 100,
+      "elapsed_sec": 210.02797783399,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 34979840,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    },
+    {
+      "correct": 200,
+      "cycles_completed": 200,
+      "elapsed_sec": 420.56074545904994,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 30523392,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    },
+    {
+      "correct": 300,
+      "cycles_completed": 300,
+      "elapsed_sec": 631.3796315419022,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 30720000,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    },
+    {
+      "correct": 400,
+      "cycles_completed": 400,
+      "elapsed_sec": 842.8213194999844,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 30818304,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    },
+    {
+      "correct": 500,
+      "cycles_completed": 500,
+      "elapsed_sec": 1054.1444457920734,
+      "failures": 0,
+      "non_finite": 0,
+      "rss_bytes": 31178752,
+      "timeouts": 0,
+      "unsafe_submissions": 0
+    }
+  ],
+  "unbounded_monotonic_growth": false
+}

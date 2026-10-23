@@ -1,0 +1,38 @@
+{
+  "A-zero": {
+    "final_joint_error_delta": 0.0,
+    "final_tcp_orientation_error_delta": 0.0,
+    "final_tcp_position_error_delta": 0.0,
+    "first_iteration": 1,
+    "last_iteration": 100,
+    "sample_count_delta": 0.0,
+    "settling_time_delta": 5.115699530655604e-15
+  },
+  "B-positive-1": {
+    "final_joint_error_delta": 0.0,
+    "final_tcp_orientation_error_delta": 0.0,
+    "final_tcp_position_error_delta": 0.0,
+    "first_iteration": 1,
+    "last_iteration": 100,
+    "sample_count_delta": 0.0,
+    "settling_time_delta": 1.2270739979669543e-13
+  },
+  "C-mixed-1": {
+    "final_joint_error_delta": 0.0,
+    "final_tcp_orientation_error_delta": 0.0,
+    "final_tcp_position_error_delta": 0.0,
+    "first_iteration": 1,
+    "last_iteration": 100,
+    "sample_count_delta": 0.0,
+    "settling_time_delta": 1.27675647831893e-13
+  },
+  "E-fixed-3": {
+    "final_joint_error_delta": 0.0,
+    "final_tcp_orientation_error_delta": 0.0,
+    "final_tcp_position_error_delta": 0.0,
+    "first_iteration": 1,
+    "last_iteration": 100,
+    "sample_count_delta": 0.0,
+    "settling_time_delta": 1.532107773982716e-14
+  }
+}

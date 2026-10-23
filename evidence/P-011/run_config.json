@@ -1,0 +1,23 @@
+{
+  "claim": "500-cycle deterministic project workload validation",
+  "fault_injection_in_primary": false,
+  "iterations": 100,
+  "known_start": "zero joint state on the same VirtualPmacController",
+  "recovery_attempts": 10,
+  "recovery_case": "B-positive-1",
+  "recovery_fault_after_steps": 1,
+  "reset": "When the post-cycle pose is not the zero joint state, a new MOVE_JOINT back to zero is validated and executed on that same controller. This restore is not one of the 500 cycles. controller.reset() is only the P-006 ERROR to CONNECTED fault reset and preserves joints.",
+  "resource_semantics": "current process RSS is observed. Growth is not by itself a leak. Unbounded monotonic growth, process failure, or OOM fails the run.",
+  "sample_period_sec": 0.01,
+  "sequence": [
+    "A-zero",
+    "B-positive-1",
+    "C-mixed-1",
+    "E-fixed-1",
+    "E-fixed-3"
+  ],
+  "settling_rule": "P-009 monitor rule. max abs joint error <= 1e-9 rad for 3 consecutive samples after execution start. Not assigned from the controller COMPLETED flag.",
+  "timeout_policy": "A cycle times out when the monitor is still TRACKING at max_execution_steps. The step limit is the P-009 monitor value and is not retuned.",
+  "timing_semantics": "Duration and settling use the controller project clock recorded by the P-009 monitor. They are not P-007 ROS transport latency and not wall-clock real-time.",
+  "total_cycles": 500
+}

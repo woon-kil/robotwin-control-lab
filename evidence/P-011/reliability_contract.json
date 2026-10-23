@@ -1,0 +1,51 @@
+{
+  "claim_boundary": "500-cycle deterministic project workload validation",
+  "critical_fail_rule": "UNSAFE_SUBMISSION stops the run. A REJECT that is submitted or tracked is UNSAFE_SUBMISSION.",
+  "cycle_definition": {
+    "reject": "command, REJECT, controller not called, tracking not started, record",
+    "safe": "known zero start, command, SAFE_TO_ATTEMPT, controller submission, tracking, completion, settling, record"
+  },
+  "drift_comparison": "Final joint error, TCP error, and sample count deltas are exact. Settling time is a project-clock subtraction and may differ by about 1e-13 s; the comparison bound is 1e-9 s, below the 0.01 s sample period.",
+  "expected_outcomes": {
+    "REJECT": 100,
+    "SAFE_TO_ATTEMPT": 400
+  },
+  "failure_categories": [
+    "VALIDATION_MISMATCH",
+    "UNSAFE_SUBMISSION",
+    "SAFE_NOT_SUBMITTED",
+    "EXECUTION_FAILURE",
+    "NOT_SETTLED",
+    "TIMEOUT",
+    "NON_FINITE",
+    "STATE_LEAK",
+    "RESET_FAILURE",
+    "UNEXPECTED_FAULT",
+    "METRIC_FAILURE",
+    "INTERNAL_ERROR"
+  ],
+  "iterations": 100,
+  "known_start": "zero joint state on the same VirtualPmacController",
+  "not_claims": [
+    "industrial reliability certified",
+    "production proven",
+    "24/7 validated",
+    "MTBF proven",
+    "field reliability proven",
+    "real robot reliability"
+  ],
+  "pass_rule": "500/500 correct cycles on this deterministic project workload, with 400 settled executions and 100 collision rejects.",
+  "percentile_method": "linear interpolation between the nearest sorted ranks",
+  "purpose": "Repeat the existing validate, execute, reject, and track path on one controller session.",
+  "reset_semantics": "When the post-cycle pose is not the zero joint state, a new MOVE_JOINT back to zero is validated and executed on that same controller. This restore is not one of the 500 cycles. controller.reset() is only the P-006 ERROR to CONNECTED fault reset and preserves joints.",
+  "resource_semantics": "current process RSS is observed. Growth is not by itself a leak. Unbounded monotonic growth, process failure, or OOM fails the run.",
+  "screenshots": "P-010 visual evidence is not repeated. This gate records quantitative results.",
+  "timing_semantics": "Duration and settling use the controller project clock recorded by the P-009 monitor. They are not P-007 ROS transport latency and not wall-clock real-time.",
+  "workload": [
+    "A-zero",
+    "B-positive-1",
+    "C-mixed-1",
+    "E-fixed-1",
+    "E-fixed-3"
+  ]
+}

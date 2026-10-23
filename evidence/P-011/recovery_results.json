@@ -1,0 +1,277 @@
+{
+  "attempted": 10,
+  "failed": 0,
+  "passed": 10,
+  "per_run": [
+    {
+      "attempt": 1,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 2,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 3,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 4,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 5,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 6,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 7,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 8,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 9,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    },
+    {
+      "attempt": 10,
+      "completed": false,
+      "fault": "TEST_FAULT",
+      "fault_detected": true,
+      "held_joints": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "joints_after_reset": [
+        0.020943951023931952,
+        0.020943951023931952,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934,
+        0.031415926535897934
+      ],
+      "next_execution_completed": true,
+      "reset": true,
+      "result": "PASS",
+      "settled": false,
+      "state_preserved": true
+    }
+  ]
+}

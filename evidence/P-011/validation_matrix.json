@@ -1,0 +1,6 @@
+{
+  "expected_reject_actual_reject": 100,
+  "expected_reject_actual_safe": 0,
+  "expected_safe_actual_reject": 0,
+  "expected_safe_actual_safe": 400
+}
