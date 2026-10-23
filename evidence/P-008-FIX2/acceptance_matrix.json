@@ -1,0 +1,875 @@
+{
+  "rows": [
+    {
+      "actual_decision": "SAFE_TO_ATTEMPT",
+      "actual_reason": [],
+      "case": "A-zero",
+      "case_classification": "DESIGNATED_SAFE",
+      "checks": [
+        {
+          "metrics": {},
+          "name": "finite_input",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "command_support",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "target_validity",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "joint_limit",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "reachability",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "fk_trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "robot_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "tool_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "tool_robot_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "adjacent_links_excluded": true,
+            "involved_objects": [],
+            "label": "EVALUATED",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "self_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "class": "PROJECT TEST SAFETY ZONE",
+            "sample_count": 100
+          },
+          "name": "safety_zone",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "tcp_alignment",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        },
+        {
+          "metrics": {},
+          "name": "ik_feasibility",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        }
+      ],
+      "controller_submitted": true,
+      "execution_completed": true,
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "expected_decision": "SAFE_TO_ATTEMPT",
+      "expected_reason": null,
+      "max_joint_error_rad": 0.0,
+      "optional_not_applicable": true,
+      "provenance": "P-008 initial measurement was SAFE_TO_ATTEMPT and completed. FIX2 remeasured the same command. It was not moved into the reject set.",
+      "required_checks_pass": true,
+      "result": "PASS",
+      "self_collision_evaluated": true,
+      "steps": 1,
+      "timeout": false
+    },
+    {
+      "actual_decision": "SAFE_TO_ATTEMPT",
+      "actual_reason": [],
+      "case": "B-positive-1",
+      "case_classification": "DESIGNATED_SAFE",
+      "checks": [
+        {
+          "metrics": {},
+          "name": "finite_input",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "command_support",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "target_validity",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "joint_limit",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "reachability",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "fk_trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 601596
+          },
+          "name": "robot_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 601596
+          },
+          "name": "tool_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 601596
+          },
+          "name": "tool_robot_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "adjacent_links_excluded": true,
+            "involved_objects": [],
+            "label": "EVALUATED",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 601596
+          },
+          "name": "self_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "class": "PROJECT TEST SAFETY ZONE",
+            "sample_count": 100
+          },
+          "name": "safety_zone",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "tcp_alignment",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        },
+        {
+          "metrics": {},
+          "name": "ik_feasibility",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        }
+      ],
+      "controller_submitted": true,
+      "execution_completed": true,
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "expected_decision": "SAFE_TO_ATTEMPT",
+      "expected_reason": null,
+      "max_joint_error_rad": 0.0,
+      "optional_not_applicable": true,
+      "provenance": "P-008 initial measurement was SAFE_TO_ATTEMPT and completed. FIX2 remeasured the same command. It was not moved into the reject set.",
+      "required_checks_pass": true,
+      "result": "PASS",
+      "self_collision_evaluated": true,
+      "steps": 23,
+      "timeout": false
+    },
+    {
+      "actual_decision": "SAFE_TO_ATTEMPT",
+      "actual_reason": [],
+      "case": "C-mixed-1",
+      "case_classification": "DESIGNATED_SAFE",
+      "checks": [
+        {
+          "metrics": {},
+          "name": "finite_input",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "command_support",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "target_validity",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "joint_limit",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "reachability",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "fk_trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 266585
+          },
+          "name": "robot_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 266585
+          },
+          "name": "tool_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 266585
+          },
+          "name": "tool_robot_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "adjacent_links_excluded": true,
+            "involved_objects": [],
+            "label": "EVALUATED",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 266585
+          },
+          "name": "self_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "class": "PROJECT TEST SAFETY ZONE",
+            "sample_count": 100
+          },
+          "name": "safety_zone",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "tcp_alignment",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        },
+        {
+          "metrics": {},
+          "name": "ik_feasibility",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        }
+      ],
+      "controller_submitted": true,
+      "execution_completed": true,
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "expected_decision": "SAFE_TO_ATTEMPT",
+      "expected_reason": null,
+      "max_joint_error_rad": 0.0,
+      "optional_not_applicable": true,
+      "provenance": "P-008 initial measurement was SAFE_TO_ATTEMPT and completed. FIX2 remeasured the same command. It was not moved into the reject set.",
+      "required_checks_pass": true,
+      "result": "PASS",
+      "self_collision_evaluated": true,
+      "steps": 24,
+      "timeout": false
+    },
+    {
+      "actual_decision": "SAFE_TO_ATTEMPT",
+      "actual_reason": [],
+      "case": "E-fixed-3",
+      "case_classification": "DESIGNATED_SAFE",
+      "checks": [
+        {
+          "metrics": {},
+          "name": "finite_input",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "command_support",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "target_validity",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "joint_limit",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "reachability",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "sample_count": 100
+          },
+          "name": "fk_trajectory",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "robot_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "tool_environment_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "involved_objects": [],
+            "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "tool_robot_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "adjacent_links_excluded": true,
+            "involved_objects": [],
+            "label": "EVALUATED",
+            "sample_count": 100,
+            "sample_index": null,
+            "triangle_tests": 0
+          },
+          "name": "self_collision",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {
+            "class": "PROJECT TEST SAFETY ZONE",
+            "sample_count": 100
+          },
+          "name": "safety_zone",
+          "reason_code": null,
+          "result": "PASS"
+        },
+        {
+          "metrics": {},
+          "name": "tcp_alignment",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        },
+        {
+          "metrics": {},
+          "name": "ik_feasibility",
+          "reason_code": null,
+          "result": "NOT_APPLICABLE"
+        }
+      ],
+      "controller_submitted": true,
+      "execution_completed": true,
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "expected_decision": "SAFE_TO_ATTEMPT",
+      "expected_reason": null,
+      "max_joint_error_rad": 0.0,
+      "optional_not_applicable": true,
+      "provenance": "P-008 initial measurement was SAFE_TO_ATTEMPT and completed. FIX2 remeasured the same command. It was not moved into the reject set.",
+      "required_checks_pass": true,
+      "result": "PASS",
+      "self_collision_evaluated": true,
+      "steps": 2,
+      "timeout": false
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "COLLISION"
+      ],
+      "case": "E-fixed-1",
+      "case_classification": "KNOWN_COLLISION",
+      "collision_pair": {
+        "a": "wrist_3_link",
+        "b": "bolt_panel"
+      },
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "COLLISION",
+      "first_collision_sample": 44,
+      "provenance": {
+        "classification": "KNOWN_COLLISION",
+        "evidence": [
+          "evidence/P-008/positive_results.json",
+          "evidence/P-008-FIX1/root_cause.json",
+          "evidence/P-008-FIX1/independent_collision_check.json",
+          "evidence/P-008-FIX1/scene_comparison.json"
+        ],
+        "source": "P-008 initial observation + P-008-FIX1 independent investigation"
+      },
+      "result": "PASS",
+      "sample_count": 100,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "joint_lower_limit",
+      "case_classification": "KNOWN_JOINT_LIMIT_VIOLATION",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "JOINT_LIMIT",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "joint_upper_limit",
+      "case_classification": "KNOWN_JOINT_LIMIT_VIOLATION",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "JOINT_LIMIT",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "nan",
+      "case_classification": "KNOWN_NON_FINITE",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "positive_inf",
+      "case_classification": "KNOWN_NON_FINITE",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "negative_inf",
+      "case_classification": "KNOWN_NON_FINITE",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "UNSUPPORTED_COMMAND",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "unsupported_command",
+      "case_classification": "KNOWN_UNSUPPORTED",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "UNSUPPORTED_COMMAND",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "UNSUPPORTED_COMMAND",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "unknown_command",
+      "case_classification": "KNOWN_UNSUPPORTED",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "UNSUPPORTED_COMMAND",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "trajectory_joint_limit",
+      "case_classification": "KNOWN_JOINT_LIMIT_VIOLATION",
+      "collision_pair": null,
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "TRAJECTORY_INVALID",
+      "first_collision_sample": null,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "COLLISION"
+      ],
+      "case": "tool_panel_collision",
+      "case_classification": "KNOWN_COLLISION",
+      "collision_pair": {
+        "a": "tool_placeholder",
+        "b": "bolt_panel"
+      },
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "COLLISION",
+      "first_collision_sample": 0,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "COLLISION"
+      ],
+      "case": "canonical_path_collision",
+      "case_classification": "KNOWN_COLLISION",
+      "collision_pair": {
+        "a": "wrist_3_link",
+        "b": "bolt_panel"
+      },
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "COLLISION",
+      "first_collision_sample": 44,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+    },
+    {
+      "actual_decision": "REJECT",
+      "actual_reason": [
+        "COLLISION",
+        "SAFETY_ZONE"
+      ],
+      "case": "safety_zone",
+      "case_classification": "KNOWN_SAFETY_ZONE_VIOLATION",
+      "collision_pair": {
+        "a": "wrist_2_link",
+        "b": "bolt_panel"
+      },
+      "controller_submitted": false,
+      "expected_decision": "REJECT",
+      "expected_reason": "SAFETY_ZONE",
+      "first_collision_sample": 0,
+      "provenance": "Existing P-008 negative case. The negative_search grid was not retuned.",
+      "result": "PASS",
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+    }
+  ]
+}

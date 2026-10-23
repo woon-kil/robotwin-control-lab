@@ -1,0 +1,70 @@
+{
+  "invalid_input_case": {
+    "case": "nan",
+    "controller_submitted": false,
+    "decision": "REJECT",
+    "reason_codes": [
+      "NON_FINITE",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED"
+    ],
+    "submit_count_after": 0,
+    "submit_count_before": 0
+  },
+  "joint_limit_case": {
+    "case": "joint_lower_limit",
+    "controller_submitted": false,
+    "decision": "REJECT",
+    "reason_codes": [
+      "JOINT_LIMIT",
+      "UNREACHABLE",
+      "TRAJECTORY_INVALID",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED"
+    ],
+    "submit_count_after": 0,
+    "submit_count_before": 0
+  },
+  "rejected_collision_case": {
+    "case": "E-fixed-1",
+    "collision_pair": {
+      "a": "wrist_3_link",
+      "b": "bolt_panel"
+    },
+    "controller_submitted": false,
+    "decision": "REJECT",
+    "first_collision_sample": 44,
+    "reason_codes": [
+      "COLLISION"
+    ],
+    "submit_count_after": 1,
+    "submit_count_before": 1
+  },
+  "safe_case": {
+    "case": "A-zero",
+    "completed": true,
+    "controller_submitted": true,
+    "decision": "SAFE_TO_ATTEMPT",
+    "max_joint_error_rad": 0.0,
+    "submit_count_after": 1,
+    "submit_count_before": 0,
+    "timeout": false,
+    "trace": [
+      "ACCEPTED",
+      "EXECUTING",
+      "COMPLETED"
+    ]
+  }
+}

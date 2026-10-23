@@ -1,0 +1,10 @@
+{
+  "command": "PYTHONPATH=. python3 -m pytest tests/unit/test_ur10e_fk.py tests/unit/test_p001b_evidence.py tests/unit/test_p006_controller.py tests/unit/test_p007_convert.py tests/unit/test_p008_validator.py tests/unit/test_p008_fix2_acceptance.py -q",
+  "isaac_rerun": false,
+  "pytest_ran": true,
+  "returncode": 0,
+  "ros_evidence_rerun": false,
+  "stderr": "",
+  "stdout": "............................................                             [100%]\n44 passed in 31.27s\n",
+  "unity_rerun": false
+}

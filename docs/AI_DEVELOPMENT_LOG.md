@@ -873,3 +873,48 @@ P-008 final status는 FAIL이다. Acceptance 문장은 이 commit에서 바꾸�
 Elapsed Time
 2026-10-23 조사는 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-008 Fix Attempt 2 — acceptance reconciliation
+
+```text
+Task
+E-fixed-1의 TRUE_COLLISION을 유지한 채, canonical configuration 5개가 모두 SAFE_TO_ATTEMPT여야 한다는 acceptance를 수정한다.
+P-009는 시작하지 않는다.
+
+Problem
+P-008 최초 가정은 5개 canonical configuration이 workcell 안에서 collision-free trajectory라는 뜻으로 쓰였다.
+FIX1은 E-fixed-1이 bolt panel과 실제로 교차한다고 확인했다. Validator defect는 아니었다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. A-zero, B-positive-1, C-mixed-1, E-fixed-3은 DESIGNATED_SAFE로 다시 측정한다.
+2. E-fixed-1은 KNOWN_COLLISION으로 두고 REJECT를 유지한다.
+3. 기존 negative case를 expected decision과 actual decision으로 비교한다.
+4. 거절: tolerance 확대, collision 제외, sample 감소, required check optional화, historical evidence 수정, P-009.
+
+Developer Decision
+위 1–4를 수용한다. Canonical configuration 이름과 joint vector는 바꾸지 않는다.
+Validator decision code와 collision config는 바꾸지 않는다.
+
+Accepted / Rejected
+Accepted — safe command만 SAFE_TO_ATTEMPT, unsafe command는 REJECT.
+Rejected — E-fixed-1을 SAFE로 바꾸거나 designated safe 1건을 실패 후 reject case로 재분류하는 것.
+
+Reason
+Designated safe 4/4는 SAFE_TO_ATTEMPT 뒤 ACCEPTED, EXECUTING, COMPLETED다.
+E-fixed-1은 sample 44/100에서 wrist_3_link와 bolt_panel로 REJECT다. submit은 증가하지 않았다.
+Negative suite는 11/11 REJECT이고 controller_submitted는 false다.
+NaN과 joint-limit도 controller에 전달되지 않았다.
+동일 suite 2회 replay는 decision, reason, collision pair, sample, submission이 같았다.
+Timeout 0, non-finite validator output 0.
+
+Verification
+evidence/P-008-FIX2. evidence/P-008과 evidence/P-008-FIX1은 수정하지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit/test_ur10e_fk.py tests/unit/test_p001b_evidence.py tests/unit/test_p006_controller.py tests/unit/test_p007_convert.py tests/unit/test_p008_validator.py tests/unit/test_p008_fix2_acceptance.py -q → 44 passed.
+P-008 result는 FINAL PASS다. 산업 안전 인증이 아니다.
+
+Elapsed Time
+2026-10-23 reconciliation은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

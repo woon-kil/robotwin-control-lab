@@ -1,0 +1,119 @@
+{
+  "canonical_configurations_unchanged": [
+    "A-zero",
+    "B-positive-1",
+    "C-mixed-1",
+    "E-fixed-1",
+    "E-fixed-3"
+  ],
+  "claim_boundary": "PROJECT TEST VALIDATOR. SAFE_TO_ATTEMPT means pre-execution checks passed.",
+  "current_acceptance": {
+    "checklist": {
+      "collision_exclusion_not_added": true,
+      "collision_validation": true,
+      "designated_safe_cases": true,
+      "deterministic_replay": true,
+      "e_fixed_1_known_collision": true,
+      "fail_closed": true,
+      "fk_trajectory": true,
+      "historical_evidence_preserved": true,
+      "invalid_input_blocked": true,
+      "joint_limit_validation": true,
+      "known_collision_controller_submission": true,
+      "non_finite_rejection": true,
+      "non_finite_validator_output": true,
+      "optional_checks_not_recorded_as_pass": true,
+      "other_negative_cases": true,
+      "p009_not_started": true,
+      "reason_codes": true,
+      "safe_command_controller_submission": true,
+      "safe_execution_completed": true,
+      "safety_certification_not_claimed": true,
+      "safety_zone_validation": true,
+      "self_collision_validation": true,
+      "timeout": true,
+      "tolerance_not_weakened": true,
+      "trajectory_validation": true,
+      "unsupported_command_rejection": true,
+      "validator_interface": true
+    },
+    "designated_safe": "SAFE_TO_ATTEMPT and controller completion",
+    "known_reject": "REJECT and controller_submitted false",
+    "result": "FINAL PASS"
+  },
+  "engineering_history": [
+    "P-008 Initial expected 5 safe and measured 4 safe plus 1 collision.",
+    "P-008 FIX1 independently classified the collision as TRUE_COLLISION.",
+    "Validator defect was NO. The test assumption was wrong.",
+    "P-008 FIX2 corrects the acceptance model and leaves the validator decision unchanged."
+  ],
+  "evidence_for_change": {
+    "classification": "TRUE_COLLISION",
+    "files": [
+      "evidence/P-008-FIX1/root_cause.json",
+      "evidence/P-008-FIX1/independent_collision_check.json",
+      "evidence/P-008-FIX1/scene_comparison.json"
+    ],
+    "independent_collision": true,
+    "scene_matches": true,
+    "validator_modified_in_fix1": false
+  },
+  "historical_acceptance": "5 canonical positive cases PASS",
+  "optional_checks": [
+    "tcp_alignment",
+    "ik_feasibility"
+  ],
+  "purpose": "Distinguish a safe workcell command from an invalid or colliding command. Passing every command is not the purpose.",
+  "reason_for_change": "The original P-008 plan incorrectly assumed that all five canonical kinematic configurations were collision-free in the P-005 workcell. P-008-FIX1 independently confirmed that E-fixed-1 intersects the bolt panel. The validator is unchanged. The acceptance model is corrected to distinguish kinematic reference configurations from workcell-safe trajectories.",
+  "reject_cases": [
+    "joint_lower_limit",
+    "joint_upper_limit",
+    "nan",
+    "positive_inf",
+    "negative_inf",
+    "unsupported_command",
+    "unknown_command",
+    "trajectory_joint_limit",
+    "tool_panel_collision",
+    "canonical_path_collision",
+    "safety_zone"
+  ],
+  "required_checks": [
+    "finite_input",
+    "command_support",
+    "target_validity",
+    "joint_limit",
+    "reachability",
+    "trajectory",
+    "fk_trajectory",
+    "robot_environment_collision",
+    "tool_environment_collision",
+    "tool_robot_collision",
+    "self_collision",
+    "safety_zone"
+  ],
+  "safe_cases": [
+    "A-zero",
+    "B-positive-1",
+    "C-mixed-1",
+    "E-fixed-3"
+  ],
+  "unchanged_safety_rules": [
+    "collision tolerance was not widened",
+    "collision geometry was not reduced",
+    "bolt_panel and wrist_3_link stay in the collision check",
+    "trajectory_sample_count stays 100",
+    "required checks stay required",
+    "fail-closed stays in force",
+    "safety zone depth stays 0.40 m",
+    "PROJECT TEST SAFETY ZONE is not an industrial safety certification",
+    "PROJECT VALIDATION PATH is not an actual UR trajectory planner"
+  ],
+  "workcell_classification": {
+    "A-zero": "DESIGNATED_SAFE",
+    "B-positive-1": "DESIGNATED_SAFE",
+    "C-mixed-1": "DESIGNATED_SAFE",
+    "E-fixed-1": "KNOWN_COLLISION",
+    "E-fixed-3": "DESIGNATED_SAFE"
+  }
+}

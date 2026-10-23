@@ -1,0 +1,12 @@
+{
+  "compared": [
+    "decision",
+    "reason codes",
+    "collision object pair",
+    "first collision sample",
+    "controller submission result"
+  ],
+  "equal": true,
+  "mismatches": [],
+  "runs": 2
+}

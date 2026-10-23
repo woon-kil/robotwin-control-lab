@@ -1,0 +1,10 @@
+RESULT FINAL PASS
+designated_safe 4/4
+negative 11/11
+e_fixed_1 REJECT sample 44
+timeouts 0
+non_finite 0
+pytest
+............................................                             [100%]
+44 passed in 31.27s
+
