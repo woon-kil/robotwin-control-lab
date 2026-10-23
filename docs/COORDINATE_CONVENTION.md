@@ -76,6 +76,7 @@ world
 - `joint/link chain`: Canonical 모델이 나중에 제공할 관절과 링크의 사슬이다. 링크 길이와 관절 원점은 이 문서에 없다.
 - `tool0`: 도구 부착 프레임의 이름이다.
 - `tcp`: MOVE_TCP와 TCP 검사에 쓰는 제어점 프레임의 이름이다. `T_tool0_tcp`의 숫자는 없다.
+- `bolt_tool_tcp`: 대표 Bolt Tool이 붙었을 때의 제어점 이름이다. 개념 사슬은 `flange` → bolt tool → `bolt_tool_tcp`다. `flange`는 로봇 플랜지이고 `tool0`은 도구 부착 프레임이다. `bolt_tool_tcp`를 `flange` 또는 `tool0`과 같은 프레임으로 두지 않는다. `T_flange_bolt_tool_tcp`와 공구 길이, 자세, 충돌 geometry의 숫자는 없다.
 
 Vision 단계에서 다음 이름이 추가될 수 있다.
 

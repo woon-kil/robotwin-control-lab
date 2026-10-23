@@ -97,4 +97,25 @@ Engineering Target은 `docs/VALIDATION_PLAN.md`에 있다. 그 표는 앞으로 
 
 오류, 타임아웃, 임포터 불일치, 기구학 실패, 기대하지 않은 충돌, Feedback 누락, NOT_EVALUATED는 기록에 남긴다. 예외를 삼키고 다음 주기를 성공으로 잇지 않는다. 테스트를 통과시키려고 기대값을 결과 쪽으로 옮기지 않는다.
 
-Required validator가 FAIL이거나 NOT_EVALUATED이면 전체 PASS를 쓰지 않는다. required 목록이 없으면 전체 PASS를 쓰지 않는다. 이 집계 규칙은 `docs/ROBOT_INTERFACE.md` 8절과 같다.
+Required validator가 FAIL이거나 NOT_EVALUATED이면 전체 PASS를 쓰지 않는다. `BOLT_FASTEN`과 `BOLT_LOOSEN`의 required 목록은 REQ-026이다. 그 외 작업은 required 목록이 없으면 전체 PASS를 쓰지 않는다. 이 집계 규칙은 `docs/ROBOT_INTERFACE.md` 8절과 같다.
+
+## 6. Bolt execution evidence
+
+Execution Evidence는 다음을 담을 수 있다.
+
+```text
+Target Torque
+Peak Torque
+Final Torque
+Rotation Angle
+Torque-Angle history
+Completion State
+Fault State
+Timestamp
+```
+
+값은 `SIMULATION TEST PARAMETER` 또는 `PROJECT TEST PARAMETER`로 정의된 시험 조건과 가상 공정 출력이다. 실제 FilterBot 또는 산업설비 specification이 아니다.
+
+HMI와 Evidence는 simulated/virtual임을 식별한다. 그 표시가 없으면 Torque 기록을 실제 센서 측정으로 읽지 않는다.
+
+`SAFE_TO_ATTEMPT` 기록은 Pre-Execution Evidence다. `FASTENED` 또는 `LOOSENED`의 Evidence가 아니다. 측정하지 않은 Torque, Angle, history를 PASS로 채우지 않는다. P-001A.1은 이 값과 PASS 파일을 만들지 않는다.

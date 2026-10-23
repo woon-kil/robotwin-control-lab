@@ -95,9 +95,14 @@ SERVO_ON, SERVO_OFF, HOLD, STOP, RESET, ESTOP도 `command_id`, `robot_id`, `comm
 HANDLE_FILTER
 PICK_OBJECT
 PLACE_OBJECT
+
+BOLT_FASTEN
+BOLT_LOOSEN
 ```
 
-이 셋은 Canonical Robot Command가 아니다. Task Decomposer를 거쳐 Canonical 명령이 된다.
+앞의 셋은 generic 후보다. `HANDLE_FILTER`는 필터 전체 공정을 MVP에서 구현하라는 명령이 아니다. `BOLT_FASTEN`과 `BOLT_LOOSEN`은 대표 Use Case의 task-level abstraction이다. Proprietary controller command가 아니다.
+
+이 명령들은 Canonical Robot Command가 아니다. Task Decomposer를 거쳐 Canonical 명령이 된다.
 
 ```text
 HANDLE_FILTER
@@ -149,9 +154,14 @@ MOVE_TCP
 HANDLE_FILTER
 PICK_OBJECT
 PLACE_OBJECT
+
+BOLT_FASTEN
+BOLT_LOOSEN
 ```
 
 이 명령은 적용 가능한 required validator의 PASS 없이 Controller execution으로 진행할 수 없다. 작업 명령을 MOVE_TCP로 분해해도 그 관문을 건너뛰지 않는다. PASS는 실행을 허용할 수 있다는 내부 판정이다.
+
+`BOLT_FASTEN`과 `BOLT_LOOSEN`의 전체 결과 이름은 `SAFE_TO_ATTEMPT`와 `REJECTED`다. `SAFE_TO_ATTEMPT` 이후에만 작업자 승인이 가능하다. 승인은 이 목록의 컨트롤러 명령이 아니다. 승인 전에 execution을 시작하지 않는다. 체결 완료는 이 판정이 아니다.
 
 Protective / Termination Commands:
 
@@ -289,7 +299,7 @@ Required Validator NOT_EVALUATED
 → Overall PASS 금지
 ```
 
-어떤 validator가 required인지는 Task와 Phase가 명시해야 한다. P-000B는 그 목록을 정하지 않는다. required 목록이 없는 작업에는 Overall PASS를 주지 않는다.
+어떤 validator가 required인지는 Task와 Phase가 명시해야 한다. `BOLT_FASTEN`과 `BOLT_LOOSEN`의 REQUIRED 목록은 REQ-026이다. 그 외 작업의 required 목록은 아직 없다. required 목록이 없는 작업에는 Overall PASS를 주지 않는다.
 
 required가 아닌 검사의 FAIL을 막을지 여부는 정하지 않았다. 그 공백을 무시 규칙으로 채우지 않는다.
 

@@ -6,11 +6,11 @@ Industrial Robot Digital Twin & Pre-Execution Validation Platform
 | --- | --- |
 | 문서 | Project Charter |
 | P-000A baseline | `bf876d22abdfb567b800ad49c966f27e4c5d7b92` |
-| 현재 Gate | P-000A.1 — Requirements Amendment |
+| 현재 Gate | P-001A.1 — Controlled Requirements Amendment |
 | 구현 | NOT STARTED |
 | 작성일 | 2026-10-23 |
 
-이 문서는 프로젝트의 목적, 범위, 구조 원칙, 가정, 초기 위험을 고정한다. 로봇 소스, 시뮬레이터 프로젝트, 제어 코드는 만들지 않는다. P-000A.1은 요구사항 개정이다. 구현 Phase가 아니며 P-000B와 P-001을 시작하지 않는다.
+이 문서는 프로젝트의 목적, 범위, 구조 원칙, 가정, 초기 위험을 고정한다. 로봇 소스, 시뮬레이터 프로젝트, 제어 코드는 만들지 않는다. P-000A.1은 요구사항 개정이다. 구현 Phase가 아니며 P-000B와 P-001을 시작하지 않는다. P-001A.1은 대표 Use Case를 Bolt Fastening / Loosening으로 정식화한다. 구현 Phase가 아니며 P-001B를 시작하지 않는다.
 
 ## 1. Project Name
 
@@ -82,7 +82,7 @@ Operator HMI는 Canonical Robot API만 호출한다. Control / Validation Core�
 UR10e
 ```
 
-P-000A는 이 후보의 소스와 버전을 확정하지 않는다. URDF, USD, 벤더 패키지를 받지 않는다. 제조사, 배포 경로, 파일 버전, 라이선스, 기구학 파라미터의 출처는 P-001을 시작하기 전에 별도의 Source Baseline Gate에서 공식 소스와 대조해 검증한다. 그 게이트를 통과하기 전에는 Golden Reference가 잠긴 것으로 기록하지 않는다.
+P-000A는 이 후보의 소스와 버전을 확정하지 않는다. URDF, USD, 벤더 패키지를 받지 않는다. 제조사, 배포 경로, 파일 버전, 라이선스, 기구학 파라미터의 출처는 P-001을 시작하기 전에 별도의 Source Baseline Gate에서 공식 소스와 대조해 검증한다. 그 게이트를 통과하기 전에는 Golden Reference가 잠긴 것으로 기록하지 않는다. P-001A가 이후 official nominal UR10e description을 핀했다. 기록은 `robot_description/SOURCE_MANIFEST.md`다. 이 절은 그 파라미터를 다시 정의하지 않는다.
 
 ## 5. Target Robot Strategy
 
@@ -314,6 +314,7 @@ P-000A의 9.1 목록은 유지한다. P-000A.1은 다음을 프로젝트 범위�
 - FilterBot 내부 설계/제어 변수는 알 수 없다고 가정한다.
 - 따라서 PMAC 계층은 공개적으로 검증 가능한 정보가 확보되기 전까지 abstraction/virtual-controller 수준으로 구현한다.
 - 실제 제품의 사양을 추정하여 구현하지 않는다.
+- 실제 체결 Tool과 Force/Torque Sensor는 확보되지 않았다고 가정한다. Bolt Torque 숫자를 제품 사양으로 추정하지 않는다.
 
 이 가정 때문에 REQ-010은 가상 컨트롤러의 통신과 상태 전이를 검증하는 요구사항이다. 비공개 프로토콜의 재구현을 요구하지 않는다.
 
@@ -483,3 +484,41 @@ Pre-Execution Validation의 PASS는 RoboTwin 내부의 engineering validation re
 이 기능은 별도 프로젝트 `Maintenance-Agentic-Twin`의 책임이다. 두 프로젝트를 현재 단계에서 통합하지 않는다.
 
 향후 양쪽 프로젝트가 각각 완료된 이후 telemetry schema 수준의 integration demo는 검토할 수 있다. 그 검토는 P-000A.1의 범위가 아니다. 명시적인 별도 Integration Gate 없이 기능을 가져오지 않는다.
+
+## 15. Representative Use Case
+
+플랫폼 정체는 1절과 같다. Bolt 작업은 대표 Use Case이며, 플랫폼을 Bolt 전용 프로그램으로 바꾸지 않는다.
+
+```text
+Robot Control Validation Platform
+        ↓
+Generic Task Architecture
+        ↓
+Representative Use Case
+        ↓
+Bolt Fastening / Loosening
+```
+
+이름은 Generic Industrial Bolt Fastening / Loosening with Torque-Aware Validation이다.
+
+도메인 동기는 위험하거나 원격인 산업설비 유지보수다. Hazardous Filter Handling은 그 동기의 일반화 예시다. 필터 전체 교체, 커버 취급, 필터 운반은 MVP 구현 범위가 아니다.
+
+대표 질문:
+
+```text
+이 로봇이 지정된 볼트 작업을 안전하게 시도할 수 있는가?
+```
+
+```text
+체결/해체 과정이 정의된 Torque/Angle 조건에 따라 정상적으로 완료되었는가?
+```
+
+첫 질문의 성공 이름은 `SAFE_TO_ATTEMPT`다. 둘째 질문의 결과 이름은 `FASTENED`, `LOOSENED`, `FAILED`, `FAULT`다. 요구의 정본은 `docs/REQUIREMENTS.md`의 REQ-023–REQ-028이다.
+
+표현 한계:
+
+```text
+Generic Industrial Maintenance Workcell inspired by publicly described remote maintenance / bolt-operation domain
+```
+
+실제 FilterBot의 구조, End-Effector, DH, Torque, 작업 sequence, control algorithm을 복제했다고 주장하지 않는다. 실제 PMAC proprietary protocol을 사용한다고 주장하지 않는다. 이 절은 구현을 시작하지 않는다.

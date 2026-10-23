@@ -1,19 +1,21 @@
 # Requirements
 
-RoboTwin Control Lab — P-000A.1 Requirements Amendment
+RoboTwin Control Lab — P-001A.1 Controlled Requirements Amendment
 
 | 항목 | 값 |
 | --- | --- |
 | 문서 | Requirements Baseline |
 | P-000A baseline | `bf876d22abdfb567b800ad49c966f27e4c5d7b92` |
-| 현재 Gate | P-000A.1 — Requirements Amendment |
+| P-001A source pin | `3b94edbc21c454b580468bd6cabbaa9204f70b50` |
+| Use case hold | `975a01c5875214976a0f5ac58d4545df7fd90091` |
+| 현재 Gate | P-001A.1 — Controlled Requirements Amendment |
 | 구현 | NOT STARTED |
 | 작성일 | 2026-10-23 |
 | 관련 문서 | `docs/PROJECT_CHARTER.md` |
 
 요구사항 ID는 `REQ-XXX`와 `NFR-XXX`를 사용한다. 이 문서는 검증 가능한 문장만 고정한다. 테스트 코드, 증거 파일, Phase 일정은 만들지 않으며 추적 행렬에서 `TBD`로 둔다.
 
-P-000A.1은 REQ-001–REQ-018과 NFR-001–NFR-007의 문장을 바꾸지 않는다. REQ-019–REQ-022를 추가한다. 이 개정은 구현 Phase가 아니다.
+P-000A.1은 REQ-001–REQ-018과 NFR-001–NFR-007의 문장을 바꾸지 않고 REQ-019–REQ-022를 추가했다. P-001A.1은 REQ-001–REQ-022와 NFR-001–NFR-007을 삭제하거나 번호를 다시 매기지 않는다. REQ-001–REQ-018의 문장은 유지한다. REQ-019–REQ-021은 대표 Use Case를 구분하는 데 필요한 문장만 고친다. REQ-023–REQ-028을 추가한다. 이 개정은 구현 Phase가 아니다. P-001B를 시작하지 않는다.
 
 숫자 목표는 4절의 초기 Engineering Target이다. 최종 보증값이 아니다.
 
@@ -223,7 +225,7 @@ Workcell은 최소한 다음 개념을 표현할 수 있어야 한다.
 - Virtual Camera
 - Lighting
 
-대표 시나리오로 다음 일반화된 산업 작업을 사용할 수 있다.
+도메인 동기는 위험하거나 원격인 산업설비 유지보수 작업이다. P-000A.1이 일반화 예시로 적었던 다음 문장은 그 동기다. MVP의 대표 구현 시나리오가 아니다.
 
 ```text
 Hazardous Filter Handling Simulation
@@ -232,6 +234,8 @@ Hazardous Filter Handling Simulation
 ```text
 The workcell is a generic hazardous filter-handling simulation inspired by industrial remote-manipulation tasks. It is not a replica of Core Robotics FilterBot or any proprietary robot system.
 ```
+
+대표 포트폴리오 Use Case는 REQ-023의 Bolt Fastening / Loosening이다. 필터 전체 교체, 커버 취급, 필터 운반은 MVP 구현 범위가 아니다. 특정 회사 제품의 전체 공정을 복제하지 않는다.
 
 실제 FilterBot의 다음 항목을 추정해서는 안 된다.
 
@@ -251,13 +255,24 @@ P-000A.1은 Workcell 모델과 시나리오 자산을 만들지 않는다.
 
 REQ-006의 Canonical Robot Command 위에 산업 작업 단위의 명령 계층을 정의한다.
 
-최소 후보:
+Generic 후보:
 
 ```text
 HANDLE_FILTER
 PICK_OBJECT
 PLACE_OBJECT
 ```
+
+이 셋은 generic task architecture에 남긴다. `HANDLE_FILTER`는 필터 전체 공정을 MVP에서 구현하라는 명령이 아니다.
+
+대표 Use Case 명령:
+
+```text
+BOLT_FASTEN
+BOLT_LOOSEN
+```
+
+이 둘은 RoboTwin 내부의 canonical task-level abstraction이다. Proprietary controller command가 아니다. Core Robotics 또는 PMAC의 실제 Task Protocol이 아니다. 이후 lower-level motion/process command로 분해된다. 개념 흐름은 REQ-027이다.
 
 Task-Level Command는 Motor나 Joint를 직접 제어하지 않는다.
 
@@ -378,6 +393,8 @@ PASS는 실제 산업 안전 인증이 아니다. RoboTwin 내부의 engineering
 
 이 요구사항은 REQ-004, REQ-005, REQ-006, REQ-009의 문장을 바꾸지 않는다. 그 검사들을 실행 전 관문으로 묶는다. P-000A.1은 validator를 구현하지 않는다.
 
+`BOLT_FASTEN`과 `BOLT_LOOSEN`에서 이 절의 전체 PASS는 프로세스 완료가 아니다. 그 결과 이름은 REQ-026의 `SAFE_TO_ATTEMPT`다. 전체 FAIL의 결과 이름은 `REJECTED`다. 체결 또는 해체 완료는 REQ-027의 Execution 결과다. 이 절의 그림에서 APPROVE는 작업자 승인이며, 승인 없이 컨트롤러 실행을 시작하지 않는다.
+
 ### REQ-022 — Safety Zone
 
 Workcell에 다음 세 가지 논리적 Safety Zone을 정의할 수 있어야 한다.
@@ -401,6 +418,273 @@ PROHIBITED
 작업 경로가 진입해서는 안 되는 영역. Pre-Execution Validation에서 trajectory reject 조건으로 사용할 수 있다.
 
 이 세 상태는 RoboTwin의 시뮬레이션 정책 모델이다. 실제 산업 안전 규격의 준수나 인증 기능이라고 주장하지 않는다. REQ-011의 컨트롤러 상태와 다른 축이다. P-000A.1은 Zone의 기하와 정책을 구현하지 않는다.
+
+### REQ-023 — Representative Use Case
+
+플랫폼의 정체는 Industrial Robot Digital Twin & Pre-Execution Validation Platform이다. Bolt 작업은 그 플랫폼의 대표 Use Case다. 프로젝트 전체를 Bolt 전용 프로그램으로 바꾸지 않는다.
+
+```text
+Robot Control Validation Platform
+        ↓
+Generic Task Architecture
+        ↓
+Representative Use Case
+        ↓
+Bolt Fastening / Loosening
+```
+
+대표 Use Case의 이름은 다음이다.
+
+```text
+Generic Industrial Bolt Fastening / Loosening with Torque-Aware Validation
+```
+
+핵심 질문은 둘이다.
+
+```text
+이 로봇이 지정된 볼트 작업을 안전하게 시도할 수 있는가?
+```
+
+```text
+체결/해체 과정이 정의된 Torque/Angle 조건에 따라 정상적으로 완료되었는가?
+```
+
+첫 질문은 Pre-Execution이다. 둘째 질문은 Execution이다. 둘을 한 판정으로 합치지 않는다.
+
+도메인 동기는 위험하거나 원격인 산업설비 유지보수다. 표현은 다음 범위를 넘지 않는다.
+
+```text
+Generic Industrial Maintenance Workcell inspired by publicly described remote maintenance / bolt-operation domain
+```
+
+금지하는 주장:
+
+- 실제 FilterBot 구조를 복제했다
+- 실제 FilterBot End-Effector다
+- 실제 FilterBot DH를 사용한다
+- 실제 FilterBot Torque를 사용한다
+- 실제 FilterBot 작업 sequence를 사용한다
+- 실제 FilterBot control algorithm을 사용한다
+- 실제 PMAC proprietary protocol을 사용한다
+
+이 요구사항은 시나리오 자산과 공구 모델을 만들지 않는다.
+
+### REQ-024 — Bolt Task Commands
+
+대표 Task-Level Command는 다음 둘이다.
+
+```text
+BOLT_FASTEN
+BOLT_LOOSEN
+```
+
+이 명령은 REQ-006의 Canonical Robot Command가 아니다. Proprietary controller command가 아니다. Task Decomposition을 거쳐 lower-level motion/process command가 된다. 분해 스키마와 코드는 이 게이트에서 만들지 않는다.
+
+`HANDLE_FILTER`, `PICK_OBJECT`, `PLACE_OBJECT`는 REQ-020의 generic 후보로 남는다. MVP는 그 명령들로 필터 교체 공정을 구현하지 않는다.
+
+### REQ-025 — Bolt Tool and Tool TCP
+
+MVP의 대표 End-Effector는 Bolt Fastening / Loosening Tool 하나다.
+
+개념적 frame chain:
+
+```text
+robot flange
+     ↓
+bolt tool
+     ↓
+bolt_tool_tcp
+```
+
+Bolt Tool은 로봇 본체와 따로 다음을 가질 수 있어야 한다.
+
+- TCP
+- geometry
+- orientation
+- collision representation
+
+`bolt_tool_tcp`는 `flange`와 다른 프레임이다. `tool0`과도 같은 프레임으로 두지 않는다. 공구 길이, 자세, 충돌 geometry의 숫자는 이 개정에 없다. 특정 제품의 Tool dimensions를 추정하지 않는다.
+
+MVP에서 제외한다.
+
+- Filter Gripper
+- Cover Handling Tool
+- Filter Transport Tool
+- Inspection Tool
+- Automatic Tool Changer implementation
+
+이후 architecture는 tool extension을 허용할 수 있다. 이 게이트는 multi-tool framework를 구현하지 않는다.
+
+### REQ-026 — Bolt Pre-Execution Result
+
+`BOLT_FASTEN`과 `BOLT_LOOSEN`의 Pre-Execution 결과는 다음 둘 중 하나다.
+
+```text
+SAFE_TO_ATTEMPT
+REJECTED
+```
+
+`SAFE_TO_ATTEMPT`는 작업을 시도할 조건이 갖춰졌다는 뜻이다. 다음을 의미하지 않는다.
+
+- `FASTENED`
+- `LOOSENED`
+- 실제 작업 성공 보장
+- 산업 안전 인증
+- 실제 체결 Torque 보장
+
+REQUIRED validator는 다음 전부다. OPTIONAL validator는 이 개정에서 만들지 않는다.
+
+| validator | 구분 |
+| --- | --- |
+| Reachability | REQUIRED |
+| IK Feasibility | REQUIRED |
+| Joint Limits | REQUIRED |
+| Robot Collision | REQUIRED |
+| Bolt Tool Collision | REQUIRED |
+| Safety Zone | REQUIRED |
+| Bolt Tool TCP Alignment | REQUIRED |
+| Approach Trajectory | REQUIRED |
+| Task / Tool Compatibility | REQUIRED |
+
+Robot Collision은 로봇 몸과 링크 사이 간섭을 포함한다. 그 검사가 비어 있으면 Robot Collision은 NOT_EVALUATED다. Bolt Tool Collision은 공구 geometry의 충돌이다. 둘을 한 검사로 합쳐 숨기지 않는다.
+
+Task / Tool Compatibility는 명령이 `BOLT_FASTEN` 또는 `BOLT_LOOSEN`이고, 선택된 공구가 Bolt Fastening / Loosening Tool일 때 성립한다. 다른 공구는 MVP에 없으므로 그 조합은 FAIL이다.
+
+REQUIRED 중 하나라도 FAIL이면 결과는 `REJECTED`다. Controller execution을 허용하지 않는다. REQUIRED 중 하나라도 NOT_EVALUATED이면 `SAFE_TO_ATTEMPT`를 주지 않는다. 이 집계는 `docs/ROBOT_INTERFACE.md` 8절과 같다.
+
+Torque 한계는 이 REQUIRED 목록에 없다. Torque는 REQ-028의 Execution feedback이다.
+
+`SAFE_TO_ATTEMPT`인 경우에만 작업자의 `APPROVE & EXECUTE`가 가능하다. 승인 전에 Controller execution을 시작하지 않는다. 승인은 REQ-006 명령이 아니다.
+
+STOP과 ESTOP의 protective/termination 의미는 P-000B 결정을 유지한다. 그 명령은 이 절의 승인을 기다리지 않는다.
+
+대표 Failure Demo는 문서 수준의 요구다. 구현과 측정은 이 게이트의 일이 아니다.
+
+```text
+BOLT_FASTEN
+       ↓
+SIMULATE
+       ↓
+Reachability      PASS
+IK                PASS
+Joint Limit       PASS
+Tool Collision    FAIL
+       ↓
+REJECTED
+       ↓
+EXECUTION BLOCKED
+```
+
+이 흐름은 이후 포트폴리오의 대표 Failure Evidence로 쓸 수 있다. 이 게이트는 그 Evidence 파일을 만들지 않는다.
+
+### REQ-027 — Bolt Execution Process
+
+Bolt 작업의 실행 과정은 Generic Fastening Process abstraction이다. 특정 FilterBot controller state machine의 복제가 아니다. REQ-011의 controller state와 다른 축이다.
+
+개념 state:
+
+```text
+APPROACH
+ALIGN
+ENGAGE
+ROTATE
+COMPLETE
+RETRACT
+```
+
+Failure와 Fault로의 이탈을 허용한다. 이 게이트는 완전한 전이표를 잠그지 않는다. 잠그지 않은 전이를 허용된 전이로 구현하지 않는다.
+
+Execution 결과는 Pre-Execution 결과와 분리한다.
+
+```text
+FASTENED
+LOOSENED
+FAILED
+FAULT
+```
+
+다음 조합이 모두 가능해야 한다.
+
+```text
+Pre-Execution: SAFE_TO_ATTEMPT
+Execution: FASTENED
+```
+
+```text
+Pre-Execution: SAFE_TO_ATTEMPT
+Execution: FAILED
+```
+
+`SAFE_TO_ATTEMPT`만으로 `FASTENED`나 `LOOSENED`를 기록하지 않는다. `REJECTED`인 작업은 Execution result를 성공으로 남기지 않는다.
+
+대표 정상 흐름은 문서 수준의 요구다.
+
+```text
+BOLT_FASTEN
+       ↓
+Bolt Target Pose
+       ↓
+Bolt Tool TCP
+       ↓
+SIMULATE
+       ↓
+Reachability
+IK
+Joint Limit
+Robot / Tool Collision
+Safety Zone
+Tool TCP Alignment
+Approach Trajectory
+       ↓
+SAFE_TO_ATTEMPT
+       ↓
+Operator Approval
+       ↓
+APPROACH
+ALIGN
+ENGAGE
+ROTATE
+       ↓
+Virtual Torque / Angle Feedback
+       ↓
+FASTENED
+       ↓
+RETRACT
+       ↓
+Evidence
+```
+
+`BOLT_LOOSEN`의 완료 결과 이름은 `LOOSENED`다. 나머지 관문은 같다. 이 게이트는 이 흐름을 실행하지 않는다.
+
+### REQ-028 — Virtual Torque and Angle Evidence
+
+Execution 단계에서 다음 feedback을 사용할 수 있어야 한다.
+
+- Rotation Angle
+- Rotation Speed
+- Torque Feedback
+- Contact State
+- Tool State
+- Controller State
+
+이 feedback은 Pre-Execution 결과가 아니다.
+
+실제 산업용 체결 Tool과 Force/Torque Sensor가 있다는 전제를 두지 않는다. 초기 구현은 Virtual Fastening Process와 Virtual Torque Sensor를 사용할 수 있다. HMI와 Evidence는 simulated/virtual임을 식별할 수 있어야 한다. 실제 센서 측정값으로 표현하지 않는다.
+
+실제 FilterBot이나 특정 산업설비의 Torque 값을 추정하지 않는다. 시험에 숫자가 필요하면 그 숫자를 `SIMULATION TEST PARAMETER` 또는 `PROJECT TEST PARAMETER`로 정의한다. 실제 장비 specification이라고 적지 않는다. 이 개정은 Torque 숫자를 만들지 않는다.
+
+이후 Execution Evidence는 다음을 저장할 수 있어야 한다.
+
+- Target Torque
+- Peak Torque
+- Final Torque
+- Rotation Angle
+- Torque-Angle history
+- Completion State
+- Fault State
+- Timestamp
+
+측정하지 않은 값을 PASS evidence로 만들지 않는다. 이 게이트는 숫자와 PASS evidence를 생성하지 않는다.
 
 ## 2. Non-Functional Requirements
 
@@ -455,8 +739,9 @@ Command, Feedback, Error, Latency를 기록할 수 있어야 한다.
 - FilterBot 내부 설계/제어 변수는 알 수 없다고 가정한다.
 - 따라서 PMAC 계층은 공개적으로 검증 가능한 정보가 확보되기 전까지 abstraction/virtual-controller 수준으로 구현한다.
 - 실제 제품의 사양을 추정하여 구현하지 않는다.
+- 실제 체결 Tool과 Force/Torque Sensor는 확보되지 않았다고 가정한다. Bolt Torque 숫자는 제품 사양이 아니다.
 
-REQ-010은 이 가정 안에서만 해석한다.
+REQ-010은 이 가정 안에서만 해석한다. REQ-028의 Torque도 이 가정 안에서만 해석한다.
 
 ## 4. Initial Engineering Targets
 
@@ -499,9 +784,9 @@ Max
 
 ## 5. Requirement Traceability Matrix
 
-Test와 Evidence는 아직 없다. 만들지 않은 테스트와 증거 경로 대신 `TBD`를 적는다.
+Test와 Evidence 파일은 아직 없다. 만들지 않은 테스트와 증거 경로 대신 `TBD`를 적는다.
 
-Gate도 `TBD`이다. 추적 행렬 예시의 `P-001`은 열 형식을 보여 주기 위한 표기이며, 이 기준선은 Phase를 배정하지 않는다. P-000A.1도 Test, Evidence, Gate를 만들지 않으며 P-000B 또는 P-001을 시작하지 않는다.
+Gate도 `TBD`이다. 추적 행렬 예시의 `P-001`은 열 형식을 보여 주기 위한 표기이며, 이 기준선은 Phase를 배정하지 않는다. P-001A.1은 Test 파일을 만들지 않으며 P-001B를 시작하지 않는다.
 
 Component 열은 이후 구현이 놓일 논리적 위치이다. 해당 경로의 코드는 아직 없다.
 
@@ -536,3 +821,20 @@ Component 열은 이후 구현이 놓일 논리적 위치이다. 해당 경로�
 | NFR-005 Logging | evidence | TBD | TBD | TBD |
 | NFR-006 Failure Visibility | evidence | TBD | TBD | TBD |
 | NFR-007 Version Pinning | docs | TBD | TBD | TBD |
+| REQ-023 Representative Use Case | docs | TBD | TBD | TBD |
+| REQ-024 Bolt Task Commands | core | TBD | TBD | TBD |
+| REQ-025 Bolt Tool and Tool TCP | core | TBD | TBD | TBD |
+| REQ-026 Bolt Pre-Execution Result | core | TBD | TBD | TBD |
+| REQ-027 Bolt Execution Process | core | TBD | TBD | TBD |
+| REQ-028 Virtual Torque and Angle Evidence | evidence, hmi | TBD | TBD | TBD |
+
+P-001A.1이 추가한 요구사항의 연결이다. Planned Gate는 열지 않았다. Evidence type은 이후 기록이 담아야 할 종류이며, 이번 게이트의 PASS 파일이 아니다.
+
+| Requirement | Architecture responsibility | Planned Gate | Evidence type |
+| --- | --- | --- | --- |
+| REQ-023 Representative Use Case | 플랫폼 정체와 대표 Use Case의 경계. Task Command Layer가 작업 이름을 받고, Workcell은 generic으로 남는다. | TBD. 열지 않음 | 문서 결정. 측정 Evidence 아님 |
+| REQ-024 Bolt Task Commands | Task Command Layer가 명령을 받고 Task Decomposer가 motion/process 후보로 분해한다. | TBD. 열지 않음 | task command 기록 |
+| REQ-025 Bolt Tool and Tool TCP | Frame Manager가 `flange`, bolt tool, `bolt_tool_tcp`를 구분한다. 숫자는 없다. | TBD. 열지 않음 | tool frame 정의 기록 |
+| REQ-026 Bolt Pre-Execution Result | Validation Engine이 REQUIRED 목록으로 `SAFE_TO_ATTEMPT` 또는 `REJECTED`를 낸다. | TBD. 열지 않음 | pre-execution result 기록 |
+| REQ-027 Bolt Execution Process | 실행 과정 state와 `FASTENED` / `LOOSENED` / `FAILED` / `FAULT`는 controller state와 다른 축이다. | TBD. 열지 않음 | execution result 기록 |
+| REQ-028 Virtual Torque and Angle Evidence | Evidence Recorder와 Operator HMI가 virtual 표시와 Torque-Angle 항목을 남긴다. | TBD. 열지 않음 | virtual로 표시된 torque-angle 기록 |

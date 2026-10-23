@@ -103,7 +103,7 @@ Max
 
 P-001의 목적은 `docs/ARCHITECTURE.md` 5절과 같다. 핀된 공개 로봇 모델에 대해 독립 FK의 정량 기준선을 만드는 것이다.
 
-P-000B는 그 측정을 실행하지 않는다. UR10e의 source, repository, commit, model version을 고르지 않는다. Source Selection과 Pinning이 P-001의 첫 작업이다. 그 전이 만든 FK 숫자는 이 계획의 PASS가 될 수 없다.
+P-000B는 그 측정을 실행하지 않는다. P-000B 시점에는 UR10e의 source, repository, commit, model version을 고르지 않았다. P-001A가 이후 official nominal UR10e를 핀했다. 기록은 `robot_description/SOURCE_MANIFEST.md`다. 그 핀 이후에도 이 계획의 FK 측정은 실행되지 않았다. 그 전에 만든 FK 숫자는 이 계획의 PASS가 될 수 없다.
 
 ## 6. Physics and safety claims
 
@@ -111,12 +111,22 @@ P-000B는 그 측정을 실행하지 않는다. UR10e의 source, repository, com
 
 Safety Zone 위반은 측정 후보이며, NORMAL, WARNING, PROHIBITED는 시뮬레이션 정책 모델이다. 산업 안전 규격의 인증 결과가 아니다.
 
+## 7. Bolt use case boundary
+
+`BOLT_FASTEN`과 `BOLT_LOOSEN`의 Pre-Execution 결과는 `SAFE_TO_ATTEMPT` 또는 `REJECTED`다. REQUIRED 목록은 REQ-026이다. 그 결과는 `FASTENED`, `LOOSENED`, `FAILED`, `FAULT`가 아니다.
+
+Execution 판정은 Rotation Angle, Rotation Speed, Torque Feedback, Contact State, Tool State, Controller State를 사용할 수 있다. Torque 숫자는 `SIMULATION TEST PARAMETER` 또는 `PROJECT TEST PARAMETER`다. 실제 장비 specification이 아니다. 이 계획은 Torque 숫자를 만들지 않는다.
+
+Virtual Fastening Process와 Virtual Torque Sensor의 기록은 simulated/virtual로 식별한다. 실제 센서 측정값으로 적지 않는다.
+
+대표 정상 흐름과 대표 Failure Demo는 REQ-026과 REQ-027의 문서 요구다. 이 계획은 그 흐름을 실행하지 않고 PASS Evidence를 만들지 않는다.
+
 ## 검증 근거
 
 이 계획의 숫자를 기존 문서와 대조한 기록이다. 새 측정은 하지 않았다.
 
-- `docs/REQUIREMENTS.md:461-486` — 4절 초기 Engineering Target. FK Position Error `< 0.5 mm`, FK Orientation Error `< 0.1 deg`, Joint Target Error `< 0.1 deg`, Cross-Simulator TCP Position Error `< 1.0 mm`, Unexpected Collision `0`, Reliability Target `500 cycles`. 상태 열은 `보증값 아님`이다. Trajectory Completion과 Joint Limit Violation 행은 이 표에 없다.
-- `docs/REQUIREMENTS.md:176-193` — REQ-017. Latency PASS 임계값은 없고 Mean, P50, P95, P99, Max만 있다. 20 ms 한도는 이 파일에 없다.
-- `docs/REQUIREMENTS.md:195-205` — REQ-018. 반복 목표 횟수는 `500 cycles`다.
-- `docs/PROJECT_CHARTER.md:51-76` — 차터 그림은 PMAC-compatible Controller를 ROS2 아래에 둔다. 이 계획 문서는 그 그림을 바꾸지 않는다.
+- `docs/REQUIREMENTS.md:746-771` — 4절 초기 Engineering Target. FK Position Error `< 0.5 mm`, FK Orientation Error `< 0.1 deg`, Joint Target Error `< 0.1 deg`, Cross-Simulator TCP Position Error `< 1.0 mm`, Unexpected Collision `0`, Reliability Target `500 cycles`. 상태 열은 `보증값 아님`이다. Trajectory Completion과 Joint Limit Violation 행은 이 표에 없다.
+- `docs/REQUIREMENTS.md:181-195` — REQ-017. Latency PASS 임계값은 없고 Mean, P50, P95, P99, Max만 있다. 20 ms 한도는 이 파일에 없다.
+- `docs/REQUIREMENTS.md:197-207` — REQ-018. 반복 목표 횟수는 `500 cycles`다.
+- `docs/PROJECT_CHARTER.md:67-73` — 차터 그림은 Unity, Isaac, ROS2, PMAC를 대등한 어댑터로 둔다. 이 계획 문서는 그 그림을 바꾸지 않는다.
 - ROS REP-103, https://reps.openrobotics.org/rep-0103/ , 조회 2026-10-23 — SI 단위, 오른손 좌표계, 각의 기본 단위는 radian. 이 계획의 degree 표기는 목표를 읽는 단위이고 저장 단위를 바꾸지 않는다.

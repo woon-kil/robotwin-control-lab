@@ -245,7 +245,7 @@ PMAC에만 있는 표현은 Canonical API를 바꾸지 않는다. 가상 컨트�
 
 ## 4. Execution rule
 
-동작과 작업 실행 명령은 HOME, MOVE_JOINT, MOVE_TCP, HANDLE_FILTER, PICK_OBJECT, PLACE_OBJECT다. 이 명령은 적용 가능한 required validator의 PASS 없이 컨트롤러 실행으로 진행하지 않는다.
+동작과 작업 실행 명령은 HOME, MOVE_JOINT, MOVE_TCP, HANDLE_FILTER, PICK_OBJECT, PLACE_OBJECT, BOLT_FASTEN, BOLT_LOOSEN이다. 이 명령은 적용 가능한 required validator의 PASS 없이 컨트롤러 실행으로 진행하지 않는다.
 
 ```text
 Validation FAIL
@@ -256,6 +256,8 @@ Validation PASS
 ```
 
 PASS는 실행을 허가할 수 있다는 뜻이다. 산업 안전 인증이 아니다.
+
+`BOLT_FASTEN`과 `BOLT_LOOSEN`의 Pre-Execution 전체 결과 이름은 `SAFE_TO_ATTEMPT`와 `REJECTED`다. `SAFE_TO_ATTEMPT`는 체결이나 해체 완료가 아니다. 작업자 승인 전에 컨트롤러 실행을 시작하지 않는다. REQUIRED 목록과 Execution 결과는 REQ-026, REQ-027이다. 실행 과정 state는 REQ-011의 controller state를 대체하지 않는다.
 
 STOP과 ESTOP은 보호 및 종료 명령이다. 동작 가능성을 묻는 명령이 아니므로 Pre-Execution Motion Validation의 PASS를 요구하지 않는다.
 
@@ -313,8 +315,30 @@ P-001을 시작할 때 Source Selection과 Pinning을 먼저 한다. 이 문서�
 이 게이트가 결정하지 않은 항목이다. 추정으로 채우지 않는다.
 
 - SERVO_OFF, HOLD, RESET에 Pre-Execution Motion Validation을 적용할지는 정하지 않았다.
-- 작업별로 어떤 validator가 required인지는 아직 목록이 없다.
+- 작업별로 어떤 validator가 required인지는, Bolt 대표 명령을 제외하면 아직 목록이 없다. `BOLT_FASTEN`과 `BOLT_LOOSEN`의 REQUIRED 목록은 REQ-026이다.
 - 타임스탬프의 epoch와 시계 종류는 정하지 않았다.
 - Quaternion의 부호 정규화는 정하지 않았다.
 - 프레임 사이 수치 변환과 시뮬레이터 변환 행렬은 정하지 않았다.
 - UR10e 소스는 P-001A에서 official nominal description으로 핀했다. 기록은 `robot_description/SOURCE_MANIFEST.md`다. 이 아키텍처 문서는 그 핀의 파라미터를 다시 정의하지 않는다.
+
+## 9. Representative use case
+
+P-001A.1이 대표 Use Case를 이 계약 위에 얹는다. 1절의 계층, 어댑터 분리, STOP/ESTOP 경로는 유지한다.
+
+```text
+Robot Control Validation Platform
+        ↓
+Generic Task Architecture
+        ↓
+Representative Use Case
+        ↓
+Bolt Fastening / Loosening
+```
+
+Task Command Layer는 `BOLT_FASTEN`과 `BOLT_LOOSEN`을 task-level 명령으로 받는다. Canonical Robot Command로 올리지 않는다. `HANDLE_FILTER`는 generic 후보로 남고, 필터 전체 공정의 MVP 구현 명령이 아니다.
+
+Frame Manager는 대표 공구의 제어점을 `bolt_tool_tcp`로 구분한다. 사슬은 `flange` → bolt tool → `bolt_tool_tcp`다. 숫자는 없다.
+
+Validation Engine은 그 두 명령의 REQUIRED 검사로 `SAFE_TO_ATTEMPT` 또는 `REJECTED`를 낸다. Evidence Recorder와 Operator HMI는 Execution의 Torque/Angle을 virtual로 표시한다. 실제 제품 Torque와 proprietary protocol은 이 절의 입력이 아니다.
+
+이 절은 FK, IK, Tool, Torque, Unity, Isaac, P-001B를 시작하지 않는다.

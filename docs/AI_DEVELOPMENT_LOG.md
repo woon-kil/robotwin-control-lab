@@ -256,3 +256,63 @@ Elapsed Time
 2026-10-23 09:02 KST 수신. 조회와 문서 작성은 한 세션이다.
 구현 사이클 시간은 측정하지 않았다.
 ```
+
+## P-001A.1 — Bolt Use Case Controlled Requirements Amendment
+
+```text
+Task
+P-001A.1. HELD였던 대표 Use Case를 요구사항과 아키텍처에 정식 반영한다.
+구현은 하지 않는다.
+
+Problem
+Hazardous Filter Handling이 대표 구현 시나리오처럼 남아 있으면
+이후 Workcell과 Tool과 HMI가 필터 전체 공정으로 넓어진다.
+Pre-Execution 성공과 체결 완료를 한 단어로 부르면 시도 허용이 작업 성공이 된다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. 대표 구현을 Generic Industrial Bolt Fastening / Loosening으로 좁힌다.
+   필터 작업 문장은 도메인 동기로 남기고 삭제하지 않는다.
+2. MVP Tool은 Bolt Fastening / Loosening Tool 하나다.
+   필터 그리퍼, 커버, 운반, 검사, Automatic Tool Changer는 구현 대상이 아니다.
+3. Pre-Execution 결과는 SAFE_TO_ATTEMPT 또는 REJECTED다.
+   Execution 결과는 FASTENED, LOOSENED, FAILED, FAULT다.
+4. Torque는 Pre-Execution REQUIRED 조건이 아니다.
+   Execution feedback이며, 초기 값은 Virtual Fastening Process와 Virtual Torque Sensor다.
+   실제 제품 Torque는 추정하지 않는다.
+   숫자가 필요하면 SIMULATION TEST PARAMETER 또는 PROJECT TEST PARAMETER다.
+5. HMI와 Evidence는 simulated/virtual임을 식별한다.
+6. 거부한 작업: FK, IK, Bolt/Torque simulator, Tool 모델, URDF 수정,
+   Unity, Isaac, ROS2, PMAC, HMI, trajectory, collision, Long-Reach, P-001B.
+   REQ-001–REQ-022와 NFR-001–NFR-007은 삭제하거나 번호를 바꾸지 않는다.
+
+Developer Decision
+개발자 지시에 따라 975a01c의 HELD 결정을 정식 반영한다.
+기존 번호는 유지하고 REQ-023–REQ-028을 추가한다.
+BOLT_FASTEN과 BOLT_LOOSEN의 REQUIRED validator 9개는 모두 필수이고 OPTIONAL은 만들지 않는다.
+
+Accepted / Rejected
+Accepted — 대표 Use Case 축소, Tool 하나, 두 결과 축의 분리, virtual Torque 표시, 제품 Torque 미사용.
+Rejected — 필터 전체 공정 구현, 제품 사양 추정, proprietary protocol, 이번 게이트의 구현과 P-001B.
+
+Reason
+필터 전체 공정은 대표 데모의 범위를 공구 여러 개와 미확인 제품 순서로 넓힌다.
+Bolt Tool 하나만 두면 Tool TCP와 충돌과 승인의 경계를 한 공구로 잠글 수 있다.
+SAFE_TO_ATTEMPT는 시도 허용이고 FASTENED는 실행 후 완료라서 같은 PASS가 아니다.
+Torque는 시도 전에 성공을 보장하지 못한다. 실행 중 피드백으로만 완료를 판정한다.
+실제 제품 Torque는 알 수 없고, 추정하면 시험 조건이 장비 사양처럼 남는다.
+Virtual 표시가 없으면 그 시험 조건을 센서 측정으로 읽는다.
+
+Verification
+REQ-001–REQ-022와 NFR-001–NFR-007의 번호는 유지했다.
+REQ-023–REQ-028과 추적 표를 추가했다.
+대표 정상 흐름과 Tool Collision FAIL → REJECTED → EXECUTION BLOCKED를 문서에 적었다.
+Torque 숫자는 만들지 않았다.
+FK, Unity, Isaac, P-001B 파일은 만들지 않았다.
+
+Elapsed Time
+2026-10-23 09:37 KST 수신. 문서 개정은 한 세션이다.
+구현 사이클 시간은 측정하지 않았다.
+```
