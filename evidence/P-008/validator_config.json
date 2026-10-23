@@ -1,0 +1,69 @@
+{
+  "alignment_class": "NOT_APPLICABLE for MOVE_JOINT. No bolt target is attached to the command. NOT_APPLICABLE is not PASS.",
+  "alignment_threshold_deg": null,
+  "claim": "PROJECT TEST VALIDATOR. SAFE_TO_ATTEMPT means pre-execution checks passed.",
+  "collision": {
+    "broadphase_cell_m": 0.05,
+    "degenerate_axis_length_squared": 1e-24,
+    "mesh_source": "pinned UR10e collision STL",
+    "self_collision_adjacent_links_excluded": true,
+    "tool_parent_link_excluded": "wrist_3_link",
+    "touching_faces_are_collision": false
+  },
+  "joint_limit_rule": "inclusive. value < lower or value > upper is a violation. Same rule as core.kinematics.limits.limit_violations. At-limit is inside.",
+  "negative_search": {
+    "elbow_rad": {
+      "start": -1.2,
+      "step": 0.3,
+      "stop": 1.2
+    },
+    "shoulder_lift_rad": {
+      "start": -1.0,
+      "step": 0.25,
+      "stop": 1.0
+    },
+    "shoulder_pan_rad": {
+      "start": -1.2,
+      "step": 0.3,
+      "stop": 1.2
+    },
+    "wrist_1_rad": {
+      "start": -1.5,
+      "step": 0.5,
+      "stop": 1.5
+    },
+    "wrist_2_rad": {
+      "start": -1.0,
+      "step": 1.0,
+      "stop": 1.0
+    },
+    "wrist_3_rad": {
+      "start": -1.0,
+      "step": 1.0,
+      "stop": 1.0
+    }
+  },
+  "not_claims": [
+    "bolt fastening succeeded",
+    "process succeeded",
+    "certified safe",
+    "human-safe",
+    "collision impossible",
+    "industrial safety certified",
+    "ISO safety zone",
+    "human protection zone",
+    "actual robot trajectory planner",
+    "IK success"
+  ],
+  "safety_zone": {
+    "boundary": "inclusive",
+    "class": "PROJECT TEST SAFETY ZONE",
+    "explicit_aabb_m": null,
+    "mode": "beyond_bolt_panel_positive_x",
+    "prohibited_depth_m": 0.4
+  },
+  "trajectory_formula": "q(s) = q_start + s*(q_target - q_start)",
+  "trajectory_model": "PROJECT VALIDATION PATH",
+  "trajectory_parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+  "trajectory_sample_count": 100
+}

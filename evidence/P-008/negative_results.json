@@ -1,0 +1,551 @@
+{
+  "cases": [
+    {
+      "actual_reason": "JOINT_LIMIT",
+      "blocking_reason_codes": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "joint_lower_limit",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "JOINT_LIMIT",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          0.0,
+          0.0,
+          -3.3415926535897933,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "JOINT_LIMIT",
+      "blocking_reason_codes": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "joint_upper_limit",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "JOINT_LIMIT",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          6.483185307179586,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "blocking_reason_codes": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "nan",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": null
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "blocking_reason_codes": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "positive_inf",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": null
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "blocking_reason_codes": [
+        "NON_FINITE",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "negative_inf",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "NON_FINITE",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": null
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "UNSUPPORTED_COMMAND",
+      "blocking_reason_codes": [
+        "UNSUPPORTED_COMMAND",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "unsupported_command",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "UNSUPPORTED_COMMAND",
+      "input": {
+        "command_type": "MOVE_TCP",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_reason": "UNSUPPORTED_COMMAND",
+      "blocking_reason_codes": [
+        "UNSUPPORTED_COMMAND",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "unknown_command",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "UNSUPPORTED_COMMAND",
+      "input": {
+        "command_type": "UNKNOWN",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_reason": "TRAJECTORY_INVALID",
+      "blocking_reason_codes": [
+        "JOINT_LIMIT",
+        "UNREACHABLE",
+        "TRAJECTORY_INVALID",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED",
+        "NOT_EVALUATED"
+      ],
+      "case": "trajectory_joint_limit",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "TRAJECTORY_INVALID",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          0.0,
+          0.0,
+          -3.3415926535897933,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "COLLISION",
+      "blocking_reason_codes": [
+        "COLLISION"
+      ],
+      "case": "tool_panel_collision",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "COLLISION",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": {
+          "in_prohibited_zone": false,
+          "joint_position": [
+            -0.30000000000000004,
+            -0.75,
+            0.9000000000000001,
+            -0.5,
+            1.0,
+            -1.0
+          ],
+          "tcp_m": [
+            1.1655221725454847,
+            -0.11233017972645298,
+            1.1839740526480402
+          ],
+          "tool_hits": [
+            {
+              "a": "tool_placeholder",
+              "b": "bolt_panel"
+            }
+          ]
+        },
+        "start_q": [
+          -0.30000000000000004,
+          -0.75,
+          0.9000000000000001,
+          -0.5,
+          1.0,
+          -1.0
+        ],
+        "target_q": [
+          -0.30000000000000004,
+          -0.75,
+          0.9000000000000001,
+          -0.5,
+          1.0,
+          -1.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+    },
+    {
+      "actual_reason": "COLLISION",
+      "blocking_reason_codes": [
+        "COLLISION"
+      ],
+      "case": "canonical_path_collision",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "COLLISION",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": null,
+        "start_q": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_q": [
+          0.1,
+          -0.2,
+          0.3,
+          -0.4,
+          0.5,
+          -0.6
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+    },
+    {
+      "actual_reason": "SAFETY_ZONE",
+      "blocking_reason_codes": [
+        "COLLISION",
+        "SAFETY_ZONE"
+      ],
+      "case": "safety_zone",
+      "controller_joint_position_after": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "controller_submitted": false,
+      "decision": "REJECT",
+      "expected_reason": "SAFETY_ZONE",
+      "input": {
+        "command_type": "MOVE_JOINT",
+        "screen": {
+          "in_prohibited_zone": true,
+          "joint_position": [
+            -0.30000000000000004,
+            -0.5,
+            0.5999999999999999,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "tcp_m": [
+            1.2749778714870814,
+            -0.14618879513850933,
+            1.1697078507198053
+          ],
+          "tool_hits": []
+        },
+        "start_q": [
+          -0.30000000000000004,
+          -0.5,
+          0.5999999999999999,
+          -1.0,
+          1.0,
+          -1.0
+        ],
+        "target_q": [
+          -0.30000000000000004,
+          -0.5,
+          0.5999999999999999,
+          -1.0,
+          1.0,
+          -1.0
+        ]
+      },
+      "matched_expected_reason": true,
+      "submit_count_after": 0,
+      "submit_count_before": 0,
+      "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+    }
+  ]
+}

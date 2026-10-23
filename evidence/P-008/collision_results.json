@@ -1,0 +1,777 @@
+{
+  "checks": {
+    "robot_environment_collision": {
+      "negative": [
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_lower_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_upper_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "nan",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "positive_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "negative_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unsupported_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unknown_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "TRAJECTORY_INVALID",
+          "case": "trajectory_joint_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "tool_panel_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "canonical_path_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+        },
+        {
+          "actual_reason": "SAFETY_ZONE",
+          "case": "safety_zone",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+        }
+      ],
+      "positive": [
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5600,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 0,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "robot_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "A-zero",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5326,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 274,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 601596
+            },
+            "name": "robot_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "B-positive-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5457,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 143,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 266585
+            },
+            "name": "robot_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "C-mixed-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 2478,
+              "collision": true,
+              "involved_objects": [
+                {
+                  "a": "wrist_3_link",
+                  "b": "bolt_panel"
+                }
+              ],
+              "joint_state": [
+                0.044444444444444446,
+                -0.08888888888888889,
+                0.13333333333333333,
+                -0.17777777777777778,
+                0.2222222222222222,
+                -0.26666666666666666
+              ],
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 42,
+              "sample_count": 100,
+              "sample_index": 44,
+              "tcp_m": [
+                1.2086629276752072,
+                0.34187231053114475,
+                0.8443252683718095
+              ],
+              "triangle_tests": 15786
+            },
+            "name": "robot_environment_collision",
+            "reason_code": "COLLISION",
+            "result": "FAIL"
+          },
+          "configuration": "E-fixed-1",
+          "decision": "REJECT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5538,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 62,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "robot_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-3",
+          "decision": "SAFE_TO_ATTEMPT"
+        }
+      ]
+    },
+    "self_collision": {
+      "negative": [
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_lower_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_upper_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "nan",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "positive_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "negative_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unsupported_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unknown_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "TRAJECTORY_INVALID",
+          "case": "trajectory_joint_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "tool_panel_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "canonical_path_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+        },
+        {
+          "actual_reason": "SAFETY_ZONE",
+          "case": "safety_zone",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+        }
+      ],
+      "positive": [
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5600,
+              "adjacent_links_excluded": true,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "label": "EVALUATED",
+              "narrow_phase_pairs": 0,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "self_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "A-zero",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5326,
+              "adjacent_links_excluded": true,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "label": "EVALUATED",
+              "narrow_phase_pairs": 274,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 601596
+            },
+            "name": "self_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "B-positive-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5457,
+              "adjacent_links_excluded": true,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "label": "EVALUATED",
+              "narrow_phase_pairs": 143,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 266585
+            },
+            "name": "self_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "C-mixed-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5328,
+              "adjacent_links_excluded": true,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "label": "EVALUATED",
+              "narrow_phase_pairs": 272,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 302903
+            },
+            "name": "self_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-1",
+          "decision": "REJECT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5538,
+              "adjacent_links_excluded": true,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "label": "EVALUATED",
+              "narrow_phase_pairs": 62,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "self_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-3",
+          "decision": "SAFE_TO_ATTEMPT"
+        }
+      ]
+    },
+    "tool_environment_collision": {
+      "negative": [
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_lower_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_upper_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "nan",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "positive_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "negative_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unsupported_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unknown_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "TRAJECTORY_INVALID",
+          "case": "trajectory_joint_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "tool_panel_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "canonical_path_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+        },
+        {
+          "actual_reason": "SAFETY_ZONE",
+          "case": "safety_zone",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+        }
+      ],
+      "positive": [
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5600,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 0,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "tool_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "A-zero",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5326,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 274,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 601596
+            },
+            "name": "tool_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "B-positive-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5457,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 143,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 266585
+            },
+            "name": "tool_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "C-mixed-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5328,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 272,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 302903
+            },
+            "name": "tool_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-1",
+          "decision": "REJECT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5538,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 62,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "tool_environment_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-3",
+          "decision": "SAFE_TO_ATTEMPT"
+        }
+      ]
+    },
+    "tool_robot_collision": {
+      "negative": [
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_lower_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "JOINT_LIMIT",
+          "case": "joint_upper_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "nan",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "positive_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "NON_FINITE",
+          "case": "negative_inf",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 non-finite joint value"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unsupported_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "UNSUPPORTED_COMMAND",
+          "case": "unknown_command",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 unsupported command"
+        },
+        {
+          "actual_reason": "TRAJECTORY_INVALID",
+          "case": "trajectory_joint_limit",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "tool_panel_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+        },
+        {
+          "actual_reason": "COLLISION",
+          "case": "canonical_path_collision",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+        },
+        {
+          "actual_reason": "SAFETY_ZONE",
+          "case": "safety_zone",
+          "decision": "REJECT",
+          "matched_expected_reason": true,
+          "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+        }
+      ],
+      "positive": [
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5600,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 0,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "tool_robot_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "A-zero",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5326,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 274,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 601596
+            },
+            "name": "tool_robot_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "B-positive-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5457,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 143,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 266585
+            },
+            "name": "tool_robot_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "C-mixed-1",
+          "decision": "SAFE_TO_ATTEMPT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5328,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 272,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 302903
+            },
+            "name": "tool_robot_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-1",
+          "decision": "REJECT"
+        },
+        {
+          "check": {
+            "metrics": {
+              "aabb_separated_pairs": 5538,
+              "collision": false,
+              "involved_objects": [],
+              "joint_state": null,
+              "method": "AABB broadphase rejects separated pairs. Overlap uses triangle or OBB tests. AABB overlap alone is not a collision.",
+              "narrow_phase_pairs": 62,
+              "sample_count": 100,
+              "sample_index": null,
+              "tcp_m": null,
+              "triangle_tests": 0
+            },
+            "name": "tool_robot_collision",
+            "reason_code": null,
+            "result": "PASS"
+          },
+          "configuration": "E-fixed-3",
+          "decision": "SAFE_TO_ATTEMPT"
+        }
+      ]
+    }
+  }
+}

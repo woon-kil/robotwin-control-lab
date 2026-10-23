@@ -1,0 +1,173 @@
+{
+  "negative": [
+    {
+      "actual_reason": "JOINT_LIMIT",
+      "case": "joint_lower_limit",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "JOINT_LIMIT",
+      "case": "joint_upper_limit",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 shoulder_pan_joint exceeds upper limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "case": "nan",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "case": "positive_inf",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "NON_FINITE",
+      "case": "negative_inf",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 non-finite joint value"
+    },
+    {
+      "actual_reason": "UNSUPPORTED_COMMAND",
+      "case": "unsupported_command",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_reason": "UNSUPPORTED_COMMAND",
+      "case": "unknown_command",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 unsupported command"
+    },
+    {
+      "actual_reason": "TRAJECTORY_INVALID",
+      "case": "trajectory_joint_limit",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 elbow_joint exceeds lower limit by 0.20000000000000018 rad"
+    },
+    {
+      "actual_reason": "COLLISION",
+      "case": "tool_panel_collision",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 tool_placeholder intersects bolt_panel at sample 0/100"
+    },
+    {
+      "actual_reason": "COLLISION",
+      "case": "canonical_path_collision",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+    },
+    {
+      "actual_reason": "SAFETY_ZONE",
+      "case": "safety_zone",
+      "decision": "REJECT",
+      "matched_expected_reason": true,
+      "summary": "REJECT \u2014 wrist_2_link intersects bolt_panel at sample 0/100"
+    }
+  ],
+  "positive": [
+    {
+      "check": {
+        "metrics": {
+          "first_violation_index": null,
+          "formula": "q(s) = q_start + s*(q_target - q_start)",
+          "joint_limit_set_is_convex": true,
+          "model": "PROJECT VALIDATION PATH",
+          "parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+          "sample_count": 100,
+          "violating_sample_count": 0
+        },
+        "name": "trajectory",
+        "reason_code": null,
+        "result": "PASS"
+      },
+      "configuration": "A-zero",
+      "decision": "SAFE_TO_ATTEMPT"
+    },
+    {
+      "check": {
+        "metrics": {
+          "first_violation_index": null,
+          "formula": "q(s) = q_start + s*(q_target - q_start)",
+          "joint_limit_set_is_convex": true,
+          "model": "PROJECT VALIDATION PATH",
+          "parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+          "sample_count": 100,
+          "violating_sample_count": 0
+        },
+        "name": "trajectory",
+        "reason_code": null,
+        "result": "PASS"
+      },
+      "configuration": "B-positive-1",
+      "decision": "SAFE_TO_ATTEMPT"
+    },
+    {
+      "check": {
+        "metrics": {
+          "first_violation_index": null,
+          "formula": "q(s) = q_start + s*(q_target - q_start)",
+          "joint_limit_set_is_convex": true,
+          "model": "PROJECT VALIDATION PATH",
+          "parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+          "sample_count": 100,
+          "violating_sample_count": 0
+        },
+        "name": "trajectory",
+        "reason_code": null,
+        "result": "PASS"
+      },
+      "configuration": "C-mixed-1",
+      "decision": "SAFE_TO_ATTEMPT"
+    },
+    {
+      "check": {
+        "metrics": {
+          "first_violation_index": null,
+          "formula": "q(s) = q_start + s*(q_target - q_start)",
+          "joint_limit_set_is_convex": true,
+          "model": "PROJECT VALIDATION PATH",
+          "parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+          "sample_count": 100,
+          "violating_sample_count": 0
+        },
+        "name": "trajectory",
+        "reason_code": null,
+        "result": "PASS"
+      },
+      "configuration": "E-fixed-1",
+      "decision": "REJECT"
+    },
+    {
+      "check": {
+        "metrics": {
+          "first_violation_index": null,
+          "formula": "q(s) = q_start + s*(q_target - q_start)",
+          "joint_limit_set_is_convex": true,
+          "model": "PROJECT VALIDATION PATH",
+          "parameter": "s_i = i/(N-1), i = 0..N-1, endpoints included",
+          "sample_count": 100,
+          "violating_sample_count": 0
+        },
+        "name": "trajectory",
+        "reason_code": null,
+        "result": "PASS"
+      },
+      "configuration": "E-fixed-3",
+      "decision": "SAFE_TO_ATTEMPT"
+    }
+  ]
+}

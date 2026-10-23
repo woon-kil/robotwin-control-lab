@@ -1,0 +1,85 @@
+{
+  "architecture_notes": [
+    "REQ-026 bolt vocabulary uses REJECTED. This MOVE_JOINT gate uses REJECT. REQUIREMENTS.md was not edited.",
+    "IK feasibility and TCP alignment are NOT_APPLICABLE. NOT_APPLICABLE is not PASS.",
+    "B01-B06 have no joint configuration mapping.",
+    "Self-collision is evaluated. Adjacent collision links are excluded. A separated AABB is a non-intersection, not a stub PASS.",
+    "Geometry checks are NOT_EVALUATED when the joint command is already non-finite or outside limits. That still REJECTS.",
+    "The ROS 2 adapter was not modified and does not contain this validator.",
+    "ExecutionGate is outside VirtualPmacController."
+  ],
+  "check_vocabulary": [
+    "PASS",
+    "FAIL",
+    "NOT_APPLICABLE",
+    "NOT_EVALUATED"
+  ],
+  "claim_boundary": "PROJECT TEST VALIDATOR. SAFE_TO_ATTEMPT means pre-execution checks passed.",
+  "decision_rule": "Any required FAIL or NOT_EVALUATED rejects. Optional NOT_APPLICABLE is allowed. All required PASS means SAFE_TO_ATTEMPT.",
+  "decision_vocabulary": [
+    "SAFE_TO_ATTEMPT",
+    "REJECT"
+  ],
+  "fail_closed_rule": "unknown, invalid, non-finite, missing data, unsupported, required NOT_EVALUATED, and internal errors REJECT. Unknown results are not PASS.",
+  "implementation": "validator.validate.PreExecutionValidator function validate; validator.gate.ExecutionGate",
+  "input_contract": [
+    "JointCommand",
+    "RobotState",
+    "WorkcellState",
+    "ValidatorConfig"
+  ],
+  "joint_limit_rule": "inclusive. value < lower or value > upper is a violation. Same rule as core.kinematics.limits.limit_violations. At-limit is inside.",
+  "not_claims": [
+    "bolt fastening succeeded",
+    "process succeeded",
+    "certified safe",
+    "human-safe",
+    "collision impossible",
+    "industrial safety certified",
+    "ISO safety zone",
+    "human protection zone",
+    "actual robot trajectory planner",
+    "IK success"
+  ],
+  "optional_checks": [
+    "tcp_alignment",
+    "ik_feasibility"
+  ],
+  "output_contract": [
+    "decision",
+    "checks",
+    "blocking_reason_codes",
+    "metrics",
+    "summary"
+  ],
+  "reachability": "MOVE_JOINT baseline: finite joint target, known joint set, within modeled joint limits. IK success is not reachability.",
+  "reason_codes": [
+    "TARGET_INVALID",
+    "NON_FINITE",
+    "UNSUPPORTED_COMMAND",
+    "JOINT_LIMIT",
+    "UNREACHABLE",
+    "TCP_ALIGNMENT",
+    "TRAJECTORY_INVALID",
+    "COLLISION",
+    "SAFETY_ZONE",
+    "VALIDATION_INTERNAL_ERROR",
+    "NOT_EVALUATED"
+  ],
+  "required_checks": [
+    "finite_input",
+    "command_support",
+    "target_validity",
+    "joint_limit",
+    "reachability",
+    "trajectory",
+    "fk_trajectory",
+    "robot_environment_collision",
+    "tool_environment_collision",
+    "tool_robot_collision",
+    "self_collision",
+    "safety_zone"
+  ],
+  "safety_zone_class": "PROJECT TEST SAFETY ZONE",
+  "trajectory": "PROJECT VALIDATION PATH"
+}

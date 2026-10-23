@@ -777,3 +777,52 @@ p620에서 PYTHONPATH=. python3 -m pytest tests/unit -q → 41 passed.
 Elapsed Time
 2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-008 — Pre-execution validator baseline
+
+```text
+Task
+P-008. MOVE_JOINT를 Controller에 전달하기 전에 Pre-Execution Validator로 검사한다.
+P-009는 시작하지 않는다.
+
+Problem
+위험한 명령을 Controller 안에서 거절하는 것과, 전달 전에 차단하는 것은 다르다.
+SAFE_TO_ATTEMPT를 체결 성공이나 안전 인증으로 쓰면 안 된다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. Validator는 VirtualPmacController 밖의 ExecutionGate다.
+2. 충돌은 pinned UR10e collision STL과 P-005 workcell box로 계산한다.
+3. Trajectory sample count는 100으로 측정 전에 고정한다.
+4. MOVE_JOINT에는 bolt target이 없으므로 alignment와 IK는 NOT_APPLICABLE이다.
+5. 거절: Cartesian command, IK reachability 주장, self-collision stub PASS, ROS adapter 내부 복제, P-009.
+
+Developer Decision
+위 1–5를 수용한다. Joint limit 포함 규칙은 기존 limit_violations와 같다. 한계값은 안이다.
+Safety zone은 bolt panel +X 뒤 0.4 m AABB이며 PROJECT TEST SAFETY ZONE이다.
+
+Accepted / Rejected
+Accepted — fail-closed REJECT, ExecutionGate submit count, 인접 link를 제외한 self-collision.
+Rejected — canonical 5개를 하드코딩 PASS로 두는 것, 충돌 stub, 안전 인증 문장, P-009.
+
+Reason
+A-zero, B-positive-1, C-mixed-1, E-fixed-3은 SAFE_TO_ATTEMPT 뒤 ACCEPTED, EXECUTING, COMPLETED다.
+최종 joint error는 0 rad다. step은 1, 23, 24, 2다.
+E-fixed-1은 sample 44/100에서 wrist_3_link와 bolt_panel이 교차해 REJECT다. submit count는 0에서 0이다.
+tool_placeholder와 bolt_panel 교차도 REJECT다.
+Safety zone 위반 pose는 COLLISION과 SAFETY_ZONE을 함께 냈다.
+NaN, Inf, unsupported command는 Controller에 전달되지 않았다.
+
+Verification
+evidence/P-008. evidence/P-001B부터 P-007은 수정하지 않았다.
+Isaac Sim, Unity, P-007 ROS evidence는 다시 실행하지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 52 passed.
+Timeout 0, non-finite 0. Deterministic replay는 같았다.
+이 결과는 산업 안전 인증이 아니다. SAFE_TO_ATTEMPT는 pre-execution checks passed다.
+Canonical safe 결과는 4/5이므로 P-008 acceptance는 FAIL이다.
+
+Elapsed Time
+2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

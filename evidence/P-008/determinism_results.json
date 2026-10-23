@@ -1,0 +1,13 @@
+{
+  "collision_case": "canonical_path_collision",
+  "collision_equal": true,
+  "compared": [
+    "decision",
+    "blocking_reason_codes",
+    "checks",
+    "summary",
+    "metrics"
+  ],
+  "runs": 2,
+  "safe_equal": true
+}

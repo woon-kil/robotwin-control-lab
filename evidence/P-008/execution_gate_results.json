@@ -1,0 +1,28 @@
+{
+  "rejected_case": {
+    "case": "canonical_path_collision",
+    "decision": "REJECT",
+    "submit_count_after": 1,
+    "submit_count_before": 1,
+    "summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+  },
+  "safe_case": {
+    "configuration": "A-zero",
+    "decision": "SAFE_TO_ATTEMPT",
+    "execution_result": {
+      "completed": true,
+      "controller_state": "READY",
+      "execution_state": "COMPLETED",
+      "max_joint_error_rad": 0.0,
+      "steps": 1,
+      "timeout": false,
+      "trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ]
+    },
+    "submit_count_after": 1,
+    "submit_count_before": 0
+  }
+}

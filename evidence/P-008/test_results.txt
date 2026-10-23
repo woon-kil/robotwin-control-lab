@@ -1,0 +1,8 @@
+RESULT FAIL
+safe 4/5
+timeouts 0
+non_finite 0
+pytest
+....................................................                     [100%]
+52 passed in 1.66s
+
