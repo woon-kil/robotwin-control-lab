@@ -1,0 +1,292 @@
+{
+  "gate": "P-001B",
+  "source_repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "robot_type": "ur10e",
+  "package": "ur_description",
+  "source_manifest": "robot_description/SOURCE_MANIFEST.md",
+  "model_identifier": "ur10e-nominal-7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "base_frame": "base_link",
+  "tcp_frame": "tool0",
+  "actuated_joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "units": {
+    "position": "meter",
+    "joint_angle": "radian",
+    "orientation": "quaternion_xyzw"
+  },
+  "joint_limit_policy": "FK calculates the transform and does not clamp. Joint limits stay on the model and are checked separately.",
+  "external_fk_accuracy_claim": false,
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "joint_vector_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "position_m": {
+        "x": 1.18425,
+        "y": 0.29069999995083656,
+        "z": 0.06084999994037644
+      },
+      "quaternion_xyzw": {
+        "x": 8.659560565463116e-17,
+        "y": 0.7071067812590626,
+        "z": 0.7071067811140325,
+        "w": -4.329780281177465e-17
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "B-positive-1",
+      "joint_vector_rad": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "position_m": {
+        "x": 0.8622827187040447,
+        "y": 0.45063468791363825,
+        "z": -0.4733330617171708
+      },
+      "quaternion_xyzw": {
+        "x": 0.7038040288365,
+        "y": 0.517488469893148,
+        "z": 0.3048943961953703,
+        "w": -0.3793480983079002
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "B-positive-2",
+      "joint_vector_rad": [
+        1.0,
+        0.5,
+        0.8,
+        0.2,
+        0.4,
+        1.2
+      ],
+      "position_m": {
+        "x": 0.07339185720957844,
+        "y": 0.6353050380818164,
+        "z": -0.7175165755405153
+      },
+      "quaternion_xyzw": {
+        "x": -0.6324803233473599,
+        "y": -0.5423929044010192,
+        "z": 0.1428168400115484,
+        "w": 0.5342115012267724
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "C-mixed-1",
+      "joint_vector_rad": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "position_m": {
+        "x": 0.9509727146435579,
+        "y": 0.8275728158109183,
+        "z": 0.38130724234666324
+      },
+      "quaternion_xyzw": {
+        "x": -0.272302625616159,
+        "y": 0.585166343817156,
+        "z": 0.6649683404056946,
+        "w": 0.3758307283928555
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "C-mixed-2",
+      "joint_vector_rad": [
+        -1.0,
+        0.8,
+        -0.5,
+        1.1,
+        -0.3,
+        0.9
+      ],
+      "position_m": {
+        "x": 0.6989165588130334,
+        "y": -0.5601003995267123,
+        "z": -0.4141574862652474
+      },
+      "quaternion_xyzw": {
+        "x": -0.5945911341796907,
+        "y": 0.02917583455235262,
+        "z": -0.6286232026778668,
+        "w": 0.5004428267925363
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "D-near-upper",
+      "joint_vector_rad": [
+        6.220353454107791,
+        6.220353454107791,
+        3.1101767270538954,
+        6.220353454107791,
+        6.220353454107791,
+        6.220353454107791
+      ],
+      "position_m": {
+        "x": 0.04913467703067286,
+        "y": 0.28795303283112356,
+        "z": 0.2849034165843817
+      },
+      "quaternion_xyzw": {
+        "x": -0.7028365319098092,
+        "y": -0.03330929073783392,
+        "z": -0.12179107474357484,
+        "w": 0.7000558796812858
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "D-near-lower",
+      "joint_vector_rad": [
+        -6.220353454107791,
+        -6.220353454107791,
+        -3.1101767270538954,
+        -6.220353454107791,
+        -6.220353454107791,
+        -6.220353454107791
+      ],
+      "position_m": {
+        "x": 0.035652754820128564,
+        "y": 0.2932874058996033,
+        "z": 0.31553512690755475
+      },
+      "quaternion_xyzw": {
+        "x": -0.7028365319098092,
+        "y": 0.03330929073783419,
+        "z": 0.12179107474357484,
+        "w": 0.7000558796812858
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "E-fixed-1",
+      "joint_vector_rad": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "position_m": {
+        "x": 1.2240990607143456,
+        "y": 0.40063976917202687,
+        "z": 0.14738062775452626
+      },
+      "quaternion_xyzw": {
+        "x": -0.15701235935851435,
+        "y": 0.6360087672062059,
+        "z": 0.6135765337509058,
+        "w": 0.4408671050052821
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "E-fixed-2",
+      "joint_vector_rad": [
+        1.5707963267948966,
+        -1.5707963267948966,
+        1.5707963267948966,
+        -0.7853981633974483,
+        0.5235987755982988,
+        -1.0471975511965976
+      ],
+      "position_m": {
+        "x": -0.2750852609032312,
+        "y": 0.6975033953965892,
+        "z": 0.749859899894282
+      },
+      "quaternion_xyzw": {
+        "x": -0.5657583596893996,
+        "y": 0.05604269108474788,
+        "z": 0.7885805074118185,
+        "w": 0.2343447856207994
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "E-fixed-3",
+      "joint_vector_rad": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "position_m": {
+        "x": 1.171717246444075,
+        "y": 0.30228643417354173,
+        "z": 0.054540876008467486
+      },
+      "quaternion_xyzw": {
+        "x": 0.010592948989876247,
+        "y": 0.7064971439737061,
+        "z": 0.7056489055497279,
+        "w": -0.05300185926140125
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    },
+    {
+      "test_id": "E-fixed-4",
+      "joint_vector_rad": [
+        2.0,
+        -1.5,
+        1.0,
+        -2.0,
+        1.5,
+        -1.0
+      ],
+      "position_m": {
+        "x": -0.38370801458094816,
+        "y": 0.4001238857108982,
+        "z": 1.2314751060299232
+      },
+      "quaternion_xyzw": {
+        "x": 0.26954285569940584,
+        "y": -0.3589709839834867,
+        "z": 0.8528355218402175,
+        "w": 0.266754670599899
+      },
+      "finite": true,
+      "deterministic_rerun": true
+    }
+  ]
+}
