@@ -1,0 +1,16 @@
+{
+    "name": "Robotwin.Ur10e",
+    "rootNamespace": "Robotwin.Ur10e",
+    "references": [
+        "Unity.Robotics.UrdfImporter"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

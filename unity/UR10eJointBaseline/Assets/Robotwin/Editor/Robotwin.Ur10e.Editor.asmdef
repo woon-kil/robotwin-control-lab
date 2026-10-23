@@ -1,0 +1,20 @@
+{
+    "name": "Robotwin.Ur10e.Editor",
+    "rootNamespace": "Robotwin.Ur10e.Editor",
+    "references": [
+        "Robotwin.Ur10e",
+        "Unity.Robotics.UrdfImporter",
+        "Unity.Robotics.UrdfImporter.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,112 @@
+{
+  "gate": "P-002",
+  "source_repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "robot_type": "ur10e",
+  "source_manifest": "robot_description/SOURCE_MANIFEST.md",
+  "unity_model": "Assets/Ur10eGolden/ur10e.prefab",
+  "import_report": "Assets/Ur10eGolden/import_report.json",
+  "invalid_joint_count_rejected": true,
+  "deterministic_rerun_max_abs_rad": 0,
+  "colliders_disabled": 7,
+  "root_was_immovable_before_test": false,
+  "global_max_joint_error_rad": 0.014747420325875282,
+  "engineering_target_deg": 0.10000000000000001,
+  "result": "FAIL",
+  "canonical_joint_order": ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"],
+  "mapping": [
+    {"canonical_name": "shoulder_pan_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link", "joint_type": "RevoluteJoint"},
+    {"canonical_name": "shoulder_lift_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link/upper_arm_link", "joint_type": "RevoluteJoint"},
+    {"canonical_name": "elbow_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link", "joint_type": "RevoluteJoint"},
+    {"canonical_name": "wrist_1_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link", "joint_type": "RevoluteJoint"},
+    {"canonical_name": "wrist_2_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link", "joint_type": "RevoluteJoint"},
+    {"canonical_name": "wrist_3_joint", "unity_path": "ur10e/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link", "joint_type": "RevoluteJoint"}
+  ],
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "target_joint_rad": [0, 0, 0, 0, 0, 0],
+      "actual_joint_rad": [9.0312660177005455E-06, 0.014747420325875282, 0.0010244597215205431, 0.0045899595133960247, 4.609684765455313E-05, -2.0137426872679498E-06],
+      "error_joint_rad": [9.0312660177005455E-06, 0.014747420325875282, 0.0010244597215205431, 0.0045899595133960247, 4.609684765455313E-05, -2.0137426872679498E-06],
+      "max_abs_error_rad": 0.014747420325875282,
+      "settling_steps": 251,
+      "settling_time": 5.0199998877942562,
+      "timeout": 5,
+      "timed_out": true,
+      "tool0_pose": {
+        "frame": "unity_world",
+        "position_m": {"x": -0.29071184992790222, "y": 0.042825043201446533, "z": 1.1816771030426025},
+        "quaternion_xyzw": {"x": 0.70707046985626221, "y": -0.70706987380981445, "z": -0.0072113587521016598, "w": -0.0071849320083856583}
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "B-positive-1",
+      "target_joint_rad": [0.20000000000000001, 0.29999999999999999, 0.40000000000000002, 0.5, 0.59999999999999998, 0.69999999999999996],
+      "actual_joint_rad": [0.20010501146316528, 0.30647033452987671, 0.40147209167480469, 0.50128316879272461, 0.59997588396072388, 0.69999122619628906],
+      "error_joint_rad": [0.0001050114631652721, 0.0064703345298767201, 0.0014720916748046653, 0.0012831687927246094, -2.4116039276100842E-05, -8.7738037108930911E-06],
+      "max_abs_error_rad": 0.0064703345298767201,
+      "settling_steps": 90,
+      "settling_time": 1.7999999597668648,
+      "timeout": 5,
+      "timed_out": false,
+      "tool0_pose": {
+        "frame": "unity_world",
+        "position_m": {"x": -0.44971886277198792, "y": -0.47974568605422974, "z": 0.85726052522659302},
+        "quaternion_xyzw": {"x": 0.51608407497406006, "y": -0.30121180415153503, "z": -0.70549118518829346, "w": -0.38106629252433777}
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "C-mixed-1",
+      "target_joint_rad": [0.5, -0.40000000000000002, 0.29999999999999999, -0.20000000000000001, 0.59999999999999998, -0.69999999999999996],
+      "actual_joint_rad": [0.49992918968200684, -0.38812375068664551, 0.30495837330818176, -0.19780220091342926, 0.60007965564727783, -0.70001047849655151],
+      "error_joint_rad": [-7.0810317993164063E-05, 0.011876249313354514, 0.0049583733081817738, 0.0021977990865707508, 7.9655647277854236E-05, -1.0478496551558081E-05],
+      "max_abs_error_rad": 0.011876249313354514,
+      "settling_steps": 251,
+      "settling_time": 5.0199998877942562,
+      "timeout": 5,
+      "timed_out": true,
+      "tool0_pose": {
+        "frame": "unity_world",
+        "position_m": {"x": -0.82839232683181763, "y": 0.36315661668777466, "z": 0.9526631236076355},
+        "quaternion_xyzw": {"x": 0.59132629632949829, "y": -0.66452091932296753, "z": 0.2684040367603302, "w": 0.36973655223846436}
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "E-fixed-1",
+      "target_joint_rad": [0.10000000000000001, -0.20000000000000001, 0.29999999999999999, -0.40000000000000002, 0.5, -0.59999999999999998],
+      "actual_joint_rad": [0.099984779953956604, -0.18804804980754852, 0.30456244945526123, -0.39724224805831909, 0.50007742643356323, -0.60000944137573242],
+      "error_joint_rad": [-1.5220046043401547E-05, 0.011951950192451488, 0.0045624494552612416, 0.0027577519416809304, 7.7426433563232422E-05, -9.4413757324440795E-06],
+      "max_abs_error_rad": 0.011951950192451488,
+      "settling_steps": 251,
+      "settling_time": 5.0199998877942562,
+      "timeout": 5,
+      "timed_out": true,
+      "tool0_pose": {
+        "frame": "unity_world",
+        "position_m": {"x": -0.40046834945678711, "y": 0.12912112474441528, "z": 1.2226107120513916},
+        "quaternion_xyzw": {"x": 0.64079642295837402, "y": -0.61442726850509644, "z": 0.15151526033878326, "w": 0.43462932109832764}
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "E-fixed-3",
+      "target_joint_rad": [0.01, 0.02, -0.029999999999999999, 0.040000000000000001, -0.050000000000000003, 0.059999999999999998],
+      "actual_joint_rad": [0.010012170299887657, 0.034625303000211716, -0.029030835255980492, 0.044509701430797577, -0.04995066300034523, 0.059997808188199997],
+      "error_joint_rad": [1.2170299887656957E-05, 0.014625303000211715, 0.00096916474401950725, 0.0045097014307975761, 4.9336999654772673E-05, -2.1918118000008313E-06],
+      "max_abs_error_rad": 0.014625303000211715,
+      "settling_steps": 251,
+      "settling_time": 5.0199998877942562,
+      "timeout": 5,
+      "timed_out": true,
+      "tool0_pose": {
+        "frame": "unity_world",
+        "position_m": {"x": -0.30227649211883545, "y": 0.036883711814880371, "z": 1.1690936088562012},
+        "quaternion_xyzw": {"x": 0.70600038766860962, "y": -0.70543628931045532, "z": -0.01770288497209549, "w": -0.060085352510213852}
+      },
+      "result": "FAIL"
+    }
+  ]
+}

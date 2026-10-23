@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.1230514">
+  <test-suite type="TestSuite" id="1008" name="UR10eJointBaseline" fullname="UR10eJointBaseline" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.123051" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1011" name="Robotwin.Ur10e.Tests.dll" fullname="/Users/woonkil/projects/robotwin-control-lab/unity/UR10eJointBaseline/Library/ScriptAssemblies/Robotwin.Ur10e.Tests.dll" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.116567" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="56114" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1012" name="Robotwin" fullname="Robotwin" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.116450" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1013" name="Ur10e" fullname="Robotwin.Ur10e" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.116409" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1014" name="Tests" fullname="Robotwin.Ur10e.Tests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.116353" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1009" name="Ur10eJointBaselineTests" fullname="Robotwin.Ur10e.Tests.Ur10eJointBaselineTests" classname="Robotwin.Ur10e.Tests.Ur10eJointBaselineTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.116019" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1010" name="JointCommandsSettleWithinEngineeringTarget" fullname="Robotwin.Ur10e.Tests.Ur10eJointBaselineTests.JointCommandsSettleWithinEngineeringTarget" methodname="JointCommandsSettleWithinEngineeringTarget" classname="Robotwin.Ur10e.Tests.Ur10eJointBaselineTests" runstate="Runnable" seed="2022653946" result="Failed" start-time="2026-10-23 01:21:30Z" end-time="2026-10-23 01:21:30Z" duration="0.110957" asserts="0">
+                <properties>
+                  <property name="Category" value="Ur10eJointBaseline" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  global_max_joint_error_rad=0.014747420325875282
+A-zero FAIL max_abs_error_rad=0.014747420325875282
+B-positive-1 FAIL max_abs_error_rad=0.0064703345298767201
+C-mixed-1 FAIL max_abs_error_rad=0.011876249313354514
+E-fixed-1 FAIL max_abs_error_rad=0.011951950192451488
+E-fixed-3 FAIL max_abs_error_rad=0.014625303000211715
+
+  String lengths are both 4. Strings differ at index 0.
+  Expected: "PASS"
+  But was:  "FAIL"
+  -----------^
+]]></message>
+                  <stack-trace><![CDATA[at Robotwin.Ur10e.Tests.Ur10eJointBaselineTests.JointCommandsSettleWithinEngineeringTarget () [0x00022] in /Users/woonkil/projects/robotwin-control-lab/unity/UR10eJointBaseline/Assets/Robotwin/Tests/Ur10eJointBaselineTests.cs:15
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Couldn't create a Convex Mesh from source mesh "shoulder_0" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+Couldn't create a Convex Mesh from source mesh "upperarm_0" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+Couldn't create a Convex Mesh from source mesh "forearm_0" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

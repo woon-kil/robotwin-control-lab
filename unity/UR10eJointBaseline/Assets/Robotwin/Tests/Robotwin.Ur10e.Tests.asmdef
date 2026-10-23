@@ -1,0 +1,27 @@
+{
+    "name": "Robotwin.Ur10e.Tests",
+    "rootNamespace": "Robotwin.Ur10e.Tests",
+    "references": [
+        "Robotwin.Ur10e",
+        "Robotwin.Ur10e.Editor",
+        "Unity.Robotics.UrdfImporter"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false,
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}
