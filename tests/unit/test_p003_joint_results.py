@@ -115,6 +115,54 @@ def test_p003_records_the_measured_joint_baseline():
     assert attempt1["result"] == "FAIL"
     assert attempt2["result"] == "FAIL"
     assert attempt2["global_max_joint_error_deg"] > data["engineering_target_deg"]
+    e3 = next(row for row in rows if row["test_id"] == "E-fixed-3")
+    assert e3["tool0_pose"]["position_m"]["z"] == -40.485015869140625
+
+
+def test_fix_attempt1_rejects_falling_tool0_and_keeps_joint_target():
+    folder = EVIDENCE / "fix-attempt1"
+    data = json.loads((folder / "joint_results.json").read_text())
+    tool = json.loads((folder / "tool0_results.json").read_text())
+    summary = (folder / "summary.md").read_text()
+    diagnostics = (folder / "diagnostics.md").read_text()
+    baseline = {row["test_id"]: row["joint_vector_rad"] for row in baseline_configurations()}
+    rows = data["configurations"]
+    target_rad = data["engineering_target_deg"] * math.pi / 180.0
+
+    assert data["result"] == "PASS"
+    assert data["timeouts"] == 0
+    assert data["cumulative_world_drift"] is False
+    assert data["global_max_joint_error_rad"] < target_rad
+    assert data["tool0_base_distance_max_m"] <= data["tool0_base_distance_limit_m"]
+    assert data["tool0_base_distance_limit_name"] == "PROJECT SANITY CHECK"
+    assert data["link_distance_span_max_m"] <= data["link_distance_span_limit_m"]
+    assert data["invalid_joint_count_rejected"] is True
+    assert data["non_finite_rejected"] is True
+    assert data["unknown_mapping_rejected"] is True
+    assert "RigidPrim" not in data["tool0_observation_api"]
+    assert "Isaac TCP accuracy" not in summary
+    assert "Initial P-003" in summary and "Overall:\nFAIL" in summary
+    assert "Fix Attempt 1" in diagnostics
+    assert [row["test_id"] for row in rows] == list(SELECTED)
+    assert [row["test_id"] for row in tool["configurations"]] == list(SELECTED)
+    previous_xy = None
+    for row in rows:
+        assert _close(row["target_joint_rad"], baseline[row["test_id"]])
+        assert row["target_joint_rad"] != row["actual_joint_rad"]
+        assert row["timed_out"] is False
+        pose = row["tool0_pose"]
+        assert pose["frame"] == "isaac_world"
+        assert pose["quaternion_order"] == "wxyz"
+        assert pose["rigid_body_api_before_read"] is False
+        assert all(math.isfinite(value) for value in pose["position_m"].values())
+        assert all(math.isfinite(value) for value in pose["quaternion_wxyz"].values())
+        assert row["tool0_base_distance_m"] <= 2.0
+        xy = (pose["position_m"]["x"], pose["position_m"]["y"])
+        if previous_xy is not None:
+            assert math.dist(previous_xy, xy) > 0.01
+        previous_xy = xy
+        span_values = list(row["link_pair_distance_m"].values())
+        assert all(math.isfinite(value) for value in span_values)
 
 
 def _close(left, right) -> bool:

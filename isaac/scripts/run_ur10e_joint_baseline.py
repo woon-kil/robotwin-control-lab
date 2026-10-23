@@ -22,6 +22,7 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("--repo", required=True)
 parser.add_argument("--isaac-root", default=str(Path.home() / "isaacsim"))
+parser.add_argument("--evidence-dir", default="")
 args = parser.parse_args()
 
 REPO = Path(args.repo).resolve()
@@ -54,7 +55,9 @@ from pxr import Gf, Usd, UsdGeom, UsdPhysics  # noqa: E402
 
 URDF_RELATIVE = Path("robot_description/generated") / SOURCE_COMMIT / "ur10e.urdf"
 PACKAGE_RELATIVE = Path("robot_description/upstream") / SOURCE_COMMIT
-EVIDENCE = REPO / "evidence" / "P-003"
+EVIDENCE = Path(args.evidence_dir) if args.evidence_dir else REPO / "evidence" / "P-003"
+if not EVIDENCE.is_absolute():
+    EVIDENCE = REPO / EVIDENCE
 USD_DIR = REPO / "isaac" / "generated" / "ur10e"
 # URDFImporterConfig docstring: Nm/rad and Nm*s/rad. Not a UR10e controller specification.
 DRIVE_STIFFNESS = 100000.0
@@ -65,6 +68,21 @@ VELOCITY_EPSILON = 0.001
 POSITION_DELTA_EPSILON = 1e-5
 ROOT_DISPLACEMENT_LIMIT_M = 1e-3
 TARGET_RADIANS = ENGINEERING_TARGET_DEGREES * math.pi / 180.0
+# UR10e reach is 1300 mm. This bound only rejects a broken world pose.
+# https://www.universal-robots.com/manuals/EN/HTML/SW5_26/Content/prod-usr-man/complianceUR10e/H_g5_sections/appendix_g5/tech_spec_sheet.htm
+TOOL0_BASE_DISTANCE_LIMIT_M = 2.0
+LINK_SPAN_LIMIT_M = 0.001
+CHAIN_NAMES = (
+    "base_link_inertia",
+    "shoulder_link",
+    "upper_arm_link",
+    "forearm_link",
+    "wrist_1_link",
+    "wrist_2_link",
+    "wrist_3_link",
+    "flange",
+    "tool0",
+)
 
 
 def sha256(path: Path) -> str:
@@ -185,13 +203,33 @@ def tool0_pose_xform(stage, path: str) -> dict[str, object]:
     }
 
 
+def unique_geometry_prim(stage, name: str) -> str:
+    matches = [
+        str(prim.GetPath())
+        for prim in stage.Traverse()
+        if prim.GetName() == name and str(prim.GetPath()).startswith("/ur10e/Geometry/")
+    ]
+    if len(matches) != 1:
+        raise RuntimeError("expected one " + name + ", found " + str(matches))
+    return matches[0]
+
+
 def read_pose(stage, path: str) -> dict[str, object]:
-    try:
-        return tool0_pose(path)
-    except Exception as exc:  # noqa: BLE001 - record the runtime API that actually worked
-        pose = tool0_pose_xform(stage, path)
-        pose["rigid_prim_error"] = type(exc).__name__
-        return pose
+    prim = stage.GetPrimAtPath(path)
+    has_rigid_body = prim.HasAPI(UsdPhysics.RigidBodyAPI)
+    pose = tool0_pose_xform(stage, path)
+    pose["rigid_body_api_before_read"] = has_rigid_body
+    if not has_rigid_body:
+        pose["observation_reason"] = (
+            "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+        )
+    return pose
+
+
+def pose_distance_m(left: dict[str, object], right: dict[str, object]) -> float:
+    a = left["position_m"]
+    b = right["position_m"]
+    return math.dist((a["x"], a["y"], a["z"]), (b["x"], b["y"], b["z"]))
 
 
 def step_until_settled(robot, dof_indices: list[int], dt: float) -> tuple[list[float], list[float], int, bool]:
@@ -305,6 +343,36 @@ def write_evidence(payload: dict[str, object], summary: str, environment: str, t
     (EVIDENCE / "summary.md").write_text(summary, encoding="utf-8")
     (EVIDENCE / "environment.md").write_text(environment, encoding="utf-8")
     (EVIDENCE / "test_results.txt").write_text(test_log, encoding="utf-8")
+    tool_rows = []
+    for row in payload["joint_results"].get("configurations", []):
+        if "tool0_pose" not in row:
+            continue
+        tool_rows.append(
+            {
+                "test_id": row["test_id"],
+                "tool0_pose": row["tool0_pose"],
+                "base_pose": row.get("base_pose"),
+                "articulation_root_pose": row.get("articulation_root_pose"),
+                "tool0_base_distance_m": row.get("tool0_base_distance_m"),
+                "link_pair_distance_m": row.get("link_pair_distance_m"),
+                "result": row["result"],
+            }
+        )
+    if tool_rows:
+        (EVIDENCE / "tool0_results.json").write_text(
+            json.dumps(
+                {
+                    "gate": "P-003",
+                    "result": payload["joint_results"].get("result"),
+                    "observation_api": payload["joint_results"].get("tool0_observation_api"),
+                    "cumulative_world_drift": payload["joint_results"].get("cumulative_world_drift"),
+                    "configurations": tool_rows,
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
 
 
 def main() -> int:
@@ -354,6 +422,8 @@ def main() -> int:
             raise RuntimeError("expected one articulation root, found " + str(roots))
         if len(tool_paths) != 1:
             raise RuntimeError("expected one tool0, found " + str(tool_paths))
+        base_link_path = unique_geometry_prim(stage, "base_link")
+        chain_paths = {name: unique_geometry_prim(stage, name) for name in CHAIN_NAMES}
         robot = Articulation(roots[0])
         timeline = omni.timeline.get_timeline_interface()
         timeline.play()
@@ -424,6 +494,31 @@ def main() -> int:
             error = [actual[index] - joints[index] for index in range(len(joints))]
             max_abs = max(abs(item) for item in error)
             pose = read_pose(stage, tool_paths[0])
+            root_position, root_orientation = robot.get_world_poses()
+            root_xyz = numbers(root_position)
+            root_quat = numbers(root_orientation)
+            root_pose = {
+                "frame": "isaac_world",
+                "quaternion_order": "wxyz",
+                "pose_api": "Articulation.get_world_poses",
+                "position_m": {"x": root_xyz[0], "y": root_xyz[1], "z": root_xyz[2]},
+                "quaternion_wxyz": {"w": root_quat[0], "x": root_quat[1], "y": root_quat[2], "z": root_quat[3]},
+            }
+            base_pose = read_pose(stage, base_link_path)
+            chain = {name: read_pose(stage, path) for name, path in chain_paths.items()}
+            pairs = {
+                parent + "->" + child: pose_distance_m(chain[parent], chain[child])
+                for parent, child in zip(CHAIN_NAMES, CHAIN_NAMES[1:])
+            }
+            tool_distance = pose_distance_m(chain["base_link_inertia"], pose)
+            try:
+                linear, angular = robot.get_velocities()
+                root_linear = numbers(linear)
+                root_angular = numbers(angular)
+            except Exception as exc:  # noqa: BLE001
+                root_linear = None
+                root_angular = None
+                failures.append(test_id + " root velocity unreadable: " + type(exc).__name__)
             finite_pose = all(math.isfinite(value) for value in pose["position_m"].values()) and all(
                 math.isfinite(value) for value in pose["quaternion_wxyz"].values()
             )
@@ -432,6 +527,7 @@ def main() -> int:
                 and finite_pose
                 and max_abs < TARGET_RADIANS
                 and displacement <= ROOT_DISPLACEMENT_LIMIT_M
+                and tool_distance <= TOOL0_BASE_DISTANCE_LIMIT_M
                 and actual != list(joints)
             )
             if not passed:
@@ -450,13 +546,25 @@ def main() -> int:
                     "timed_out": timed_out,
                     "root_displacement_m": displacement,
                     "final_velocity_rad_s": velocity,
+                    "articulation_root_pose": root_pose,
+                    "base_pose": base_pose,
                     "tool0_pose": pose,
+                    "tool0_base_distance_m": tool_distance,
+                    "link_pair_distance_m": pairs,
+                    "root_linear_velocity_m_s": root_linear,
+                    "root_angular_velocity_rad_s": root_angular,
                     "result": "PASS" if passed else "FAIL",
                 }
             )
+        timeline.stop()
+        simulation_app.update()
+        robot = Articulation(roots[0])
+        timeline.play()
+        simulation_app.update()
         regulate_from_command(robot, api_indices, CONFIGURATIONS[0][1])
         simulation_app.update()
         rerun_actual, _, _, _ = step_until_settled(robot, api_indices, dt)
+        rerun_pose = read_pose(stage, tool_paths[0])
         first_actual = measured_rows[0]["actual_joint_rad"]
         rerun_error = max(abs(rerun_actual[index] - first_actual[index]) for index in range(len(first_actual)))
         global_max = max(row["max_abs_error_rad"] for row in measured_rows)
@@ -474,6 +582,29 @@ def main() -> int:
             failures.append("global max exceeds 0.1 deg")
         if root_motion > ROOT_DISPLACEMENT_LIMIT_M:
             failures.append("root moved " + format(root_motion, ".17g") + " m")
+        link_span = 0.0
+        for key in measured_rows[0]["link_pair_distance_m"]:
+            values = [row["link_pair_distance_m"][key] for row in measured_rows]
+            link_span = max(link_span, max(values) - min(values))
+        if link_span > LINK_SPAN_LIMIT_M:
+            failures.append("link chain span " + format(link_span, ".17g") + " m")
+        tool_distances = [row["tool0_base_distance_m"] for row in measured_rows]
+        if max(tool_distances) > TOOL0_BASE_DISTANCE_LIMIT_M:
+            failures.append("tool0 left the sanity envelope")
+        cumulative_drift = False
+        for previous, row in zip(measured_rows, measured_rows[1:], strict=False):
+            previous_position = previous["tool0_pose"]["position_m"]
+            position = row["tool0_pose"]["position_m"]
+            xy = math.dist((previous_position["x"], previous_position["y"]), (position["x"], position["y"]))
+            if position["z"] - previous_position["z"] < -1.0 and xy < 0.01:
+                cumulative_drift = True
+        if cumulative_drift:
+            failures.append("tool0 z accumulated while xy stayed fixed")
+        first_tool = measured_rows[0]["tool0_pose"]
+        rerun_tool0_position_m = pose_distance_m(first_tool, rerun_pose)
+        rerun_tool0_orientation = max(
+            abs(first_tool["quaternion_wxyz"][key] - rerun_pose["quaternion_wxyz"][key]) for key in ("w", "x", "y", "z")
+        )
         result = "FAIL" if failures else "PASS"
         up_axis = UsdGeom.GetStageUpAxis(stage)
         import_report.update(
@@ -515,7 +646,16 @@ def main() -> int:
             "non_finite_rejected": invalid_finite,
             "unknown_mapping_rejected": unknown_mapping and duplicate_mapping,
             "root_displacement_max_m": root_motion,
-            "initial_condition": "teleport dof positions to the commanded configuration and zero dof velocities, then set position targets",
+            "initial_condition": "set_dof_velocities(0), set_dof_positions(command), set_dof_position_targets(command), physics steps until settle, then UsdGeom.XformCache tool0 pose",
+            "tool0_observation_api": measured_rows[0]["tool0_pose"]["pose_api"],
+            "tool0_base_distance_max_m": max(tool_distances),
+            "tool0_base_distance_limit_m": TOOL0_BASE_DISTANCE_LIMIT_M,
+            "tool0_base_distance_limit_name": "PROJECT SANITY CHECK",
+            "link_distance_span_max_m": link_span,
+            "link_distance_span_limit_m": LINK_SPAN_LIMIT_M,
+            "cumulative_world_drift": cumulative_drift,
+            "deterministic_rerun_tool0_position_m": rerun_tool0_position_m,
+            "deterministic_rerun_tool0_orientation": rerun_tool0_orientation,
             "physics_dt_s": dt,
             "solver_position_iterations": solver_position,
             "solver_velocity_iterations": solver_velocity,
@@ -589,6 +729,28 @@ def render_summary(results: dict[str, object], probe: dict[str, str], root: str)
             "Timeouts",
             str(results["timeouts"]),
             "",
+            "Tool0 observation",
+            str(results.get("tool0_observation_api", "")),
+            "",
+            "Tool0 base distance max",
+            format(float(results.get("tool0_base_distance_max_m", 0.0)), ".17g") + " m",
+            "",
+            "Cumulative world drift",
+            str(results.get("cumulative_world_drift")),
+            "",
+            "Fixed tool0",
+            *[
+                row["test_id"]
+                + " "
+                + format(row["tool0_pose"]["position_m"]["x"], ".17g")
+                + " "
+                + format(row["tool0_pose"]["position_m"]["y"], ".17g")
+                + " "
+                + format(row["tool0_pose"]["position_m"]["z"], ".17g")
+                for row in results["configurations"]
+                if "tool0_pose" in row
+            ],
+            "",
             "Known limitations",
             "official nominal UR10e model",
             "not robot-specific calibration",
@@ -600,6 +762,41 @@ def render_summary(results: dict[str, object], probe: dict[str, str], root: str)
             "```",
             "",
             "이 숫자는 Isaac PhysX articulation feedback이다. Python FK 정확도나 Unity와의 우열이 아니다.",
+            "",
+            "```text",
+            "Initial P-003",
+            "Joint error:",
+            "0.08758590629328365 deg PASS",
+            "",
+            "BUT",
+            "",
+            "tool0:",
+            "physically invalid cumulative world displacement",
+            "A-zero z=0.057508014142513275",
+            "B-positive-1 z=-2.5203418731689453",
+            "C-mixed-1 z=-10.136713981628418",
+            "E-fixed-1 z=-22.79160499572754",
+            "E-fixed-3 z=-40.485015869140625",
+            "",
+            "Overall:",
+            "FAIL",
+            "",
+            "Fix Attempt 1",
+            "Root cause:",
+            "tool0 is an Xform with no RigidBodyAPI. RigidPrim.__init__ applies RigidBodyAPI, and that new body falls under gravity.",
+            "",
+            "Modification:",
+            "Read tool0 with UsdGeom.XformCache. Do not construct RigidPrim on a prim that has no RigidBodyAPI.",
+            "",
+            "Joint error:",
+            format(float(results["global_max_joint_error_deg"]), ".17g") + " deg",
+            "",
+            "Tool0 integrity:",
+            "PASS" if not results.get("cumulative_world_drift") and float(results.get("tool0_base_distance_max_m", 99.0)) <= TOOL0_BASE_DISTANCE_LIMIT_M else "FAIL",
+            "",
+            "Overall:",
+            str(results["result"]),
+            "```",
             "",
         ]
     )
@@ -686,7 +883,7 @@ def render_environment(probe, gravity, up_axis, dt, solver_position, solver_velo
             "Drive stiffness와 damping은 URDFImporterConfig에 Nm/rad, Nm*s/rad로 적힌 PROJECT TEST PARAMETER다. UR10e controller capability가 아니다.",
             "USD drive:angular:physics:stiffness와 damping은 import_report.json의 joint_mapping에 있다. drive_stiffness_readback은 Articulation.get_dof_gains 값이다.",
             "solver iteration attribute가 stage에 없으면 스키마 기본값을 사용한 것처럼 적지 않는다.",
-            "Quaternion은 RigidPrim.get_world_poses 문서의 wxyz를 사용한다. tensor 원본 xyzw를 그대로 적지 않는다.",
+            "tool0는 RigidBodyAPI가 없는 Xform이다. pose는 UsdGeom.XformCache다. Quaternion 순서는 XformPrim.get_world_poses 문서와 같은 wxyz다.",
             "tool0 frame은 isaac_world다. canonical base_link로 변환하지 않았다.",
             "",
         ]

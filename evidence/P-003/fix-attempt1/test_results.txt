@@ -1,0 +1,10 @@
+result PASS
+global_max_joint_error_rad 0.0015286624431610218
+global_max_joint_error_deg 0.087585906293283652
+timeouts 0
+deterministic_rerun_max_abs_rad 0
+A-zero PASS steps=42 max_abs_error_rad=0.0014696849975734949 timed_out=false
+B-positive-1 PASS steps=42 max_abs_error_rad=0.0012223541736602894 timed_out=false
+C-mixed-1 PASS steps=42 max_abs_error_rad=0.0015076935291290505 timed_out=false
+E-fixed-1 PASS steps=42 max_abs_error_rad=0.0015286624431610218 timed_out=false
+E-fixed-3 PASS steps=42 max_abs_error_rad=0.0014589778333902355 timed_out=false

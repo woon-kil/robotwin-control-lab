@@ -1,0 +1,353 @@
+{
+  "gate": "P-003",
+  "result": "PASS",
+  "observation_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+  "cumulative_world_drift": false,
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840670108795746,
+          "y": 0.290816962106665,
+          "z": 0.05750801414253482
+        },
+        "quaternion_wxyz": {
+          "w": -0.0011021499564641294,
+          "x": 0.0010340215120729932,
+          "y": 0.7071186159411188,
+          "z": 0.707093331219085
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "articulation_root_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "Articulation.get_world_poses",
+        "position_m": {
+          "x": 8.028719093999825e-06,
+          "y": 4.982935593034199e-07,
+          "z": -1.1233792974962853e-05
+        },
+        "quaternion_wxyz": {
+          "w": -1.2910077202832326e-05,
+          "x": 0.0005626567872241139,
+          "y": 1.785558561095968e-05,
+          "z": 0.9999997615814209
+        }
+      },
+      "tool0_base_distance_m": 1.2206056719877665,
+      "link_pair_distance_m": {
+        "base_link_inertia->shoulder_link": 0.18069994449616023,
+        "shoulder_link->upper_arm_link": 3.331384502767203e-08,
+        "upper_arm_link->forearm_link": 0.6127000451087954,
+        "forearm_link->wrist_1_link": 0.5974928041840155,
+        "wrist_1_link->wrist_2_link": 0.11984998305043866,
+        "wrist_2_link->wrist_3_link": 0.11654996871948617,
+        "wrist_3_link->flange": 0.0,
+        "flange->tool0": 0.0
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "B-positive-1",
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 0.8608286977121026,
+          "y": 0.4506002969998936,
+          "z": -0.4754112665479662
+        },
+        "quaternion_wxyz": {
+          "w": -0.37983286541092726,
+          "x": 0.7041616950949868,
+          "y": 0.5172005426216535,
+          "z": 0.3039521347622787
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "articulation_root_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "Articulation.get_world_poses",
+        "position_m": {
+          "x": -1.3299209058459383e-05,
+          "y": -3.753734972633538e-06,
+          "z": -7.998466571734753e-06
+        },
+        "quaternion_wxyz": {
+          "w": 1.4594515050703194e-05,
+          "x": 0.0004448376421350986,
+          "y": 5.2699710067827255e-05,
+          "z": 0.9999998807907104
+        }
+      },
+      "tool0_base_distance_m": 1.081712158919072,
+      "link_pair_distance_m": {
+        "base_link_inertia->shoulder_link": 0.1806999593973194,
+        "shoulder_link->upper_arm_link": 4.759971256127622e-08,
+        "upper_arm_link->forearm_link": 0.6126998662948672,
+        "forearm_link->wrist_1_link": 0.5974929133417133,
+        "wrist_1_link->wrist_2_link": 0.1198500171303779,
+        "wrist_2_link->wrist_3_link": 0.11654999107123187,
+        "wrist_3_link->flange": 0.0,
+        "flange->tool0": 0.0
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "C-mixed-1",
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 0.9515947103148312,
+          "y": 0.827844976935842,
+          "z": 0.3779478966444301
+        },
+        "quaternion_wxyz": {
+          "w": 0.3748450570063099,
+          "x": -0.2716223298194832,
+          "y": 0.5860887674724207,
+          "z": 0.664990563710517
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "articulation_root_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "Articulation.get_world_poses",
+        "position_m": {
+          "x": 1.419964428350795e-05,
+          "y": 8.327382602146827e-06,
+          "z": -8.331971002917271e-06
+        },
+        "quaternion_wxyz": {
+          "w": 6.9251736931619234e-06,
+          "x": 0.0005048258462920785,
+          "y": 0.00013444693468045443,
+          "z": 0.9999997615814209
+        }
+      },
+      "tool0_base_distance_m": 1.3166888748578596,
+      "link_pair_distance_m": {
+        "base_link_inertia->shoulder_link": 0.1807000041007996,
+        "shoulder_link->upper_arm_link": 2.960486402181909e-08,
+        "upper_arm_link->forearm_link": 0.6126999258995103,
+        "forearm_link->wrist_1_link": 0.5974929176849454,
+        "wrist_1_link->wrist_2_link": 0.11984996497632434,
+        "wrist_2_link->wrist_3_link": 0.1165500581264721,
+        "wrist_3_link->flange": 0.0,
+        "flange->tool0": 0.0
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "E-fixed-1",
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.224150179997351,
+          "y": 0.4006291905479394,
+          "z": 0.14369448988255593
+        },
+        "quaternion_wxyz": {
+          "w": 0.43982954758565423,
+          "x": -0.15608956299532178,
+          "y": 0.6367975784035679,
+          "z": 0.6137384308757927
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "articulation_root_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "Articulation.get_world_poses",
+        "position_m": {
+          "x": 1.1789064046752173e-05,
+          "y": 1.8327277757634874e-06,
+          "z": -1.0172581824008375e-05
+        },
+        "quaternion_wxyz": {
+          "w": 1.8460686987964436e-05,
+          "x": 0.0005722542991861701,
+          "y": 3.392195867490955e-05,
+          "z": 0.9999998211860657
+        }
+      },
+      "tool0_base_distance_m": 1.2960200273540898,
+      "link_pair_distance_m": {
+        "base_link_inertia->shoulder_link": 0.18070000410079992,
+        "shoulder_link->upper_arm_link": 2.8309398164663493e-08,
+        "upper_arm_link->forearm_link": 0.6127001047134435,
+        "forearm_link->wrist_1_link": 0.5974927336053487,
+        "wrist_1_link->wrist_2_link": 0.1198500096798071,
+        "wrist_2_link->wrist_3_link": 0.11654992401601429,
+        "wrist_3_link->flange": 0.0,
+        "flange->tool0": 0.0
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "E-fixed-3",
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1715254784921376,
+          "y": 0.3023835995183416,
+          "z": 0.05124436318525982
+        },
+        "quaternion_wxyz": {
+          "w": -0.054089025353374086,
+          "x": 0.01162344326528195,
+          "y": 0.7064383776207006,
+          "z": 0.7056090217164271
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api_before_read": false,
+        "observation_reason": "prim has no RigidBodyAPI. RigidPrim.__init__ applies that API and the new body falls under gravity."
+      },
+      "articulation_root_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "Articulation.get_world_poses",
+        "position_m": {
+          "x": 7.672269020986278e-06,
+          "y": 8.622528753221559e-07,
+          "z": -1.1560641723917797e-05
+        },
+        "quaternion_wxyz": {
+          "w": -1.9630397218861617e-05,
+          "x": 0.0005594060639850795,
+          "y": 2.015958307310939e-05,
+          "z": 0.9999997615814209
+        }
+      },
+      "tool0_base_distance_m": 1.210998173997452,
+      "link_pair_distance_m": {
+        "base_link_inertia->shoulder_link": 0.1807000041008021,
+        "shoulder_link->upper_arm_link": 4.2277805277107005e-08,
+        "upper_arm_link->forearm_link": 0.6127001047134428,
+        "forearm_link->wrist_1_link": 0.5974928036534175,
+        "wrist_1_link->wrist_2_link": 0.11984997242696224,
+        "wrist_2_link->wrist_3_link": 0.1165499389171602,
+        "wrist_3_link->flange": 0.0,
+        "flange->tool0": 0.0
+      },
+      "result": "PASS"
+    }
+  ]
+}

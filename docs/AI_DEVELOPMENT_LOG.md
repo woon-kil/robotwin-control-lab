@@ -422,3 +422,57 @@ Attempt 1, 1b, 2 evidence는 남겼다.
 Elapsed Time
 2026-10-23 측정과 수정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-003 Fix Attempt 1 — tool0 state integrity
+
+```text
+Task
+P-003 Fix Attempt 1. joint feedback과 tool0 world pose가 같은 physical state인지 확인한다.
+joint gain은 바꾸지 않는다. P-004는 시작하지 않는다.
+
+Problem
+기존 P-003은 joint global max 0.08758590629328365 deg, timeout 0으로 숫자 PASS였다.
+tool0 world z는 A-zero 0.057508014142513275에서 E-fixed-3 -40.485015869140625까지
+configuration마다 내려갔다. xy와 quaternion은 거의 그대로였다.
+joint metric PASS를 전체 PASS로 보지 않는다. 그 evidence는 evidence/P-003 루트에 남긴다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+실행 호스트는 p620. Isaac Sim VERSION 파일은 6.2.0-rc.14+release.52805.02189a84.gl.
+
+AI Proposal
+1. 수정 전에 link chain, fresh state, RigidPrim(tool0) free-fall을 따로 측정한다.
+2. tool0는 RigidBodyAPI가 없는 Xform이므로 UsdGeom.XformCache로 읽는다.
+   RigidPrim 생성자는 없는 API를 적용하고, 그 body는 중력으로 떨어진다.
+3. 거절: tool0 evidence 삭제, Python FK로 Isaac pose 교정, 0.1 deg 완화, drive retune, P-004.
+
+Developer Decision
+위 1–3을 수용한다. articulation root는 base_link_inertia로 유지한다.
+PROJECT SANITY CHECK tool0-base distance limit은 2.0 m다.
+UR10e 공식 reach 1300 mm보다 위이고, FK accuracy target이 아니다.
+adjacent link span limit은 0.001 m다.
+
+Accepted / Rejected
+Accepted — XformCache 관측과 sanity/integrity 실패 조건을 재측정에 넣는다.
+Rejected — RigidPrim(tool0), root 임의 변경, Python FK 비교, P-004.
+
+Reason
+Xform chain은 다섯 configuration에서 같이 움직이고 adjacent distance span은
+2.3841857632600494e-07 m다. fresh와 continuous USD z는 같다.
+RigidPrim(tool0) 이후 joint command 없이 43 update를 반복하면 z가
+0.051248036324977875, -2.526602029800415, -10.142973899841309,
+-22.79786491394043, -40.491275787353516으로 내려간다.
+기존 실패와 같은 자유낙하이고, joint state와 tool0 관측이 다른 body였다.
+
+Verification
+evidence/P-003/fix-attempt1. headless. configuration 5. timeout 0.
+global max 0.0015286624431610218 rad, 0.08758590629328365 deg.
+tool0 base distance max 1.3166888748578596 m. cumulative_world_drift false.
+A-zero fresh rerun joint, tool0 position, tool0 orientation 차이는 0.0.
+pose API는 UsdGeom.XformCache.GetLocalToWorldTransform. frame isaac_world. quaternion wxyz.
+Attempt 1, 1b, 2와 루트 joint_results.json은 덮어쓰지 않았다.
+이 결과는 UR10e controller 재현이 아니고 Unity 또는 Python FK와의 비교가 아니다.
+
+Elapsed Time
+2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

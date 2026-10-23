@@ -1,0 +1,119 @@
+{
+  "source_repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "source_urdf": "robot_description/generated/7ce98d8c3512b9d0239da93b75de68ea64f61bd6/ur10e.urdf",
+  "source_urdf_sha256": "1248d39ee013426682f92fb0fdb9171ab4a6b7bbb58d2247473b32b7215dc376",
+  "robot": "ur10e",
+  "isaac_version_file": "6.2.0-rc.14+release.52805.02189a84.gl",
+  "execution_mode": "headless",
+  "generated_asset": "/home/woonkil/work/robotwin-p003/isaac/generated/ur10e/ur10e_12/ur10e.usda",
+  "articulation_root": "/ur10e/Geometry/world/base_link/base_link_inertia",
+  "fixed_base": true,
+  "fixed_joints": [
+    "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0"
+  ],
+  "tool0_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+  "canonical_joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "joint_mapping": [
+    {
+      "canonical_name": "shoulder_pan_joint",
+      "isaac_dof_name": "shoulder_pan_joint",
+      "isaac_dof_index": 0,
+      "joint_type": "revolute",
+      "urdf_effort": "330.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 330.0
+    },
+    {
+      "canonical_name": "shoulder_lift_joint",
+      "isaac_dof_name": "shoulder_lift_joint",
+      "isaac_dof_index": 1,
+      "joint_type": "revolute",
+      "urdf_effort": "330.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 330.0
+    },
+    {
+      "canonical_name": "elbow_joint",
+      "isaac_dof_name": "elbow_joint",
+      "isaac_dof_index": 2,
+      "joint_type": "revolute",
+      "urdf_effort": "150.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 150.0
+    },
+    {
+      "canonical_name": "wrist_1_joint",
+      "isaac_dof_name": "wrist_1_joint",
+      "isaac_dof_index": 3,
+      "joint_type": "revolute",
+      "urdf_effort": "54.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 54.0
+    },
+    {
+      "canonical_name": "wrist_2_joint",
+      "isaac_dof_name": "wrist_2_joint",
+      "isaac_dof_index": 4,
+      "joint_type": "revolute",
+      "urdf_effort": "54.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 54.0
+    },
+    {
+      "canonical_name": "wrist_3_joint",
+      "isaac_dof_name": "wrist_3_joint",
+      "isaac_dof_index": 5,
+      "joint_type": "revolute",
+      "urdf_effort": "54.0",
+      "isaac_drive_type": "force",
+      "usd_drive_type": "force",
+      "usd_drive_stiffness": 1745.3292236328125,
+      "usd_drive_damping": 17.453292846679688,
+      "usd_drive_max_force": 54.0
+    }
+  ],
+  "dof_names": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "importer": {
+    "class": "isaacsim.asset.importer.urdf.URDFImporter",
+    "fix_base": true,
+    "merge_fixed_joints": false,
+    "allow_self_collision": false,
+    "joint_drive_type": "force",
+    "joint_target_type": "position",
+    "override_joint_stiffness_nm_per_rad": 100000.0,
+    "override_joint_damping_nm_s_per_rad": 1000.0,
+    "run_asset_transformer": false,
+    "run_multi_physics_conversion": true,
+    "ros_package": "ur_description"
+  }
+}
