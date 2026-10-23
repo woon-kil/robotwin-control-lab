@@ -1,0 +1,132 @@
+{
+  "api": "omni.physx.get_physx_simulation_interface().get_contact_report",
+  "contact_report_bodies": 7,
+  "geometric_distance_robot_base_to_panel_m": 1.2757742747053649,
+  "geometric_sanity": "GEOMETRIC SANITY ONLY. NOT IK VALIDATION.",
+  "initial_penetration_count": 0,
+  "minimum_separation_m": 0.02761254273355007,
+  "minimum_separation_note": "Bolt rays start 5 mm on the robot side of the panel face and point -X. A hit on /ur10e is directional clearance, not a mesh signed distance.",
+  "pairs": [],
+  "raycast": {
+    "api": "omni.physx.get_physx_scene_query_interface().raycast_closest",
+    "bolt_rays": [
+      {
+        "bolt_id": "B01",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "hit": false,
+        "origin_m": [
+          1.245,
+          0.22,
+          1.17
+        ]
+      },
+      {
+        "bolt_id": "B02",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "hit": false,
+        "origin_m": [
+          1.245,
+          -0.22,
+          1.17
+        ]
+      },
+      {
+        "bolt_id": "B03",
+        "collision": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/forearm_1",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "distance_m": 0.02761254273355007,
+        "hit": true,
+        "origin_m": [
+          1.245,
+          0.0,
+          0.95
+        ],
+        "position_m": [
+          1.2173874378204346,
+          1.4901161193847656e-08,
+          0.9500000476837158
+        ]
+      },
+      {
+        "bolt_id": "B04",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "hit": false,
+        "origin_m": [
+          1.245,
+          0.22,
+          0.73
+        ]
+      },
+      {
+        "bolt_id": "B05",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "hit": false,
+        "origin_m": [
+          1.245,
+          -0.22,
+          0.73
+        ]
+      },
+      {
+        "bolt_id": "B06",
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "hit": false,
+        "origin_m": [
+          1.245,
+          0.0,
+          1.25
+        ]
+      }
+    ],
+    "minimum_robot_clearance_m": 0.02761254273355007,
+    "note": "Bolt rays start 5 mm on the robot side of the panel face and point -X. A hit on /ur10e is directional clearance, not a mesh signed distance.",
+    "panel_collision_query_hit": true,
+    "panel_probe": {
+      "collision": "/World/Workcell/WorkStructure/BoltPanel/PanelSolid",
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_m": 0.75,
+      "hit": true,
+      "origin_m": [
+        0.5,
+        0.0,
+        1.2
+      ],
+      "position_m": [
+        1.25,
+        0.0,
+        1.2000000476837158
+      ]
+    }
+  },
+  "self_contact_pair_count": 0,
+  "separation_definition": "ContactData.separation as returned. separation < 0 counts as penetration. A contact event with separation > 0 is recorded and is not an unexpected collision.",
+  "unexpected_collision_count": 0
+}

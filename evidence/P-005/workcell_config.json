@@ -1,0 +1,659 @@
+{
+  "T_world_bolt_panel": {
+    "rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "xyz_m": [
+      1.26,
+      0.0,
+      0.95
+    ]
+  },
+  "T_world_robot_base": {
+    "rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "xyz_m": [
+      0.0,
+      0.0,
+      0.75
+    ]
+  },
+  "T_world_workcell": {
+    "rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "xyz_m": [
+      1.26,
+      0.0,
+      0.0
+    ]
+  },
+  "acceptance": {
+    "base_displacement_m_max": 0.001,
+    "build_position_m_max": 1e-06,
+    "class": "PROJECT TEST CONDITION",
+    "initial_penetration_count_max": 0,
+    "joint_drift_rad_max": 0.01,
+    "non_finite_count_max": 0,
+    "note": "Fall and contact detectors for this baseline. They are not industrial accuracy and not an IK tolerance.",
+    "reset_joint_rad_max": 0.0001,
+    "reset_position_m_max": 0.0001,
+    "static_displacement_m_max": 0.001,
+    "tool0_drift_m_max": 0.005,
+    "unexpected_collision_count_max": 0
+  },
+  "bolt_panel": {
+    "center_in_workcell_m": [
+      0.0,
+      0.0,
+      0.95
+    ],
+    "frame": "bolt_panel",
+    "orientation": "vertical. The thin axis is world X. The face toward the robot is -X.",
+    "prim": "/World/Workcell/WorkStructure/BoltPanel",
+    "rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "size_m": [
+      0.02,
+      0.64,
+      0.64
+    ],
+    "static": true
+  },
+  "bolt_panel_world": {
+    "aabb_m": {
+      "max_m": [
+        1.27,
+        0.32,
+        1.27
+      ],
+      "min_m": [
+        1.25,
+        -0.32,
+        0.6299999999999999
+      ]
+    },
+    "center_in_workcell_m": [
+      0.0,
+      0.0,
+      0.95
+    ],
+    "center_m": [
+      1.26,
+      0.0,
+      0.95
+    ],
+    "frame": "bolt_panel",
+    "orientation": "vertical. The thin axis is world X. The face toward the robot is -X.",
+    "prim": "/World/Workcell/WorkStructure/BoltPanel",
+    "rpy_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "size_m": [
+      0.02,
+      0.64,
+      0.64
+    ],
+    "static": true
+  },
+  "bolt_targets": [
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B01",
+      "label": "upper_left",
+      "position_m": [
+        -0.01,
+        0.22,
+        0.22
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B02",
+      "label": "upper_right",
+      "position_m": [
+        -0.01,
+        -0.22,
+        0.22
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B03",
+      "label": "center",
+      "position_m": [
+        -0.01,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B04",
+      "label": "lower_left",
+      "position_m": [
+        -0.01,
+        0.22,
+        -0.22
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B05",
+      "label": "lower_right",
+      "position_m": [
+        -0.01,
+        -0.22,
+        -0.22
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "frame": "bolt_panel",
+      "id": "B06",
+      "label": "upper_center",
+      "position_m": [
+        -0.01,
+        0.0,
+        0.3
+      ]
+    }
+  ],
+  "bolt_targets_world": [
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.336899397860587,
+      "frame": "bolt_panel",
+      "id": "B01",
+      "label": "upper_left",
+      "nominal_reach_sphere": "outside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        0.22,
+        0.22
+      ],
+      "position_world_m": [
+        1.25,
+        0.22,
+        1.17
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.336899397860587,
+      "frame": "bolt_panel",
+      "id": "B02",
+      "label": "upper_right",
+      "nominal_reach_sphere": "outside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        -0.22,
+        0.22
+      ],
+      "position_world_m": [
+        1.25,
+        -0.22,
+        1.17
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.2658988901172163,
+      "frame": "bolt_panel",
+      "id": "B03",
+      "label": "center",
+      "nominal_reach_sphere": "inside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        0.0,
+        0.0
+      ],
+      "position_world_m": [
+        1.25,
+        0.0,
+        0.95
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.2693699224418389,
+      "frame": "bolt_panel",
+      "id": "B04",
+      "label": "lower_left",
+      "nominal_reach_sphere": "inside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        0.22,
+        -0.22
+      ],
+      "position_world_m": [
+        1.25,
+        0.22,
+        0.73
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.2693699224418389,
+      "frame": "bolt_panel",
+      "id": "B05",
+      "label": "lower_right",
+      "nominal_reach_sphere": "inside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        -0.22,
+        -0.22
+      ],
+      "position_world_m": [
+        1.25,
+        -0.22,
+        0.73
+      ]
+    },
+    {
+      "approach_axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "distance_from_robot_base_m": 1.346291201783626,
+      "frame": "bolt_panel",
+      "id": "B06",
+      "label": "upper_center",
+      "nominal_reach_sphere": "outside_nominal_reach_sphere",
+      "position_m": [
+        -0.01,
+        0.0,
+        0.3
+      ],
+      "position_world_m": [
+        1.25,
+        0.0,
+        1.25
+      ]
+    }
+  ],
+  "claim": "UR10e-based reference workcell",
+  "fixture": {
+    "center_m": [
+      0.0,
+      0.0,
+      0.375
+    ],
+    "note": "Pedestal top stays below the robot base collision. The robot is fixed by the articulation root, not by resting contact.",
+    "prim": "/World/Fixture/Pedestal",
+    "size_m": [
+      0.36,
+      0.36,
+      0.746
+    ],
+    "static": true
+  },
+  "fixture_world": {
+    "aabb_m": {
+      "max_m": [
+        0.18,
+        0.18,
+        0.748
+      ],
+      "min_m": [
+        -0.18,
+        -0.18,
+        0.0020000000000000018
+      ]
+    },
+    "center_m": [
+      0.0,
+      0.0,
+      0.375
+    ],
+    "note": "Pedestal top stays below the robot base collision. The robot is fixed by the articulation root, not by resting contact.",
+    "prim": "/World/Fixture/Pedestal",
+    "size_m": [
+      0.36,
+      0.36,
+      0.746
+    ],
+    "static": true
+  },
+  "floor": {
+    "center_m": [
+      0.0,
+      0.0,
+      -0.025
+    ],
+    "prim": "/World/Floor",
+    "size_m": [
+      3.0,
+      3.0,
+      0.05
+    ],
+    "static": true
+  },
+  "floor_world": {
+    "aabb_m": {
+      "max_m": [
+        1.5,
+        1.5,
+        0.0
+      ],
+      "min_m": [
+        -1.5,
+        -1.5,
+        -0.05
+      ]
+    },
+    "center_m": [
+      0.0,
+      0.0,
+      -0.025
+    ],
+    "prim": "/World/Floor",
+    "size_m": [
+      3.0,
+      3.0,
+      0.05
+    ],
+    "static": true
+  },
+  "frames": [
+    "world",
+    "robot_base",
+    "workcell",
+    "bolt_panel",
+    "tool0"
+  ],
+  "future_frames_not_implemented": [
+    "bolt_tool_tcp",
+    "bolt_target"
+  ],
+  "geometric_sanity": "GEOMETRIC SANITY ONLY. NOT IK VALIDATION.",
+  "geometry_class": "PROJECT TEST GEOMETRY",
+  "isaac_import": {
+    "allow_self_collision": false,
+    "collision_from_visuals": false,
+    "fix_base": true,
+    "joint_drive_type": "force",
+    "joint_target_type": "position",
+    "merge_fixed_joints": false,
+    "merge_mesh": false,
+    "note": "Same Isaac importer settings as P-004. Stiffness 200000 Nm/rad is not a UR controller specification.",
+    "override_joint_damping": 1000.0,
+    "override_joint_stiffness_nm_per_rad": 200000.0,
+    "relocate_articulation_root": true,
+    "run_asset_transformer": false,
+    "run_multi_physics_conversion": true
+  },
+  "not_claims": [
+    "NOT ACTUAL INDUSTRIAL TOOL",
+    "NOT A SITE SAFETY VALIDATION",
+    "NOT BOLT FASTENING VALIDATION",
+    "NOT A FILTERBOT MODEL"
+  ],
+  "physics": {
+    "bolt_panel_static": true,
+    "floor_static": true,
+    "gravity_direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "gravity_enabled": true,
+    "gravity_magnitude_m_s2": 9.81,
+    "robot_base_fixed": true,
+    "stability_duration_class": "PROJECT TEST CONDITION",
+    "stability_duration_s": 10.0,
+    "work_structure_static": true
+  },
+  "posts_world": [
+    {
+      "aabb_m": {
+        "max_m": [
+          1.28,
+          0.42000000000000004,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          0.38,
+          0.0020000000000000018
+        ]
+      },
+      "center_in_workcell_m": [
+        0.0,
+        0.4,
+        0.315
+      ],
+      "center_m": [
+        1.26,
+        0.4,
+        0.315
+      ],
+      "id": "post_positive_y",
+      "prim": "/World/Workcell/WorkStructure/PostPositiveY",
+      "size_m": [
+        0.04,
+        0.04,
+        0.626
+      ]
+    },
+    {
+      "aabb_m": {
+        "max_m": [
+          1.28,
+          -0.38,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          -0.42000000000000004,
+          0.0020000000000000018
+        ]
+      },
+      "center_in_workcell_m": [
+        0.0,
+        -0.4,
+        0.315
+      ],
+      "center_m": [
+        1.26,
+        -0.4,
+        0.315
+      ],
+      "id": "post_negative_y",
+      "prim": "/World/Workcell/WorkStructure/PostNegativeY",
+      "size_m": [
+        0.04,
+        0.04,
+        0.626
+      ]
+    }
+  ],
+  "robot": {
+    "T_world_robot_base": {
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xyz_m": [
+        0.0,
+        0.0,
+        0.75
+      ]
+    },
+    "base_frame": "base_link",
+    "model": "ur10e",
+    "nominal_reach_m": 1.3,
+    "nominal_reach_note": "UR datasheet reach 1300 mm, Updated October 2026. Distance from base_link origin to a point is a geometric ball check. NOT IK VALIDATION.",
+    "nominal_reach_source": "https://www.universal-robots.com/manuals/EN/DataSheets/UR10e_techsheet_pdf_online/UR10e_techsheet_en.pdf",
+    "provenance": "official nominal UR10e description pinned by SOURCE_MANIFEST. Not a calibrated robot and not a long-reach derivative.",
+    "role": "reference manipulator",
+    "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+    "source_repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+    "tcp_frame": "tool0"
+  },
+  "runtime": {
+    "articulation_root": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+    "generated_usd_dir": "/home/woonkil/work/robotwin-p003/isaac/generated/workcell",
+    "gravity": {
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "enabled": true,
+      "magnitude_m_s2": 9.8100004196167,
+      "prim": "/PhysicsScene"
+    },
+    "physics_dt_s": 0.016666666666666666,
+    "placement_method": "usd_translate_on_/ur10e"
+  },
+  "tool_box_world_aabb_m": {
+    "max_m": [
+      1.20425,
+      0.41069999995493867,
+      0.8308499999280702
+    ],
+    "min_m": [
+      1.16425,
+      0.3506999999467345,
+      0.790849999915764
+    ]
+  },
+  "tool_placeholder": {
+    "center_in_tool0_m": [
+      0.0,
+      0.0,
+      0.09
+    ],
+    "collision_name": "tool_placeholder_collision",
+    "collision_parent_link": "wrist_3_link",
+    "collision_parent_reason": "tool0 has no RigidBodyAPI. The collision cube is parented to wrist_3_link so PhysX includes it in that rigid body. The frame Xform stays under tool0.",
+    "disclaimer": "NOT ACTUAL INDUSTRIAL TOOL",
+    "frame_name": "ToolPlaceholder",
+    "frame_parent": "tool0",
+    "label": "PROJECT TEST GEOMETRY",
+    "size_m": [
+      0.04,
+      0.04,
+      0.06
+    ]
+  },
+  "units": {
+    "angle": "radian",
+    "length": "meter",
+    "time": "second"
+  },
+  "work_structure": {
+    "posts": [
+      {
+        "center_in_workcell_m": [
+          0.0,
+          0.4,
+          0.315
+        ],
+        "id": "post_positive_y",
+        "prim": "/World/Workcell/WorkStructure/PostPositiveY",
+        "size_m": [
+          0.04,
+          0.04,
+          0.626
+        ]
+      },
+      {
+        "center_in_workcell_m": [
+          0.0,
+          -0.4,
+          0.315
+        ],
+        "id": "post_negative_y",
+        "prim": "/World/Workcell/WorkStructure/PostNegativeY",
+        "size_m": [
+          0.04,
+          0.04,
+          0.626
+        ]
+      }
+    ],
+    "prim": "/World/Workcell/WorkStructure",
+    "static": true
+  },
+  "workcell": {
+    "T_world_workcell": {
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xyz_m": [
+        1.26,
+        0.0,
+        0.0
+      ]
+    },
+    "frame": "workcell",
+    "prim": "/World/Workcell"
+  }
+}

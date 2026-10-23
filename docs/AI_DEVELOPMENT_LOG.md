@@ -625,3 +625,60 @@ PYTHONPATH=. python3 -m pytest tests/unit -q → 23 passed.
 Elapsed Time
 2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-005 — industrial workcell physics baseline
+
+```text
+Task
+P-005. 검증된 nominal UR10e를 재현 가능한 industrial workcell에 배치하고
+frame, physics, collision, reset, stability를 측정한다.
+P-006은 시작하지 않는다.
+
+Problem
+Long-reach 모델의 source가 없다. Bolt 공정, IK, trajectory, safety zone은 이번 Gate 밖이다.
+Zero pose에서 tool0는 base_link 기준 약 x=1.184 m, y=0.291 m, z=0.061 m라서
+전방 panel이 팔 높이에 있으면 command 없이 penetration이 생긴다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+Isaac은 p620. PhysX contact report와 raycast_closest는 설치된 omni.physx 110.4.4 binding에서 확인했다.
+
+AI Proposal
+1. Provenance가 있는 robot만 쓴다. 없으면 UR10e-based reference workcell로 둔다.
+2. Isaac을 physics baseline으로 하고 Unity workcell은 복제하지 않는다.
+3. Scene는 workcell/config/workcell.json에서 다시 만든다.
+4. 거절: FilterBot, IK, torque, trajectory, safety-zone engine, P-004 stiffness 변경.
+
+Developer Decision
+위 1–4를 수용한다. Robot은 pinned nominal UR10e다.
+Floor, pedestal, posts, vertical bolt panel, B01–B06, tool placeholder를 PROJECT TEST GEOMETRY로 둔다.
+Panel은 zero-pose collision mesh AABB 밖에 둔다. 접촉은 PhysX contact report로 센다.
+
+Accepted / Rejected
+Accepted — Option A, Isaac primary, stiffness 200000, damping 1000, articulation root relocation, gravity ON.
+Rejected — generic long-reach model, FilterBot claim, bolt fastening, IK, Unity 중복 scene.
+
+Reason
+xformOpOrder에 scale을 translate보다 앞에 두면 translation이 scale된다.
+그 배치의 tool center 오차는 0.08460000407771068 m였다.
+Translate를 앞으로 둔 재측정 오차는 1.7402633963655867e-08 m다.
+10 s, 600 steps, dt 0.016666666666666666 s.
+Base displacement 0 m. Max joint drift 3.637978807091713e-10 rad.
+Tool0 drift 0 m. Unexpected collisions 0. Initial penetrations 0.
+Reset joint difference 1.2514647096395493e-09 rad.
+Build position difference 0 m.
+Directional raycast clearance 0.02761254273355007 m.
+Robot base에서 panel frame까지 1.2757742747053649 m.
+Nominal reach 1300 mm와 비교한 sphere 판정은 geometric sanity이며 IK가 아니다.
+Gravity readback magnitude는 9.8100004196167이다. 입력은 9.81이다.
+
+Verification
+evidence/P-005. evidence/P-001B, P-002, P-003, P-004는 덮어쓰지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 30 passed.
+P-004 runner의 DRIVE_STIFFNESS 200000과 DRIVE_DAMPING 1000은 유지했다.
+이 결과는 현장 안전 검증도, bolt fastening 검증도, FilterBot도 아니다.
+REQ-019의 camera, lighting, restricted zone은 이번 baseline에 없다.
+
+Elapsed Time
+2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

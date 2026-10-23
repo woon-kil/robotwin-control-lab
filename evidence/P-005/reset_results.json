@@ -1,0 +1,489 @@
+{
+  "after_reset": {
+    "bolt_panel": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.26,
+        "y": 0.0,
+        "z": 0.95
+      },
+      "prim_path": "/World/Workcell/WorkStructure/BoltPanel",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "bolt_targets": {
+      "B01": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.22,
+          "z": 1.17
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B01",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B02": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": -0.22,
+          "z": 1.17
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B02",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B03": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.0,
+          "z": 0.95
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B03",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B04": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.22,
+          "z": 0.73
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B04",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B05": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": -0.22,
+          "z": 0.73
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B05",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B06": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.0,
+          "z": 1.25
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B06",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      }
+    },
+    "floor": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -0.025
+      },
+      "prim_path": "/World/Floor",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "joint_names": [
+      "shoulder_pan_joint",
+      "shoulder_lift_joint",
+      "elbow_joint",
+      "wrist_1_joint",
+      "wrist_2_joint",
+      "wrist_3_joint"
+    ],
+    "joint_rad": [
+      1.4055971178095206e-06,
+      0.0005065400036983192,
+      0.0001637144887354225,
+      1.1332333087921143e-05,
+      -3.65810457481075e-08,
+      1.17296199420025e-08
+    ],
+    "pedestal": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.375
+      },
+      "prim_path": "/World/Fixture/Pedestal",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "robot_base": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.75
+      },
+      "prim_path": "/ur10e/Geometry/world/base_link",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "tool0": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.184167742729187,
+        "y": 0.2907013893126827,
+        "z": 0.8101570606231656
+      },
+      "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": -0.00024119022200969897,
+        "x": 0.00024041534964842803,
+        "y": 0.7071067269678223,
+        "z": 0.7071067534004963
+      },
+      "rigid_body_api": false
+    },
+    "work_structure": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.26,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "prim_path": "/World/Workcell/WorkStructure",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    }
+  },
+  "before_reset": {
+    "bolt_panel": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.26,
+        "y": 0.0,
+        "z": 0.95
+      },
+      "prim_path": "/World/Workcell/WorkStructure/BoltPanel",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "bolt_targets": {
+      "B01": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.22,
+          "z": 1.17
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B01",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B02": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": -0.22,
+          "z": 1.17
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B02",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B03": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.0,
+          "z": 0.95
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B03",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B04": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.22,
+          "z": 0.73
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B04",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B05": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": -0.22,
+          "z": 0.73
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B05",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      },
+      "B06": {
+        "frame": "isaac_world",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "position_m": {
+          "x": 1.25,
+          "y": 0.0,
+          "z": 1.25
+        },
+        "prim_path": "/World/Workcell/WorkStructure/BoltPanel/B06",
+        "quaternion_order": "wxyz",
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rigid_body_api": false
+      }
+    },
+    "floor": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -0.025
+      },
+      "prim_path": "/World/Floor",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "joint_names": [
+      "shoulder_pan_joint",
+      "shoulder_lift_joint",
+      "elbow_joint",
+      "wrist_1_joint",
+      "wrist_2_joint",
+      "wrist_3_joint"
+    ],
+    "joint_rad": [
+      1.405531634190993e-06,
+      0.000506540120113641,
+      0.00016371574020013213,
+      1.133214209403377e-05,
+      -3.658021441310666e-08,
+      1.1560791435272222e-08
+    ],
+    "pedestal": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.375
+      },
+      "prim_path": "/World/Fixture/Pedestal",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "robot_base": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.75
+      },
+      "prim_path": "/ur10e/Geometry/world/base_link",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    },
+    "tool0": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.184167742729187,
+        "y": 0.2907013893126827,
+        "z": 0.8101570606231656
+      },
+      "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": -0.00024119022200969897,
+        "x": 0.00024041534964842803,
+        "y": 0.7071067269678223,
+        "z": 0.7071067534004963
+      },
+      "rigid_body_api": false
+    },
+    "work_structure": {
+      "frame": "isaac_world",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "position_m": {
+        "x": 1.26,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "prim_path": "/World/Workcell/WorkStructure",
+      "quaternion_order": "wxyz",
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rigid_body_api": false
+    }
+  },
+  "bolt_panel_difference_m": 0.0,
+  "joint_difference_rad": [
+    6.548361852765083e-11,
+    1.1641532182693481e-10,
+    1.2514647096395493e-09,
+    1.9099388737231493e-10,
+    8.313350008393172e-13,
+    1.688285067302786e-10
+  ],
+  "max_joint_difference_rad": 1.2514647096395493e-09,
+  "method": "timeline.stop, reconstruct Articulation, timeline.play, set canonical joint targets to zero, settle",
+  "reset_settle_steps": 43,
+  "reset_timed_out": false,
+  "robot_base_difference_m": 0.0,
+  "tool0_difference_m": 0.0
+}

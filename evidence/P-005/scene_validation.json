@@ -1,0 +1,31 @@
+{
+  "articulation_root": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+  "articulation_root_before": [
+    "/ur10e/Geometry/world/base_link/base_link_inertia"
+  ],
+  "articulation_root_relocated_count": 1,
+  "collision_counts": {
+    "bolt_panel": 1,
+    "floor": 1,
+    "pedestal": 1,
+    "posts": 2,
+    "robot": 8,
+    "tool_placeholder": 1
+  },
+  "collision_geometry_present": true,
+  "finite_transforms": true,
+  "frames": {
+    "bolt_panel": "/World/Workcell/WorkStructure/BoltPanel",
+    "robot_base": "/World/RobotBase",
+    "tool0": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+    "workcell": "/World/Workcell",
+    "world": "/World"
+  },
+  "placement_method": "usd_translate_on_/ur10e",
+  "required_frames_present": true,
+  "required_prims_present": true,
+  "robot_fixed_base": true,
+  "self_collision_engine": "NOT IMPLEMENTED. Robot collision prims are present for a later check.",
+  "static_environment": true,
+  "visual_vs_collision": "UR10e visual and collision mesh origins differ in the pinned URDF. Workcell boxes use the same cube for visual and collision. Tool frame is under tool0. Tool collision is parented to wrist_3_link."
+}
