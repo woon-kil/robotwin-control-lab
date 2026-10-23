@@ -1,0 +1,240 @@
+{
+  "cases": [
+    {
+      "case": "A-zero",
+      "metrics": {
+        "accuracy_claim": "PROJECT VIRTUAL CONTROLLER tracking error. Not UR10e positioning accuracy.",
+        "command_accepted_time_s": 0.0,
+        "completion_time_s": 0.01,
+        "duration_sec": 0.02,
+        "execution_start_time_s": 0.01,
+        "final_max_joint_error_rad": 0.0,
+        "final_tcp_orientation_error_rad": 0.0,
+        "final_tcp_position_error_m": 0.0,
+        "global_max_joint_error_rad": 0.0,
+        "max_tcp_orientation_error_deg": 0.0,
+        "max_tcp_orientation_error_rad": 0.0,
+        "max_tcp_position_error_m": 0.0,
+        "max_tcp_position_error_mm": 0.0,
+        "per_joint": [
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_pan_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_lift_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "elbow_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_1_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_2_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_3_joint",
+            "max_abs_error_rad": 0.0,
+            "mean_abs_error_rad": 0.0
+          }
+        ],
+        "sample_count": 3,
+        "settled_time_s": 0.02,
+        "settling_time_sec": 0.01
+      }
+    },
+    {
+      "case": "B-positive-1",
+      "metrics": {
+        "accuracy_claim": "PROJECT VIRTUAL CONTROLLER tracking error. Not UR10e positioning accuracy.",
+        "command_accepted_time_s": 0.0,
+        "completion_time_s": 0.23000000000000007,
+        "duration_sec": 0.25000000000000006,
+        "execution_start_time_s": 0.01,
+        "final_max_joint_error_rad": 0.0,
+        "final_tcp_orientation_error_rad": 0.0,
+        "final_tcp_position_error_m": 0.0,
+        "global_max_joint_error_rad": 0.7,
+        "max_tcp_orientation_error_deg": 108.88601121861682,
+        "max_tcp_orientation_error_rad": 1.9004194051283465,
+        "max_tcp_position_error_m": 0.643889414418888,
+        "max_tcp_position_error_mm": 643.889414418888,
+        "per_joint": [
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_pan_joint",
+            "max_abs_error_rad": 0.2,
+            "mean_abs_error_rad": 0.04067393092011778
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_lift_joint",
+            "max_abs_error_rad": 0.3,
+            "mean_abs_error_rad": 0.08849558240335173
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "elbow_joint",
+            "max_abs_error_rad": 0.4,
+            "mean_abs_error_rad": 0.10575222039230624
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_1_joint",
+            "max_abs_error_rad": 0.5,
+            "mean_abs_error_rad": 0.1626957236804711
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_2_joint",
+            "max_abs_error_rad": 0.6,
+            "mean_abs_error_rad": 0.23196053685305357
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_3_joint",
+            "max_abs_error_rad": 0.7,
+            "mean_abs_error_rad": 0.313529637939147
+          }
+        ],
+        "sample_count": 26,
+        "settled_time_s": 0.25000000000000006,
+        "settling_time_sec": 0.24000000000000005
+      }
+    },
+    {
+      "case": "C-mixed-1",
+      "metrics": {
+        "accuracy_claim": "PROJECT VIRTUAL CONTROLLER tracking error. Not UR10e positioning accuracy.",
+        "command_accepted_time_s": 0.0,
+        "completion_time_s": 0.24000000000000007,
+        "duration_sec": 0.26000000000000006,
+        "execution_start_time_s": 0.01,
+        "final_max_joint_error_rad": 0.0,
+        "final_tcp_orientation_error_rad": 0.0,
+        "final_tcp_position_error_m": 0.0,
+        "global_max_joint_error_rad": 0.7,
+        "max_tcp_orientation_error_deg": 55.74779565874351,
+        "max_tcp_orientation_error_rad": 0.9729825849740755,
+        "max_tcp_position_error_m": 0.6673406599956621,
+        "max_tcp_position_error_mm": 667.340659995662,
+        "per_joint": [
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_pan_joint",
+            "max_abs_error_rad": 0.5,
+            "mean_abs_error_rad": 0.23035072286647346
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_lift_joint",
+            "max_abs_error_rad": 0.4,
+            "mean_abs_error_rad": 0.14891293723899743
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "elbow_joint",
+            "max_abs_error_rad": 0.3,
+            "mean_abs_error_rad": 0.05875123355128123
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_1_joint",
+            "max_abs_error_rad": 0.2,
+            "mean_abs_error_rad": 0.02741724232393124
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_2_joint",
+            "max_abs_error_rad": 0.6,
+            "mean_abs_error_rad": 0.22336940585849605
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_3_joint",
+            "max_abs_error_rad": 0.7,
+            "mean_abs_error_rad": 0.301917429126586
+          }
+        ],
+        "sample_count": 27,
+        "settled_time_s": 0.26000000000000006,
+        "settling_time_sec": 0.25000000000000006
+      }
+    },
+    {
+      "case": "E-fixed-3",
+      "metrics": {
+        "accuracy_claim": "PROJECT VIRTUAL CONTROLLER tracking error. Not UR10e positioning accuracy.",
+        "command_accepted_time_s": 0.0,
+        "completion_time_s": 0.02,
+        "duration_sec": 0.04,
+        "execution_start_time_s": 0.01,
+        "final_max_joint_error_rad": 0.0,
+        "final_tcp_orientation_error_rad": 2.1073424255447017e-08,
+        "final_tcp_position_error_m": 0.0,
+        "global_max_joint_error_rad": 0.06,
+        "max_tcp_orientation_error_deg": 6.1970808141304365,
+        "max_tcp_orientation_error_rad": 0.10815946421874685,
+        "max_tcp_position_error_m": 0.018196714386910895,
+        "max_tcp_position_error_mm": 18.196714386910894,
+        "per_joint": [
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_pan_joint",
+            "max_abs_error_rad": 0.01,
+            "mean_abs_error_rad": 0.002
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "shoulder_lift_joint",
+            "max_abs_error_rad": 0.02,
+            "mean_abs_error_rad": 0.004
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "elbow_joint",
+            "max_abs_error_rad": 0.03,
+            "mean_abs_error_rad": 0.006
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_1_joint",
+            "max_abs_error_rad": 0.04,
+            "mean_abs_error_rad": 0.009716814692820413
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_2_joint",
+            "max_abs_error_rad": 0.05,
+            "mean_abs_error_rad": 0.013716814692820415
+          },
+          {
+            "final_abs_error_rad": 0.0,
+            "joint": "wrist_3_joint",
+            "max_abs_error_rad": 0.06,
+            "mean_abs_error_rad": 0.017716814692820413
+          }
+        ],
+        "sample_count": 5,
+        "settled_time_s": 0.04,
+        "settling_time_sec": 0.03
+      }
+    }
+  ]
+}

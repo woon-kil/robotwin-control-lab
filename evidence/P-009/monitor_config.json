@@ -1,0 +1,18 @@
+{
+  "claim": "PROJECT DIGITAL-TWIN STATE TRACKING",
+  "joint_settling_tolerance_rad": 1e-09,
+  "max_execution_steps": 10000,
+  "not_claims": [
+    "actual UR10e positioning accuracy",
+    "industrial trajectory tracking performance",
+    "hard real-time certification",
+    "real robot",
+    "real PMAC verification",
+    "bolt fastening success"
+  ],
+  "sample_period_sec": 0.01,
+  "settling_consecutive_samples": 3,
+  "settling_tolerance_class": "PROJECT TEST PARAMETER",
+  "start_state": "Each case starts from a new controller at the zero joint state.",
+  "time_source": "VirtualPmacController project clock"
+}

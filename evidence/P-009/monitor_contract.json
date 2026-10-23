@@ -1,0 +1,39 @@
+{
+  "actual_definition": "actual_q is the controller plant joint position at the sample. The monitor does not copy it from target_q.",
+  "claim_boundary": "PROJECT DIGITAL-TWIN STATE TRACKING",
+  "completion_vs_settling": "COMPLETED is the controller trace. SETTLED is the monitor rule. They are recorded as separate times and are not assigned from each other.",
+  "fk_source": "core.kinematics.fk.forward_kinematics",
+  "joint_error_formula": "error_i = target_i - actual_i, radian",
+  "not_claims": [
+    "actual UR10e positioning accuracy",
+    "industrial trajectory tracking performance",
+    "hard real-time certification",
+    "real robot",
+    "real PMAC verification",
+    "bolt fastening success"
+  ],
+  "p007_relation": "P-007 latency is transport time. This gate measures motion-state tracking and does not rerun ROS.",
+  "sample_period_sec": 0.01,
+  "sample_schema": [
+    "sequence",
+    "timestamp_s",
+    "dt_s",
+    "controller_state",
+    "execution_state",
+    "target_q",
+    "actual_q",
+    "joint_error_rad",
+    "abs_joint_error_rad",
+    "target_tcp",
+    "actual_tcp",
+    "tcp_position_error_m",
+    "tcp_orientation_error_rad"
+  ],
+  "settling_rule": "PROJECT TEST PARAMETER. max abs joint error <= joint_settling_tolerance_rad for settling_consecutive_samples consecutive samples after execution start. N is 3. A single COMPLETED sample is not SETTLED.",
+  "start_state": "Each case starts from a new controller at the zero joint state.",
+  "target_definition": "target_q is the commanded joint position accepted by VirtualPmacController. The monitor does not copy it from actual_q.",
+  "tcp_orientation_formula": "shortest angle of R_target^-1 * R_actual via core.validation.tcp_compare.orientation_error_rad. trace(R) = trace(R^-1), so this is the same angle as R_target * R_actual^-1. Euler component subtraction is not used. Identical quaternions can still produce a sub-1e-7 rad acos result; the stored quaternions are the pose comparison.",
+  "tcp_position_formula": "||p_target - p_actual||, meter, from P-001B forward_kinematics in the robot base frame",
+  "time_source": "VirtualPmacController project clock",
+  "tracking_error_note": "global max joint and TCP errors include the initial target-actual difference. They are not controller accuracy and not UR10e accuracy."
+}

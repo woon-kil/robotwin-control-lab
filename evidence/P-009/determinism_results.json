@@ -1,0 +1,17 @@
+{
+  "compared": [
+    "sample_count",
+    "state sequence",
+    "target trace",
+    "actual trace",
+    "joint errors",
+    "TCP errors",
+    "settling time",
+    "final metrics"
+  ],
+  "comparison": "exact JSON equality of samples, metrics, traces, settling time, and completion",
+  "equal": true,
+  "mismatches": [],
+  "numeric_tolerance": 0,
+  "runs": 2
+}

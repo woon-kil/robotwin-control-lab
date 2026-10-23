@@ -1,0 +1,12 @@
+{
+  "blocking_reason_codes": [
+    "COLLISION"
+  ],
+  "case": "E-fixed-1",
+  "controller_submitted": false,
+  "execution_trace_created": false,
+  "submit_count_after": 0,
+  "submit_count_before": 0,
+  "tracking_started": false,
+  "validation_decision": "REJECT"
+}

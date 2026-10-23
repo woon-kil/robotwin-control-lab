@@ -1,0 +1,30 @@
+{
+  "actual_q_at_fault": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "controller_trace": [
+    "ACCEPTED",
+    "EXECUTING",
+    "FAULTED"
+  ],
+  "execution_completed": false,
+  "fault_case": "B-positive-1",
+  "fault_occurred": true,
+  "fault_step": 1,
+  "settled": false,
+  "status": "ERROR",
+  "target_q_at_fault": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "tracking_started": true
+}

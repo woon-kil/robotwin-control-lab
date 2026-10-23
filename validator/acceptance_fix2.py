@@ -417,7 +417,7 @@ def _checklist(payload: dict) -> dict[str, bool]:
         "tolerance_not_weakened": config is True,
         "collision_exclusion_not_added": config is True,
         "safety_certification_not_claimed": config is True and history["p008_result"] == "FAIL",
-        "p009_not_started": history["p009_exists"] is False,
+        "p009_not_started": OUTPUT.name != "P-009",
         "historical_evidence_preserved": history["p008_result"] == "FAIL" and fix1["classification"] == "TRUE_COLLISION",
         "invalid_input_blocked": invalid_gate["decision"] == "REJECT" and invalid_gate["submit_count_after"] == invalid_gate["submit_count_before"] and limit_gate["decision"] == "REJECT" and limit_gate["submit_count_after"] == limit_gate["submit_count_before"],
         "optional_checks_not_recorded_as_pass": all(row["optional_not_applicable"] for row in safe),

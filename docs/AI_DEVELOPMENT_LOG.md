@@ -918,3 +918,53 @@ P-008 result는 FINAL PASS다. 산업 안전 인증이 아니다.
 Elapsed Time
 2026-10-23 reconciliation은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-009 — Digital twin target vs actual
+
+```text
+Task
+SAFE_TO_ATTEMPT 명령의 target joint와 actual joint를 project clock으로 기록하고, joint/TCP 오차와 settling을 계산한다.
+E-fixed-1은 P-008 REJECT이면 tracking을 시작하지 않는다. P-010은 시작하지 않는다.
+
+Problem
+Controller COMPLETED와 monitor SETTLED를 같은 값으로 두면 단일 sample 수렴과 fault 이후 hold를 구분할 수 없다.
+A-zero는 시작부터 target과 actual이 같아서 separation 증거가 되지 않는다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. Monitor는 controller와 validator 밖에 두고 ExecutionGate 통과 뒤에만 begin한다.
+2. TCP는 target_q와 actual_q에 각각 P-001B FK를 적용한다. Orientation은 기존 shortest-angle 함수를 쓴다.
+3. Settling은 1e-9 rad를 연속 3 sample 유지할 때다. COMPLETED 플래그로 대입하지 않는다.
+4. 거절: target/actual 복사, Euler 차감, E-fixed-1 trace, HMI, 실측 정확도 주장, P-010.
+
+Developer Decision
+위 1–4를 수용한다. 각 case는 zero joint state의 새 controller에서 시작한다.
+dt는 P-006의 0.01 s를 유지한다.
+FIX2 acceptance의 p009_not_started는 이후 evidence 디렉터리 존재가 아니라 FIX2 출력 경로를 보게 고친다. evidence/P-008-FIX2 파일은 다시 쓰지 않는다.
+
+Accepted / Rejected
+Accepted — designated safe 4건만 추적하고, fault 중에는 SETTLED로 두지 않는다.
+Rejected — A-zero만으로 target/actual separation을 주장하는 것, 거절된 명령의 execution trace.
+
+Reason
+Designated safe 4/4는 SAFE_TO_ATTEMPT 뒤 추적, COMPLETED, SETTLED다.
+Global max joint tracking error는 0.7 rad다. 이것은 이동 시작의 target-actual 차이며 positioning accuracy가 아니다.
+Max TCP position tracking error는 667.340659995662 mm다.
+Max TCP orientation tracking error는 108.88601121861682 deg다.
+Final max joint error는 0.0 rad다.
+B-positive-1, C-mixed-1, E-fixed-3은 초기와 중간 sample에서 target_q와 actual_q가 달랐다.
+E-fixed-1은 REJECT이고 submit과 tracking은 시작되지 않았다.
+Fault는 tracking이 시작된 뒤 SETTLED가 아니고 COMPLETED도 아니다.
+Timeout 0, non-finite 0. Replay는 exact match다.
+
+Verification
+evidence/P-009. evidence/P-001부터 P-008-FIX2는 수정하지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit/test_ur10e_fk.py tests/unit/test_p001b_evidence.py tests/unit/test_p006_controller.py tests/unit/test_p007_convert.py tests/unit/test_p008_validator.py tests/unit/test_p008_fix2_acceptance.py tests/unit/test_p009_monitor.py -q → 52 passed.
+ROS, Isaac, Unity는 다시 실행하지 않았다.
+이 결과는 실제 UR10e 정확도나 hard real-time이 아니다.
+
+Elapsed Time
+2026-10-23 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```
