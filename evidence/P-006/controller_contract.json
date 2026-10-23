@@ -1,0 +1,102 @@
+{
+  "architecture_notes": [
+    "REQ-011 names are used. ENABLED, EXECUTING, FAULT, DISABLED, and JOINT_POSITION are not controller_state or command_type values.",
+    "servo_on enters READY. SERVO_ON is not a resting state because motion is defined to start from READY and no locked edge leaves SERVO_ON.",
+    "reset from ERROR returns CONNECTED. It does not enter READY and does not change actual joint position.",
+    "MOVE_TCP, IK, and Cartesian motion are not implemented.",
+    "This table does not amend docs/ROBOT_INTERFACE.md and is not a Power PMAC state machine."
+  ],
+  "busy_policy": "REJECT_BUSY",
+  "claim": "PMAC-compatible controller semantics",
+  "claim_boundary": [
+    "PROJECT VIRTUAL CONTROLLER",
+    "NOT VERIFIED AGAINST REAL POWER PMAC",
+    "DETERMINISTIC PROJECT TEST MODEL",
+    "NOT ACTUAL UR10e SERVO DYNAMICS",
+    "NOT ACTUAL PMAC SERVO DYNAMICS"
+  ],
+  "command_states": [
+    "ACCEPTED",
+    "EXECUTING",
+    "COMPLETED",
+    "REJECTED",
+    "FAULTED"
+  ],
+  "completion_tolerance_class": "PROJECT TEST PARAMETER",
+  "completion_tolerance_rad": 1e-09,
+  "controller_states_vocabulary": [
+    "DISCONNECTED",
+    "CONNECTED",
+    "SERVO_OFF",
+    "SERVO_ON",
+    "HOMING",
+    "READY",
+    "RUNNING",
+    "HOLD",
+    "ERROR",
+    "ESTOP"
+  ],
+  "fault_codes": [
+    "FAULT_INJECTED",
+    "COMMAND_INVALID",
+    "JOINT_LIMIT",
+    "INTERNAL_ERROR",
+    "TEST_FAULT"
+  ],
+  "fault_reset_destination": "CONNECTED",
+  "implementation": "VirtualPmacController",
+  "joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "prompt_command_mapping": {
+    "JOINT_POSITION": "MOVE_JOINT"
+  },
+  "prompt_state_mapping": {
+    "DISABLED": "SERVO_OFF",
+    "ENABLED": "READY",
+    "EXECUTING": "RUNNING",
+    "FAULT": "ERROR"
+  },
+  "real_pmac_compatibility_claimed": false,
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "states_not_used": [
+    "SERVO_ON",
+    "HOMING",
+    "HOLD",
+    "ESTOP"
+  ],
+  "states_used_by_this_baseline": [
+    "DISCONNECTED",
+    "CONNECTED",
+    "READY",
+    "RUNNING",
+    "SERVO_OFF",
+    "ERROR"
+  ],
+  "supported_commands": [
+    "MOVE_JOINT"
+  ],
+  "units": {
+    "angle": "radian",
+    "time": "second"
+  },
+  "virtual_motion_parameters": {
+    "max_velocity_rad_s": [
+      2.0943951023931953,
+      2.0943951023931953,
+      3.141592653589793,
+      3.141592653589793,
+      3.141592653589793,
+      3.141592653589793
+    ],
+    "max_velocity_source": "pinned UR10e joint_limits.yaml max_velocity, converted from degrees",
+    "model": "per-joint velocity slew",
+    "test_dt_class": "PROJECT TEST CLOCK",
+    "test_dt_s": 0.01
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "claim_boundary": [
+    "NOT REAL PMAC LATENCY",
+    "NOT HARD REAL-TIME GUARANTEE"
+  ],
+  "clock": "time.perf_counter host process time",
+  "max_s": 0.0007278751581907272,
+  "mean_s": 6.140552557491022e-05,
+  "p50_s": 5.7416968047618866e-05,
+  "p95_s": 6.550014950335026e-05,
+  "p99_s": 7.233303040266037e-05,
+  "sample_count": 116,
+  "unit": "second"
+}

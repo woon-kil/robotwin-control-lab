@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "code": null,
+      "expected": "PASS",
+      "name": "DISCONNECTED -> CONNECTED",
+      "outcome": "PASS",
+      "result": "PASS"
+    },
+    {
+      "code": null,
+      "expected": "PASS",
+      "name": "CONNECTED -> READY",
+      "outcome": "PASS",
+      "result": "PASS"
+    },
+    {
+      "code": null,
+      "expected": "PASS",
+      "name": "READY -> RUNNING",
+      "outcome": "PASS",
+      "result": "PASS"
+    },
+    {
+      "code": null,
+      "expected": "PASS",
+      "name": "RUNNING -> READY",
+      "outcome": "PASS",
+      "result": "PASS"
+    },
+    {
+      "code": "ILLEGAL_STATE",
+      "expected": "REJECT",
+      "name": "DISCONNECTED -> RUNNING",
+      "outcome": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "code": "ILLEGAL_STATE",
+      "expected": "REJECT",
+      "name": "ERROR -> RUNNING",
+      "outcome": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "code": "ILLEGAL_TRANSITION",
+      "expected": "REJECT",
+      "name": "DISCONNECTED -> servo_on",
+      "outcome": "REJECT",
+      "result": "PASS"
+    },
+    {
+      "code": "ILLEGAL_TRANSITION",
+      "expected": "REJECT",
+      "name": "READY -> reset",
+      "outcome": "REJECT",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

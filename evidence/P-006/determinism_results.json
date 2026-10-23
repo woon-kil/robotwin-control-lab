@@ -1,0 +1,37 @@
+{
+  "fault_state_equal": true,
+  "max_difference_rad": 0.0,
+  "result": "PASS",
+  "run1_completion_steps": [
+    1,
+    23,
+    45,
+    20,
+    22
+  ],
+  "run1_final_q": [
+    0.01,
+    0.02,
+    -0.03,
+    0.04,
+    -0.05,
+    0.06
+  ],
+  "run2_completion_steps": [
+    1,
+    23,
+    45,
+    20,
+    22
+  ],
+  "run2_final_q": [
+    0.01,
+    0.02,
+    -0.03,
+    0.04,
+    -0.05,
+    0.06
+  ],
+  "timed_out": false,
+  "traces_equal": true
+}

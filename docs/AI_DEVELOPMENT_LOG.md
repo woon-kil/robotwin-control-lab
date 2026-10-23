@@ -682,3 +682,49 @@ REQ-019의 camera, lighting, restricted zone은 이번 baseline에 없다.
 Elapsed Time
 2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-006 — virtual PMAC-compatible controller baseline
+
+```text
+Task
+P-006. Canonical MOVE_JOINT를 받는 VirtualPmacController를 만들고
+lifecycle, slew, fault, reset, replay를 측정한다.
+P-007은 시작하지 않는다.
+
+Problem
+P-000B의 controller_state 어휘와 P-006 프롬프트의 ENABLED/EXECUTING/FAULT/JOINT_POSITION이 다르다.
+실제 Power PMAC 명령과 레지스터는 공개된 구현 근거가 없다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. controller_state는 REQ-011 이름만 쓴다. enable은 READY, 동작 중은 RUNNING, fault는 ERROR다.
+2. 관절 명령 타입은 MOVE_JOINT다. JOINT_POSITION이라는 둘째 schema는 만들지 않는다.
+3. 동작은 관절별 sourced velocity limit의 deterministic slew다.
+4. 거절: real PMAC protocol, Isaac/Unity/ROS 호출, MOVE_TCP, IK, fault reset 시 joint zeroing.
+
+Developer Decision
+위 1–4를 수용한다. reset destination은 CONNECTED 하나다.
+EXECUTING 중 새 명령은 REJECT_BUSY다.
+servo_on은 READY로 들어가고 SERVO_ON은 이 baseline의 체류 상태가 아니다.
+
+Accepted / Rejected
+Accepted — VirtualPmacController, MOVE_JOINT, project slew, TEST_FAULT injection.
+Rejected — Power PMAC compatibility claim, command teleport, P-007.
+
+Reason
+다섯 configuration의 최종 joint error는 0 rad다.
+Replay 두 실행의 final q 차이는 0 rad다.
+Fault reset 전후 joint position은 같다.
+Timeout 0, non-finite 0.
+속도 한도는 pinned UR10e joint_limits.yaml의 max_velocity다.
+
+Verification
+evidence/P-006. evidence/P-001B부터 P-005는 덮어쓰지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 37 passed.
+이 결과는 실제 Power PMAC timing, protocol, motion behavior가 아니다.
+
+Elapsed Time
+2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

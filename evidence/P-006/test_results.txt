@@ -1,0 +1,16 @@
+controller_interface_defined PASS
+lifecycle_deterministic PASS
+valid_joint_command_accepted PASS
+invalid_command_rejected PASS
+target_differs_from_actual_during_motion PASS
+all_five_configurations_complete PASS
+busy_policy PASS
+fault_injection PASS
+command_rejected_during_fault PASS
+fault_reset PASS
+joint_state_preserved_on_reset PASS
+deterministic_replay PASS
+non_finite_state PASS
+timeout PASS
+real_pmac_claim_absent PASS
+RESULT PASS

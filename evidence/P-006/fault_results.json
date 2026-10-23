@@ -1,0 +1,25 @@
+{
+  "active_command_aborted": true,
+  "controller_enters_fault": true,
+  "fault_injected": true,
+  "joint_position_after_reset": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "joint_position_before_fault": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "joint_state_preserved": true,
+  "new_command_rejected": true,
+  "reset_succeeds": true,
+  "result": "PASS"
+}

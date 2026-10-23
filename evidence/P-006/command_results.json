@@ -1,0 +1,254 @@
+{
+  "configurations": [
+    {
+      "command_id": "A-zero",
+      "completion_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "max_joint_error_rad": 0.0,
+      "result": "COMPLETED",
+      "simulated_duration_s": 0.01,
+      "start_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steps": 1,
+      "target_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "timed_out": false
+    },
+    {
+      "command_id": "B-positive-1",
+      "completion_q": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "max_joint_error_rad": 0.0,
+      "result": "COMPLETED",
+      "simulated_duration_s": 0.23,
+      "start_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steps": 23,
+      "target_q": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "timed_out": false
+    },
+    {
+      "command_id": "C-mixed-1",
+      "completion_q": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "max_joint_error_rad": 0.0,
+      "result": "COMPLETED",
+      "simulated_duration_s": 0.24,
+      "start_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steps": 24,
+      "target_q": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "timed_out": false
+    },
+    {
+      "command_id": "E-fixed-1",
+      "completion_q": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "max_joint_error_rad": 0.0,
+      "result": "COMPLETED",
+      "simulated_duration_s": 0.2,
+      "start_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steps": 20,
+      "target_q": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "timed_out": false
+    },
+    {
+      "command_id": "E-fixed-3",
+      "completion_q": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "execution_trace": [
+        "ACCEPTED",
+        "EXECUTING",
+        "COMPLETED"
+      ],
+      "max_joint_error_rad": 0.0,
+      "result": "COMPLETED",
+      "simulated_duration_s": 0.02,
+      "start_q": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steps": 2,
+      "target_q": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "timed_out": false
+    }
+  ],
+  "result": "PASS",
+  "sequence": {
+    "busy": {
+      "active_command_preserved": true,
+      "first": "ACCEPTED",
+      "result": "PASS",
+      "second": "REJECTED",
+      "second_code": "BUSY"
+    },
+    "commands": [
+      {
+        "accepted": "ACCEPTED",
+        "command_id": "sequence-A-zero",
+        "steps": 1,
+        "trace": [
+          "ACCEPTED",
+          "EXECUTING",
+          "COMPLETED"
+        ]
+      },
+      {
+        "accepted": "ACCEPTED",
+        "command_id": "sequence-B-positive-1",
+        "steps": 23,
+        "trace": [
+          "ACCEPTED",
+          "EXECUTING",
+          "COMPLETED"
+        ]
+      },
+      {
+        "accepted": "ACCEPTED",
+        "command_id": "sequence-C-mixed-1",
+        "steps": 45,
+        "trace": [
+          "ACCEPTED",
+          "EXECUTING",
+          "COMPLETED"
+        ]
+      },
+      {
+        "accepted": "ACCEPTED",
+        "command_id": "sequence-E-fixed-1",
+        "steps": 20,
+        "trace": [
+          "ACCEPTED",
+          "EXECUTING",
+          "COMPLETED"
+        ]
+      },
+      {
+        "accepted": "ACCEPTED",
+        "command_id": "sequence-E-fixed-3",
+        "steps": 22,
+        "trace": [
+          "ACCEPTED",
+          "EXECUTING",
+          "COMPLETED"
+        ]
+      }
+    ],
+    "result": "PASS",
+    "timed_out": false
+  },
+  "target_differs_from_actual_during_motion": true
+}
