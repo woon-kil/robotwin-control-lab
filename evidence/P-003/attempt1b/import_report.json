@@ -1,0 +1,10 @@
+{
+  "source_repository": "UniversalRobots/Universal_Robots_ROS2_Description",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "source_urdf": "robot_description/generated/7ce98d8c3512b9d0239da93b75de68ea64f61bd6/ur10e.urdf",
+  "source_urdf_sha256": "1248d39ee013426682f92fb0fdb9171ab4a6b7bbb58d2247473b32b7215dc376",
+  "robot": "ur10e",
+  "isaac_version_file": "6.2.0-rc.14+release.52805.02189a84.gl",
+  "execution_mode": "headless",
+  "error": "AttributeError: 'tuple' object has no attribute 'Traverse'"
+}

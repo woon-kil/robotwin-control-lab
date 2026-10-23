@@ -32,3 +32,10 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Isaac generated USD and Kit caches. The import script is the reproducible source.
+isaac/generated/
+**/*.usd
+**/*.usda
+**/*.usdc
+kit/

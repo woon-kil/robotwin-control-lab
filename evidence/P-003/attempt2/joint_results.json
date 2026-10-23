@@ -1,0 +1,351 @@
+{
+  "gate": "P-003",
+  "result": "FAIL",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "canonical_joint_order": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "engineering_target_deg": 0.1,
+  "global_max_joint_error_rad": 1.6746309041976928,
+  "global_max_joint_error_deg": 95.9492830527047,
+  "timeouts": 1,
+  "deterministic_rerun_max_abs_rad": 1.3972490159794688,
+  "invalid_joint_count_rejected": true,
+  "non_finite_rejected": true,
+  "unknown_mapping_rejected": true,
+  "root_displacement_max_m": 2.290063128096822e-05,
+  "physics_dt_s": 0.016666666666666666,
+  "solver_position_iterations": null,
+  "solver_velocity_iterations": null,
+  "drive_stiffness_readback": [
+    100000.0,
+    100000.0,
+    100000.0,
+    100000.0,
+    100000.0,
+    100000.0
+  ],
+  "drive_damping_readback": [
+    1000.0,
+    1000.0,
+    1000.0,
+    1000.0,
+    1000.0,
+    1000.0
+  ],
+  "drive_max_effort_readback": [
+    330.0,
+    330.0,
+    150.0,
+    54.0,
+    54.0,
+    54.0
+  ],
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "target_joint_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_joint_rad": [
+        4.063021333422512e-05,
+        0.0014758976176381111,
+        0.00042394999763928354,
+        -2.48110245593125e-06,
+        6.082697723286401e-07,
+        1.914334646357929e-08
+      ],
+      "error_joint_rad": [
+        4.063021333422512e-05,
+        0.0014758976176381111,
+        0.00042394999763928354,
+        -2.48110245593125e-06,
+        6.082697723286401e-07,
+        1.914334646357929e-08
+      ],
+      "max_abs_error_rad": 0.0014758976176381111,
+      "max_abs_error_deg": 0.0845627044840767,
+      "settling_steps": 43,
+      "settling_time": 0.7166666666666667,
+      "timeout": 8.0,
+      "timed_out": false,
+      "root_displacement_m": 1.6585137066857808e-06,
+      "final_velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "isaacsim.core.experimental.prims.RigidPrim.get_world_poses",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840846538543701,
+          "y": 0.2907465994358063,
+          "z": 0.05750598758459091
+        },
+        "quaternion_wxyz": {
+          "w": -0.0010814372217282653,
+          "x": 0.001055389759130776,
+          "y": 0.7071186900138855,
+          "z": 0.7070932388305664
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "B-positive-1",
+      "target_joint_rad": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "actual_joint_rad": [
+        0.20023120939731598,
+        0.30123040080070496,
+        0.4003054201602936,
+        0.4998847544193268,
+        0.6000054478645325,
+        0.699999988079071
+      ],
+      "error_joint_rad": [
+        0.0002312093973159679,
+        0.0012304008007049672,
+        0.0003054201602935569,
+        -0.00011524558067321777,
+        5.447864532492908e-06,
+        -1.1920928910669204e-08
+      ],
+      "max_abs_error_rad": 0.0012304008007049672,
+      "max_abs_error_deg": 0.07049677298991175,
+      "settling_steps": 256,
+      "settling_time": 4.266666666666667,
+      "timeout": 8.0,
+      "timed_out": false,
+      "root_displacement_m": 2.290063128096822e-05,
+      "final_velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "isaacsim.core.experimental.prims.RigidPrim.get_world_poses",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840846538543701,
+          "y": 0.2907465994358063,
+          "z": -90.284423828125
+        },
+        "quaternion_wxyz": {
+          "w": -0.0010814372217282653,
+          "x": 0.001055389759130776,
+          "y": 0.7071186900138855,
+          "z": 0.7070932388305664
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "C-mixed-1",
+      "target_joint_rad": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "actual_joint_rad": [
+        0.5000559091567993,
+        1.2746309041976929,
+        0.29995447397232056,
+        -0.200069397687912,
+        0.6000030040740967,
+        -0.7000001668930054
+      ],
+      "error_joint_rad": [
+        5.5909156799316406e-05,
+        1.6746309041976928,
+        -4.552602767943226e-05,
+        -6.93976879119762e-05,
+        3.004074096701892e-06,
+        -1.6689300541550267e-07
+      ],
+      "max_abs_error_rad": 1.6746309041976928,
+      "max_abs_error_deg": 95.9492830527047,
+      "settling_steps": 481,
+      "settling_time": 8.016666666666666,
+      "timeout": 8.0,
+      "timed_out": true,
+      "root_displacement_m": 1.660842052458479e-05,
+      "final_velocity_rad_s": [
+        0.014433219097554684,
+        -0.1034899353981018,
+        0.004190683830529451,
+        0.005335713736712933,
+        0.0006852306541986763,
+        -9.185660019284114e-05
+      ],
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "isaacsim.core.experimental.prims.RigidPrim.get_world_poses",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840846538543701,
+          "y": 0.2907465994358063,
+          "z": -745.039306640625
+        },
+        "quaternion_wxyz": {
+          "w": -0.0010814372217282653,
+          "x": 0.001055389759130776,
+          "y": 0.7071186900138855,
+          "z": 0.7070932388305664
+        }
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "E-fixed-1",
+      "target_joint_rad": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "actual_joint_rad": [
+        0.10006517916917801,
+        1.2965470552444458,
+        0.2999514937400818,
+        -0.40008050203323364,
+        0.5000032186508179,
+        -0.600000262260437
+      ],
+      "error_joint_rad": [
+        6.517916917800348e-05,
+        1.4965470552444458,
+        -4.850625991820179e-05,
+        -8.050203323362037e-05,
+        3.2186508178710938e-06,
+        -2.622604370339232e-07
+      ],
+      "max_abs_error_rad": 1.4965470552444458,
+      "max_abs_error_deg": 85.7458301082384,
+      "settling_steps": 310,
+      "settling_time": 5.166666666666667,
+      "timeout": 8.0,
+      "timed_out": false,
+      "root_displacement_m": 1.8338738249105099e-06,
+      "final_velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "isaacsim.core.experimental.prims.RigidPrim.get_world_poses",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840846538543701,
+          "y": 0.2907465994358063,
+          "z": -1503.5255126953125
+        },
+        "quaternion_wxyz": {
+          "w": -0.0010814372217282653,
+          "x": 0.001055389759130776,
+          "y": 0.7071186900138855,
+          "z": 0.7070932388305664
+        }
+      },
+      "result": "FAIL"
+    },
+    {
+      "test_id": "E-fixed-3",
+      "target_joint_rad": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "actual_joint_rad": [
+        0.010079335421323776,
+        1.439937949180603,
+        -0.029996223747730255,
+        0.03989255428314209,
+        -0.04999639093875885,
+        0.0599999837577343
+      ],
+      "error_joint_rad": [
+        7.933542132377604e-05,
+        1.419937949180603,
+        3.776252269743763e-06,
+        -0.00010744571685791099,
+        3.609061241152678e-06,
+        -1.62422656990735e-08
+      ],
+      "max_abs_error_rad": 1.419937949180603,
+      "max_abs_error_deg": 81.35645165851012,
+      "settling_steps": 130,
+      "settling_time": 2.1666666666666665,
+      "timeout": 8.0,
+      "timed_out": false,
+      "root_displacement_m": 8.850857425434975e-07,
+      "final_velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "isaacsim.core.experimental.prims.RigidPrim.get_world_poses",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "position_m": {
+          "x": 1.1840846538543701,
+          "y": 0.2907465994358063,
+          "z": -1901.9072265625
+        },
+        "quaternion_wxyz": {
+          "w": -0.0010814372217282653,
+          "x": 0.001055389759130776,
+          "y": 0.7071186900138855,
+          "z": 0.7070932388305664
+        }
+      },
+      "result": "FAIL"
+    }
+  ]
+}

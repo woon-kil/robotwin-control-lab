@@ -1,0 +1,10 @@
+result FAIL
+global_max_joint_error_rad 1.6746309041976928
+global_max_joint_error_deg 95.9492830527047
+timeouts 1
+deterministic_rerun_max_abs_rad 1.3972490159794688
+A-zero PASS steps=43 max_abs_error_rad=0.0014758976176381111 timed_out=false
+B-positive-1 PASS steps=256 max_abs_error_rad=0.0012304008007049672 timed_out=false
+C-mixed-1 FAIL steps=481 max_abs_error_rad=1.6746309041976928 timed_out=true
+E-fixed-1 FAIL steps=310 max_abs_error_rad=1.4965470552444458 timed_out=false
+E-fixed-3 FAIL steps=130 max_abs_error_rad=1.419937949180603 timed_out=false

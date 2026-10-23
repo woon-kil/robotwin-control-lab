@@ -367,3 +367,58 @@ Attempt 1의 0.014747420325875282 rad와 Attempt 2A의 0.0026187931653112173 rad
 Elapsed Time
 2026-10-23 진단과 재시험은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-003 — Isaac UR10e joint control baseline
+
+```text
+Task
+P-003. 같은 Golden Reference UR10e를 Isaac Sim headless에서 불러
+canonical joint command와 PhysX joint feedback의 오차를 측정한다.
+Unity, Python FK와 비교하지 않는다. P-004는 시작하지 않는다.
+
+Problem
+Attempt 1은 import 뒤 stage가 열려 있지 않아 articulation root가 0개였다.
+Attempt 1b는 open_stage가 (bool, stage)를 반환하는데 stage로 사용했다.
+Attempt 2는 root를 찾았지만 reset_to_default_state가 set_default_state 없이는
+아무 일도 하지 않았다. shoulder_lift_joint가 이전 자세를 물려받아
+global max 95.9492830527047 deg, timeout 1이었다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+실행 호스트는 p620. Isaac Sim VERSION 파일은 6.2.0-rc.14+release.52805.02189a84.gl.
+
+AI Proposal
+1. import_urdf가 반환한 USDA를 open_stage의 성공 플래그와 함께 연다.
+2. configuration마다 DOF position을 command로 옮기고 velocity를 0으로 둔 뒤
+   position target을 걸고, settling 이후 physics tensor를 읽는다.
+3. 거절: 0.1 deg 완화, gravity OFF PASS, actual=target, Unity 우열, Python FK mm claim,
+   solver attribute가 없을 때 스키마 기본값 32를 사용한 것처럼 기록.
+
+Developer Decision
+위 1–3을 수용한다. stiffness 100000 Nm/rad, damping 1000 Nm*s/rad,
+max effort는 URDF effort, gravity는 runner가 만든 Z-up 9.81, timeout 8 s,
+settle 20 step을 유지한다. 이 drive는 PROJECT TEST PARAMETER다.
+
+Accepted / Rejected
+Accepted — stage를 다시 열고, configuration을 독립된 hold로 측정한다.
+Rejected — Engineering Target 변경, gravity OFF, 무한 stiffness, P-004, IK.
+
+Reason
+A-zero와 B-positive-1은 0.1 deg 아래였고, 실패한 관절은 shoulder_lift뿐이었다.
+reset이 없어 넘어진 자세에서 effort 330 Nm로 복귀하지 못했다.
+command 자세에서 다시 잡으면 같은 drive의 hold 오차가 0.1 deg 아래였다.
+USD stiffness 1745.3292236328125는 authored attribute이고,
+get_dof_gains readback은 100000이다. solver iteration attribute는 stage에 없다.
+
+Verification
+Headless. configuration 5. timeout 0.
+global max 0.0015286624431610218 rad, 0.08758590629328365 deg.
+deterministic rerun max abs 3.3173018891829997e-06 rad.
+tool0 frame isaac_world, quaternion wxyz.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 17 passed.
+Attempt 1, 1b, 2 evidence는 남겼다.
+이 결과는 UR10e controller 재현이 아니고 Unity와의 비교가 아니다.
+
+Elapsed Time
+2026-10-23 측정과 수정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

@@ -1,0 +1,10 @@
+{
+  "gate": "P-003",
+  "result": "FAIL",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "engineering_target_deg": 0.1,
+  "failures": [
+    "AttributeError: 'tuple' object has no attribute 'Traverse'"
+  ],
+  "configurations": []
+}
