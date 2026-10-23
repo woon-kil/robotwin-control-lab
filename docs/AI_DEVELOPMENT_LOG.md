@@ -200,3 +200,59 @@ Elapsed Time
 2026-10-23 08:40 KST 수신. 문서 작성과 확인은 한 세션이다.
 로컬 커밋은 이 기록 직후 1회. 구현 사이클 시간은 측정하지 않았다.
 ```
+
+## P-001A — UR10e Source Selection & Model Pinning
+
+```text
+Task
+P-001A. UR10e Golden Reference의 official source와 정확한 upstream commit을 핀한다.
+FK와 시뮬레이터 import는 하지 않는다.
+
+Problem
+브랜치 이름만 적으면 이후 jazzy가 움직였을 때 같은 모델을 다시 만들 수 없다.
+비공식 URDF나 특정 장비 calibration을 nominal 설명과 섞으면 비교 기준이 바뀐다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. 공식 저장소 UniversalRobots/Universal_Robots_ROS2_Description를 고른다.
+   ROS baseline이 Jazzy이므로 검토 브랜치는 jazzy다.
+2. 조회 시점의 브랜치 팁 커밋을 SHA로 핀한다. 브랜치 이름만 기록하지 않는다.
+3. 저장소 루트가 패키지 ur_description이다. ur_description/ 하위 경로는 만들지 않는다.
+4. 설명은 official nominal UR10e description이다.
+   default_kinematics.yaml의 hash 필드는 소스 필드로만 적고,
+   특정 실제 장비의 calibration으로 부르지 않는다.
+5. 라이선스는 package.xml의 BSD-3-Clause와 LICENSE 본문,
+   Graphical Documentation 주석의 적용 목록을 그대로 적는다.
+   UR10e mesh에 LICENSE.txt가 없다는 사실을 제약 없음으로 쓰지 않는다.
+6. 거부한 소스: 비공식 URDF 저장소.
+   거부한 작업: FK, IK, Unity, Isaac, ROS2 controller, PMAC, trajectory,
+   collision 구현, Long-Reach, HMI, Vision, benchmark, myCobot 증거 재사용,
+   xacro 수정, P-001B.
+
+Developer Decision
+개발자 지시에 따라 공식 jazzy 팁 7ce98d8c3512b9d0239da93b75de68ea64f61bd6을 핀한다.
+UR10e 설명 입력과 mesh만 수정 없이 복사하고 SHA-256을 남긴다.
+물리 YAML의 숫자는 소스 값으로만 적고 검증된 거동으로 적지 않는다.
+
+Accepted / Rejected
+Accepted — 공식 저장소, jazzy, 조회된 SHA, nominal 경계, 소스에서 읽은 joint와 frame.
+Rejected — 비공식 URDF, 장비 calibration 주장, 제약 없음 해석, FK와 import, P-001B.
+
+Reason
+공식 description이 아니면 이후 Canonical Model과 FK 비교의 기준 커밋이 재현되지 않는다.
+브랜치는 이동하므로 SHA가 필요하다.
+패키지가 싣는 기본 YAML과 컨트롤러에서 추출하는 calibration 파일은 소스가 서로 다른 입력이라고 적혀 있다.
+
+Verification
+2026-10-23T00:04:38Z에 refs/heads/jazzy가 7ce98d8c3512b9d0239da93b75de68ea64f61bd6였다.
+entry point, UR10e config 네 파일, joint 6개, 요청 frame, LICENSE를 그 커밋에서 확인했다.
+로컬 복사 23개 파일의 shasum -a 256 -c는 통과했다.
+FK 구현, Unity, Isaac, P-001B는 만들지 않았다.
+기록은 robot_description/SOURCE_MANIFEST.md와 evidence/P-001A/source_selection.md다.
+
+Elapsed Time
+2026-10-23 09:02 KST 수신. 조회와 문서 작성은 한 세션이다.
+구현 사이클 시간은 측정하지 않았다.
+```

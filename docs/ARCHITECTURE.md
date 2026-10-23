@@ -317,4 +317,4 @@ P-001을 시작할 때 Source Selection과 Pinning을 먼저 한다. 이 문서�
 - 타임스탬프의 epoch와 시계 종류는 정하지 않았다.
 - Quaternion의 부호 정규화는 정하지 않았다.
 - 프레임 사이 수치 변환과 시뮬레이터 변환 행렬은 정하지 않았다.
-- UR10e 소스는 고르지 않았다.
+- UR10e 소스는 P-001A에서 official nominal description으로 핀했다. 기록은 `robot_description/SOURCE_MANIFEST.md`다. 이 아키텍처 문서는 그 핀의 파라미터를 다시 정의하지 않는다.
