@@ -826,3 +826,50 @@ Canonical safe 결과는 4/5이므로 P-008 acceptance는 FAIL이다.
 Elapsed Time
 2026-10-23 구현과 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-008 Fix Attempt 1 — E-fixed-1 collision investigation
+
+```text
+Task
+E-fixed-1의 wrist_3_link vs bolt_panel sample 44/100이 실제 교차인지 판별한다.
+Validator를 PASS로 만들기 위해 고치지 않는다. P-009는 시작하지 않는다.
+
+Problem
+Canonical configuration 5개가 모두 SAFE_TO_ATTEMPT여야 한다는 가정과,
+P-005 workcell 안에서 그 궤적이 패널을 지날 수 있다는 사실이 섞여 있었다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. 같은 validate()로 sample 44를 재현한다.
+2. P-008 scene은 resolve_workcell()이므로 P-005 evidence와 숫자로 비교한다.
+3. SAT와 별개로 triangle edge clip과 box-edge intersection을 계산한다.
+4. N=100/500/1000은 진단만 하고 production sample count는 100으로 둔다.
+5. 거절: tolerance 확대, collision 제외, E-fixed-1 특수 처리, acceptance 자동 수정, P-009.
+
+Developer Decision
+위 1–5를 수용한다. Isaac contact는 동적 step 뒤 관절이라 이 joint vector의 oracle로 쓰지 않는다.
+
+Accepted / Rejected
+Accepted — TRUE_COLLISION이면 validator를 유지한다.
+Rejected — AABB overlap만으로 충돌을 취소하는 것, panel이나 wrist_3를 검사에서 빼는 것.
+
+Reason
+재현은 sample 44/100, wrist_3_link, bolt_panel이다.
+P-005와 P-008의 base, panel, floor, pedestal, post transform 차이는 0이다.
+SAT와 exact triangle-box는 삼각형 3개에서 같고, 불일치는 0이다.
+샘플된 최대 침투는 9.275217475473996e-05 m이고, clip된 edge 길이는 0.0006292049816059846 m다.
+충돌 구간은 sample 44부터 75까지다.
+N=100/500/1000의 첫 충돌 s는 0.4444444444444444, 0.4348697394789579, 0.4344344344344344다.
+FK 위치 차이와 transform composition 차이는 0이다.
+
+Verification
+evidence/P-008-FIX1. evidence/P-008 summary의 FAIL은 덮어쓰지 않았다.
+PYTHONPATH=. python3 -m pytest tests/unit/test_p008_validator.py tests/unit/test_p006_controller.py tests/unit/test_p007_convert.py -q → 22 passed.
+Isaac scene은 이 joint vector로 재실행하지 않았다.
+P-008 final status는 FAIL이다. Acceptance 문장은 이 commit에서 바꾸지 않았다.
+
+Elapsed Time
+2026-10-23 조사는 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

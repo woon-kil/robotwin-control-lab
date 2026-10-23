@@ -1,0 +1,20 @@
+{
+  "diagnostic_depth_samples": 21,
+  "exact_strict_hit_count": 3,
+  "independent_method": "strict vertex inclusion, triangle-edge slab clip, and box-edge versus triangle. This is not the validator SAT.",
+  "isaac": {
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "host_reachable": true,
+    "ran": false,
+    "reason": "P-005 contact reports are read after dynamic stepping. Commanded joints are not the settled joints. That query would not be this sample's joint vector, so it was not used as the oracle."
+  },
+  "max_clipped_edge_length_m": 0.0006292049816059846,
+  "max_sampled_penetration_m": 9.275217475473996e-05,
+  "methods_disagree_on_triangle_count": 0,
+  "sat_triangle_hit_count": 3,
+  "scene_matches": true,
+  "static_samples_only": true,
+  "strict_intersection": true,
+  "swept_volume_added": false,
+  "validator_method": "AABB broadphase, then SAT triangle versus panel AABB. AABB overlap alone is not the decision."
+}

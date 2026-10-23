@@ -1,0 +1,25 @@
+{
+  "collision_present_at_every_resolution": true,
+  "first_hit_s_span": 0.010010010010010006,
+  "production_sample_count_unchanged": 100,
+  "runs": [
+    {
+      "first_hit_index": 44,
+      "first_hit_s": 0.4444444444444444,
+      "production_config": true,
+      "sample_count": 100
+    },
+    {
+      "first_hit_index": 217,
+      "first_hit_s": 0.4348697394789579,
+      "production_config": false,
+      "sample_count": 500
+    },
+    {
+      "first_hit_index": 434,
+      "first_hit_s": 0.4344344344344344,
+      "production_config": false,
+      "sample_count": 1000
+    }
+  ]
+}

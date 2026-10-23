@@ -1,0 +1,46 @@
+{
+  "fresh_decision": "REJECT",
+  "fresh_involved_objects": [
+    {
+      "a": "wrist_3_link",
+      "b": "bolt_panel"
+    }
+  ],
+  "fresh_joint_state": [
+    0.044444444444444446,
+    -0.08888888888888889,
+    0.13333333333333333,
+    -0.17777777777777778,
+    0.2222222222222222,
+    -0.26666666666666666
+  ],
+  "fresh_sample_count": 100,
+  "fresh_sample_index": 44,
+  "fresh_summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100",
+  "fresh_tcp_m": [
+    1.2086629276752072,
+    0.34187231053114475,
+    0.8443252683718095
+  ],
+  "frozen_involved_objects": [
+    {
+      "a": "wrist_3_link",
+      "b": "bolt_panel"
+    }
+  ],
+  "frozen_joint_state": [
+    0.044444444444444446,
+    -0.08888888888888889,
+    0.13333333333333333,
+    -0.17777777777777778,
+    0.2222222222222222,
+    -0.26666666666666666
+  ],
+  "frozen_sample_index": 44,
+  "frozen_tcp_m": [
+    1.2086629276752072,
+    0.34187231053114475,
+    0.8443252683718095
+  ],
+  "matches_frozen_sample_and_pair": true
+}

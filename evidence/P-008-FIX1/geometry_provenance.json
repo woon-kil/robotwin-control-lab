@@ -1,0 +1,52 @@
+{
+  "geometry_source": "robot_description/upstream/7ce98d8c3512b9d0239da93b75de68ea64f61bd6/meshes/ur10e/collision/wrist3.stl",
+  "geometry_used_by_p008": "collision",
+  "link": "wrist_3_link",
+  "local_transform_rpy_rad": [
+    1.5707963267948966,
+    0.0,
+    0.0
+  ],
+  "local_transform_xyz_m": [
+    0.0,
+    -0.0005,
+    -0.1168
+  ],
+  "mesh_or_primitive": "collision STL mesh",
+  "origin_rule": "ur_macro.xacro legacy origin because visual yaml has no mesh_offset",
+  "panel_primitive": "P-005 axis-aligned box",
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "sha256": "7038904dd03dfea56212191ac61d26746b379dbddfd517b905e13c01e1c12e6a",
+  "triangle_count": 138,
+  "visual_geometry_not_used": "meshes/ur10e/visual/wrist3.dae",
+  "world_mesh_transform_at_sample_44": [
+    [
+      -0.906110554675539,
+      0.17488855516558083,
+      0.3851982034974756,
+      1.1884285435336162
+    ],
+    [
+      0.1725197453850619,
+      0.9841521935442233,
+      -0.04100484598638215,
+      0.2269028319021863
+    ],
+    [
+      -0.38626493519068017,
+      0.02929937224906196,
+      -0.9219224189854319,
+      0.8404421404836264
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "AABB_collision": true,
+  "P005_scene_matches": true,
+  "P008_scene_matches": true,
+  "classification": "TRUE_COLLISION",
+  "collision_exclusion_added": false,
+  "evidence": [
+    "evidence/P-008-FIX1/reproduction.json",
+    "evidence/P-008-FIX1/scene_comparison.json",
+    "evidence/P-008-FIX1/independent_collision_check.json"
+  ],
+  "fk_crosscheck_pass": true,
+  "independent_collision": true,
+  "p008_final_status": "FAIL",
+  "p009_started": false,
+  "recommended_action": "Do not change the validator. E-fixed-1 remains REJECT. A canonical kinematic configuration is not the same thing as a collision-free workcell trajectory. Acceptance was not rewritten in this commit.",
+  "resolution_collision_persists": true,
+  "root_cause": "TRUE_COLLISION",
+  "sat_collision": true,
+  "tolerance_changed": false,
+  "transform_crosscheck_pass": true,
+  "validator_modified": false
+}

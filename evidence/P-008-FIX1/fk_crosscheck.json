@@ -1,0 +1,32 @@
+{
+  "base_rpy_rad": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "fk_quaternion_in_base_xyzw": [
+    -0.07678741285037678,
+    0.6924261744787056,
+    0.688186944248839,
+    0.2026040865579376
+  ],
+  "fk_tcp_in_base_m": [
+    1.2086629276752072,
+    0.34187231053114475,
+    0.09432526837180959
+  ],
+  "independent_fk": "core.kinematics.fk.forward_kinematics",
+  "pass": true,
+  "position_difference_m": 0.0,
+  "reported_trajectory_tcp_m": [
+    1.2086629276752072,
+    0.34187231053114475,
+    0.8443252683718095
+  ],
+  "threshold_note": "1e-12 m is float composition noise. It is not a collision margin.",
+  "world_tcp_from_fk_m": [
+    1.2086629276752072,
+    0.34187231053114475,
+    0.8443252683718095
+  ]
+}

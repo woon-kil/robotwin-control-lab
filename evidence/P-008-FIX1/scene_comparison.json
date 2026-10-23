@@ -1,0 +1,407 @@
+{
+  "all_match": true,
+  "objects": [
+    {
+      "P005_dimensions_m": null,
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.75
+        ]
+      },
+      "P008_dimensions_m": null,
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.75
+        ]
+      },
+      "match": true,
+      "object": "robot_base",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_dimensions_m": null,
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.0,
+          0.0
+        ]
+      },
+      "P008_dimensions_m": null,
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.0,
+          0.0
+        ]
+      },
+      "match": true,
+      "object": "workcell_origin",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_aabb_m": {
+        "max_m": [
+          1.27,
+          0.32,
+          1.27
+        ],
+        "min_m": [
+          1.25,
+          -0.32,
+          0.6299999999999999
+        ]
+      },
+      "P005_dimensions_m": [
+        0.02,
+        0.64,
+        0.64
+      ],
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.0,
+          0.95
+        ]
+      },
+      "P008_aabb_m": {
+        "max_m": [
+          1.27,
+          0.32,
+          1.27
+        ],
+        "min_m": [
+          1.25,
+          -0.32,
+          0.6299999999999999
+        ]
+      },
+      "P008_dimensions_m": [
+        0.02,
+        0.64,
+        0.64
+      ],
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.0,
+          0.95
+        ]
+      },
+      "dimension_difference_m": 0.0,
+      "match": true,
+      "object": "bolt_panel",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_aabb_m": {
+        "max_m": [
+          1.5,
+          1.5,
+          0.0
+        ],
+        "min_m": [
+          -1.5,
+          -1.5,
+          -0.05
+        ]
+      },
+      "P005_dimensions_m": [
+        3.0,
+        3.0,
+        0.05
+      ],
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "P008_aabb_m": {
+        "max_m": [
+          1.5,
+          1.5,
+          0.0
+        ],
+        "min_m": [
+          -1.5,
+          -1.5,
+          -0.05
+        ]
+      },
+      "P008_dimensions_m": [
+        3.0,
+        3.0,
+        0.05
+      ],
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "dimension_difference_m": 0.0,
+      "match": true,
+      "object": "floor",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_aabb_m": {
+        "max_m": [
+          0.18,
+          0.18,
+          0.748
+        ],
+        "min_m": [
+          -0.18,
+          -0.18,
+          0.0020000000000000018
+        ]
+      },
+      "P005_dimensions_m": [
+        0.36,
+        0.36,
+        0.746
+      ],
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.375
+        ]
+      },
+      "P008_aabb_m": {
+        "max_m": [
+          0.18,
+          0.18,
+          0.748
+        ],
+        "min_m": [
+          -0.18,
+          -0.18,
+          0.0020000000000000018
+        ]
+      },
+      "P008_dimensions_m": [
+        0.36,
+        0.36,
+        0.746
+      ],
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.375
+        ]
+      },
+      "dimension_difference_m": 0.0,
+      "match": true,
+      "object": "pedestal",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_aabb_m": {
+        "max_m": [
+          1.28,
+          -0.38,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          -0.42000000000000004,
+          0.0020000000000000018
+        ]
+      },
+      "P005_dimensions_m": [
+        0.04,
+        0.04,
+        0.626
+      ],
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          -0.4,
+          0.315
+        ]
+      },
+      "P008_aabb_m": {
+        "max_m": [
+          1.28,
+          -0.38,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          -0.42000000000000004,
+          0.0020000000000000018
+        ]
+      },
+      "P008_dimensions_m": [
+        0.04,
+        0.04,
+        0.626
+      ],
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          -0.4,
+          0.315
+        ]
+      },
+      "dimension_difference_m": 0.0,
+      "match": true,
+      "object": "post_negative_y",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    },
+    {
+      "P005_aabb_m": {
+        "max_m": [
+          1.28,
+          0.42000000000000004,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          0.38,
+          0.0020000000000000018
+        ]
+      },
+      "P005_dimensions_m": [
+        0.04,
+        0.04,
+        0.626
+      ],
+      "P005_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.4,
+          0.315
+        ]
+      },
+      "P008_aabb_m": {
+        "max_m": [
+          1.28,
+          0.42000000000000004,
+          0.628
+        ],
+        "min_m": [
+          1.24,
+          0.38,
+          0.0020000000000000018
+        ]
+      },
+      "P008_dimensions_m": [
+        0.04,
+        0.04,
+        0.626
+      ],
+      "P008_transform": {
+        "rpy_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyz_m": [
+          1.26,
+          0.4,
+          0.315
+        ]
+      },
+      "dimension_difference_m": 0.0,
+      "match": true,
+      "object": "post_positive_y",
+      "rotation_difference_rad": 0.0,
+      "translation_difference_m": 0.0
+    }
+  ],
+  "p005_scene_source": "evidence/P-005/workcell_config.json",
+  "p008_scene_source": "workcell.layout.resolve_workcell",
+  "units": {
+    "angle": "radians",
+    "degree_conversion_in_validator_decision_code": false,
+    "duplicate_conversion_found": false,
+    "length": "meters",
+    "panel_size_m": [
+      0.02,
+      0.64,
+      0.64
+    ]
+  }
+}
