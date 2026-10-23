@@ -1058,3 +1058,42 @@ PYTHONPATH=. python3 -m pytest tests/unit/test_p006_controller.py tests/unit/tes
 Elapsed Time
 2026-10-23 측정은 한 세션이다. Primary wall runtime은 1054.1445243339986 s다.
 ```
+
+## P-014A — employment portfolio packaging
+
+```text
+Task
+P-011 baseline을 면접용 README와 portfolio brief로 정리한다.
+로봇 기능, P-012, P-013은 시작하지 않는다.
+
+Problem
+저장소 README가 P-001A.1 개정 상태에 머물러 문제, 구조, 실패 조사, 500-cycle 결과가 첫 화면에 없다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. README는 기존 evidence의 측정값만 인용한다. 대표 반올림은 0.291 mm와 1.09 ms이고 원값을 링크한다.
+2. 첫 HMI 이미지는 REJECT다.
+3. Architecture 계약과 evidence/P-001부터 P-011, controller, validator, digital_twin, hmi, reliability는 수정하지 않는다.
+
+Developer Decision
+위 1–3을 수용한다.
+
+Accepted / Rejected
+Accepted — README, docs/PORTFOLIO_BRIEF.md, docs/PORTFOLIO_ARCHITECTURE.md.
+Rejected — 500/500을 현장 신뢰성으로 적기, SAFE_TO_ATTEMPT를 안전 인증으로 적기, historical evidence 재생성.
+
+Reason
+Unity ↔ Isaac 원값은 0.29056228373221366 mm다.
+ROS 2 P95 원값은 1.0901190034928732 ms다.
+P-011은 500/500, unsafe submission 0, collision reject 100/100, recovery 10/10이다.
+E-fixed-1은 TRUE_COLLISION이고 validator defect는 NO다.
+
+Verification
+README의 repository-relative link를 파일 존재로 검사한다.
+evidence와 core 구현 파일은 이 커밋에 넣지 않는다.
+
+Elapsed Time
+2026-10-23 packaging은 한 세션이다. 500-cycle은 다시 실행하지 않았다.
+```
