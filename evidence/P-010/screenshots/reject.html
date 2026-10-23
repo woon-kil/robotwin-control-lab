@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RoboTwin Control Lab</title>
+<style>
+body { margin: 0; font-family: "Segoe UI", sans-serif; background: #f4f6f8; color: #17202a; }
+header, footer { display: flex; justify-content: space-between; padding: 12px 20px; background: #102027; color: white; }
+main { padding: 16px; display: grid; gap: 12px; }
+section { background: white; border: 1px solid #cfd8dc; border-radius: 8px; padding: 12px 16px; }
+.top { display: grid; grid-template-columns: 320px 1fr; gap: 12px; }
+.lower { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; }
+h1 { margin: 0; font-size: 20px; }
+h2 { margin: 0 0 8px; font-size: 14px; letter-spacing: 0.04em; }
+.decision { font-size: 28px; font-weight: 700; margin: 4px 0; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid #eceff1; font-variant-numeric: tabular-nums; }
+button { margin: 0 8px 8px 0; padding: 8px 12px; }
+button:disabled { opacity: 0.45; }
+.note { color: #37474f; }
+svg { width: 100%; height: 220px; background: #fafafa; border: 1px solid #eceff1; }
+.project { font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+<h1>RoboTwin Control Lab</h1>
+<div><span class="project">PROJECT TEST</span> · SYSTEM: REJECTED</div>
+</header>
+<main>
+<p class="note">Mode: LIVE PROJECT RUN. PROJECT TEST. Digital Twin Tracking Error. Not UR10e positioning accuracy. Not a safety certification.</p>
+<div class="top">
+<section>
+<h2>COMMAND</h2>
+<p>Case: E-fixed-1</p>
+<p>Command target: J1 5.73°, J2 -11.46°, J3 17.19°, J4 -22.92°, J5 28.65°, J6 -34.38°</p>
+<form method="post" action="/select"><button type="submit" name="case" value="A-zero" aria-pressed="false">A-zero</button><button type="submit" name="case" value="B-positive-1" aria-pressed="false">B-positive-1</button><button type="submit" name="case" value="C-mixed-1" aria-pressed="false">C-mixed-1</button><button type="submit" name="case" value="E-fixed-1" aria-pressed="true">E-fixed-1</button><button type="submit" name="case" value="E-fixed-3" aria-pressed="false">E-fixed-3</button></form>
+<form method="post" action="/validate"><button type="submit">VALIDATE</button></form>
+<form method="post" action="/execute"><button type="submit" disabled>EXECUTE</button></form>
+<form method="post" action="/fault"><button type="submit" disabled>INJECT TEST_FAULT</button></form>
+<p data-execute-enabled="false">Execute disabled</p>
+</section>
+<section>
+<h2>PRE-EXECUTION VALIDATION</h2>
+<p class="decision" data-decision="REJECT">REJECT</p>
+<p>Command blocked before the controller.</p>
+<p>blocking_reason_codes: COLLISION</p>
+<p>Collision: wrist_3_link ↔ bolt_panel. First detected sample: 44 / 100.</p>
+<p class="note">REJECT — wrist_3_link intersects bolt_panel at sample 44/100</p>
+<ul><li>finite_input: PASS</li><li>command_support: PASS</li><li>target_validity: PASS</li><li>joint_limit: PASS</li><li>reachability: PASS</li><li>trajectory: PASS</li><li>fk_trajectory: PASS</li><li>robot_environment_collision: FAIL COLLISION</li><li>tool_environment_collision: PASS</li><li>tool_robot_collision: PASS</li><li>self_collision: PASS</li><li>safety_zone: PASS</li><li>tcp_alignment: NOT_APPLICABLE</li><li>ik_feasibility: NOT_APPLICABLE</li></ul>
+</section>
+</div>
+<section>
+<h2>DIGITAL TWIN — TARGET vs ACTUAL</h2>
+<p>Tracking not started</p>
+</section>
+<div class="lower">
+<section>
+<h2>TRACKING ERROR</h2>
+<p>Max joint error: NOT RUN</p>
+<p>Completion time: NOT RUN</p>
+<p>Settling time: NOT RUN</p>
+<p>No tracking series</p>
+</section>
+<section>
+<h2>TCP</h2>
+<p>Tracking not started</p>
+</section>
+</div>
+</main>
+<footer>
+<div>Controller: NOT RUN</div>
+<div>Last Execution: IDLE</div>
+<div data-settled="NOT RUN">Settled: NOT RUN</div>
+</footer>
+</body>
+</html>

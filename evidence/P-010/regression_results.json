@@ -1,0 +1,7 @@
+{
+  "command": "PYTHONPATH=. python3 -m pytest tests/unit/test_p006_controller.py tests/unit/test_p008_validator.py tests/unit/test_p009_monitor.py tests/unit/test_p010_hmi.py -q",
+  "historical_core_modified": false,
+  "p011_started": false,
+  "result": "PASS",
+  "returncode": 0
+}

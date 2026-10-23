@@ -1,0 +1,30 @@
+{
+  "claim_boundary": "PROJECT TEST. Digital Twin Tracking Error. Not UR10e positioning accuracy, not a real robot, not real PMAC, and not a safety certification.",
+  "data_sources": [
+    "validator.validate",
+    "validator.gate.ExecutionGate via digital_twin.session.run_case",
+    "digital_twin.monitor.DigitalTwinMonitor samples and metrics"
+  ],
+  "demo_cases": [
+    "A-zero",
+    "B-positive-1",
+    "C-mixed-1",
+    "E-fixed-1",
+    "E-fixed-3"
+  ],
+  "display_states": [
+    "NOT RUN",
+    "VALIDATING",
+    "EXECUTING",
+    "READY",
+    "REJECTED",
+    "FAULT"
+  ],
+  "execute_enable_rule": "Execute calls the controller path only when validation_decision is SAFE_TO_ATTEMPT and execute_enabled is true. REJECT clears both and does not call the runner.",
+  "fault_semantics": "A fault observation is FAULT, controller ERROR, execution FAULTED, settled false, and completed false.",
+  "purpose": "Show one operator whether a command may be attempted, why it was blocked, and how target and actual differed after a live project run.",
+  "replay": "Recorded evidence replay is not used. Validate, execute, and fault are live project runs.",
+  "representative_execution": "B-positive-1",
+  "target_actual_semantics": "Joint and TCP values are copied from the monitor sample. The chart value is the max of that sample's stored abs_joint_error_rad. The HMI does not run FK or the plant.",
+  "validation_semantics": "SAFE_TO_ATTEMPT means pre-execution project checks passed. It is not a safety certification."
+}

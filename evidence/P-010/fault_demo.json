@@ -1,0 +1,203 @@
+{
+  "actual_q": [
+    0.020943951023931952,
+    0.020943951023931952,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934,
+    0.031415926535897934
+  ],
+  "actual_tcp": {
+    "frame": "tool0",
+    "position_m": [
+      1.1706067484315346,
+      0.31522696207862155,
+      0.018219956083699824
+    ],
+    "quaternion_xyzw": [
+      0.04440447267252962,
+      0.7066416596816731,
+      0.7052078297207616,
+      -0.03698275962578309
+    ],
+    "reference_frame": "base_link"
+  },
+  "backend_blocked": false,
+  "case_name": "B-positive-1",
+  "checks": [
+    {
+      "name": "finite_input",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "command_support",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "target_validity",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "joint_limit",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "reachability",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "trajectory",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "fk_trajectory",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "robot_environment_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "tool_environment_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "tool_robot_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "self_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "safety_zone",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "tcp_alignment",
+      "reason_code": null,
+      "result": "NOT_APPLICABLE"
+    },
+    {
+      "name": "ik_feasibility",
+      "reason_code": null,
+      "result": "NOT_APPLICABLE"
+    }
+  ],
+  "collision_pair": null,
+  "collision_sample": null,
+  "command_id": "B-positive-1",
+  "commanded_q": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "completed": false,
+  "completion_time_s": null,
+  "controller_state": "ERROR",
+  "controller_submitted": true,
+  "execute_enabled": false,
+  "execution_state": "FAULTED",
+  "fault": true,
+  "fault_code": "TEST_FAULT",
+  "joint_error": [
+    0.17905604897606806,
+    0.27905604897606806,
+    0.3685840734641021,
+    0.4685840734641021,
+    0.568584073464102,
+    0.668584073464102
+  ],
+  "joint_names": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "mode": "LIVE PROJECT RUN",
+  "peak_actual_q": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "peak_joint_error": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "peak_joint_error_rad": 0.7,
+  "peak_target_q": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "series": [
+    {
+      "max_abs_joint_error_rad": 0.7,
+      "time_s": 0.0
+    },
+    {
+      "max_abs_joint_error_rad": 0.668584073464102,
+      "time_s": 0.01
+    }
+  ],
+  "settled": false,
+  "settled_at_s": null,
+  "settling_time_s": null,
+  "target_q": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "target_tcp": {
+    "frame": "tool0",
+    "position_m": [
+      0.8622827187040447,
+      0.45063468791363825,
+      -0.4733330617171708
+    ],
+    "quaternion_xyzw": [
+      0.7038040288365,
+      0.517488469893148,
+      0.3048943961953703,
+      -0.3793480983079002
+    ],
+    "reference_frame": "base_link"
+  },
+  "tcp_orientation_error_rad": 1.7888323560565826,
+  "tcp_position_error_m": 0.5958383411902528,
+  "tracking_started": true,
+  "ui_state": "FAULT",
+  "validation_decision": "SAFE_TO_ATTEMPT",
+  "validation_reasons": [],
+  "validation_summary": "SAFE_TO_ATTEMPT \u2014 pre-execution checks passed"
+}

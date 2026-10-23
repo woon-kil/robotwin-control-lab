@@ -1,0 +1,129 @@
+{
+  "actual_q": null,
+  "actual_tcp": null,
+  "backend_blocked": true,
+  "case_name": "E-fixed-1",
+  "checks": [
+    {
+      "name": "finite_input",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "command_support",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "target_validity",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "joint_limit",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "reachability",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "trajectory",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "fk_trajectory",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "robot_environment_collision",
+      "reason_code": "COLLISION",
+      "result": "FAIL"
+    },
+    {
+      "name": "tool_environment_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "tool_robot_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "self_collision",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "safety_zone",
+      "reason_code": null,
+      "result": "PASS"
+    },
+    {
+      "name": "tcp_alignment",
+      "reason_code": null,
+      "result": "NOT_APPLICABLE"
+    },
+    {
+      "name": "ik_feasibility",
+      "reason_code": null,
+      "result": "NOT_APPLICABLE"
+    }
+  ],
+  "collision_pair": {
+    "a": "wrist_3_link",
+    "b": "bolt_panel"
+  },
+  "collision_sample": "44 / 100",
+  "command_id": "E-fixed-1",
+  "commanded_q": [
+    0.1,
+    -0.2,
+    0.3,
+    -0.4,
+    0.5,
+    -0.6
+  ],
+  "completed": false,
+  "completion_time_s": null,
+  "controller_state": null,
+  "controller_submitted": false,
+  "execute_enabled": false,
+  "execution_state": "IDLE",
+  "fault": false,
+  "fault_code": null,
+  "joint_error": null,
+  "joint_names": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+  ],
+  "mode": "LIVE PROJECT RUN",
+  "peak_actual_q": null,
+  "peak_joint_error": null,
+  "peak_joint_error_rad": null,
+  "peak_target_q": null,
+  "series": [],
+  "settled": null,
+  "settled_at_s": null,
+  "settling_time_s": null,
+  "target_q": null,
+  "target_tcp": null,
+  "tcp_orientation_error_rad": null,
+  "tcp_position_error_m": null,
+  "tracking_started": false,
+  "ui_state": "REJECTED",
+  "validation_decision": "REJECT",
+  "validation_reasons": [
+    "COLLISION"
+  ],
+  "validation_summary": "REJECT \u2014 wrist_3_link intersects bolt_panel at sample 44/100"
+}

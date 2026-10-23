@@ -968,3 +968,47 @@ ROS, Isaac, Unity는 다시 실행하지 않았다.
 Elapsed Time
 2026-10-23 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-010 — Operator HMI baseline
+
+```text
+Task
+P-008 검증과 P-009 tracking 결과를 한 화면에서 보여주고, SAFE_TO_ATTEMPT가 아닌 명령은 controller에 전달하지 않는다.
+P-011은 시작하지 않는다.
+
+Problem
+REJECT가 버튼 표시만으로 막히면 실행 경로가 남을 수 있다.
+Fault를 COMPLETED나 SETTLED로 보이면 수렴으로 오해한다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+
+AI Proposal
+1. HMI는 validator.validate와 digital_twin.session.run_case의 결과를 표시한다. Tracking 식과 FK를 다시 만들지 않는다.
+2. Execute는 validation_decision이 SAFE_TO_ATTEMPT이고 execute_enabled일 때만 runner를 호출한다.
+3. 대표 실행은 B-positive-1이다. E-fixed-1은 REJECT다. Fault는 B-positive-1에 TEST_FAULT를 주입한 live project run이다.
+4. 거절: replay를 live execution으로 표시, SAFE_TO_ATTEMPT를 안전 인증으로 표시, NaN을 0으로 표시, P-011.
+
+Developer Decision
+위 1–4를 수용한다. controller, validator, digital_twin은 수정하지 않는다.
+
+Accepted / Rejected
+Accepted — 한 화면에서 검증, 차단 이유, target/actual, tracking, settling, fault를 구분한다.
+Rejected — REJECT 뒤 controller 제출, fault를 수렴으로 표시.
+
+Reason
+B-positive-1은 SAFE_TO_ATTEMPT 뒤 controller에 전달되고 COMPLETED, SETTLED다.
+Peak joint error는 0.7 rad다. completion_time_s는 0.23000000000000007이고 settled_at_s는 0.25000000000000006이다.
+E-fixed-1은 REJECT, COLLISION, wrist_3_link와 bolt_panel, sample 44/100이다. runner는 호출되지 않았다.
+Fault는 ERROR, FAULTED, settled false, completed false다.
+Regression은 33 passed in 21.95s다.
+Screenshot는 3개다.
+
+Verification
+evidence/P-010.
+PYTHONPATH=. python3 -m pytest tests/unit/test_p006_controller.py tests/unit/test_p008_validator.py tests/unit/test_p009_monitor.py tests/unit/test_p010_hmi.py -q → 33 passed.
+이 화면은 산업 안전 인증이나 실제 UR10e 정밀도가 아니다.
+
+Elapsed Time
+2026-10-23 측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

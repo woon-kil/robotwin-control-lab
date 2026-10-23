@@ -1,0 +1,28 @@
+{
+  "fault_case": {
+    "controller_state": "ERROR",
+    "execution_completed": false,
+    "execution_state": "FAULTED",
+    "faulted": true,
+    "settled": false,
+    "ui_state": "FAULT"
+  },
+  "reject_case": {
+    "case": "E-fixed-1",
+    "controller_submitted": false,
+    "execute_enabled": false,
+    "reason": "COLLISION",
+    "runner_called": false,
+    "tracking_started": false,
+    "validation": "REJECT"
+  },
+  "safe_case": {
+    "case": "B-positive-1",
+    "completed": true,
+    "controller_submitted": true,
+    "execute_enabled": true,
+    "settled": true,
+    "tracking_started": true,
+    "validation": "SAFE_TO_ATTEMPT"
+  }
+}
