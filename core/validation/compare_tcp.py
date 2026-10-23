@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
 from pathlib import Path
@@ -324,8 +325,11 @@ def _environment(unity: dict, isaac: dict) -> str:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--evidence", type=Path, default=None)
+    parsed = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    evidence = root / "evidence" / "P-004"
+    evidence = parsed.evidence if parsed.evidence is not None else root / "evidence" / "P-004"
     unity = json.loads((evidence / "raw" / "unity_results.json").read_text(encoding="utf-8"))
     isaac = json.loads((evidence / "raw" / "isaac_results.json").read_text(encoding="utf-8"))
     report = write_report(evidence, unity, isaac)

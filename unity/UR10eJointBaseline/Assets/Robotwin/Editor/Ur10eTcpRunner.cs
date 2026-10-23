@@ -13,11 +13,16 @@ namespace Robotwin.Ur10e.Editor
 
         public static void Run()
         {
+            Run(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "evidence", "P-004", "raw")));
+        }
+
+        public static void Run(string evidenceDirectory)
+        {
             var previousMode = Physics.simulationMode;
             Physics.simulationMode = SimulationMode.Script;
             try
             {
-                Measure();
+                Measure(evidenceDirectory);
             }
             finally
             {
@@ -25,9 +30,8 @@ namespace Robotwin.Ur10e.Editor
             }
         }
 
-        static void Measure()
+        static void Measure(string evidenceDirectory)
         {
-            var evidenceDirectory = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "evidence", "P-004", "raw"));
             Directory.CreateDirectory(evidenceDirectory);
             var configurations = Configurations();
             var rows = new Sample[configurations.Length];

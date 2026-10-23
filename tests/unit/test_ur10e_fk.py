@@ -7,7 +7,7 @@ import pytest
 
 from core.errors import KinematicsError
 from core.kinematics.configurations import baseline_configurations
-from core.kinematics.fk import chain_transform, forward_kinematics, kinematic_path
+from core.kinematics.fk import chain_frames, chain_transform, forward_kinematics, kinematic_path
 from core.kinematics.limits import limit_violations
 from core.kinematics.transform import (
     axis_rotation,
@@ -95,6 +95,24 @@ def test_fixed_origins_match_xacro_text():
     assert 'rpy="${pi} 0 0"' in macro
     assert '<axis xyz="0 0 1" />' in macro
     assert 'xyz="0 0 0" rpy="0 0 0"' in entry
+
+
+def test_chain_frames_use_the_same_tool0_pose(model):
+    joints = (0.2, -0.4, 0.3, -0.2, 0.6, -0.7)
+    pose = forward_kinematics(model, joints)
+    frames = chain_frames(model, joints)
+    cumulative = frames[-1]["cumulative"]
+    assert frames[-1]["child"] == model.tcp_frame
+    assert cumulative["reference_frame"] == model.base_frame
+    assert cumulative["x"] == pose.x
+    assert cumulative["y"] == pose.y
+    assert cumulative["z"] == pose.z
+    assert cumulative["qx"] == pose.qx
+    assert cumulative["qy"] == pose.qy
+    assert cumulative["qz"] == pose.qz
+    assert cumulative["qw"] == pose.qw
+    shoulder = next(frame for frame in chain_frames(model, (0.0, 0.0, 0.0, 0.0, 0.0, 0.0)) if frame["child"] == "shoulder_link")
+    assert shoulder["cumulative"]["z"] == pytest.approx(0.1807)
 
 
 def test_zero_configuration_partial_chain(model):

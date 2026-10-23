@@ -1,0 +1,365 @@
+{
+  "gate": "P-004",
+  "source": "isaac",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "isaac_version_file": "6.2.0-rc.14+release.52805.02189a84.gl",
+  "execution_mode": "headless",
+  "physics_device": "cpu",
+  "os": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "gpu": "NVIDIA GeForce RTX 3090, 595.99.02, 24576 MiB",
+  "native_frame": "isaac_world",
+  "quaternion_order": "wxyz",
+  "handedness": "right",
+  "up_axis": "Z",
+  "normalization_applied": false,
+  "tool0_observation_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+  "articulation_root_before": [
+    "/ur10e/Geometry/world/base_link/base_link_inertia"
+  ],
+  "articulation_root_relocated_count": 1,
+  "articulation_root": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "target_joint_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_joint_rad": [
+        1.2451645261535305e-06,
+        0.0012141603510826826,
+        0.0003736567741725594,
+        1.6105264876387082e-05,
+        -6.883540493163309e-08,
+        1.7798072349251015e-08
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 1.1840564012527464,
+          "y": 0.2907013297080384,
+          "z": 0.05919906497001653
+        },
+        "quaternion_wxyz": {
+          "w": -0.0005674067010251781,
+          "x": 0.0005665720271171653,
+          "y": 0.7071066011484866,
+          "z": 0.707106506587239
+        }
+      }
+    },
+    {
+      "test_id": "B-positive-1",
+      "target_joint_rad": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7
+      ],
+      "actual_joint_rad": [
+        0.20001822710037231,
+        0.300989031791687,
+        0.4002585709095001,
+        0.4999001920223236,
+        0.6000047922134399,
+        0.699999988079071
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.8615310787018016,
+          "y": 0.45049881666574676,
+          "z": -0.47435614300209616
+        },
+        "quaternion_wxyz": {
+          "w": -0.37955943998980024,
+          "x": 0.7040150892562546,
+          "y": 0.5173163540218513,
+          "z": 0.3044358314582498
+        }
+      }
+    },
+    {
+      "test_id": "C-mixed-1",
+      "target_joint_rad": [
+        0.5,
+        -0.4,
+        0.3,
+        -0.2,
+        0.6,
+        -0.7
+      ],
+      "actual_joint_rad": [
+        0.4999902546405792,
+        -0.3988417387008667,
+        0.30039799213409424,
+        -0.19995759427547455,
+        0.5999988317489624,
+        -0.7000003457069397
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.9511668087729954,
+          "y": 0.8276652118865451,
+          "z": 0.37961092627023096
+        },
+        "quaternion_wxyz": {
+          "w": 0.3753186415382408,
+          "x": -0.2719778133838406,
+          "y": 0.5856859212982714,
+          "z": 0.6649330702663461
+        }
+      }
+    },
+    {
+      "test_id": "E-fixed-1",
+      "target_joint_rad": [
+        0.1,
+        -0.2,
+        0.3,
+        -0.4,
+        0.5,
+        -0.6
+      ],
+      "actual_joint_rad": [
+        0.09999728947877884,
+        -0.19880349934101105,
+        0.3004150390625,
+        -0.3999336361885071,
+        0.4999977648258209,
+        -0.6000000238418579
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 1.2239884127834444,
+          "y": 0.4006249580980845,
+          "z": 0.1455966528300524
+        },
+        "quaternion_wxyz": {
+          "w": 0.4403230727758062,
+          "x": -0.1565369247205305,
+          "y": 0.6364282389596504,
+          "z": 0.6136537129644286
+        }
+      }
+    },
+    {
+      "test_id": "E-fixed-3",
+      "target_joint_rad": [
+        0.01,
+        0.02,
+        -0.03,
+        0.04,
+        -0.05,
+        0.06
+      ],
+      "actual_joint_rad": [
+        0.01000163983553648,
+        0.02121180295944214,
+        -0.029629210010170937,
+        0.0400085523724556,
+        -0.04999983310699463,
+        0.060000013560056686
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "base_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quaternion_wxyz": {
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "tool0_pose": {
+        "frame": "isaac_world",
+        "quaternion_order": "wxyz",
+        "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "rigid_body_api": false,
+        "position_m": {
+          "x": 1.1715196371908767,
+          "y": 0.3022865043164803,
+          "z": 0.052909333256680686
+        },
+        "quaternion_wxyz": {
+          "w": -0.05356405422506734,
+          "x": 0.011154147333704446,
+          "y": 0.7064603805609564,
+          "z": 0.7056346135146013
+        }
+      }
+    }
+  ],
+  "rerun": {
+    "test_id": "A-zero",
+    "target_joint_rad": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actual_joint_rad": [
+      1.2451645261535305e-06,
+      0.0012141603510826826,
+      0.0003736567741725594,
+      1.6105264876387082e-05,
+      -6.883540493163309e-08,
+      1.7798072349251015e-08
+    ],
+    "settling_steps": 42,
+    "timed_out": false,
+    "base_pose": {
+      "frame": "isaac_world",
+      "quaternion_order": "wxyz",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "prim_path": "/ur10e/Geometry/world/base_link",
+      "rigid_body_api": false,
+      "position_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "quaternion_wxyz": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "tool0_pose": {
+      "frame": "isaac_world",
+      "quaternion_order": "wxyz",
+      "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform Gf.Quatd real then imaginary",
+      "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+      "rigid_body_api": false,
+      "position_m": {
+        "x": 1.1840564012527464,
+        "y": 0.2907013297080384,
+        "z": 0.05919906497001653
+      },
+      "quaternion_wxyz": {
+        "w": -0.0005674067010251781,
+        "x": 0.0005665720271171653,
+        "y": 0.7071066011484866,
+        "z": 0.707106506587239
+      }
+    }
+  }
+}

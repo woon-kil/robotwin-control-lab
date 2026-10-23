@@ -526,3 +526,53 @@ P-001B, P-002, P-003 evidence는 수정하지 않았다.
 Elapsed Time
 2026-10-23 측정과 비교는 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
 ```
+
+## P-004 Fix Attempt 1 — Isaac transform chain
+
+```text
+Task
+P-004 Fix Attempt 1. Python FK와 Isaac tool0의 약 1.47 mm 차이가
+base_link부터 tool0까지 어느 frame에서 처음 생기는지 측정한다.
+원인을 측정하기 전에는 FK, URDF, drive, timestep, tolerance를 바꾸지 않는다.
+P-005는 시작하지 않는다.
+
+Problem
+P-004 FAIL의 kinematic 차이는 Python ↔ Isaac position 1.4705603411282602 mm,
+orientation 0.066672609317108195 deg다. Unity는 같은 FK와 0.0040523245387939092 mm다.
+최종 TCP만 다시 재면 발생 joint를 알 수 없다.
+
+AI Tool
+Cursor agent (Grok 4.7), 2026-10-23.
+Isaac은 p620, VERSION 6.2.0-rc.14+release.52805.02189a84.gl.
+Importer helper는 설치된 fix_articulation_root_for_fixed_base다.
+
+AI Proposal
+1. 같은 Isaac actual joint로 chain_frames와 XformCache chain을 비교한다.
+2. Authored USD local이 Python과 같으면 runtime root를 본다.
+3. 거절: 1.36 mm Z offset, tolerance 완화, drive 변경, FK geometry 변경, P-005.
+
+Developer Decision
+위 1–3을 수용한다. 측정된 원인은 base_link_inertia에 남은 ArticulationRootAPI다.
+수정은 그 API를 world-anchoring fixed joint로 옮기는 것이다.
+
+Accepted / Rejected
+Accepted — fix_articulation_root_for_fixed_base를 P-004 Isaac runner에 적용한다.
+Rejected — empirical offset, drive retune, tolerance 변경.
+
+Reason
+relocation 전 A-zero post-settle orientation error는 base_link_inertia에서
+0.06468463585198597 deg이고 tool0 position error는 1.363292 mm다.
+Authored local orientation error는 0 deg다.
+relocation 후 Python ↔ Isaac position maximum은 0.00075148570272387397 mm다.
+Unity ↔ Isaac position maximum은 1.2526456740680483 mm이고, 이 값은
+두 simulator의 settled joint로 계산한 FK 차이와 같다. 1.0 mm를 넘으므로 FAIL이다.
+
+Verification
+evidence/P-004/fix-attempt1. 기존 evidence/P-004 루트는 덮어쓰지 않았다.
+A-zero rerun의 joint, tool0 position, tool0 orientation 차이는 0이다.
+PYTHONPATH=. python3 -m pytest tests/unit -q → 23 passed.
+이 결과는 실제 UR10e 정확도가 아니다.
+
+Elapsed Time
+2026-10-23 진단과 재측정은 한 세션이다. 구현 사이클 시간은 따로 측정하지 않았다.
+```

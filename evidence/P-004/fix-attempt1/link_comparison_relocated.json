@@ -1,0 +1,4740 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt1",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "pose_api": "UsdGeom.XformCache.GetLocalToWorldTransform",
+  "rigid_prim_constructed": false,
+  "physics_dt_s": 0.016666666666666666,
+  "articulation_root_before": [
+    "/ur10e/Geometry/world/base_link/base_link_inertia"
+  ],
+  "articulation_root": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+  "articulation_root_relocated_count": 1,
+  "configurations": [
+    {
+      "test_id": "A-zero",
+      "target_joint_rad": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "pre_step_joint_rad": [
+        "-1.5688608527852921e-06",
+        "0.0010839032474905252",
+        "0.00033644554787315428",
+        "1.5467749108211137e-05",
+        "-6.8859620228067797e-08",
+        "1.6607584640837558e-08"
+      ],
+      "post_settle_joint_rad": [
+        "1.2451645261535305e-06",
+        "0.0012141603510826826",
+        "0.00037365677417255938",
+        "1.6105264876387082e-05",
+        "-6.8835404931633093e-08",
+        "1.7798072349251015e-08"
+      ],
+      "injected_joint_rad": [
+        "-3.5743877901950327e-07",
+        "0.0022980046924203634",
+        "0.00071005523204803467",
+        "3.1395327823702246e-05",
+        "-1.3182436475744908e-07",
+        "3.451087238204309e-08"
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "pre_step_first_divergence": {
+        "frame": "forearm_link",
+        "joint": "elbow_joint",
+        "position_error_mm": 0.00014064309037377859,
+        "orientation_error_deg": 0.019289068022834036
+      },
+      "post_settle_first_divergence": {
+        "frame": "forearm_link",
+        "joint": "elbow_joint",
+        "position_error_mm": 0.00011360488000478637,
+        "orientation_error_deg": 0.02141479465583979
+      },
+      "injected_first_divergence": null,
+      "pre_step": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.60770320892334e-08,
+            "dy_m": -4.074234767275247e-32,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -2.60770320892334e-05,
+            "dy_mm": -4.074234767275247e-29,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.661393011125998e-08,
+            "position_error_mm": 3.661393011125998e-05,
+            "orientation_error_rad": 1.5688028559986599e-06,
+            "orientation_error_deg": 8.988578253679307e-05
+          },
+          "local_error": {
+            "dx_m": 2.60770320892334e-08,
+            "dy_m": 3.1935154286765974e-24,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 2.60770320892334e-05,
+            "dy_mm": 3.1935154286765974e-21,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.661393011125998e-08,
+            "position_error_mm": 3.661393011125998e-05,
+            "orientation_error_rad": 1.5688028559986599e-06,
+            "orientation_error_deg": 8.988578253679307e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 3.308722450212111e-24,
+            "dy_m": 2.980232238769531e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 3.3087224502121107e-21,
+            "dy_mm": 2.980232238769531e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.935411916571691e-08,
+            "position_error_mm": 3.935411916571691e-05,
+            "orientation_error_rad": 2.8585383434967613e-07,
+            "orientation_error_deg": 1.6378218265868204e-05
+          },
+          "local_error": {
+            "dx_m": -2.60770320892334e-08,
+            "dy_m": -2.9802322387695312e-08,
+            "dz_m": 0.0,
+            "dx_mm": -2.60770320892334e-05,
+            "dy_mm": -2.9802322387695312e-05,
+            "dz_mm": 0.0,
+            "position_error_m": 3.960037906741593e-08,
+            "position_error_mm": 3.960037906741593e-05,
+            "orientation_error_rad": 1.4106607492017564e-06,
+            "orientation_error_deg": 8.082490725402336e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.435859964260544e-08,
+            "dy_m": 9.69732689070717e-08,
+            "dz_m": 1.00848870115966e-07,
+            "dx_mm": -1.435859964260544e-05,
+            "dy_mm": 9.69732689070717e-05,
+            "dz_mm": 0.000100848870115966,
+            "position_error_m": 1.4064309037377857e-07,
+            "position_error_mm": 0.00014064309037377859,
+            "orientation_error_rad": 0.00033665774663960667,
+            "orientation_error_deg": 0.019289068022834036
+          },
+          "local_error": {
+            "dx_m": 1.4495849298690189e-08,
+            "dy_m": -3.4471176746375676e-09,
+            "dz_m": -4.091428358351244e-08,
+            "dx_mm": 1.4495849298690189e-05,
+            "dy_mm": -3.4471176746375676e-06,
+            "dz_mm": -4.091428358351244e-05,
+            "position_error_m": 4.354297725586999e-08,
+            "position_error_mm": 4.354297725586999e-05,
+            "orientation_error_rad": 0.00033644554811347344,
+            "orientation_error_deg": 0.019276909942867702
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -6.038616717773948e-08,
+            "dy_m": 2.325695265814609e-07,
+            "dz_m": 3.539279007369611e-07,
+            "dx_mm": -6.038616717773948e-05,
+            "dy_mm": 0.0002325695265814609,
+            "dz_mm": 0.0003539279007369611,
+            "position_error_m": 4.2778503106211533e-07,
+            "position_error_mm": 0.0004277850310621153,
+            "orientation_error_rad": 0.00035212549387485346,
+            "orientation_error_deg": 0.020175304657988825
+          },
+          "local_error": {
+            "dx_m": 4.796981800669897e-08,
+            "dy_m": -0.00019214999338135197,
+            "dz_m": 3.478527063616177e-08,
+            "dx_mm": 4.796981800669897e-05,
+            "dy_mm": -0.19214999338135197,
+            "dz_mm": 3.478527063616177e-05,
+            "position_error_m": 0.000192150002517752,
+            "position_error_mm": 0.192150002517752,
+            "orientation_error_rad": 1.5467749851049827e-05,
+            "orientation_error_deg": 0.0008862367850292628
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 8.648227023400068e-09,
+            "dy_m": 2.235569194208864e-07,
+            "dz_m": 3.8889713936673953e-07,
+            "dx_mm": 8.648227023400068e-06,
+            "dy_mm": 0.0002235569194208864,
+            "dz_mm": 0.00038889713936673953,
+            "position_error_m": 4.486574116842808e-07,
+            "position_error_mm": 0.0004486574116842808,
+            "orientation_error_rad": 5.127385417844487e-07,
+            "orientation_error_deg": 2.937775443794112e-05
+          },
+          "local_error": {
+            "dx_m": 4.213323700263949e-05,
+            "dy_m": 4.247426983738922e-08,
+            "dz_m": 4.0876741244076955e-10,
+            "dx_mm": 0.04213323700263949,
+            "dy_mm": 4.247426983738922e-05,
+            "dz_mm": 4.0876741244076954e-07,
+            "position_error_m": 4.2133258413648455e-05,
+            "position_error_mm": 0.042133258413648456,
+            "orientation_error_rad": 0.0003516263534166387,
+            "orientation_error_deg": 0.020146706016348888
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -4.6965533684328875e-08,
+            "dy_m": 1.7737532026496083e-07,
+            "dz_m": 3.8835349758237214e-07,
+            "dx_mm": -4.6965533684328875e-05,
+            "dy_mm": 0.00017737532026496083,
+            "dz_mm": 0.00038835349758237214,
+            "position_error_m": 4.2951857314650876e-07,
+            "position_error_mm": 0.00042951857314650876,
+            "orientation_error_rad": 4.0315834458079264e-07,
+            "orientation_error_deg": 2.3099271619960363e-05
+          },
+          "local_error": {
+            "dx_m": 4.577388423854245e-08,
+            "dy_m": -4.618167871728307e-08,
+            "dz_m": 1.0748089893166552e-08,
+            "dx_mm": 4.577388423854245e-05,
+            "dy_mm": -4.618167871728307e-05,
+            "dz_mm": 1.0748089893166552e-05,
+            "position_error_m": 6.590536672973932e-08,
+            "position_error_mm": 6.590536672973932e-05,
+            "orientation_error_rad": 1.698993779866605e-07,
+            "orientation_error_deg": 9.734517300533534e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -4.6965533684328875e-08,
+            "dy_m": 1.7737532026496083e-07,
+            "dz_m": 3.8835349758237214e-07,
+            "dx_mm": -4.6965533684328875e-05,
+            "dy_mm": 0.00017737532026496083,
+            "dz_mm": 0.00038835349758237214,
+            "position_error_m": 4.2951857314650876e-07,
+            "position_error_mm": 0.00042951857314650876,
+            "orientation_error_rad": 4.0425836939366545e-07,
+            "orientation_error_deg": 2.3162298399097643e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -4.6965533684328875e-08,
+            "dy_m": 1.7737532026496083e-07,
+            "dz_m": 3.8835349758237214e-07,
+            "dx_mm": -4.6965533684328875e-05,
+            "dy_mm": 0.00017737532026496083,
+            "dz_mm": 0.00038835349758237214,
+            "position_error_m": 4.2951857314650876e-07,
+            "position_error_mm": 0.00042951857314650876,
+            "orientation_error_rad": 4.0315834458079264e-07,
+            "orientation_error_deg": 2.3099271619960363e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "post_settle": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 9.953568623824532e-33,
+            "dy_m": -1.862645149230957e-09,
+            "dz_m": 1.900196075488303e-08,
+            "dx_mm": 9.953568623824532e-30,
+            "dy_mm": -1.862645149230957e-06,
+            "dz_mm": 1.900196075488303e-05,
+            "position_error_m": 1.909303431835989e-08,
+            "position_error_mm": 1.909303431835989e-05,
+            "orientation_error_rad": 1.244938288581775e-06,
+            "orientation_error_deg": 7.132970968997543e-05
+          },
+          "local_error": {
+            "dx_m": -2.281082519488722e-25,
+            "dy_m": 1.862645149230957e-09,
+            "dz_m": 1.900196075488303e-08,
+            "dx_mm": -2.281082519488722e-22,
+            "dy_mm": 1.862645149230957e-06,
+            "dz_mm": 1.900196075488303e-05,
+            "position_error_m": 1.909303431835989e-08,
+            "position_error_mm": 1.909303431835989e-05,
+            "orientation_error_rad": 1.2452949533329921e-06,
+            "orientation_error_deg": 7.135014507492126e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.4901161193847656e-08,
+            "dy_m": -1.8611563782443123e-24,
+            "dz_m": 3.3903121948730686e-08,
+            "dx_mm": 1.4901161193847656e-05,
+            "dy_mm": -1.8611563782443123e-21,
+            "dz_mm": 3.3903121948730686e-05,
+            "position_error_m": 3.7033313149049134e-08,
+            "position_error_mm": 3.7033313149049134e-05,
+            "orientation_error_rad": 1.5196262340524166e-07,
+            "orientation_error_deg": 8.706816964856289e-06
+          },
+          "local_error": {
+            "dx_m": -1.4901161193847656e-08,
+            "dy_m": -1.862645149230957e-09,
+            "dz_m": 1.4901161193847656e-08,
+            "dx_mm": -1.4901161193847656e-05,
+            "dy_mm": -1.862645149230957e-06,
+            "dz_mm": 1.4901161193847656e-05,
+            "position_error_m": 2.1155582166464156e-08,
+            "position_error_mm": 2.1155582166464155e-05,
+            "orientation_error_rad": 1.130329446107977e-06,
+            "orientation_error_deg": 6.476310672134712e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 6.007065800339717e-08,
+            "dy_m": -4.7655874208646985e-08,
+            "dz_m": 8.382423552499851e-08,
+            "dx_mm": 6.007065800339717e-05,
+            "dy_mm": -4.7655874208646984e-05,
+            "dz_mm": 8.382423552499851e-05,
+            "position_error_m": 1.1360488000478638e-07,
+            "position_error_mm": 0.00011360488000478637,
+            "orientation_error_rad": 0.00037375867538289026,
+            "orientation_error_deg": 0.02141479465583979
+          },
+          "local_error": {
+            "dx_m": -4.510879514363353e-08,
+            "dy_m": -1.2447427810702294e-08,
+            "dz_m": 2.5439966332866492e-08,
+            "dx_mm": -4.510879514363353e-05,
+            "dy_mm": -1.2447427810702294e-05,
+            "dz_mm": 2.5439966332866493e-05,
+            "position_error_m": 5.3262873987706685e-08,
+            "position_error_mm": 5.326287398770668e-05,
+            "orientation_error_rad": 0.0003736567740459726,
+            "orientation_error_deg": 0.021408956139307666
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 7.309542482403231e-08,
+            "dy_m": -8.105762916432724e-08,
+            "dz_m": 3.2823239723422937e-07,
+            "dx_mm": 7.309542482403231e-05,
+            "dy_mm": -8.105762916432724e-05,
+            "dz_mm": 0.00032823239723422937,
+            "position_error_m": 3.4590430319681815e-07,
+            "position_error_mm": 0.00034590430319681814,
+            "orientation_error_rad": 0.00038986393789041567,
+            "orientation_error_deg": 0.022337558225471277
+          },
+          "local_error": {
+            "dx_m": 4.796981789567667e-08,
+            "dy_m": -0.00021337700309220775,
+            "dz_m": 3.4785270469628315e-08,
+            "dx_mm": 4.796981789567667e-05,
+            "dy_mm": -0.21337700309220775,
+            "dz_mm": 3.4785270469628315e-05,
+            "position_error_m": 0.00021337701131970732,
+            "position_error_mm": 0.21337701131970732,
+            "orientation_error_rad": 1.6105267116441825e-05,
+            "orientation_error_deg": 0.000922763833702946
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.3942674526035148e-07,
+            "dy_m": -9.840585768472465e-08,
+            "dz_m": 3.540673425422858e-07,
+            "dx_mm": 0.00013942674526035148,
+            "dy_mm": -9.840585768472465e-05,
+            "dz_mm": 0.0003540673425422858,
+            "position_error_m": 3.9304861426484835e-07,
+            "position_error_mm": 0.00039304861426484836,
+            "orientation_error_rad": 3.5762786865234566e-07,
+            "orientation_error_deg": 2.049056751003836e-05
+          },
+          "local_error": {
+            "dx_m": 4.665888991439715e-05,
+            "dy_m": 3.502368926822097e-08,
+            "dz_m": -1.7127941283867754e-08,
+            "dx_mm": 0.04665888991439715,
+            "dy_mm": 3.502368926822097e-05,
+            "dz_mm": -1.7127941283867752e-05,
+            "position_error_m": 4.665890620309283e-05,
+            "position_error_mm": 0.04665890620309283,
+            "orientation_error_rad": 0.00038958622108794107,
+            "orientation_error_deg": 0.02232164622478961
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.7336368229869947e-07,
+            "dy_m": -1.445874964756122e-07,
+            "dz_m": 3.432166624101063e-07,
+            "dx_mm": 0.00017336368229869947,
+            "dy_mm": -0.0001445874964756122,
+            "dz_mm": 0.0003432166624101063,
+            "position_error_m": 4.1080188392117004e-07,
+            "position_error_mm": 0.00041080188392117,
+            "orientation_error_rad": 3.125693941623437e-07,
+            "orientation_error_deg": 1.7908907090463362e-05
+          },
+          "local_error": {
+            "dx_m": -7.584813221939157e-09,
+            "dy_m": -4.6181678689527494e-08,
+            "dz_m": 1.103979078577388e-08,
+            "dx_mm": -7.584813221939157e-06,
+            "dy_mm": -4.6181678689527494e-05,
+            "dz_mm": 1.103979078577388e-05,
+            "position_error_m": 4.8084860598613766e-08,
+            "position_error_mm": 4.8084860598613764e-05,
+            "orientation_error_rad": 1.6323404237781964e-07,
+            "orientation_error_deg": 9.352621701108691e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.7336368229869947e-07,
+            "dy_m": -1.445874964756122e-07,
+            "dz_m": 3.432166624101063e-07,
+            "dx_mm": 0.00017336368229869947,
+            "dy_mm": -0.0001445874964756122,
+            "dz_mm": 0.0003432166624101063,
+            "position_error_m": 4.1080188392117004e-07,
+            "position_error_mm": 0.00041080188392117,
+            "orientation_error_rad": 3.125693941623437e-07,
+            "orientation_error_deg": 1.7908907090463362e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.7336368229869947e-07,
+            "dy_m": -1.445874964756122e-07,
+            "dz_m": 3.432166624101063e-07,
+            "dx_mm": 0.00017336368229869947,
+            "dy_mm": -0.0001445874964756122,
+            "dz_mm": 0.0003432166624101063,
+            "position_error_m": 4.1080188392117004e-07,
+            "position_error_mm": 0.00041080188392117,
+            "orientation_error_rad": 3.125693941623437e-07,
+            "orientation_error_deg": 1.7908907090463362e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        }
+      ],
+      "injected_settled_joints": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -9.313225746154787e-09,
+            "dy_m": -1.4901161193847655e-08,
+            "dz_m": -1.0800361632812283e-08,
+            "dx_mm": -9.313225746154787e-06,
+            "dy_mm": -1.4901161193847655e-05,
+            "dz_mm": -1.0800361632812283e-05,
+            "position_error_m": 2.0625920346093536e-08,
+            "position_error_mm": 2.0625920346093535e-05,
+            "orientation_error_rad": 3.5762786865234566e-07,
+            "orientation_error_deg": 2.049056751003836e-05
+          },
+          "local_error": {
+            "dx_m": 9.313225746154785e-09,
+            "dy_m": 1.4901161193847656e-08,
+            "dz_m": -1.0800361632812283e-08,
+            "dx_mm": 9.313225746154785e-06,
+            "dy_mm": 1.4901161193847656e-05,
+            "dz_mm": -1.0800361632812283e-05,
+            "position_error_m": 2.0625920346093536e-08,
+            "position_error_mm": 2.0625920346093535e-05,
+            "orientation_error_rad": 3.5762786865234566e-07,
+            "orientation_error_deg": 2.049056751003836e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.490116119384766e-08,
+            "dy_m": -2.9802322387695312e-08,
+            "dz_m": -1.0800361632812283e-08,
+            "dx_mm": -1.490116119384766e-05,
+            "dy_mm": -2.9802322387695312e-05,
+            "dz_mm": -1.0800361632812283e-05,
+            "position_error_m": 3.502671603254693e-08,
+            "position_error_mm": 3.5026716032546934e-05,
+            "orientation_error_rad": 3.3453023911481726e-07,
+            "orientation_error_deg": 1.9167170820781278e-05
+          },
+          "local_error": {
+            "dx_m": 5.587935447692871e-09,
+            "dy_m": 1.4901161193847656e-08,
+            "dz_m": 0.0,
+            "dx_mm": 5.587935447692871e-06,
+            "dy_mm": 1.4901161193847656e-05,
+            "dz_mm": 0.0,
+            "position_error_m": 1.5914447131226827e-08,
+            "position_error_mm": 1.5914447131226827e-05,
+            "orientation_error_rad": 2.149076029934881e-07,
+            "orientation_error_deg": 1.2313298636799924e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -8.874977497352887e-08,
+            "dy_m": 2.2645303595714105e-07,
+            "dz_m": 9.887779583994671e-08,
+            "dx_mm": -8.874977497352887e-05,
+            "dy_mm": 0.00022645303595714104,
+            "dz_mm": 9.887779583994671e-05,
+            "position_error_m": 2.625534584845997e-07,
+            "position_error_mm": 0.0002625534584845997,
+            "orientation_error_rad": 1.9688984977181508e-05,
+            "orientation_error_deg": 0.0011280957420889818
+          },
+          "local_error": {
+            "dx_m": 7.410049440714772e-08,
+            "dy_m": 8.48153108856664e-09,
+            "dz_m": 9.048962109299671e-08,
+            "dx_mm": 7.410049440714772e-05,
+            "dy_mm": 8.48153108856664e-06,
+            "dz_mm": 9.048962109299672e-05,
+            "position_error_m": 1.1726547303679873e-07,
+            "position_error_mm": 0.00011726547303679873,
+            "orientation_error_rad": 1.9521351516641138e-05,
+            "orientation_error_deg": 0.0011184910522948459
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.2888226708085426e-08,
+            "dy_m": 4.4544132399293446e-07,
+            "dz_m": 4.443066496939707e-07,
+            "dx_mm": -1.2888226708085426e-05,
+            "dy_mm": 0.00044544132399293446,
+            "dz_mm": 0.0004443066496939707,
+            "position_error_m": 6.292793326262497e-07,
+            "position_error_mm": 0.0006292793326262497,
+            "orientation_error_rad": 5.108256287244707e-05,
+            "orientation_error_deg": 0.0029268152593028927
+          },
+          "local_error": {
+            "dx_m": -1.308441163194729e-07,
+            "dy_m": -1.0920605746034262e-05,
+            "dz_m": 3.478527080269522e-08,
+            "dx_mm": -0.0001308441163194729,
+            "dy_mm": -0.010920605746034262,
+            "dz_mm": 3.478527080269522e-05,
+            "position_error_m": 1.0921444962007398e-05,
+            "position_error_mm": 0.010921444962007398,
+            "orientation_error_rad": 3.139532862519856e-05,
+            "orientation_error_deg": 0.0017988198266501384
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 5.992350482486586e-08,
+            "dy_m": 4.132967675596344e-07,
+            "dz_m": 4.566046971909987e-07,
+            "dx_mm": 5.992350482486586e-05,
+            "dy_mm": 0.0004132967675596344,
+            "dz_mm": 0.0004566046971909987,
+            "position_error_m": 6.187833982926674e-07,
+            "position_error_mm": 0.0006187833982926674,
+            "orientation_error_rad": 8.893384523020545e-07,
+            "orientation_error_deg": 5.09553398756044e-05
+          },
+          "local_error": {
+            "dx_m": 6.0493407547657085e-06,
+            "dy_m": 1.2671947477449486e-08,
+            "dz_m": -4.2217351028084446e-08,
+            "dx_mm": 0.0060493407547657085,
+            "dy_mm": 1.2671947477449486e-05,
+            "dz_mm": -4.221735102808445e-05,
+            "position_error_m": 6.049501338974151e-06,
+            "position_error_mm": 0.006049501338974151,
+            "orientation_error_rad": 5.01980112845053e-05,
+            "orientation_error_deg": 0.002876134186552234
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 3.363381395615761e-08,
+            "dy_m": 4.11818576628864e-07,
+            "dz_m": 4.547572620347551e-07,
+            "dx_mm": 3.363381395615761e-05,
+            "dy_mm": 0.000411818576628864,
+            "dz_mm": 0.0004547572620347551,
+            "position_error_m": 6.144346514245497e-07,
+            "position_error_mm": 0.0006144346514245497,
+            "orientation_error_rad": 9.009967123169593e-07,
+            "orientation_error_deg": 5.1623308970924566e-05
+          },
+          "local_error": {
+            "dx_m": 1.562174412050865e-08,
+            "dy_m": -1.4781951912512525e-09,
+            "dz_m": 7.831057048725993e-09,
+            "dx_mm": 1.562174412050865e-05,
+            "dy_mm": -1.4781951912512525e-06,
+            "dz_mm": 7.831057048725993e-06,
+            "position_error_m": 1.7537086556508923e-08,
+            "position_error_mm": 1.7537086556508924e-05,
+            "orientation_error_rad": 1.8848643661548996e-07,
+            "orientation_error_deg": 1.0799477313527678e-05
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 3.363381395615761e-08,
+            "dy_m": 4.11818576628864e-07,
+            "dz_m": 4.547572620347551e-07,
+            "dx_mm": 3.363381395615761e-05,
+            "dy_mm": 0.000411818576628864,
+            "dz_mm": 0.0004547572620347551,
+            "position_error_m": 6.144346514245497e-07,
+            "position_error_mm": 0.0006144346514245497,
+            "orientation_error_rad": 9.01735739136206e-07,
+            "orientation_error_deg": 5.166565208861438e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 3.363381395615761e-08,
+            "dy_m": 4.11818576628864e-07,
+            "dz_m": 4.547572620347551e-07,
+            "dx_mm": 3.363381395615761e-05,
+            "dy_mm": 0.000411818576628864,
+            "dz_mm": 0.0004547572620347551,
+            "position_error_m": 6.144346514245497e-07,
+            "position_error_mm": 0.0006144346514245497,
+            "orientation_error_rad": 9.009967123169593e-07,
+            "orientation_error_deg": 5.1623308970924566e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "B-positive-1",
+      "target_joint_rad": [
+        "0.20000000000000001",
+        "0.29999999999999999",
+        "0.40000000000000002",
+        "0.5",
+        "0.59999999999999998",
+        "0.69999999999999996"
+      ],
+      "pre_step_joint_rad": [
+        "0.19999875128269196",
+        "0.30091926455497742",
+        "0.40024664998054504",
+        "0.49990746378898621",
+        "0.60000455379486084",
+        "0.69999998807907104"
+      ],
+      "post_settle_joint_rad": [
+        "0.20001822710037231",
+        "0.30098903179168701",
+        "0.40025857090950012",
+        "0.49990019202232361",
+        "0.60000479221343994",
+        "0.69999998807907104"
+      ],
+      "injected_joint_rad": [
+        "0.20001702010631561",
+        "0.30190759897232056",
+        "0.40050497651100159",
+        "0.49980783462524414",
+        "0.60000932216644287",
+        "0.69999998807907104"
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "pre_step_first_divergence": null,
+      "post_settle_first_divergence": null,
+      "injected_first_divergence": null,
+      "pre_step": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.048909664154053e-08,
+            "dy_m": -2.235174179077148e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -2.048909664154053e-05,
+            "dy_mm": -2.235174179077148e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.0675254236529395e-08,
+            "position_error_mm": 5.06752542365294e-05,
+            "orientation_error_rad": 1.9314112360500902e-07,
+            "orientation_error_deg": 1.1066171232981577e-05
+          },
+          "local_error": {
+            "dx_m": 2.0489096641540527e-08,
+            "dy_m": 2.2351741790771484e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": 2.0489096641540527e-05,
+            "dy_mm": 2.2351741790771484e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.0675254236529395e-08,
+            "position_error_mm": 5.06752542365294e-05,
+            "orientation_error_rad": 1.9428737179048833e-07,
+            "orientation_error_deg": 1.113184641628407e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.980232239630414e-08,
+            "dy_m": 1.4901161357302115e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -2.980232239630414e-05,
+            "dy_mm": 1.4901161357302115e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.2524289425738907e-08,
+            "position_error_mm": 5.252428942573891e-05,
+            "orientation_error_rad": 2.2401357260902137e-07,
+            "orientation_error_deg": 1.2835032264144347e-05
+          },
+          "local_error": {
+            "dx_m": 1.7266268415028141e-09,
+            "dy_m": -3.836057516082291e-08,
+            "dz_m": -1.4710455076283324e-15,
+            "dx_mm": 1.7266268415028142e-06,
+            "dy_mm": -3.836057516082291e-05,
+            "dz_mm": -1.4710455076283324e-12,
+            "position_error_m": 3.839941362728009e-08,
+            "position_error_mm": 3.839941362728009e-05,
+            "orientation_error_rad": 2.7151207861734413e-07,
+            "orientation_error_deg": 1.5556496191598024e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.5122751628737774e-07,
+            "dy_m": -8.885148070070237e-08,
+            "dz_m": 1.1138636196728058e-07,
+            "dx_mm": 0.00015122751628737774,
+            "dy_mm": -8.885148070070237e-05,
+            "dz_mm": 0.00011138636196728058,
+            "position_error_m": 2.077769692181076e-07,
+            "position_error_mm": 0.0002077769692181076,
+            "orientation_error_rad": 5.306152646173556e-07,
+            "orientation_error_deg": 3.0402015207791835e-05
+          },
+          "local_error": {
+            "dx_m": -1.0471343991902415e-07,
+            "dy_m": 7.135842133854098e-08,
+            "dz_m": -6.882022050041622e-08,
+            "dx_mm": -0.00010471343991902415,
+            "dy_mm": 7.135842133854098e-05,
+            "dz_mm": -6.882022050041622e-05,
+            "position_error_m": 1.441983063192135e-07,
+            "position_error_mm": 0.0001441983063192135,
+            "orientation_error_rad": 3.175031505921871e-07,
+            "orientation_error_deg": 1.8191590511038928e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.248253204717443e-07,
+            "dy_m": -8.766994263886829e-08,
+            "dz_m": 3.340256858885837e-07,
+            "dx_mm": 0.0002248253204717443,
+            "dy_mm": -8.766994263886829e-05,
+            "dz_mm": 0.0003340256858885837,
+            "position_error_m": 4.1207475341358125e-07,
+            "position_error_mm": 0.00041207475341358126,
+            "orientation_error_rad": 1.3657139822709094e-07,
+            "orientation_error_deg": 7.824964720612765e-06
+          },
+          "local_error": {
+            "dx_m": 1.075744628931119e-07,
+            "dy_m": -9.332111228221862e-08,
+            "dz_m": 4.968643166347597e-08,
+            "dx_mm": 0.0001075744628931119,
+            "dy_mm": -9.332111228221862e-05,
+            "dz_mm": 4.968643166347597e-05,
+            "position_error_m": 1.5083048947670107e-07,
+            "position_error_mm": 0.00015083048947670108,
+            "orientation_error_rad": 4.960094981519404e-07,
+            "orientation_error_deg": 2.8419250842508193e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.898397700734634e-07,
+            "dy_m": -5.6207231091676135e-08,
+            "dz_m": 2.9164019171856737e-07,
+            "dx_mm": 0.0002898397700734634,
+            "dy_mm": -5.6207231091676135e-05,
+            "dz_mm": 0.00029164019171856737,
+            "position_error_m": 4.149943934186026e-07,
+            "position_error_mm": 0.0004149943934186026,
+            "orientation_error_rad": 2.950279395762593e-07,
+            "orientation_error_deg": 1.6903855776160328e-05
+          },
+          "local_error": {
+            "dx_m": -6.312227185389929e-08,
+            "dy_m": 4.9924850351046324e-08,
+            "dz_m": 5.436204823261338e-09,
+            "dx_mm": -6.312227185389929e-05,
+            "dy_mm": 4.9924850351046324e-05,
+            "dz_mm": 5.4362048232613376e-06,
+            "position_error_m": 8.066265684598038e-08,
+            "position_error_mm": 8.066265684598038e-05,
+            "orientation_error_rad": 2.1900144899933185e-07,
+            "orientation_error_deg": 1.2547858734911261e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 3.7607662428662536e-07,
+            "dy_m": -5.5458124981200285e-08,
+            "dz_m": 3.015537918260591e-07,
+            "dx_mm": 0.00037607662428662536,
+            "dy_mm": -5.5458124981200285e-05,
+            "dz_mm": 0.0003015537918260591,
+            "position_error_m": 4.85225638570272e-07,
+            "position_error_mm": 0.000485225638570272,
+            "orientation_error_rad": 5.127385417844487e-07,
+            "orientation_error_deg": 2.937775443794112e-05
+          },
+          "local_error": {
+            "dx_m": -1.5161248256845283e-08,
+            "dy_m": -1.4781951912512525e-09,
+            "dz_m": -5.235130525325993e-08,
+            "dx_mm": -1.5161248256845283e-05,
+            "dy_mm": -1.4781951912512525e-06,
+            "dz_mm": -5.235130525325993e-05,
+            "position_error_m": 5.452254278231283e-08,
+            "position_error_mm": 5.4522542782312834e-05,
+            "orientation_error_rad": 2.475566823160081e-07,
+            "orientation_error_deg": 1.4183953086968167e-05
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 3.7607662428662536e-07,
+            "dy_m": -5.5458124981200285e-08,
+            "dz_m": 3.015537918260591e-07,
+            "dx_mm": 0.00037607662428662536,
+            "dy_mm": -5.5458124981200285e-05,
+            "dz_mm": 0.0003015537918260591,
+            "position_error_m": 4.85225638570272e-07,
+            "position_error_mm": 0.000485225638570272,
+            "orientation_error_rad": 5.144678503761369e-07,
+            "orientation_error_deg": 2.9476836521720566e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 3.7607662428662536e-07,
+            "dy_m": -5.5458124981200285e-08,
+            "dz_m": 3.015537918260591e-07,
+            "dx_mm": 0.00037607662428662536,
+            "dy_mm": -5.5458124981200285e-05,
+            "dz_mm": 0.0003015537918260591,
+            "position_error_m": 4.85225638570272e-07,
+            "position_error_mm": 0.000485225638570272,
+            "orientation_error_rad": 5.136039239053212e-07,
+            "orientation_error_deg": 2.9427337181133195e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "post_settle": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.1175870895385745e-08,
+            "dy_m": -2.7939677238464355e-08,
+            "dz_m": -1.0800361632812283e-08,
+            "dx_mm": -1.1175870895385746e-05,
+            "dy_mm": -2.7939677238464355e-05,
+            "dz_mm": -1.0800361632812283e-05,
+            "position_error_m": 3.1971447665994374e-08,
+            "position_error_mm": 3.197144766599437e-05,
+            "orientation_error_rad": 5.93433015100365e-07,
+            "orientation_error_deg": 3.400120718897416e-05
+          },
+          "local_error": {
+            "dx_m": 1.1175870895385742e-08,
+            "dy_m": 2.7939677238464355e-08,
+            "dz_m": -1.0800361632812283e-08,
+            "dx_mm": 1.1175870895385742e-05,
+            "dy_mm": 2.7939677238464355e-05,
+            "dz_mm": -1.0800361632812283e-05,
+            "position_error_m": 3.197144766599437e-08,
+            "position_error_mm": 3.1971447665994365e-05,
+            "orientation_error_rad": 5.938070668331256e-07,
+            "orientation_error_deg": 3.4022638774580906e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -4.470348408252766e-08,
+            "dy_m": -1.4901161055655948e-08,
+            "dz_m": 4.100799588790949e-09,
+            "dx_mm": -4.470348408252766e-05,
+            "dy_mm": -1.4901161055655949e-05,
+            "dz_mm": 4.100799588790949e-06,
+            "position_error_m": 4.729971085737025e-08,
+            "position_error_mm": 4.729971085737025e-05,
+            "orientation_error_rad": 6.944644568998384e-07,
+            "orientation_error_deg": 3.9789882402205607e-05
+          },
+          "local_error": {
+            "dx_m": 3.026859829446947e-08,
+            "dy_m": -1.9440054899178014e-08,
+            "dz_m": 1.4901160333424812e-08,
+            "dx_mm": 3.026859829446947e-05,
+            "dy_mm": -1.9440054899178015e-05,
+            "dz_mm": 1.4901160333424812e-05,
+            "position_error_m": 3.893774976134918e-08,
+            "position_error_mm": 3.893774976134918e-05,
+            "orientation_error_rad": 4.960094981519404e-07,
+            "orientation_error_deg": 2.8419250842508193e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 3.364403278194317e-08,
+            "dy_m": -2.954617094458323e-07,
+            "dz_m": 3.218327719878289e-07,
+            "dx_mm": 3.364403278194317e-05,
+            "dy_mm": -0.0002954617094458323,
+            "dz_mm": 0.0003218327719878289,
+            "position_error_m": 4.3818475077968625e-07,
+            "position_error_mm": 0.00043818475077968624,
+            "orientation_error_rad": 4.2722437342499377e-07,
+            "orientation_error_deg": 2.447815350237319e-05
+          },
+          "local_error": {
+            "dx_m": 7.410049440714772e-08,
+            "dy_m": 9.675054016278217e-08,
+            "dz_m": 7.307118455238352e-08,
+            "dx_mm": 7.410049440714772e-05,
+            "dy_mm": 9.675054016278217e-05,
+            "dz_mm": 7.307118455238353e-05,
+            "position_error_m": 1.4209485671572474e-07,
+            "position_error_mm": 0.00014209485671572475,
+            "orientation_error_rad": 4.0808510594455145e-07,
+            "orientation_error_deg": 2.338155425277186e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 4.2500348784724196e-07,
+            "dy_m": -4.921707250638008e-07,
+            "dz_m": 4.179542888449461e-07,
+            "dx_mm": 0.00042500348784724196,
+            "dy_mm": -0.0004921707250638008,
+            "dz_mm": 0.0004179542888449461,
+            "position_error_m": 7.730108504128728e-07,
+            "position_error_mm": 0.0007730108504128728,
+            "orientation_error_rad": 1.1750205757449542e-06,
+            "orientation_error_deg": 6.732371983121794e-05
+          },
+          "local_error": {
+            "dx_m": -1.308441157643614e-07,
+            "dy_m": 2.820550547011358e-07,
+            "dz_m": -3.9720535194298634e-08,
+            "dx_mm": -0.0001308441157643614,
+            "dy_mm": 0.0002820550547011358,
+            "dz_mm": -3.9720535194298634e-05,
+            "position_error_m": 3.134532779039642e-07,
+            "position_error_mm": 0.0003134532779039642,
+            "orientation_error_rad": 9.846048674990212e-07,
+            "orientation_error_deg": 5.641370339573155e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 4.33360457186005e-07,
+            "dy_m": -4.6010652343664304e-07,
+            "dz_m": 3.74203059649858e-07,
+            "dx_mm": 0.000433360457186005,
+            "dy_mm": -0.00046010652343664304,
+            "dz_mm": 0.000374203059649858,
+            "position_error_m": 7.345251722117715e-07,
+            "position_error_mm": 0.0007345251722117715,
+            "orientation_error_rad": 7.670842216154376e-07,
+            "orientation_error_deg": 4.395068842964249e-05
+          },
+          "local_error": {
+            "dx_m": 6.135703500831369e-08,
+            "dy_m": -2.229213827420473e-09,
+            "dz_m": -1.9030234717754124e-08,
+            "dx_mm": 6.135703500831369e-05,
+            "dy_mm": -2.229213827420473e-06,
+            "dz_mm": -1.9030234717754123e-05,
+            "position_error_m": 6.427911770328377e-08,
+            "position_error_mm": 6.427911770328376e-05,
+            "orientation_error_rad": 4.716870722575355e-07,
+            "orientation_error_deg": 2.7025678491239083e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 4.777295913305224e-07,
+            "dy_m": -4.554115321520058e-07,
+            "dz_m": 3.5931258723920223e-07,
+            "dx_mm": 0.0004777295913305224,
+            "dy_mm": -0.0004554115321520058,
+            "dz_mm": 0.00035931258723920223,
+            "position_error_m": 7.51485702723874e-07,
+            "position_error_mm": 0.000751485702723874,
+            "orientation_error_rad": 6.822063411629092e-07,
+            "orientation_error_deg": 3.908754410569666e-05
+          },
+          "local_error": {
+            "dx_m": 8.179645460959506e-09,
+            "dy_m": 1.3422966113618706e-08,
+            "dz_m": 4.1493203910349826e-08,
+            "dx_mm": 8.179645460959506e-06,
+            "dy_mm": 1.3422966113618706e-05,
+            "dz_mm": 4.1493203910349825e-05,
+            "position_error_m": 4.4370807857196173e-08,
+            "position_error_mm": 4.4370807857196175e-05,
+            "orientation_error_rad": 1.7120130796843874e-07,
+            "orientation_error_deg": 9.809112393710968e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 4.777295913305224e-07,
+            "dy_m": -4.554115321520058e-07,
+            "dz_m": 3.5931258723920223e-07,
+            "dx_mm": 0.0004777295913305224,
+            "dy_mm": -0.0004554115321520058,
+            "dz_mm": 0.00035931258723920223,
+            "position_error_m": 7.51485702723874e-07,
+            "position_error_mm": 0.000751485702723874,
+            "orientation_error_rad": 6.822063411629092e-07,
+            "orientation_error_deg": 3.908754410569666e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 4.777295913305224e-07,
+            "dy_m": -4.554115321520058e-07,
+            "dz_m": 3.5931258723920223e-07,
+            "dx_mm": 0.0004777295913305224,
+            "dy_mm": -0.0004554115321520058,
+            "dz_mm": 0.00035931258723920223,
+            "position_error_m": 7.51485702723874e-07,
+            "position_error_mm": 0.000751485702723874,
+            "orientation_error_rad": 6.822063411629092e-07,
+            "orientation_error_deg": 3.908754410569666e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "injected_settled_joints": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.048909664154053e-08,
+            "dy_m": -2.7939677238464352e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -2.048909664154053e-05,
+            "dy_mm": -2.7939677238464352e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 4.3139273533350936e-08,
+            "position_error_mm": 4.313927353335093e-05,
+            "orientation_error_rad": 5.430241572346932e-07,
+            "orientation_error_deg": 3.111299238319633e-05
+          },
+          "local_error": {
+            "dx_m": 2.0489096641540527e-08,
+            "dy_m": 2.7939677238464355e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 2.0489096641540527e-05,
+            "dy_mm": 2.7939677238464355e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 4.3139273533350936e-08,
+            "position_error_mm": 4.313927353335093e-05,
+            "orientation_error_rad": 5.438413498072291e-07,
+            "orientation_error_deg": 3.115981406865207e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.4901160869874567e-08,
+            "dy_m": -5.960464637296699e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -1.4901160869874567e-05,
+            "dy_mm": -5.9604646372966985e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 6.659824877671821e-08,
+            "position_error_mm": 6.659824877671821e-05,
+            "orientation_error_rad": 5.519467347101084e-07,
+            "orientation_error_deg": 3.162421841491611e-05
+          },
+          "local_error": {
+            "dx_m": 8.148388630502202e-10,
+            "dy_m": 3.2143915973392716e-08,
+            "dz_m": 1.3877787807814457e-16,
+            "dx_mm": 8.148388630502202e-07,
+            "dy_mm": 3.2143915973392716e-05,
+            "dz_mm": 1.3877787807814457e-13,
+            "position_error_m": 3.215424227807691e-08,
+            "position_error_mm": 3.215424227807691e-05,
+            "orientation_error_rad": 3.6133395591325183e-07,
+            "orientation_error_deg": 2.0702910668595488e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -3.898744749264438e-08,
+            "dy_m": -2.7109399905467235e-07,
+            "dz_m": 2.1323993185107248e-07,
+            "dx_mm": -3.898744749264438e-05,
+            "dy_mm": -0.00027109399905467235,
+            "dz_mm": 0.00021323993185107248,
+            "position_error_m": 3.4710696610885876e-07,
+            "position_error_mm": 0.0003471069661088588,
+            "orientation_error_rad": 6.717102330675636e-07,
+            "orientation_error_deg": 3.848616141052026e-05
+          },
+          "local_error": {
+            "dx_m": 1.3370513918253835e-07,
+            "dy_m": 4.174465226269852e-08,
+            "dz_m": 4.5093862771221165e-08,
+            "dx_mm": 0.00013370513918253835,
+            "dy_mm": 4.174465226269852e-05,
+            "dz_mm": 4.509386277122116e-05,
+            "position_error_m": 1.4715004823643552e-07,
+            "position_error_mm": 0.00014715004823643552,
+            "orientation_error_rad": 2.640492490927786e-07,
+            "orientation_error_deg": 1.5128907556614795e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.1379981762770228e-07,
+            "dy_m": -3.3906391089244536e-07,
+            "dz_m": 3.1523528482013674e-07,
+            "dx_mm": 0.00021379981762770228,
+            "dy_mm": -0.00033906391089244536,
+            "dz_mm": 0.00031523528482013674,
+            "position_error_m": 5.099489998842547e-07,
+            "position_error_mm": 0.0005099489998842547,
+            "orientation_error_rad": 4.5976783694451e-07,
+            "orientation_error_deg": 2.6342756612779434e-05
+          },
+          "local_error": {
+            "dx_m": -7.123947176612688e-08,
+            "dy_m": -1.3176820340410345e-07,
+            "dz_m": 1.9884109414558537e-08,
+            "dx_mm": -7.123947176612688e-05,
+            "dy_mm": -0.00013176820340410345,
+            "dz_mm": 1.9884109414558537e-05,
+            "position_error_m": 1.5110691437876728e-07,
+            "position_error_mm": 0.00015110691437876728,
+            "orientation_error_rad": 3.953724849647786e-07,
+            "orientation_error_deg": 2.265317472408141e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.2225547013920988e-07,
+            "dy_m": -3.1513939374727684e-07,
+            "dz_m": 3.3732256449203746e-07,
+            "dx_mm": 0.00022225547013920988,
+            "dy_mm": -0.00031513939374727684,
+            "dz_mm": 0.00033732256449203746,
+            "position_error_m": 5.123444583614496e-07,
+            "position_error_mm": 0.0005123444583614496,
+            "orientation_error_rad": 4.915124923727158e-07,
+            "orientation_error_deg": 2.8161591390912678e-05
+          },
+          "local_error": {
+            "dx_m": 3.734060527449401e-08,
+            "dy_m": 2.012252796335101e-08,
+            "dz_m": -2.1369984472807813e-08,
+            "dx_mm": 3.734060527449401e-05,
+            "dy_mm": 2.012252796335101e-05,
+            "dz_mm": -2.136998447280781e-05,
+            "position_error_m": 4.74964542915517e-08,
+            "position_error_mm": 4.7496454291551704e-05,
+            "orientation_error_rad": 2.9276136613471166e-07,
+            "orientation_error_deg": 1.6773990684003203e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.9972316689376157e-07,
+            "dy_m": -2.862321186181127e-07,
+            "dz_m": 3.5693460381791553e-07,
+            "dx_mm": 0.00019972316689376157,
+            "dy_mm": -0.0002862321186181127,
+            "dz_mm": 0.00035693460381791553,
+            "position_error_m": 4.992198719255264e-07,
+            "position_error_mm": 0.0004992198719255264,
+            "orientation_error_rad": 5.289387509017901e-07,
+            "orientation_error_deg": 3.030595804759414e-05
+          },
+          "local_error": {
+            "dx_m": 3.3630222218139494e-08,
+            "dy_m": 1.3422966113618706e-08,
+            "dz_m": 6.199509753758369e-08,
+            "dx_mm": 3.3630222218139494e-05,
+            "dy_mm": 1.3422966113618706e-05,
+            "dz_mm": 6.199509753758369e-05,
+            "position_error_m": 7.179526435931073e-08,
+            "position_error_mm": 7.179526435931074e-05,
+            "orientation_error_rad": 2.2302015940987762e-07,
+            "orientation_error_deg": 1.277811388052082e-05
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.9972316689376157e-07,
+            "dy_m": -2.862321186181127e-07,
+            "dz_m": 3.5693460381791553e-07,
+            "dx_mm": 0.00019972316689376157,
+            "dy_mm": -0.0002862321186181127,
+            "dz_mm": 0.00035693460381791553,
+            "position_error_m": 4.992198719255264e-07,
+            "position_error_mm": 0.0004992198719255264,
+            "orientation_error_rad": 5.285187915256144e-07,
+            "orientation_error_deg": 3.0281896147772322e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.9972316689376157e-07,
+            "dy_m": -2.862321186181127e-07,
+            "dz_m": 3.5693460381791553e-07,
+            "dx_mm": 0.00019972316689376157,
+            "dy_mm": -0.0002862321186181127,
+            "dz_mm": 0.00035693460381791553,
+            "position_error_m": 4.992198719255264e-07,
+            "position_error_mm": 0.0004992198719255264,
+            "orientation_error_rad": 5.289387509017901e-07,
+            "orientation_error_deg": 3.030595804759414e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "C-mixed-1",
+      "target_joint_rad": [
+        "0.5",
+        "-0.40000000000000002",
+        "0.29999999999999999",
+        "-0.20000000000000001",
+        "0.59999999999999998",
+        "-0.69999999999999996"
+      ],
+      "pre_step_joint_rad": [
+        "0.50000309944152832",
+        "-0.39896315336227417",
+        "0.30035871267318726",
+        "-0.19996070861816406",
+        "0.5999985933303833",
+        "-0.70000004768371582"
+      ],
+      "post_settle_joint_rad": [
+        "0.49999025464057922",
+        "-0.3988417387008667",
+        "0.30039799213409424",
+        "-0.19995759427547455",
+        "0.5999988317489624",
+        "-0.7000003457069397"
+      ],
+      "injected_joint_rad": [
+        "0.49999323487281799",
+        "-0.3978046178817749",
+        "0.30075663328170776",
+        "-0.19991843402385712",
+        "0.59999740123748779",
+        "-0.70000040531158447"
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "pre_step_first_divergence": null,
+      "post_settle_first_divergence": null,
+      "injected_first_divergence": null,
+      "pre_step": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.2351741790771488e-08,
+            "dy_m": -3.632158041000366e-08,
+            "dz_m": -5.550384521435525e-08,
+            "dx_mm": -2.2351741790771488e-05,
+            "dy_mm": -3.632158041000366e-05,
+            "dz_mm": -5.550384521435525e-05,
+            "position_error_m": 6.999667419342714e-08,
+            "position_error_mm": 6.999667419342715e-05,
+            "orientation_error_rad": 2.2598729860936304e-07,
+            "orientation_error_deg": 1.2948118433879161e-05
+          },
+          "local_error": {
+            "dx_m": 2.2351741790771484e-08,
+            "dy_m": 3.632158041000366e-08,
+            "dz_m": -5.550384521435525e-08,
+            "dx_mm": 2.2351741790771484e-05,
+            "dy_mm": 3.632158041000366e-05,
+            "dz_mm": -5.550384521435525e-05,
+            "position_error_m": 6.999667419342714e-08,
+            "position_error_mm": 6.999667419342715e-05,
+            "orientation_error_rad": 2.2794393510786276e-07,
+            "orientation_error_deg": 1.306022544728445e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.980232252898191e-08,
+            "dy_m": -2.9802322056116285e-08,
+            "dz_m": -4.060268404826317e-08,
+            "dx_mm": -2.980232252898191e-05,
+            "dy_mm": -2.9802322056116286e-05,
+            "dz_mm": -4.060268404826317e-05,
+            "position_error_m": 5.852294233871894e-08,
+            "position_error_mm": 5.8522942338718945e-05,
+            "orientation_error_rad": 1.1151007970493862e-07,
+            "orientation_error_deg": 6.3890569402603996e-06
+          },
+          "local_error": {
+            "dx_m": 3.4129750137168524e-09,
+            "dy_m": -9.293195546433708e-09,
+            "dz_m": 1.4901161221603232e-08,
+            "dx_mm": 3.4129750137168525e-06,
+            "dy_mm": -9.293195546433708e-06,
+            "dz_mm": 1.4901161221603232e-05,
+            "position_error_m": 1.7890122628442846e-08,
+            "position_error_mm": 1.7890122628442848e-05,
+            "orientation_error_rad": 1.8848643661548996e-07,
+            "orientation_error_deg": 1.0799477313527678e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -7.834814080842634e-08,
+            "dy_m": -1.1723067683266919e-07,
+            "dz_m": -3.087127509182608e-08,
+            "dx_mm": -7.834814080842634e-05,
+            "dy_mm": -0.00011723067683266919,
+            "dz_mm": -3.087127509182608e-05,
+            "position_error_m": 1.4434160309688236e-07,
+            "position_error_mm": 0.00014434160309688236,
+            "orientation_error_rad": 5.16191365590357e-08,
+            "orientation_error_deg": 2.9575586669421963e-06
+          },
+          "local_error": {
+            "dx_m": 7.410049429612542e-08,
+            "dy_m": 2.9831367931443253e-09,
+            "dz_m": 8.539681006968937e-09,
+            "dx_mm": 7.410049429612542e-05,
+            "dy_mm": 2.9831367931443253e-06,
+            "dz_mm": 8.539681006968937e-06,
+            "position_error_m": 7.465057609796131e-08,
+            "position_error_mm": 7.465057609796131e-05,
+            "orientation_error_rad": 8.429369702178808e-08,
+            "orientation_error_deg": 4.829673078902934e-06
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -8.753221669710598e-08,
+            "dy_m": -1.1401909671970856e-07,
+            "dz_m": 1.9241597820629508e-07,
+            "dx_mm": -8.753221669710598e-05,
+            "dy_mm": -0.00011401909671970856,
+            "dz_mm": 0.00019241597820629508,
+            "position_error_m": 2.401794163657094e-07,
+            "position_error_mm": 0.0002401794163657094,
+            "orientation_error_rad": 2.9802322387695424e-07,
+            "orientation_error_deg": 1.7075472925031942e-05
+          },
+          "local_error": {
+            "dx_m": -1.1634826990736258e-08,
+            "dy_m": 1.9208087553845843e-07,
+            "dz_m": 1.988410952558084e-08,
+            "dx_mm": -1.1634826990736258e-05,
+            "dy_mm": 0.00019208087553845843,
+            "dz_mm": 1.988410952558084e-05,
+            "position_error_m": 1.9345751409120922e-07,
+            "position_error_mm": 0.0001934575140912092,
+            "orientation_error_rad": 3.5388297101968464e-07,
+            "orientation_error_deg": 2.0276000680978356e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -9.556065527771551e-08,
+            "dy_m": -9.655870947256062e-08,
+            "dz_m": 2.1387784593374093e-07,
+            "dx_mm": -9.556065527771551e-05,
+            "dy_mm": -9.655870947256062e-05,
+            "dz_mm": 0.00021387784593374093,
+            "position_error_m": 2.5337552406136185e-07,
+            "position_error_mm": 0.00025337552406136187,
+            "orientation_error_rad": 1.7377590819732272e-07,
+            "orientation_error_deg": 9.956626120759439e-06
+          },
+          "local_error": {
+            "dx_m": -4.316962787243028e-08,
+            "dy_m": 2.0122528129884465e-08,
+            "dz_m": 2.0964777112408728e-08,
+            "dx_mm": -4.316962787243028e-05,
+            "dy_mm": 2.0122528129884465e-05,
+            "dz_mm": 2.096477711240873e-05,
+            "position_error_m": 5.2038973744253237e-08,
+            "position_error_mm": 5.203897374425324e-05,
+            "orientation_error_rad": 4.6600388798451516e-07,
+            "orientation_error_deg": 2.6700056018199894e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -9.951459389867523e-08,
+            "dy_m": -7.877225915997599e-08,
+            "dz_m": 1.9127801464957628e-07,
+            "dx_mm": -9.951459389867523e-05,
+            "dy_mm": -7.877225915997599e-05,
+            "dz_mm": 0.00019127801464957628,
+            "position_error_m": 2.2955500887645251e-07,
+            "position_error_mm": 0.00022955500887645252,
+            "orientation_error_rad": 1.504943510645939e-07,
+            "orientation_error_deg": 8.622691156561379e-06
+          },
+          "local_error": {
+            "dx_m": 1.2356023759707568e-08,
+            "dy_m": 1.3422966002596404e-08,
+            "dz_m": 3.9043799619844385e-08,
+            "dx_mm": 1.2356023759707568e-05,
+            "dy_mm": 1.3422966002596404e-05,
+            "dz_mm": 3.9043799619844383e-05,
+            "position_error_m": 4.309600478248393e-08,
+            "position_error_mm": 4.309600478248393e-05,
+            "orientation_error_rad": 1.3657139822709094e-07,
+            "orientation_error_deg": 7.824964720612765e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -9.951459389867523e-08,
+            "dy_m": -7.877225915997599e-08,
+            "dz_m": 1.9127801464957628e-07,
+            "dx_mm": -9.951459389867523e-05,
+            "dy_mm": -7.877225915997599e-05,
+            "dz_mm": 0.00019127801464957628,
+            "position_error_m": 2.2955500887645251e-07,
+            "position_error_mm": 0.00022955500887645252,
+            "orientation_error_rad": 1.5196262340524166e-07,
+            "orientation_error_deg": 8.706816964856289e-06
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -9.951459389867523e-08,
+            "dy_m": -7.877225915997599e-08,
+            "dz_m": 1.9127801464957628e-07,
+            "dx_mm": -9.951459389867523e-05,
+            "dy_mm": -7.877225915997599e-05,
+            "dz_mm": 0.00019127801464957628,
+            "position_error_m": 2.2955500887645251e-07,
+            "position_error_mm": 0.00022955500887645252,
+            "orientation_error_rad": 1.490116119384767e-07,
+            "orientation_error_deg": 8.537736462515945e-06
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "post_settle": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.1175870895385747e-08,
+            "dy_m": -3.818422555923462e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -1.1175870895385747e-05,
+            "dy_mm": -3.818422555923462e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.6846399371446734e-08,
+            "position_error_mm": 5.684639937144673e-05,
+            "orientation_error_rad": 2.7151207861734413e-07,
+            "orientation_error_deg": 1.5556496191598024e-05
+          },
+          "local_error": {
+            "dx_m": 1.1175870895385742e-08,
+            "dy_m": 3.818422555923462e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": 1.1175870895385742e-05,
+            "dy_mm": 3.818422555923462e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.6846399371446734e-08,
+            "position_error_mm": 5.684639937144673e-05,
+            "orientation_error_rad": 2.7151207861734413e-07,
+            "orientation_error_deg": 1.5556496191598024e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -7.45058049602279e-09,
+            "dy_m": -2.980232246300136e-08,
+            "dz_m": -2.5701523354015876e-08,
+            "dx_mm": -7.45058049602279e-06,
+            "dy_mm": -2.980232246300136e-05,
+            "dz_mm": -2.5701523354015876e-05,
+            "position_error_m": 4.0053188095749056e-08,
+            "position_error_mm": 4.005318809574906e-05,
+            "orientation_error_rad": 4.955616339539307e-07,
+            "orientation_error_deg": 2.839359011416723e-05
+          },
+          "local_error": {
+            "dx_m": -7.287691339286084e-09,
+            "dy_m": -5.569881000866417e-09,
+            "dz_m": 1.4901162970204496e-08,
+            "dx_mm": -7.287691339286084e-06,
+            "dy_mm": -5.569881000866417e-06,
+            "dz_mm": 1.4901162970204496e-05,
+            "position_error_m": 1.7497962089486642e-08,
+            "position_error_mm": 1.7497962089486642e-05,
+            "orientation_error_rad": 2.4303058430999715e-07,
+            "orientation_error_deg": 1.3924626773561162e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.5758776411578523e-07,
+            "dy_m": 1.0519968784983291e-09,
+            "dz_m": -2.883244678009156e-07,
+            "dx_mm": 0.00015758776411578523,
+            "dy_mm": 1.0519968784983291e-06,
+            "dz_mm": -0.0002883244678009156,
+            "position_error_m": 3.285818145137158e-07,
+            "position_error_mm": 0.0003285818145137158,
+            "orientation_error_rad": 3.111453804049072e-07,
+            "orientation_error_deg": 1.782731711219369e-05
+          },
+          "local_error": {
+            "dx_m": -4.5108795365678134e-08,
+            "dy_m": -3.6059162877855044e-08,
+            "dz_m": -1.3954220926813125e-07,
+            "dx_mm": -4.5108795365678134e-05,
+            "dy_mm": -3.6059162877855044e-05,
+            "dz_mm": -0.00013954220926813127,
+            "position_error_m": 1.5102018015558463e-07,
+            "position_error_mm": 0.00015102018015558462,
+            "orientation_error_rad": 2.45756246186356e-07,
+            "orientation_error_deg": 1.4080795695456234e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 6.818626463456212e-08,
+            "dy_m": 2.104270524494467e-08,
+            "dz_m": -3.432360914379373e-07,
+            "dx_mm": 6.818626463456212e-05,
+            "dy_mm": 2.104270524494467e-05,
+            "dz_mm": -0.0003432360914379373,
+            "position_error_m": 3.505754934310615e-07,
+            "position_error_mm": 0.00035057549343106147,
+            "orientation_error_rad": 3.2098083538618844e-07,
+            "orientation_error_deg": 1.8390847172212026e-05
+          },
+          "local_error": {
+            "dx_m": 4.796981800669897e-08,
+            "dy_m": 1.0060011129686686e-07,
+            "dz_m": -2.481937405596213e-08,
+            "dx_mm": 4.796981800669897e-05,
+            "dy_mm": 0.00010060011129686686,
+            "dz_mm": -2.481937405596213e-05,
+            "position_error_m": 1.1418181624526554e-07,
+            "position_error_mm": 0.00011418181624526553,
+            "orientation_error_rad": 3.7460938364197636e-07,
+            "orientation_error_deg": 2.1463536648682345e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 9.405170686704878e-08,
+            "dy_m": -4.414020038367994e-08,
+            "dz_m": -3.326082861909718e-07,
+            "dx_mm": 9.405170686704878e-05,
+            "dy_mm": -4.414020038367994e-05,
+            "dz_mm": -0.0003326082861909718,
+            "position_error_m": 3.484571033820549e-07,
+            "position_error_mm": 0.0003484571033820549,
+            "orientation_error_rad": 2.8585383434967613e-07,
+            "orientation_error_deg": 1.6378218265868204e-05
+          },
+          "local_error": {
+            "dx_m": 2.521491659912556e-08,
+            "dy_m": 1.2671947477449486e-08,
+            "dz_m": -5.150459933181984e-08,
+            "dx_mm": 2.521491659912556e-05,
+            "dy_mm": 1.2671947477449486e-05,
+            "dz_mm": -5.150459933181984e-05,
+            "position_error_m": 5.872898793869508e-08,
+            "position_error_mm": 5.872898793869508e-05,
+            "orientation_error_rad": 4.588009213906761e-07,
+            "orientation_error_deg": 2.6287356432399194e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.0069808187296303e-07,
+            "dy_m": 5.24079102337538e-09,
+            "dz_m": -3.67766485986909e-07,
+            "dx_mm": 0.00010069808187296303,
+            "dy_mm": 5.24079102337538e-06,
+            "dz_mm": -0.000367766485986909,
+            "position_error_m": 3.8133942596931145e-07,
+            "position_error_mm": 0.00038133942596931144,
+            "orientation_error_rad": 3.3320009373125436e-07,
+            "orientation_error_deg": 1.9090959104164312e-05
+          },
+          "local_error": {
+            "dx_m": -4.3852206310646125e-09,
+            "dy_m": 4.322528850131402e-08,
+            "dz_m": 2.0615504341194743e-08,
+            "dx_mm": -4.3852206310646125e-06,
+            "dy_mm": 4.322528850131402e-05,
+            "dz_mm": 2.061550434119474e-05,
+            "position_error_m": 4.809006909172375e-08,
+            "position_error_mm": 4.809006909172375e-05,
+            "orientation_error_rad": 6.989264130329237e-08,
+            "orientation_error_deg": 4.00455336570039e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.0069808187296303e-07,
+            "dy_m": 5.24079102337538e-09,
+            "dz_m": -3.67766485986909e-07,
+            "dx_mm": 0.00010069808187296303,
+            "dy_mm": 5.24079102337538e-06,
+            "dz_mm": -0.000367766485986909,
+            "position_error_m": 3.8133942596931145e-07,
+            "position_error_mm": 0.00038133942596931144,
+            "orientation_error_rad": 3.3320009373125436e-07,
+            "orientation_error_deg": 1.9090959104164312e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.0069808187296303e-07,
+            "dy_m": 5.24079102337538e-09,
+            "dz_m": -3.67766485986909e-07,
+            "dx_mm": 0.00010069808187296303,
+            "dy_mm": 5.24079102337538e-06,
+            "dz_mm": -0.000367766485986909,
+            "position_error_m": 3.8133942596931145e-07,
+            "position_error_mm": 0.00038133942596931144,
+            "orientation_error_rad": 3.3320009373125436e-07,
+            "orientation_error_deg": 1.9090959104164312e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "injected_settled_joints": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -7.450580596923833e-09,
+            "dy_m": -4.0978193283081055e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -7.450580596923833e-06,
+            "dy_mm": -4.0978193283081055e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.816615360882985e-08,
+            "position_error_mm": 5.816615360882985e-05,
+            "orientation_error_rad": 3.068336886461687e-07,
+            "orientation_error_deg": 1.7580275371856632e-05
+          },
+          "local_error": {
+            "dx_m": 7.450580596923828e-09,
+            "dy_m": 4.0978193283081055e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": 7.450580596923828e-06,
+            "dy_mm": 4.0978193283081055e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 5.816615360882985e-08,
+            "position_error_mm": 5.816615360882985e-05,
+            "orientation_error_rad": 3.075565016351696e-07,
+            "orientation_error_deg": 1.762168950550362e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -7.450580568555831e-09,
+            "dy_m": -4.4703483687665424e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -7.450580568555831e-06,
+            "dy_mm": -4.470348368766542e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 6.084809408922431e-08,
+            "position_error_mm": 6.0848094089224304e-05,
+            "orientation_error_rad": 3.182017282256888e-07,
+            "orientation_error_deg": 1.823161606110081e-05
+          },
+          "local_error": {
+            "dx_m": 1.7859772549755348e-09,
+            "dy_m": 3.2692619722496374e-09,
+            "dz_m": -9.159339953157541e-16,
+            "dx_mm": 1.7859772549755348e-06,
+            "dy_mm": 3.2692619722496374e-06,
+            "dz_mm": -9.159339953157541e-13,
+            "position_error_m": 3.725290404584369e-09,
+            "position_error_mm": 3.725290404584369e-06,
+            "orientation_error_rad": 1.2105760581248948e-07,
+            "orientation_error_deg": 6.9360898910140305e-06
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.067708876867357e-08,
+            "dy_m": -4.5082111488348175e-08,
+            "dz_m": -2.693084064087081e-07,
+            "dx_mm": 1.067708876867357e-05,
+            "dy_mm": -4.5082111488348175e-05,
+            "dz_mm": -0.0002693084064087081,
+            "position_error_m": 2.7326436789896317e-07,
+            "position_error_mm": 0.0002732643678989632,
+            "orientation_error_rad": 5.230286352272166e-07,
+            "orientation_error_deg": 2.9967333363006965e-05
+          },
+          "local_error": {
+            "dx_m": 7.410049396305851e-08,
+            "dy_m": -2.3362242029811853e-08,
+            "dz_m": 1.421938113815144e-08,
+            "dx_mm": 7.410049396305851e-05,
+            "dy_mm": -2.3362242029811853e-05,
+            "dz_mm": 1.4219381138151439e-05,
+            "position_error_m": 7.898650744387167e-08,
+            "position_error_mm": 7.898650744387168e-05,
+            "orientation_error_rad": 2.200130084191774e-07,
+            "orientation_error_deg": 1.2605816820395112e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.0559032359580556e-07,
+            "dy_m": -5.450961293451684e-08,
+            "dz_m": -3.459069111144686e-07,
+            "dx_mm": 0.00010559032359580556,
+            "dy_mm": -5.450961293451684e-05,
+            "dz_mm": -0.0003459069111144686,
+            "position_error_m": 3.657488284275025e-07,
+            "position_error_mm": 0.0003657488284275025,
+            "orientation_error_rad": 4.1988500367419345e-07,
+            "orientation_error_deg": 2.405763859136635e-05
+          },
+          "local_error": {
+            "dx_m": -7.123947165510458e-08,
+            "dy_m": 2.1628889618208191e-07,
+            "dz_m": -5.462169658243532e-08,
+            "dx_mm": -7.123947165510458e-05,
+            "dy_mm": 0.0002162888961820819,
+            "dz_mm": -5.462169658243532e-05,
+            "position_error_m": 2.3417830529514362e-07,
+            "position_error_mm": 0.0002341783052951436,
+            "orientation_error_rad": 1.460009659995544e-07,
+            "orientation_error_deg": 8.365239156607499e-06
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.0565233177217692e-07,
+            "dy_m": -6.385489470517314e-08,
+            "dz_m": -3.4959256761668556e-07,
+            "dx_mm": 0.00010565233177217692,
+            "dy_mm": -6.385489470517314e-05,
+            "dz_mm": -0.00034959256761668556,
+            "position_error_m": 3.707490069029636e-07,
+            "position_error_mm": 0.0003707490069029636,
+            "orientation_error_rad": 3.885747435809785e-07,
+            "orientation_error_deg": 2.2263692832568243e-05
+          },
+          "local_error": {
+            "dx_m": -4.3854534004239554e-08,
+            "dy_m": -2.2292137163981707e-09,
+            "dz_m": -8.487500920673197e-09,
+            "dx_mm": -4.3854534004239554e-05,
+            "dy_mm": -2.2292137163981707e-06,
+            "dz_mm": -8.487500920673197e-06,
+            "position_error_m": 4.472389985679703e-08,
+            "position_error_mm": 4.4723899856797026e-05,
+            "orientation_error_rad": 1.8966081829902343e-07,
+            "orientation_error_deg": 1.0866764427531615e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 8.933268880184642e-08,
+            "dy_m": -5.3365424967921626e-08,
+            "dz_m": -3.681431944291269e-07,
+            "dx_mm": 8.933268880184642e-05,
+            "dy_mm": -5.3365424967921626e-05,
+            "dz_mm": -0.0003681431944291269,
+            "position_error_m": 3.8256713067781496e-07,
+            "position_error_mm": 0.000382567130677815,
+            "orientation_error_rad": 6.165552397244432e-07,
+            "orientation_error_deg": 3.5326013072887316e-05
+          },
+          "local_error": {
+            "dx_m": 3.617003940803443e-08,
+            "dy_m": 5.972385516694878e-09,
+            "dz_m": -2.2706232911882233e-08,
+            "dx_mm": 3.617003940803443e-05,
+            "dy_mm": 5.972385516694878e-06,
+            "dz_mm": -2.2706232911882234e-05,
+            "position_error_m": 4.312208427925805e-08,
+            "position_error_mm": 4.312208427925805e-05,
+            "orientation_error_rad": 2.3934808975769653e-07,
+            "orientation_error_deg": 1.3713635377634418e-05
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 8.933268880184642e-08,
+            "dy_m": -5.3365424967921626e-08,
+            "dz_m": -3.681431944291269e-07,
+            "dx_mm": 8.933268880184642e-05,
+            "dy_mm": -5.3365424967921626e-05,
+            "dz_mm": -0.0003681431944291269,
+            "position_error_m": 3.8256713067781496e-07,
+            "position_error_mm": 0.000382567130677815,
+            "orientation_error_rad": 6.165552397244432e-07,
+            "orientation_error_deg": 3.5326013072887316e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 8.933268880184642e-08,
+            "dy_m": -5.3365424967921626e-08,
+            "dz_m": -3.681431944291269e-07,
+            "dx_mm": 8.933268880184642e-05,
+            "dy_mm": -5.3365424967921626e-05,
+            "dz_mm": -0.0003681431944291269,
+            "position_error_m": 3.8256713067781496e-07,
+            "position_error_mm": 0.000382567130677815,
+            "orientation_error_rad": 6.151130032703464e-07,
+            "orientation_error_deg": 3.524337901100766e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "E-fixed-1",
+      "target_joint_rad": [
+        "0.10000000000000001",
+        "-0.20000000000000001",
+        "0.29999999999999999",
+        "-0.40000000000000002",
+        "0.5",
+        "-0.59999999999999998"
+      ],
+      "pre_step_joint_rad": [
+        "0.099999010562896729",
+        "-0.19893723726272583",
+        "0.30037170648574829",
+        "-0.39993998408317566",
+        "0.49999794363975525",
+        "-0.60000002384185791"
+      ],
+      "post_settle_joint_rad": [
+        "0.099997289478778839",
+        "-0.19880349934101105",
+        "0.3004150390625",
+        "-0.39993363618850708",
+        "0.49999776482582092",
+        "-0.60000002384185791"
+      ],
+      "injected_joint_rad": [
+        "0.09999624639749527",
+        "-0.19774065911769867",
+        "0.30078664422035217",
+        "-0.3998737633228302",
+        "0.49999573826789856",
+        "-0.60000002384185791"
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "pre_step_first_divergence": null,
+      "post_settle_first_divergence": null,
+      "injected_first_divergence": null,
+      "pre_step": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -4.0978193283081055e-08,
+            "dy_m": 7.684433000924621e-32,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -4.0978193283081055e-05,
+            "dy_mm": 7.684433000924621e-29,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 4.8371278671902724e-08,
+            "position_error_mm": 4.837127867190272e-05,
+            "orientation_error_rad": 6.311481769248164e-07,
+            "orientation_error_deg": 3.6162126785168156e-05
+          },
+          "local_error": {
+            "dx_m": 4.0978193283081055e-08,
+            "dy_m": 5.0183812470523485e-24,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 4.0978193283081055e-05,
+            "dy_mm": 5.0183812470523485e-21,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 4.8371278671902724e-08,
+            "position_error_mm": 4.837127867190272e-05,
+            "orientation_error_rad": 6.32202727663421e-07,
+            "orientation_error_deg": 3.6222548091772603e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.9802322264602526e-08,
+            "dy_m": 6.094592492704028e-17,
+            "dz_m": -1.0800361993634766e-08,
+            "dx_mm": -2.9802322264602526e-05,
+            "dy_mm": 6.094592492704028e-14,
+            "dz_mm": -1.0800361993634766e-05,
+            "position_error_m": 3.169899417263541e-08,
+            "position_error_mm": 3.169899417263541e-05,
+            "orientation_error_rad": 3.4627169485754695e-07,
+            "orientation_error_deg": 1.983990668017933e-05
+          },
+          "local_error": {
+            "dx_m": -1.112003822356656e-08,
+            "dy_m": 1.1157204049538888e-09,
+            "dz_m": 1.4901161193847656e-08,
+            "dx_mm": -1.112003822356656e-05,
+            "dy_mm": 1.1157204049538888e-06,
+            "dz_mm": 1.4901161193847656e-05,
+            "position_error_m": 1.8626451273408017e-08,
+            "position_error_mm": 1.8626451273408017e-05,
+            "orientation_error_rad": 9.50409097618018e-07,
+            "orientation_error_deg": 5.445443010434949e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -9.018322644216425e-09,
+            "dy_m": -1.862690213738638e-07,
+            "dz_m": -9.448931659328252e-08,
+            "dx_mm": -9.018322644216425e-06,
+            "dy_mm": -0.0001862690213738638,
+            "dz_mm": -9.448931659328252e-05,
+            "position_error_m": 2.0905910508073476e-07,
+            "position_error_mm": 0.00020905910508073477,
+            "orientation_error_rad": 2.7232865814115286e-07,
+            "orientation_error_deg": 1.5603282751949065e-05
+          },
+          "local_error": {
+            "dx_m": 1.4495849520734794e-08,
+            "dy_m": 1.4709928497502744e-08,
+            "dz_m": -2.0115935482259647e-09,
+            "dx_mm": 1.4495849520734794e-05,
+            "dy_mm": 1.4709928497502744e-05,
+            "dz_mm": -2.011593548225965e-06,
+            "position_error_m": 2.0749895381246982e-08,
+            "position_error_mm": 2.074989538124698e-05,
+            "orientation_error_rad": 2.537576312709815e-07,
+            "orientation_error_deg": 1.4539241291064202e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 6.489451354063647e-08,
+            "dy_m": -2.864937801438927e-07,
+            "dz_m": -1.2093187035100428e-08,
+            "dx_mm": 6.489451354063647e-05,
+            "dy_mm": -0.0002864937801438927,
+            "dz_mm": -1.2093187035100428e-05,
+            "position_error_m": 2.940003896621209e-07,
+            "position_error_mm": 0.00029400038966212087,
+            "orientation_error_rad": 2.49344118396663e-07,
+            "orientation_error_deg": 1.4286365630539097e-05
+          },
+          "local_error": {
+            "dx_m": -1.1634826879713955e-08,
+            "dy_m": 2.8057510093049132e-08,
+            "dz_m": 3.478527074718407e-08,
+            "dx_mm": -1.1634826879713955e-05,
+            "dy_mm": 2.805751009304913e-05,
+            "dz_mm": 3.478527074718407e-05,
+            "position_error_m": 4.6180170312563464e-08,
+            "position_error_mm": 4.6180170312563465e-05,
+            "orientation_error_rad": 2.1900144899933185e-07,
+            "orientation_error_deg": 1.2547858734911261e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.2033370683516296e-08,
+            "dy_m": -3.485445422279909e-07,
+            "dz_m": 2.7212134962040224e-08,
+            "dx_mm": -2.2033370683516296e-05,
+            "dy_mm": -0.0003485445422279909,
+            "dz_mm": 2.7212134962040224e-05,
+            "position_error_m": 3.5029882618956813e-07,
+            "position_error_mm": 0.0003502988261895681,
+            "orientation_error_rad": 1.534168443230839e-07,
+            "orientation_error_deg": 8.79013768592829e-06
+          },
+          "local_error": {
+            "dx_m": 6.394970619716389e-08,
+            "dy_m": 6.482601162816071e-08,
+            "dz_m": -3.979137682877954e-08,
+            "dx_mm": 6.394970619716389e-05,
+            "dy_mm": 6.482601162816071e-05,
+            "dz_mm": -3.9791376828779544e-05,
+            "position_error_m": 9.937469686116251e-08,
+            "position_error_mm": 9.937469686116251e-05,
+            "orientation_error_rad": 3.4882724019049657e-07,
+            "orientation_error_deg": 1.99863286421117e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -6.134787366995909e-08,
+            "dy_m": -3.772647092503689e-07,
+            "dz_m": 4.240089268581215e-08,
+            "dx_mm": -6.134787366995909e-05,
+            "dy_mm": -0.0003772647092503689,
+            "dz_mm": 4.240089268581215e-05,
+            "position_error_m": 3.845647645717746e-07,
+            "position_error_mm": 0.0003845647645717746,
+            "orientation_error_rad": 4.712160915387242e-08,
+            "orientation_error_deg": 2.699869328381916e-06
+          },
+          "local_error": {
+            "dx_m": 2.126879294905848e-08,
+            "dy_m": -3.873109817587039e-08,
+            "dz_m": -1.4256613352290453e-08,
+            "dx_mm": 2.126879294905848e-05,
+            "dy_mm": -3.873109817587039e-05,
+            "dz_mm": -1.4256613352290453e-05,
+            "position_error_m": 4.642963001893874e-08,
+            "position_error_mm": 4.642963001893874e-05,
+            "orientation_error_rad": 1.788139343261721e-07,
+            "orientation_error_deg": 1.024528375501914e-05
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -6.134787366995909e-08,
+            "dy_m": -3.772647092503689e-07,
+            "dz_m": 4.240089268581215e-08,
+            "dx_mm": -6.134787366995909e-05,
+            "dy_mm": -0.0003772647092503689,
+            "dz_mm": 4.240089268581215e-05,
+            "position_error_m": 3.845647645717746e-07,
+            "position_error_mm": 0.0003845647645717746,
+            "orientation_error_rad": 5.960464477539064e-08,
+            "orientation_error_deg": 3.415094585006376e-06
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -6.134787366995909e-08,
+            "dy_m": -3.772647092503689e-07,
+            "dz_m": 4.240089268581215e-08,
+            "dx_mm": -6.134787366995909e-05,
+            "dy_mm": -0.0003772647092503689,
+            "dz_mm": 4.240089268581215e-05,
+            "position_error_m": 3.845647645717746e-07,
+            "position_error_mm": 0.0003845647645717746,
+            "orientation_error_rad": 5.16191365590357e-08,
+            "orientation_error_deg": 2.9575586669421963e-06
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "post_settle": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.3038516044616703e-08,
+            "dy_m": -2.2351741790771484e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -1.3038516044616703e-05,
+            "dy_mm": -2.2351741790771484e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.647151679511519e-08,
+            "position_error_mm": 3.647151679511519e-05,
+            "orientation_error_rad": 3.6500241499888574e-08,
+            "orientation_error_deg": 2.091309789151873e-06
+          },
+          "local_error": {
+            "dx_m": 1.30385160446167e-08,
+            "dy_m": 2.2351741790771484e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 1.30385160446167e-05,
+            "dy_mm": 2.2351741790771484e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.647151679511519e-08,
+            "position_error_mm": 3.647151679511519e-05,
+            "orientation_error_rad": 4.712160915387242e-08,
+            "orientation_error_deg": 2.699869328381916e-06
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.4901161209446178e-08,
+            "dy_m": -1.4901161503179208e-08,
+            "dz_m": -1.0800361577301132e-08,
+            "dx_mm": -1.4901161209446178e-05,
+            "dy_mm": -1.4901161503179208e-05,
+            "dz_mm": -1.0800361577301132e-05,
+            "position_error_m": 2.3679886607291347e-08,
+            "position_error_mm": 2.3679886607291346e-05,
+            "orientation_error_rad": 3.285021734989986e-07,
+            "orientation_error_deg": 1.882178810236694e-05
+          },
+          "local_error": {
+            "dx_m": 1.109544123245595e-09,
+            "dy_m": -7.599309626016293e-09,
+            "dz_m": 1.4901161193847656e-08,
+            "dx_mm": 1.1095441232455949e-06,
+            "dy_mm": -7.599309626016293e-06,
+            "dz_mm": 1.4901161193847656e-05,
+            "position_error_m": 1.67638062467485e-08,
+            "position_error_mm": 1.67638062467485e-05,
+            "orientation_error_rad": 2.8662955852853374e-07,
+            "orientation_error_deg": 1.6422663987382993e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.333517755108815e-07,
+            "dy_m": -2.2032982911757149e-07,
+            "dz_m": -1.1100119229334737e-07,
+            "dx_mm": 0.0001333517755108815,
+            "dy_mm": -0.00022032982911757149,
+            "dz_mm": -0.00011100119229334737,
+            "position_error_m": 2.804446368205808e-07,
+            "position_error_mm": 0.00028044463682058083,
+            "orientation_error_rad": 4.588009213906761e-07,
+            "orientation_error_deg": 2.6287356432399194e-05
+          },
+          "local_error": {
+            "dx_m": -1.0471344003004646e-07,
+            "dy_m": -3.1152524171407237e-08,
+            "dz_m": -6.346770930408361e-08,
+            "dx_mm": -0.00010471344003004646,
+            "dy_mm": -3.1152524171407237e-05,
+            "dz_mm": -6.346770930408362e-05,
+            "position_error_m": 1.2634688128119313e-07,
+            "position_error_mm": 0.00012634688128119312,
+            "orientation_error_rad": 2.8585383434967613e-07,
+            "orientation_error_deg": 1.6378218265868204e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 7.235028509633423e-08,
+            "dy_m": -3.1885988277524646e-07,
+            "dz_m": -1.229316502759925e-07,
+            "dx_mm": 7.235028509633423e-05,
+            "dy_mm": -0.00031885988277524646,
+            "dz_mm": -0.0001229316502759925,
+            "position_error_m": 3.49311292741222e-07,
+            "position_error_mm": 0.000349311292741222,
+            "orientation_error_rad": 3.3320009373125436e-07,
+            "orientation_error_deg": 1.9090959104164312e-05
+          },
+          "local_error": {
+            "dx_m": 1.075744627820896e-07,
+            "dy_m": 1.9533253226011738e-07,
+            "dz_m": 3.478527069167292e-08,
+            "dx_mm": 0.0001075744627820896,
+            "dy_mm": 0.00019533253226011738,
+            "dz_mm": 3.478527069167292e-05,
+            "position_error_m": 2.2569244174118445e-07,
+            "position_error_mm": 0.00022569244174118445,
+            "orientation_error_rad": 1.9768624248238833e-07,
+            "orientation_error_deg": 1.1326587362040649e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 5.3316844939033103e-08,
+            "dy_m": -3.568302344159058e-07,
+            "dz_m": -7.768889542791868e-08,
+            "dx_mm": 5.3316844939033103e-05,
+            "dy_mm": -0.0003568302344159058,
+            "dz_mm": -7.768889542791868e-05,
+            "position_error_m": 3.690610608291984e-07,
+            "position_error_mm": 0.0003690610608291984,
+            "orientation_error_rad": 2.7151207861734413e-07,
+            "orientation_error_deg": 1.5556496191598024e-05
+          },
+          "local_error": {
+            "dx_m": -2.0242895359956492e-08,
+            "dy_m": 4.9924850351046324e-08,
+            "dz_m": -1.9435899525055544e-08,
+            "dx_mm": -2.0242895359956492e-05,
+            "dy_mm": 4.9924850351046324e-05,
+            "dz_mm": -1.9435899525055543e-05,
+            "position_error_m": 5.727145611451286e-08,
+            "position_error_mm": 5.727145611451286e-05,
+            "orientation_error_rad": 6.664001874625058e-08,
+            "orientation_error_deg": 3.818191820832846e-06
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -5.1708014314755246e-08,
+            "dy_m": -4.133601138045506e-07,
+            "dz_m": -7.947299224264626e-08,
+            "dx_mm": -5.1708014314755246e-05,
+            "dy_mm": -0.0004133601138045506,
+            "dz_mm": -7.947299224264626e-05,
+            "position_error_m": 4.240946343976609e-07,
+            "position_error_mm": 0.0004240946343976609,
+            "orientation_error_rad": 2.731427964541825e-07,
+            "orientation_error_deg": 1.5649929441225568e-05
+          },
+          "local_error": {
+            "dx_m": 8.631576509099403e-08,
+            "dy_m": -9.088516224331489e-08,
+            "dz_m": -5.413303715416718e-08,
+            "dx_mm": 8.631576509099403e-05,
+            "dy_mm": -9.088516224331489e-05,
+            "dz_mm": -5.413303715416718e-05,
+            "position_error_m": 1.3653171694068662e-07,
+            "position_error_mm": 0.00013653171694068663,
+            "orientation_error_rad": 1.3160349229466696e-07,
+            "orientation_error_deg": 7.540324677666867e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -5.1708014314755246e-08,
+            "dy_m": -4.133601138045506e-07,
+            "dz_m": -7.947299224264626e-08,
+            "dx_mm": -5.1708014314755246e-05,
+            "dy_mm": -0.0004133601138045506,
+            "dz_mm": -7.947299224264626e-05,
+            "position_error_m": 4.240946343976609e-07,
+            "position_error_mm": 0.0004240946343976609,
+            "orientation_error_rad": 2.747638361839329e-07,
+            "orientation_error_deg": 1.574280817616329e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": -5.1708014314755246e-08,
+            "dy_m": -4.133601138045506e-07,
+            "dz_m": -7.947299224264626e-08,
+            "dx_mm": -5.1708014314755246e-05,
+            "dy_mm": -0.0004133601138045506,
+            "dz_mm": -7.947299224264626e-05,
+            "position_error_m": 4.240946343976609e-07,
+            "position_error_mm": 0.0004240946343976609,
+            "orientation_error_rad": 2.731427964541825e-07,
+            "orientation_error_deg": 1.5649929441225568e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "injected_settled_joints": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.4214386940002448e-08,
+            "dy_m": -4.470348358154297e-08,
+            "dz_m": -7.040500640820291e-08,
+            "dx_mm": -2.4214386940002448e-05,
+            "dy_mm": -4.470348358154297e-05,
+            "dz_mm": -7.040500640820291e-05,
+            "position_error_m": 8.684240269905328e-08,
+            "position_error_mm": 8.684240269905328e-05,
+            "orientation_error_rad": 1.3791425183019047e-06,
+            "orientation_error_deg": 7.901904564574304e-05
+          },
+          "local_error": {
+            "dx_m": 2.421438694000244e-08,
+            "dy_m": 4.470348358154297e-08,
+            "dz_m": -7.040500640820291e-08,
+            "dx_mm": 2.421438694000244e-05,
+            "dy_mm": 4.470348358154297e-05,
+            "dz_mm": -7.040500640820291e-05,
+            "position_error_m": 8.684240269905327e-08,
+            "position_error_mm": 8.684240269905327e-05,
+            "orientation_error_rad": 1.3793035108336273e-06,
+            "orientation_error_deg": 7.902826983834387e-05
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.490116110835612e-08,
+            "dy_m": -8.940696684318309e-08,
+            "dz_m": -5.550384521435525e-08,
+            "dx_mm": -1.490116110835612e-05,
+            "dy_mm": -8.940696684318309e-05,
+            "dz_mm": -5.550384521435525e-05,
+            "position_error_m": 1.0628418111861394e-07,
+            "position_error_mm": 0.00010628418111861394,
+            "orientation_error_rad": 4.2041349350410664e-07,
+            "orientation_error_deg": 2.4087918828135964e-05
+          },
+          "local_error": {
+            "dx_m": -4.804029174465527e-09,
+            "dy_m": 4.5409898064008296e-08,
+            "dz_m": 1.4901162970204496e-08,
+            "dx_mm": -4.804029174465527e-06,
+            "dy_mm": 4.5409898064008296e-05,
+            "dz_mm": 1.4901162970204496e-05,
+            "position_error_m": 4.803313644097514e-08,
+            "position_error_mm": 4.803313644097514e-05,
+            "orientation_error_rad": 1.1170902737374477e-06,
+            "orientation_error_deg": 6.400455802026958e-05
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.5971412909164826e-08,
+            "dy_m": -2.605827881460576e-07,
+            "dz_m": -2.469800624571583e-07,
+            "dx_mm": 2.5971412909164826e-05,
+            "dy_mm": -0.0002605827881460576,
+            "dz_mm": -0.0002469800624571583,
+            "position_error_m": 3.5996813055854444e-07,
+            "position_error_mm": 0.00035996813055854445,
+            "orientation_error_rad": 2.920019319991096e-07,
+            "orientation_error_deg": 1.6730478313215042e-05
+          },
+          "local_error": {
+            "dx_m": 1.4495849631757096e-08,
+            "dy_m": -2.4515902308230864e-08,
+            "dz_m": 1.5011291871862862e-08,
+            "dx_mm": 1.4495849631757096e-05,
+            "dy_mm": -2.4515902308230864e-05,
+            "dz_mm": 1.5011291871862863e-05,
+            "position_error_m": 3.219468909922082e-08,
+            "position_error_mm": 3.219468909922082e-05,
+            "orientation_error_rad": 3.6378370570343046e-07,
+            "orientation_error_deg": 2.084327099243578e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -3.05767544617197e-08,
+            "dy_m": -3.4335429255349936e-07,
+            "dz_m": -2.4373218898698923e-07,
+            "dx_mm": -3.05767544617197e-05,
+            "dy_mm": -0.00034335429255349936,
+            "dz_mm": -0.00024373218898698923,
+            "position_error_m": 4.221758970816735e-07,
+            "position_error_mm": 0.0004221758970816735,
+            "orientation_error_rad": 5.442494859620899e-07,
+            "orientation_error_deg": 3.11831985477923e-05
+          },
+          "local_error": {
+            "dx_m": 1.0757446244902269e-07,
+            "dy_m": -7.635315318887947e-08,
+            "dz_m": 6.458759302385708e-08,
+            "dx_mm": 0.00010757446244902269,
+            "dy_mm": -7.635315318887947e-05,
+            "dz_mm": 6.458759302385708e-05,
+            "position_error_m": 1.468796314867929e-07,
+            "position_error_mm": 0.00014687963148679288,
+            "orientation_error_rad": 5.93433015100365e-07,
+            "orientation_error_deg": 3.400120718897416e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -6.960550713586144e-08,
+            "dy_m": -3.642341558918183e-07,
+            "dz_m": -2.2741354538391434e-07,
+            "dx_mm": -6.960550713586144e-05,
+            "dy_mm": -0.0003642341558918183,
+            "dz_mm": -0.00022741354538391434,
+            "position_error_m": 4.350038707482354e-07,
+            "position_error_mm": 0.00043500387074823545,
+            "orientation_error_rad": 3.3848931466342814e-07,
+            "orientation_error_deg": 1.9394009140490124e-05
+          },
+          "local_error": {
+            "dx_m": -2.577219859745128e-08,
+            "dy_m": 2.7573108671297142e-08,
+            "dz_m": -2.1907376797891798e-08,
+            "dx_mm": -2.577219859745128e-05,
+            "dy_mm": 2.7573108671297142e-05,
+            "dz_mm": -2.1907376797891796e-05,
+            "position_error_m": 4.363961159898698e-08,
+            "position_error_mm": 4.3639611598986984e-05,
+            "orientation_error_rad": 2.7232865814115286e-07,
+            "orientation_error_deg": 1.5603282751949065e-05
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.39032807489059e-09,
+            "dy_m": -3.7645105260830647e-07,
+            "dz_m": -2.3822554415242614e-07,
+            "dx_mm": 1.39032807489059e-06,
+            "dy_mm": -0.00037645105260830647,
+            "dz_mm": -0.00023822554415242614,
+            "position_error_m": 4.4549830292468823e-07,
+            "position_error_mm": 0.0004454983029246882,
+            "orientation_error_rad": 3.8628224721001985e-07,
+            "orientation_error_deg": 2.2132342465963256e-05
+          },
+          "local_error": {
+            "dx_m": -6.548081887824964e-08,
+            "dy_m": 1.3422966002596404e-08,
+            "dz_m": 1.1301440126856183e-08,
+            "dx_mm": -6.548081887824964e-05,
+            "dy_mm": 1.3422966002596404e-05,
+            "dz_mm": 1.1301440126856183e-05,
+            "position_error_m": 6.779112188342886e-08,
+            "position_error_mm": 6.779112188342886e-05,
+            "orientation_error_rad": 1.429269171748377e-07,
+            "orientation_error_deg": 8.18910913293408e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.39032807489059e-09,
+            "dy_m": -3.7645105260830647e-07,
+            "dz_m": -2.3822554415242614e-07,
+            "dx_mm": 1.39032807489059e-06,
+            "dy_mm": -0.00037645105260830647,
+            "dz_mm": -0.00023822554415242614,
+            "position_error_m": 4.4549830292468823e-07,
+            "position_error_mm": 0.0004454983029246882,
+            "orientation_error_rad": 3.8628224721001985e-07,
+            "orientation_error_deg": 2.2132342465963256e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.39032807489059e-09,
+            "dy_m": -3.7645105260830647e-07,
+            "dz_m": -2.3822554415242614e-07,
+            "dx_mm": 1.39032807489059e-06,
+            "dy_mm": -0.00037645105260830647,
+            "dz_mm": -0.00023822554415242614,
+            "position_error_m": 4.4549830292468823e-07,
+            "position_error_mm": 0.0004454983029246882,
+            "orientation_error_rad": 3.8628224721001985e-07,
+            "orientation_error_deg": 2.2132342465963256e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "E-fixed-3",
+      "target_joint_rad": [
+        "0.01",
+        "0.02",
+        "-0.029999999999999999",
+        "0.040000000000000001",
+        "-0.050000000000000003",
+        "0.059999999999999998"
+      ],
+      "pre_step_joint_rad": [
+        "0.0099984016269445419",
+        "0.021083703264594078",
+        "-0.029665505513548851",
+        "0.040008775889873505",
+        "-0.049999859184026718",
+        "0.060000013560056686"
+      ],
+      "post_settle_joint_rad": [
+        "0.01000163983553648",
+        "0.021211802959442139",
+        "-0.029629210010170937",
+        "0.040008552372455597",
+        "-0.049999833106994629",
+        "0.060000013560056686"
+      ],
+      "injected_joint_rad": [
+        "0.010000008158385754",
+        "0.022295432165265083",
+        "-0.029294762760400772",
+        "0.040017154067754745",
+        "-0.049999680370092392",
+        "0.06000002846121788"
+      ],
+      "settling_steps": 42,
+      "timed_out": false,
+      "pre_step_first_divergence": null,
+      "post_settle_first_divergence": null,
+      "injected_first_divergence": null,
+      "pre_step": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.8626451492309608e-09,
+            "dy_m": -2.9802322387695312e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": -1.8626451492309608e-06,
+            "dy_mm": -2.9802322387695312e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.939817435188337e-08,
+            "position_error_mm": 3.939817435188337e-05,
+            "orientation_error_rad": 8.396801027264449e-06,
+            "orientation_error_deg": 0.00048110126027336704
+          },
+          "local_error": {
+            "dx_m": 1.862645149230957e-09,
+            "dy_m": 2.9802322387695312e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 1.862645149230957e-06,
+            "dy_mm": 2.9802322387695312e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 3.939817435188337e-08,
+            "position_error_mm": 3.939817435188337e-05,
+            "orientation_error_rad": 8.39688035874627e-06,
+            "orientation_error_deg": 0.00048110580563245784
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 3.9607714735767375e-17,
+            "dy_m": -4.4703484085587546e-08,
+            "dz_m": -2.570152282665994e-08,
+            "dx_mm": 3.9607714735767375e-14,
+            "dy_mm": -4.470348408558755e-05,
+            "dz_mm": -2.570152282665994e-05,
+            "position_error_m": 5.1565199165713505e-08,
+            "position_error_mm": 5.156519916571351e-05,
+            "orientation_error_rad": 1.6049041769309372e-07,
+            "orientation_error_deg": 9.195423586105984e-06
+          },
+          "local_error": {
+            "dx_m": -1.7134414997954665e-09,
+            "dy_m": 1.491905443629094e-08,
+            "dz_m": -8.881784197001252e-16,
+            "dx_mm": -1.7134414997954665e-06,
+            "dy_mm": 1.4919054436290942e-05,
+            "dz_mm": -8.881784197001252e-13,
+            "position_error_m": 1.501712579178301e-08,
+            "position_error_mm": 1.5017125791783011e-05,
+            "orientation_error_rad": 8.446211616502286e-06,
+            "orientation_error_deg": 0.00048393227849994957
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.2406946581222655e-08,
+            "dy_m": -3.1007628499557516e-08,
+            "dz_m": 8.003688098390249e-08,
+            "dx_mm": -1.2406946581222655e-05,
+            "dy_mm": -3.1007628499557516e-05,
+            "dz_mm": 8.003688098390249e-05,
+            "position_error_m": 8.672547299535042e-08,
+            "position_error_mm": 8.672547299535043e-05,
+            "orientation_error_rad": 3.785246922806956e-06,
+            "orientation_error_deg": 0.0002168786730917207
+          },
+          "local_error": {
+            "dx_m": 1.4495849409712491e-08,
+            "dy_m": 1.0198490135726601e-08,
+            "dz_m": 4.289822538512562e-08,
+            "dx_mm": 1.4495849409712491e-05,
+            "dy_mm": 1.0198490135726601e-05,
+            "dz_mm": 4.289822538512562e-05,
+            "position_error_m": 4.641547793948276e-08,
+            "position_error_mm": 4.641547793948276e-05,
+            "orientation_error_rad": 3.6305051643489415e-06,
+            "orientation_error_deg": 0.00020801262341764364
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 5.833494398643779e-08,
+            "dy_m": -9.374472531575861e-09,
+            "dz_m": 7.70537240124547e-08,
+            "dx_mm": 5.833494398643779e-05,
+            "dy_mm": -9.374472531575861e-06,
+            "dz_mm": 7.70537240124547e-05,
+            "position_error_m": 9.709852114905583e-08,
+            "position_error_mm": 9.709852114905583e-05,
+            "orientation_error_rad": 2.6152280820044575e-06,
+            "orientation_error_deg": 0.00014984153156294856
+          },
+          "local_error": {
+            "dx_m": -7.123947132203767e-08,
+            "dy_m": -2.1525574994685215e-06,
+            "dz_m": 1.9884109608847567e-08,
+            "dx_mm": -7.123947132203767e-05,
+            "dy_mm": -0.0021525574994685215,
+            "dz_mm": 1.9884109608847567e-05,
+            "position_error_m": 2.1538278084859416e-06,
+            "position_error_mm": 0.0021538278084859415,
+            "orientation_error_rad": 1.171424627723376e-06,
+            "orientation_error_deg": 6.71176871862331e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.9178173871203796e-07,
+            "dy_m": -3.961344149927548e-08,
+            "dz_m": 1.0790915656866407e-07,
+            "dx_mm": 0.00019178173871203796,
+            "dy_mm": -3.961344149927548e-05,
+            "dz_mm": 0.00010790915656866407,
+            "position_error_m": 2.2359303683744129e-07,
+            "position_error_mm": 0.00022359303683744129,
+            "orientation_error_rad": 5.174802349265078e-07,
+            "orientation_error_deg": 2.9649433442727233e-05
+          },
+          "local_error": {
+            "dx_m": 1.8129598777782974e-07,
+            "dy_m": 3.5023689240465394e-08,
+            "dz_m": -2.8823481847661936e-08,
+            "dx_mm": 0.00018129598777782974,
+            "dy_mm": 3.5023689240465394e-05,
+            "dz_mm": -2.8823481847661934e-05,
+            "position_error_m": 1.8688415421906207e-07,
+            "position_error_mm": 0.00018688415421906206,
+            "orientation_error_rad": 2.2704597657614946e-06,
+            "orientation_error_deg": 0.00013008776213239515
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.5377017909278266e-07,
+            "dy_m": -4.4814404076554126e-08,
+            "dz_m": 9.406173934189965e-08,
+            "dx_mm": 0.00025377017909278266,
+            "dy_mm": -4.4814404076554126e-05,
+            "dz_mm": 9.406173934189965e-05,
+            "position_error_m": 2.7432689517716473e-07,
+            "position_error_mm": 0.00027432689517716474,
+            "orientation_error_rad": 5.153303285178773e-07,
+            "orientation_error_deg": 2.9526252879164574e-05
+          },
+          "local_error": {
+            "dx_m": -2.131528731297294e-08,
+            "dy_m": -8.92877578817508e-09,
+            "dz_m": 1.6281923735719125e-08,
+            "dx_mm": -2.131528731297294e-05,
+            "dy_mm": -8.92877578817508e-06,
+            "dz_mm": 1.6281923735719123e-05,
+            "position_error_m": 2.8269516282488114e-08,
+            "position_error_mm": 2.8269516282488115e-05,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 2.5377017909278266e-07,
+            "dy_m": -4.4814404076554126e-08,
+            "dz_m": 9.406173934189965e-08,
+            "dx_mm": 0.00025377017909278266,
+            "dy_mm": -4.4814404076554126e-05,
+            "dz_mm": 9.406173934189965e-05,
+            "position_error_m": 2.7432689517716473e-07,
+            "position_error_mm": 0.00027432689517716474,
+            "orientation_error_rad": 5.170509687929649e-07,
+            "orientation_error_deg": 2.9624838304987327e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 2.5377017909278266e-07,
+            "dy_m": -4.4814404076554126e-08,
+            "dz_m": 9.406173934189965e-08,
+            "dx_mm": 0.00025377017909278266,
+            "dy_mm": -4.4814404076554126e-05,
+            "dz_mm": 9.406173934189965e-05,
+            "position_error_m": 2.7432689517716473e-07,
+            "position_error_mm": 0.00027432689517716474,
+            "orientation_error_rad": 5.157610267364077e-07,
+            "orientation_error_deg": 2.9550930069330173e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 2.1073424255447017e-08,
+            "orientation_error_deg": 1.2074182697257333e-06
+          }
+        }
+      ],
+      "post_settle": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -1.6763806343078617e-08,
+            "dy_m": -1.4901161193847655e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -1.6763806343078617e-05,
+            "dy_mm": -1.4901161193847655e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 4.638585730265699e-08,
+            "position_error_mm": 4.638585730265699e-05,
+            "orientation_error_rad": 5.1584712322813976e-06,
+            "orientation_error_deg": 0.00029555863034937303
+          },
+          "local_error": {
+            "dx_m": 1.6763806343078613e-08,
+            "dy_m": 1.4901161193847656e-08,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": 1.6763806343078613e-05,
+            "dy_mm": 1.4901161193847656e-05,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 4.638585730265699e-08,
+            "position_error_mm": 4.638585730265699e-05,
+            "orientation_error_rad": 5.15855732086932e-06,
+            "orientation_error_deg": 0.0002955635628621252
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -4.470348394624981e-08,
+            "dy_m": 5.225505417705246e-16,
+            "dz_m": -4.0602684020507596e-08,
+            "dx_mm": -4.470348394624981e-05,
+            "dy_mm": 5.225505417705246e-13,
+            "dz_mm": -4.0602684020507596e-05,
+            "position_error_m": 6.0390226250626e-08,
+            "position_error_mm": 6.0390226250626e-05,
+            "orientation_error_rad": 2.546311540996299e-07,
+            "orientation_error_deg": 1.4589290462454086e-05
+          },
+          "local_error": {
+            "dx_m": 2.778916829981883e-08,
+            "dy_m": -1.5179997703285156e-08,
+            "dz_m": 4.440892098500626e-16,
+            "dx_mm": 2.7789168299818832e-05,
+            "dy_mm": -1.5179997703285156e-05,
+            "dz_mm": 4.440892098500626e-13,
+            "position_error_m": 3.166496810463258e-08,
+            "position_error_mm": 3.166496810463258e-05,
+            "orientation_error_rad": 5.014500896418599e-06,
+            "orientation_error_deg": 0.00028730973772935376
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.829142364824122e-09,
+            "dy_m": 1.3785415852243799e-08,
+            "dz_m": 7.955696681993807e-08,
+            "dx_mm": 2.829142364824122e-06,
+            "dy_mm": 1.3785415852243799e-05,
+            "dz_mm": 7.955696681993807e-05,
+            "position_error_m": 8.079203368110289e-08,
+            "position_error_mm": 8.079203368110289e-05,
+            "orientation_error_rad": 2.5723392518806633e-07,
+            "orientation_error_deg": 1.4738418260860163e-05
+          },
+          "local_error": {
+            "dx_m": -4.510879525465583e-08,
+            "dy_m": 6.1361315750740886e-09,
+            "dz_m": -7.890863426026373e-08,
+            "dx_mm": -4.510879525465583e-05,
+            "dy_mm": 6.1361315750740886e-06,
+            "dz_mm": -7.890863426026373e-05,
+            "position_error_m": 9.109900153598363e-08,
+            "position_error_mm": 9.109900153598364e-05,
+            "orientation_error_rad": 2.920019319991096e-07,
+            "orientation_error_deg": 1.6730478313215042e-05
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -2.0924161070468017e-08,
+            "dy_m": 1.2957975814575917e-07,
+            "dz_m": 1.2629572643252374e-07,
+            "dx_mm": -2.0924161070468017e-05,
+            "dy_mm": 0.00012957975814575917,
+            "dz_mm": 0.00012629572643252374,
+            "position_error_m": 1.8215198256602976e-07,
+            "position_error_mm": 0.00018215198256602976,
+            "orientation_error_rad": 1.5011024784403098e-06,
+            "orientation_error_deg": 8.60068366312574e-05
+          },
+          "local_error": {
+            "dx_m": -1.1634826990736258e-08,
+            "dy_m": 7.775567908985259e-08,
+            "dz_m": 4.9829483317331835e-09,
+            "dx_mm": -1.1634826990736258e-05,
+            "dy_mm": 7.775567908985259e-05,
+            "dz_mm": 4.9829483317331835e-06,
+            "position_error_m": 7.877908735130934e-08,
+            "position_error_mm": 7.877908735130934e-05,
+            "orientation_error_rad": 1.3989643125575239e-06,
+            "orientation_error_deg": 8.015475079896668e-05
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.0074090894818255e-07,
+            "dy_m": 1.3426863479382156e-07,
+            "dz_m": 1.3512757836287026e-07,
+            "dx_mm": 0.00010074090894818255,
+            "dy_mm": 0.00013426863479382156,
+            "dz_mm": 0.00013512757836287026,
+            "position_error_m": 2.1549074100600305e-07,
+            "position_error_mm": 0.00021549074100600304,
+            "orientation_error_rad": 5.713191483223758e-07,
+            "orientation_error_deg": 3.273417595388082e-05
+          },
+          "local_error": {
+            "dx_m": -2.998393426878465e-07,
+            "dy_m": 1.2671947477449486e-08,
+            "dz_m": 3.1861009977761538e-09,
+            "dx_mm": -0.0002998393426878465,
+            "dy_mm": 1.2671947477449486e-05,
+            "dz_mm": 3.1861009977761536e-06,
+            "position_error_m": 3.001239092706863e-07,
+            "position_error_mm": 0.00030012390927068626,
+            "orientation_error_rad": 2.060459377461274e-06,
+            "orientation_error_deg": 0.00011805562618668404
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.4889219079883276e-07,
+            "dy_m": 1.2076159427998334e-07,
+            "dz_m": 1.2853151018510367e-07,
+            "dx_mm": 0.00014889219079883276,
+            "dy_mm": 0.00012076159427998334,
+            "dz_mm": 0.00012853151018510367,
+            "position_error_m": 2.3080857056093633e-07,
+            "position_error_mm": 0.00023080857056093632,
+            "orientation_error_rad": 5.599348016994053e-07,
+            "orientation_error_deg": 3.2081900939870606e-05
+          },
+          "local_error": {
+            "dx_m": -2.2672177024674056e-08,
+            "dy_m": -1.6379356412854484e-08,
+            "dz_m": 4.146142466923015e-09,
+            "dx_mm": -2.2672177024674056e-05,
+            "dy_mm": -1.6379356412854484e-05,
+            "dz_mm": 4.146142466923015e-06,
+            "position_error_m": 2.827545622785772e-08,
+            "position_error_mm": 2.8275456227857718e-05,
+            "orientation_error_rad": 8.161702118890975e-08,
+            "orientation_error_deg": 4.676310850554341e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.4889219079883276e-07,
+            "dy_m": 1.2076159427998334e-07,
+            "dz_m": 1.2853151018510367e-07,
+            "dx_mm": 0.00014889219079883276,
+            "dy_mm": 0.00012076159427998334,
+            "dz_mm": 0.00012853151018510367,
+            "position_error_m": 2.3080857056093633e-07,
+            "position_error_mm": 0.00023080857056093632,
+            "orientation_error_rad": 5.599348016994053e-07,
+            "orientation_error_deg": 3.2081900939870606e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 1.4889219079883276e-07,
+            "dy_m": 1.2076159427998334e-07,
+            "dz_m": 1.2853151018510367e-07,
+            "dx_mm": 0.00014889219079883276,
+            "dy_mm": 0.00012076159427998334,
+            "dz_mm": 0.00012853151018510367,
+            "position_error_m": 2.3080857056093633e-07,
+            "position_error_mm": 0.00023080857056093632,
+            "orientation_error_rad": 5.599348016994053e-07,
+            "orientation_error_deg": 3.2081900939870606e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ],
+      "injected_settled_joints": [
+        {
+          "frame": "base_link",
+          "joint": null,
+          "parent": null,
+          "prim_path": "/ur10e/Geometry/world/base_link",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": null
+        },
+        {
+          "frame": "base_link_inertia",
+          "joint": "base_link-base_link_inertia",
+          "parent": "base_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "shoulder_link",
+          "joint": "shoulder_pan_joint",
+          "parent": "base_link_inertia",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 5.5879354476928694e-09,
+            "dy_m": -1.1175870895385742e-08,
+            "dz_m": 4.100799561035373e-09,
+            "dx_mm": 5.587935447692869e-06,
+            "dy_mm": -1.1175870895385742e-05,
+            "dz_mm": 4.100799561035373e-06,
+            "position_error_m": 1.3150728872488419e-08,
+            "position_error_mm": 1.315072887248842e-05,
+            "orientation_error_rad": 6.7903530453496654e-06,
+            "orientation_error_deg": 0.00038905857090234153
+          },
+          "local_error": {
+            "dx_m": -5.587935447692871e-09,
+            "dy_m": 1.1175870895385742e-08,
+            "dz_m": 4.100799561035373e-09,
+            "dx_mm": -5.587935447692871e-06,
+            "dy_mm": 1.1175870895385742e-05,
+            "dz_mm": 4.100799561035373e-06,
+            "position_error_m": 1.315072887248842e-08,
+            "position_error_mm": 1.3150728872488421e-05,
+            "orientation_error_rad": 6.7904184450524975e-06,
+            "orientation_error_deg": 0.0003890623180292952
+          }
+        },
+        {
+          "frame": "upper_arm_link",
+          "joint": "shoulder_lift_joint",
+          "parent": "shoulder_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.980232173857671e-08,
+            "dy_m": -2.980232278861585e-08,
+            "dz_m": 1.9001960976927634e-08,
+            "dx_mm": 2.980232173857671e-05,
+            "dy_mm": -2.980232278861585e-05,
+            "dz_mm": 1.9001960976927634e-05,
+            "position_error_m": 4.623236253508114e-08,
+            "position_error_mm": 4.623236253508114e-05,
+            "orientation_error_rad": 5.264139691786736e-07,
+            "orientation_error_deg": 3.0161298710667795e-05
+          },
+          "local_error": {
+            "dx_m": -2.402678589419339e-08,
+            "dy_m": 1.886782463600412e-08,
+            "dz_m": 1.4901160305669237e-08,
+            "dx_mm": -2.402678589419339e-05,
+            "dy_mm": 1.886782463600412e-05,
+            "dz_mm": 1.4901160305669237e-05,
+            "position_error_m": 3.399008422107346e-08,
+            "position_error_mm": 3.399008422107346e-05,
+            "orientation_error_rad": 6.973838958344731e-06,
+            "orientation_error_deg": 0.0003995715393170634
+          }
+        },
+        {
+          "frame": "forearm_link",
+          "joint": "elbow_joint",
+          "parent": "upper_arm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.1979770115088115e-08,
+            "dy_m": -4.1764554694831424e-08,
+            "dz_m": 3.13082368169626e-07,
+            "dx_mm": 2.1979770115088115e-05,
+            "dy_mm": -4.1764554694831424e-05,
+            "dz_mm": 0.000313082368169626,
+            "position_error_m": 3.166195786458426e-07,
+            "position_error_mm": 0.0003166195786458426,
+            "orientation_error_rad": 2.8766574937506505e-06,
+            "orientation_error_deg": 0.00016482033349659328
+          },
+          "local_error": {
+            "dx_m": 1.4495849631757096e-08,
+            "dy_m": -1.2794065362697893e-08,
+            "dz_m": 8.921171709572725e-08,
+            "dx_mm": 1.4495849631757096e-05,
+            "dy_mm": -1.2794065362697893e-05,
+            "dz_mm": 8.921171709572725e-05,
+            "position_error_m": 9.128279264034143e-08,
+            "position_error_mm": 9.128279264034144e-05,
+            "orientation_error_rad": 2.3749478003333664e-06,
+            "orientation_error_deg": 0.0001360744855229804
+          }
+        },
+        {
+          "frame": "wrist_1_link",
+          "joint": "wrist_1_joint",
+          "parent": "forearm_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": -7.575432725559494e-09,
+            "dy_m": -8.5416803907723e-08,
+            "dz_m": 4.974128939017053e-07,
+            "dx_mm": -7.5754327255594944e-06,
+            "dy_mm": -8.5416803907723e-05,
+            "dz_mm": 0.0004974128939017053,
+            "position_error_m": 5.047504379299328e-07,
+            "position_error_mm": 0.0005047504379299329,
+            "orientation_error_rad": 1.8348406742478403e-06,
+            "orientation_error_deg": 0.00010512862671333955
+          },
+          "local_error": {
+            "dx_m": 4.796981778465437e-08,
+            "dy_m": -1.4556227370676744e-06,
+            "dz_m": 1.9884109497825264e-08,
+            "dx_mm": 4.796981778465437e-05,
+            "dy_mm": -0.0014556227370676744,
+            "dz_mm": 1.9884109497825264e-05,
+            "position_error_m": 1.4565486719973358e-06,
+            "position_error_mm": 0.0014565486719973358,
+            "orientation_error_rad": 4.708908401855408e-06,
+            "orientation_error_deg": 0.0002698005775400083
+          }
+        },
+        {
+          "frame": "wrist_2_link",
+          "joint": "wrist_2_joint",
+          "parent": "wrist_1_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 1.8614585495235758e-07,
+            "dy_m": -1.007014594489597e-07,
+            "dz_m": 5.186072724316926e-07,
+            "dx_mm": 0.00018614585495235758,
+            "dy_mm": -0.0001007014594489597,
+            "dz_mm": 0.0005186072724316926,
+            "position_error_m": 5.601290621545488e-07,
+            "position_error_mm": 0.0005601290621545488,
+            "orientation_error_rad": 1.0228754461843528e-06,
+            "orientation_error_deg": 5.8606446033924375e-05
+          },
+          "local_error": {
+            "dx_m": -4.1251362858929497e-07,
+            "dy_m": 2.757310868517493e-08,
+            "dz_m": -1.0808873431556021e-08,
+            "dx_mm": -0.00041251362858929497,
+            "dy_mm": 2.757310868517493e-05,
+            "dz_mm": -1.0808873431556021e-05,
+            "position_error_m": 4.135753883384874e-07,
+            "position_error_mm": 0.0004135753883384874,
+            "orientation_error_rad": 2.6870062102173607e-06,
+            "orientation_error_deg": 0.00015395411537089682
+          }
+        },
+        {
+          "frame": "wrist_3_link",
+          "joint": "wrist_3_joint",
+          "parent": "wrist_2_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+          "rigid_body_api": true,
+          "cumulative_error": {
+            "dx_m": 2.3515007896435236e-07,
+            "dy_m": -1.1415521361524128e-07,
+            "dz_m": 5.109249680973482e-07,
+            "dx_mm": 0.00023515007896435236,
+            "dy_mm": -0.00011415521361524128,
+            "dz_mm": 0.0005109249680973482,
+            "position_error_m": 5.739087867054823e-07,
+            "position_error_mm": 0.0005739087867054824,
+            "orientation_error_rad": 1.1238281509259817e-06,
+            "orientation_error_deg": 6.439060994605005e-05
+          },
+          "local_error": {
+            "dx_m": 2.8421265341194157e-08,
+            "dy_m": -1.637935638509891e-08,
+            "dz_m": -2.1559772619285146e-09,
+            "dx_mm": 2.8421265341194157e-05,
+            "dy_mm": -1.637935638509891e-05,
+            "dz_mm": -2.1559772619285147e-06,
+            "position_error_m": 3.2874000017317596e-08,
+            "position_error_mm": 3.287400001731759e-05,
+            "orientation_error_rad": 1.1348386266624797e-07,
+            "orientation_error_deg": 6.502146373618259e-06
+          }
+        },
+        {
+          "frame": "flange",
+          "joint": "wrist_3-flange",
+          "parent": "wrist_3_link",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 2.3515007896435236e-07,
+            "dy_m": -1.1415521361524128e-07,
+            "dz_m": 5.109249680973482e-07,
+            "dx_mm": 0.00023515007896435236,
+            "dy_mm": -0.00011415521361524128,
+            "dz_mm": 0.0005109249680973482,
+            "position_error_m": 5.739087867054823e-07,
+            "position_error_mm": 0.0005739087867054824,
+            "orientation_error_rad": 1.124223239055932e-06,
+            "orientation_error_deg": 6.441324682843192e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        },
+        {
+          "frame": "tool0",
+          "joint": "flange-tool0",
+          "parent": "flange",
+          "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+          "rigid_body_api": false,
+          "cumulative_error": {
+            "dx_m": 2.3515007896435236e-07,
+            "dy_m": -1.1415521361524128e-07,
+            "dz_m": 5.109249680973482e-07,
+            "dx_mm": 0.00023515007896435236,
+            "dy_mm": -0.00011415521361524128,
+            "dz_mm": 0.0005109249680973482,
+            "position_error_m": 5.739087867054823e-07,
+            "position_error_mm": 0.0005739087867054824,
+            "orientation_error_rad": 1.1238281509259817e-06,
+            "orientation_error_deg": 6.439060994605005e-05
+          },
+          "local_error": {
+            "dx_m": 0.0,
+            "dy_m": 0.0,
+            "dz_m": 0.0,
+            "dx_mm": 0.0,
+            "dy_mm": 0.0,
+            "dz_mm": 0.0,
+            "position_error_m": 0.0,
+            "position_error_mm": 0.0,
+            "orientation_error_rad": 0.0,
+            "orientation_error_deg": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

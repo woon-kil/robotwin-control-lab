@@ -113,12 +113,55 @@ def kinematic_path(robot_model: RobotModel) -> tuple[Joint, ...]:
 
 def chain_transform(robot_model: RobotModel, joint_positions: Sequence[float]):
     """경로의 누적 4x4. 테스트가 마지막 행과 직교성을 본다."""
+    frames = chain_frames(robot_model, joint_positions)
+    if not frames:
+        return identity()
+    return frames[-1]["cumulative_matrix"]
+
+
+def chain_frames(robot_model: RobotModel, joint_positions: Sequence[float]) -> tuple[dict[str, object], ...]:
+    """base에서 tcp까지 기존 joint motion을 누적하고 자식 프레임마다 기록한다.
+
+    forward_kinematics와 같은 `_joint_motion`이다. 기하 파라미터를 바꾸지 않는다.
+    """
     positions = _read_actuated_positions(robot_model, joint_positions)
     position_by_name = dict(zip(robot_model.actuated_joint_order, positions, strict=True))
     transform = identity()
+    frames: list[dict[str, object]] = []
     for joint in kinematic_path(robot_model):
-        transform = multiply(transform, _joint_motion(joint, position_by_name))
-    return transform
+        local = _joint_motion(joint, position_by_name)
+        transform = multiply(transform, local)
+        frames.append(
+            {
+                "joint": joint.name,
+                "joint_type": joint.joint_type,
+                "parent": joint.parent,
+                "child": joint.child,
+                "origin_xyz_m": [float(value) for value in joint.origin_xyz],
+                "origin_rpy_rad": [float(value) for value in joint.origin_rpy],
+                "axis_xyz": [float(value) for value in joint.axis],
+                "local_matrix": local,
+                "cumulative_matrix": transform,
+                "local": _matrix_pose(local, joint.child, joint.parent),
+                "cumulative": _matrix_pose(transform, joint.child, robot_model.base_frame),
+            }
+        )
+    return tuple(frames)
+
+
+def _matrix_pose(matrix, frame: str, reference_frame: str) -> dict[str, float | str]:
+    qx, qy, qz, qw = matrix_to_quaternion(matrix)
+    return {
+        "frame": frame,
+        "reference_frame": reference_frame,
+        "x": matrix[0][3],
+        "y": matrix[1][3],
+        "z": matrix[2][3],
+        "qx": qx,
+        "qy": qy,
+        "qz": qz,
+        "qw": qw,
+    }
 
 
 def _joint_motion(joint: Joint, position_by_name: dict[str, float]):

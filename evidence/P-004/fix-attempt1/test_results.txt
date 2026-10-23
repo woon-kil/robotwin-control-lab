@@ -1,0 +1,24 @@
+result FAIL
+A-zero Unity ↔ Isaac position UNKNOWN
+B-positive-1 Unity ↔ Isaac position UNKNOWN
+C-mixed-1 Unity ↔ Isaac position UNKNOWN
+E-fixed-1 Unity ↔ Isaac position UNKNOWN
+E-fixed-3 Unity ↔ Isaac position UNKNOWN
+
+Python ↔ Unity position 0.0040523245387939092 mm PASS
+Python ↔ Unity orientation 0.00062471732598054931 deg PASS
+Python ↔ Isaac position 0.00075148570272387397 mm PASS
+Python ↔ Isaac orientation 3.9087544105696663e-05 deg PASS
+Unity ↔ Isaac position 1.2526456740680483 mm FAIL
+
+A-zero rerun joint difference 0
+A-zero rerun tool0 position difference 0
+A-zero rerun tool0 orientation difference 0
+
+PYTHONPATH=. python3 -m pytest tests/unit -q
+23 passed
+
+Regression: PASS
+Empirical offset used: NO
+Tolerance changed: NO
+P-005 started: NO

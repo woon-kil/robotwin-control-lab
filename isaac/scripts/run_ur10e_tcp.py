@@ -15,6 +15,7 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("--repo", required=True)
 parser.add_argument("--isaac-root", default=str(Path.home() / "isaacsim"))
+parser.add_argument("--evidence-dir", default="")
 args = parser.parse_args()
 
 REPO = Path(args.repo).resolve()
@@ -37,6 +38,7 @@ simulation_app = SimulationApp({"headless": True})
 import numpy as np  # noqa: E402
 import omni.timeline  # noqa: E402
 from isaacsim.asset.importer.urdf import URDFImporter, URDFImporterConfig  # noqa: E402
+from isaacsim.asset.importer.utils.impl.asset_utils import fix_articulation_root_for_fixed_base  # noqa: E402
 from isaacsim.core.experimental.prims import Articulation  # noqa: E402
 from isaacsim.core.experimental.utils import stage as stage_utils  # noqa: E402
 from isaacsim.core.simulation_manager import SimulationManager  # noqa: E402
@@ -44,7 +46,7 @@ from pxr import Gf, Usd, UsdGeom, UsdPhysics  # noqa: E402
 
 URDF_RELATIVE = Path("robot_description/generated") / SOURCE_COMMIT / "ur10e.urdf"
 PACKAGE_RELATIVE = Path("robot_description/upstream") / SOURCE_COMMIT
-EVIDENCE = REPO / "evidence" / "P-004" / "raw"
+EVIDENCE = Path(args.evidence_dir).resolve() if args.evidence_dir else REPO / "evidence" / "P-004" / "raw"
 USD_DIR = REPO / "isaac" / "generated" / "ur10e"
 DRIVE_STIFFNESS = 100000.0
 DRIVE_DAMPING = 1000.0
@@ -186,6 +188,8 @@ def main() -> int:
     if not opened or stage is None:
         raise RuntimeError("failed to open generated USD " + generated)
     ensure_gravity(stage)
+    roots_before = [str(prim.GetPath()) for prim in stage.Traverse() if prim.HasAPI(UsdPhysics.ArticulationRootAPI)]
+    relocated = int(fix_articulation_root_for_fixed_base(stage))
     roots = [str(prim.GetPath()) for prim in stage.Traverse() if prim.HasAPI(UsdPhysics.ArticulationRootAPI)]
     if len(roots) != 1:
         raise RuntimeError("expected one articulation root, found " + str(roots))
@@ -228,6 +232,8 @@ def main() -> int:
         "up_axis": "Z",
         "normalization_applied": False,
         "tool0_observation_api": rows[0]["tool0_pose"]["pose_api"],
+        "articulation_root_before": roots_before,
+        "articulation_root_relocated_count": relocated,
         "articulation_root": roots[0],
         "configurations": rows,
         "rerun": rerun,

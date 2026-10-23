@@ -1,0 +1,951 @@
+{
+  "gate": "P-004",
+  "diagnostic": "fix-attempt1",
+  "source_commit": "7ce98d8c3512b9d0239da93b75de68ea64f61bd6",
+  "frames": [
+    {
+      "frame": "base_link_inertia",
+      "joint": "base_link-base_link_inertia",
+      "parent": "base_link",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "urdf_origin_rpy_rad": [
+        0.0,
+        0.0,
+        3.141592653589793
+      ],
+      "python_local_at_zero": {
+        "frame": "base_link_inertia",
+        "reference_frame": "base_link",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 1.0,
+        "qw": 6.123233995736766e-17
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qw": 6.123233995736766e-17,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 1.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia",
+        "parent": "/ur10e/Geometry/world/base_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": [
+        {
+          "name": "base",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "shoulder_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.1807
+          ]
+        },
+        {
+          "name": "base_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "shoulder_link",
+      "joint": "shoulder_pan_joint",
+      "parent": "base_link_inertia",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.0,
+        0.1807
+      ],
+      "urdf_origin_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "python_local_at_zero": {
+        "frame": "shoulder_link",
+        "reference_frame": "base_link_inertia",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.1807,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "qw": 1.0
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.1807,
+        "qw": 1.0,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": [
+        {
+          "name": "shoulder",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "upper_arm_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "shoulder_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "upper_arm_link",
+      "joint": "shoulder_lift_joint",
+      "parent": "shoulder_link",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "urdf_origin_rpy_rad": [
+        1.570796327,
+        0.0,
+        0.0
+      ],
+      "python_local_at_zero": {
+        "frame": "upper_arm_link",
+        "reference_frame": "shoulder_link",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qx": 0.7071067812590625,
+        "qy": 0.0,
+        "qz": 0.0,
+        "qw": 0.7071067811140326
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qw": 0.7071067690849305,
+        "qx": 0.7071067932881643,
+        "qy": 0.0,
+        "qz": 0.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 3.6500241499888574e-08,
+        "orientation_error_deg": 2.091309789151873e-06
+      },
+      "children": [
+        {
+          "name": "upperarm",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.1762
+          ]
+        },
+        {
+          "name": "forearm_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            -0.6127,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "upperarm_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.1762
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "forearm_link",
+      "joint": "elbow_joint",
+      "parent": "upper_arm_link",
+      "urdf_origin_xyz_m": [
+        -0.6127,
+        0.0,
+        0.0
+      ],
+      "urdf_origin_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "python_local_at_zero": {
+        "frame": "forearm_link",
+        "reference_frame": "upper_arm_link",
+        "x": -0.6127,
+        "y": 0.0,
+        "z": 0.0,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "qw": 1.0
+      },
+      "isaac_authored_local": {
+        "x": -0.6127,
+        "y": 0.0,
+        "z": 0.0,
+        "qw": 1.0,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": [
+        {
+          "name": "forearm",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0393
+          ]
+        },
+        {
+          "name": "wrist_1_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            -0.57155,
+            0.0,
+            0.17415
+          ]
+        },
+        {
+          "name": "forearm_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0393
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "wrist_1_link",
+      "joint": "wrist_1_joint",
+      "parent": "forearm_link",
+      "urdf_origin_xyz_m": [
+        -0.57155,
+        0.0,
+        0.17415
+      ],
+      "urdf_origin_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "python_local_at_zero": {
+        "frame": "wrist_1_link",
+        "reference_frame": "forearm_link",
+        "x": -0.57155,
+        "y": 0.0,
+        "z": 0.17415,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "qw": 1.0
+      },
+      "isaac_authored_local": {
+        "x": -0.57155,
+        "y": 0.0,
+        "z": 0.17415,
+        "qw": 1.0,
+        "qx": 0.0,
+        "qy": 0.0,
+        "qz": 0.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": [
+        {
+          "name": "wrist1",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            -0.135
+          ]
+        },
+        {
+          "name": "wrist_2_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            0.0,
+            -0.11985,
+            -2.458164590756244e-11
+          ]
+        },
+        {
+          "name": "wrist1_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            -0.135
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "wrist_2_link",
+      "joint": "wrist_2_joint",
+      "parent": "wrist_1_link",
+      "urdf_origin_xyz_m": [
+        0.0,
+        -0.11985,
+        -2.458164590756244e-11
+      ],
+      "urdf_origin_rpy_rad": [
+        1.570796327,
+        0.0,
+        0.0
+      ],
+      "python_local_at_zero": {
+        "frame": "wrist_2_link",
+        "reference_frame": "wrist_1_link",
+        "x": 0.0,
+        "y": -0.11985,
+        "z": -2.458164590756244e-11,
+        "qx": 0.7071067812590625,
+        "qy": 0.0,
+        "qz": 0.0,
+        "qw": 0.7071067811140326
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": -0.11985,
+        "z": -2.458164590756244e-11,
+        "qw": 0.7071067690849305,
+        "qx": 0.7071067932881643,
+        "qy": 0.0,
+        "qz": 0.0,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 3.6500241499888574e-08,
+        "orientation_error_deg": 2.091309789151873e-06
+      },
+      "children": [
+        {
+          "name": "wrist2",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            -0.12
+          ]
+        },
+        {
+          "name": "wrist_3_link",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": true,
+          "local_translation_m": [
+            0.0,
+            0.11655,
+            -2.390480459346185e-11
+          ]
+        },
+        {
+          "name": "wrist2_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            -0.12
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "wrist_3_link",
+      "joint": "wrist_3_joint",
+      "parent": "wrist_2_link",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.11655,
+        -2.390480459346185e-11
+      ],
+      "urdf_origin_rpy_rad": [
+        1.570796326589793,
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "python_local_at_zero": {
+        "frame": "wrist_3_link",
+        "reference_frame": "wrist_2_link",
+        "x": 0.0,
+        "y": 0.11655,
+        "z": -2.390480459346185e-11,
+        "qx": -0.7071067812590626,
+        "qy": 8.659560562354932e-17,
+        "qz": 8.880535511286711e-27,
+        "qw": 0.7071067811140325
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.11655,
+        "z": -2.390480459346185e-11,
+        "qw": -0.7071067690849303,
+        "qx": 0.7071067932881645,
+        "qy": -8.659560899830693e-17,
+        "qz": -1.7934538571637488e-17,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 3.6500241499888574e-08,
+        "orientation_error_deg": 2.091309789151873e-06
+      },
+      "children": [
+        {
+          "name": "wrist3",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            -0.0005,
+            -0.1168
+          ]
+        },
+        {
+          "name": "wrist3_1",
+          "type_name": "Mesh",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            -0.0005,
+            -0.1168
+          ]
+        },
+        {
+          "name": "ft_frame",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "flange",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "flange",
+      "joint": "wrist_3-flange",
+      "parent": "wrist_3_link",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "urdf_origin_rpy_rad": [
+        0.0,
+        -1.5707963267948966,
+        -1.5707963267948966
+      ],
+      "python_local_at_zero": {
+        "frame": "flange",
+        "reference_frame": "wrist_3_link",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qx": -0.5,
+        "qy": -0.5,
+        "qz": -0.5,
+        "qw": 0.5
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qw": 0.49999999999999994,
+        "qx": -0.5000000000000002,
+        "qy": -0.5000000000000001,
+        "qz": -0.5,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": [
+        {
+          "name": "tool0",
+          "type_name": "Xform",
+          "kind": "other",
+          "rigid_body_api": false,
+          "local_translation_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "frame": "tool0",
+      "joint": "flange-tool0",
+      "parent": "flange",
+      "urdf_origin_xyz_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "urdf_origin_rpy_rad": [
+        1.5707963267948966,
+        0.0,
+        1.5707963267948966
+      ],
+      "python_local_at_zero": {
+        "frame": "tool0",
+        "reference_frame": "flange",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qx": 0.5,
+        "qy": 0.5,
+        "qz": 0.5,
+        "qw": 0.5
+      },
+      "isaac_authored_local": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "qw": 0.4999999999999997,
+        "qx": 0.5000000000000001,
+        "qy": 0.5000000000000001,
+        "qz": 0.5000000000000001,
+        "prim_path": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange/tool0",
+        "parent": "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link/flange"
+      },
+      "authored_versus_python_zero": {
+        "dx_m": 0.0,
+        "dy_m": 0.0,
+        "dz_m": 0.0,
+        "dx_mm": 0.0,
+        "dy_mm": 0.0,
+        "dz_mm": 0.0,
+        "position_error_m": 0.0,
+        "position_error_mm": 0.0,
+        "orientation_error_rad": 0.0,
+        "orientation_error_deg": 0.0
+      },
+      "children": []
+    }
+  ],
+  "physics_joints": [
+    {
+      "path": "/ur10e/Physics/tn__base_linkbase_link_inertia_kc0",
+      "type_name": "PhysicsFixedJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia"
+      ],
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": {
+        "w": 6.123234262925839e-17,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": null
+    },
+    {
+      "path": "/ur10e/Physics/shoulder_pan_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link"
+      ],
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.18070000410079956
+      ],
+      "local_rot0": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    },
+    {
+      "path": "/ur10e/Physics/shoulder_lift_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link"
+      ],
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": {
+        "w": 0.7071067690849304,
+        "x": 0.7071067690849304,
+        "y": -1.232595164407831e-32,
+        "z": -1.7934537957764396e-17
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    },
+    {
+      "path": "/ur10e/Physics/elbow_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link"
+      ],
+      "local_pos0": [
+        -0.6126999855041504,
+        0.0,
+        8.271806125530277e-25
+      ],
+      "local_rot0": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    },
+    {
+      "path": "/ur10e/Physics/wrist_1_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link"
+      ],
+      "local_pos0": [
+        -0.5715500116348267,
+        0.0,
+        0.1741500049829483
+      ],
+      "local_rot0": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    },
+    {
+      "path": "/ur10e/Physics/wrist_2_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link"
+      ],
+      "local_pos0": [
+        -2.220446049250313e-16,
+        -0.11985000222921371,
+        -2.45816422772549e-11
+      ],
+      "local_rot0": {
+        "w": 0.7071067690849304,
+        "x": 0.7071067690849304,
+        "y": -2.53632667137296e-17,
+        "z": -4.329780301713277e-17
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    },
+    {
+      "path": "/ur10e/Physics/wrist_3_joint",
+      "type_name": "PhysicsRevoluteJoint",
+      "body0": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link"
+      ],
+      "body1": [
+        "/ur10e/Geometry/world/base_link/base_link_inertia/shoulder_link/upper_arm_link/forearm_link/wrist_1_link/wrist_2_link/wrist_3_link"
+      ],
+      "local_pos0": [
+        -2.220446049250313e-16,
+        0.11654999852180481,
+        -2.390480868807998e-11
+      ],
+      "local_rot0": {
+        "w": 0.7071067690849304,
+        "x": -0.7071067690849304,
+        "y": 2.5363268368090826e-17,
+        "z": 6.123234262925839e-17
+      },
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": {
+        "w": 1.0,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "axis": "Z"
+    }
+  ]
+}
