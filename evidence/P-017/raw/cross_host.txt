@@ -1,4 +1,4 @@
-BLOCKED
-Ubuntu p620 was reachable.
-Windows Power PMAC Simulator was not running.
-No cross-host session was opened.
+NOT THIS RUN
+Ubuntu p620 → Windows was not measured.
+The 2026-10-25T10:41:54.742760+00:00 run is MacBook → 192.168.0.146:22022 → 172.20.0.200:22.
+See evidence/P-017/cross_host_results.json.

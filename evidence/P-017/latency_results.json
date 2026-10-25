@@ -1,10 +1,15 @@
 {
-  "status": "NOT RUN",
   "label": "PROJECT COMMUNICATION SPIKE LATENCY",
-  "mean_ms": null,
-  "p50_ms": null,
-  "p95_ms": null,
-  "p99_ms": null,
-  "max_ms": null,
-  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened."
+  "definition": "Mac client command start \u2192 parsed PMAC response received",
+  "not": [
+    "network latency",
+    "controller real-time latency",
+    "servo response latency"
+  ],
+  "mean_ms": 3943.166506662965,
+  "p50_ms": 3674.0326459985226,
+  "p95_ms": 5704.727576370351,
+  "p99_ms": 6505.163115102344,
+  "max_ms": 8779.493291862309,
+  "sample_count": 100
 }

@@ -1,2 +1,4 @@
-NOT RUN
-No simulator endpoint. No variable was written or read.
+SUPERSEDED
+The 2026-10-25T08:36:23Z note said no variable was written.
+The 2026-10-25T10:41:54.742760+00:00 run wrote and read P100 for 100 iterations.
+See evidence/P-017/write_read_results.json and evidence/P-017/raw/roundtrip.jsonl.

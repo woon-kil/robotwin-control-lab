@@ -1,3 +1,4 @@
 NOT RUN
 Motor[x].ActPos was not read.
 Physical encoder read: NOT TESTED
+This probe used P100 only.

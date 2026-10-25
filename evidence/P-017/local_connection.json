@@ -1,7 +1,5 @@
 {
-  "status": "NOT RUN",
-  "attempts": 0,
-  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened.",
-  "measured": false,
-  "protocol": null
+  "status": "PASS",
+  "path": "MacBook -> 192.168.0.146:22022 -> 172.20.0.200:22 -> gpascii",
+  "first_iteration_error": null
 }

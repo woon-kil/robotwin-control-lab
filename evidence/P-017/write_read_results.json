@@ -1,9 +1,20 @@
 {
-  "status": "NOT RUN",
-  "attempts": 0,
-  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened.",
-  "measured": false,
-  "write": "NOT RUN",
-  "read": "NOT RUN",
-  "match": "NOT RUN"
+  "variable": "P100",
+  "summary": {
+    "attempts": 100,
+    "write_success": 100,
+    "read_success": 100,
+    "roundtrip_success": 100,
+    "mismatch_count": 0,
+    "timeout_count": 0,
+    "error_count": 0,
+    "latency_definition": "Mac client command start \u2192 parsed PMAC response received",
+    "latency_sample": "iterations whose error_type is null",
+    "latency_method": "linear interpolation on sorted successful elapsed times",
+    "mean_ms": 3943.166506662965,
+    "p50_ms": 3674.0326459985226,
+    "p95_ms": 5704.727576370351,
+    "p99_ms": 6505.163115102344,
+    "max_ms": 8779.493291862309
+  }
 }

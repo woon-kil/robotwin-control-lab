@@ -1,2 +1,6 @@
-NOT RUN
-No simulator endpoint.
+started_at=2026-10-25T10:41:54.742760+00:00
+user=root
+host=192.168.0.146
+port=22022
+first_error=None
+credential_recorded=no

@@ -1,4 +1,3 @@
-BLOCKED
-Power PMAC Simulator process was not started.
-local_pmac_paths=[]
-windows_vm_tools={'parallels': False, 'utm': False, 'virtualbox': False}
+NOT STARTED BY THIS PROBE
+The 2026-10-25T08:36:23Z environment probe did not find a local Simulator process.
+The 2026-10-25T10:41:54.742760+00:00 probe did not start the Simulator. It opened SSH to the already reachable gpascii path.

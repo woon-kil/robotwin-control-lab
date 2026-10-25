@@ -1,6 +1,6 @@
 {
   "status": "NOT RUN",
   "attempts": 0,
-  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened.",
+  "reason": "The 2026-10-25T10:41:54Z P100 probe did not disconnect or reconnect. Reconnect was not part of this measurement.",
   "measured": false
 }

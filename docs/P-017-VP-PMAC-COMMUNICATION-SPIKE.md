@@ -1,39 +1,73 @@
-# P-017 — VP-PMAC Environment & Communication Spike
+# P-017 — Automated Power PMAC Communication Probe
 
-측정 시각: 2026-10-25T08:36:23Z
+측정 시각: 2026-10-25T10:41:54.742760+00:00
 
-판정: **BLOCKED**
+이 문서는 GO / PASS / FAIL을 확정하지 않는다. 최종 판정은 별도 review다. P-018은 시작하지 않는다.
 
-GO도 CONDITIONAL GO도 아니다. 측정된 protocol 실패가 아니므로 NO-GO도 아니다. Official Power PMAC Simulator를 실행할 Windows 호스트가 없어 통신 세션을 열지 않았다. SSH/gpascii와 OPC UA는 UNVERIFIED다. P-018은 시작하지 않는다.
+2026-10-25T08:36:23Z의 environment probe는 Windows Simulator를 찾지 못해 BLOCKED였다. 아래는 그 이후 MacBook에서 연 통신 측정이다.
 
-## 실행한 것
+## 경로
 
-`spikes/p017_vppmac/probe_environment.py`가 이 Mac과 `ssh p620`만 확인했다.
+```text
+client: MacBook
+server/forwarder: Windows notebook
+Windows address: 192.168.0.146
+forwarding port: 22022
+target: Official Power PMAC Simulator 1.2.1
+target PMAC address: 172.20.0.200
+interface: SSH + gpascii
+variable: P100
+```
 
-- 이 기계: macOS 26.6.2, arm64
-- p620: Ubuntu 24.04.4 LTS
-- Parallels, UTM, VirtualBox: 없음
-- Windows App은 설치되어 있다. 저장된 Remote Desktop 대상은 없었다.
-- Power PMAC IDE / Simulator 경로는 찾지 못했다.
-- Simulator process는 없다.
+MacBook → `192.168.0.146:22022` → Windows portproxy → `172.20.0.200:22` → `gpascii`
 
-ARP에 다른 LAN 주소가 보였다. PMAC으로 확인되지 않았으므로 스캔하지 않았고 주소는 기록하지 않았다.
+credential은 `PMAC_SSH_PASSWORD` 환경변수로만 넘겼다. 값은 source, config, evidence, log에 없다.
+
+## 실행
+
+```text
+python3 spikes/p017_vppmac/roundtrip_probe.py --iterations 100
+```
+
+각 iteration은 `P100`에 `17020 + index`를 WRITE한 뒤 READ하고, marker `__P017_READ__` 뒤의 마지막 `P100=<number>`를 expected와 비교한다. iteration 1은 17020, iteration 100은 17119다.
+
+## 측정
+
+정본은 `evidence/P-017/roundtrip_results.json`이다.
+
+| 항목 | 값 |
+|---|---|
+| attempts | 100 |
+| write_success | 100 |
+| read_success | 100 |
+| roundtrip_success | 100 |
+| mismatch_count | 0 |
+| timeout_count | 0 |
+| error_count | 0 |
+
+Latency label: `PROJECT COMMUNICATION SPIKE LATENCY`
+
+정의: `Mac client command start → parsed PMAC response received`
+
+SSH handshake와 portproxy가 포함된다. network latency, controller real-time latency, servo response latency가 아니다.
+
+| 통계 | ms |
+|---|---|
+| mean | 3943.166506662965 |
+| P50 | 3674.0326459985226 |
+| P95 | 5704.727576370351 |
+| P99 | 6505.163115102344 |
+| max | 8779.493291862309 |
+
+iteration별 원문은 `evidence/P-017/raw/roundtrip.jsonl`이다.
 
 ## 하지 않은 것
 
-- Simulator 기동
-- 외부 WRITE / READ
+- `IRobotController`, `VirtualPmacController`, `ExecutionGate`, Validator 수정
+- `PowerPmacControllerAdapter` 구현
+- PMAC motion program, motor motion command
 - `Motor[x].ActPos` read
-- 20회 round-trip
 - disconnect / reconnect
-- Ubuntu에서 Windows Simulator로 접속
-
-이 항목은 PASS가 아니다. `evidence/P-017/`의 해당 파일은 `NOT RUN` 또는 `BLOCKED`다.
-
-## Protocol
-
-선택한 protocol 없다. P-016의 후보 SSH, SFTP, HTTP, OPC UA, DART, MQTT는 이번 실행에서 모두 UNVERIFIED다. hardware에서 gpascii가 쓰인다는 이유로 Simulator 접속을 시도하지 않았다.
-
-## 다음
-
-Windows 10 또는 11에 Power PMAC IDE 4.6.5.3과 Simulator 1.2.1이 설치된 뒤에만 이 spike를 다시 연다. 그때도 local Windows client가 성공한 다음 cross-host를 본다. adapter는 그때도 이 결과만으로 작성하지 않는다.
+- Ubuntu p620 → Windows
+- real Power PMAC hardware 검증
+- real-time 성능 주장
