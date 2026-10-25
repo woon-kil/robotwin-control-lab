@@ -1,0 +1,9 @@
+{
+  "performed": true,
+  "requested_target": 2,
+  "result": "REJECTED",
+  "error_code": "DISCONNECTED",
+  "command_sent": false,
+  "transport_calls": [],
+  "jog_observed_on_transport": false
+}

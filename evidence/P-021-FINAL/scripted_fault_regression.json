@@ -1,0 +1,103 @@
+{
+  "live_fault_injection": "NOT_TESTED",
+  "fault_detection": true,
+  "blocked": true,
+  "recovery": true,
+  "failed_recovery": true,
+  "faults": [
+    {
+      "fault": "AmpFault",
+      "result": "FAULTED",
+      "error_code": "AMP_FAULT",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    },
+    {
+      "fault": "FeFatal",
+      "result": "FAULTED",
+      "error_code": "FE_FATAL",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    },
+    {
+      "fault": "LimitStop",
+      "result": "FAULTED",
+      "error_code": "LIMIT_STOP",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    }
+  ],
+  "scripted_recovery": {
+    "source": "scripted AmpFault",
+    "live_fault_injection": "NOT_TESTED",
+    "blocked_result": "FAULT_PRESENT",
+    "blocked_sent": false,
+    "verification": "RECOVERED",
+    "post_command": "#1j=2",
+    "post_result": "COMPLETED",
+    "jog_count": 1,
+    "phases": [
+      {
+        "order": 0,
+        "phase": "FAILURE_DETECTED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": "AMP_FAULT",
+        "command_sent": false,
+        "result": "FAULT_PRESENT",
+        "recovery_action": "recover_test_motor",
+        "read_back": true
+      },
+      {
+        "order": 1,
+        "phase": "EXECUTION_BLOCKED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": "AMP_FAULT",
+        "command_sent": false,
+        "result": "FAULT_PRESENT",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 2,
+        "phase": "RECOVERY_VERIFIED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": null,
+        "command_sent": false,
+        "result": "RECOVERED",
+        "recovery_action": "recover_test_motor",
+        "read_back": true
+      },
+      {
+        "order": 3,
+        "phase": "POST_RECOVERY_COMPLETED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": null,
+        "command_sent": true,
+        "result": "COMPLETED",
+        "recovery_action": null,
+        "read_back": true
+      }
+    ]
+  },
+  "fault_remains": {
+    "result": "FAULT_PRESENT",
+    "post_result": "FAULT_PRESENT",
+    "command_sent": false,
+    "jog_count": 0
+  },
+  "not_ready": {
+    "result": "NOT_READY",
+    "post_result": "NOT_READY",
+    "command_sent": false,
+    "jog_count": 0,
+    "activation_count": 0,
+    "enable_count": 0
+  }
+}

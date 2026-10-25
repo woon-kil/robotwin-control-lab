@@ -1,0 +1,66 @@
+{
+  "target": 3,
+  "units": "pmac_motor_unit",
+  "command": "#1j=3",
+  "ack_present": true,
+  "error_present": false,
+  "returncode": 1,
+  "ack_is_motion_completion": false,
+  "timeline_note": "SSH/gpascii sample times are not a high-frequency servo trace",
+  "before": {
+    "Motor[1].JogPos": "1",
+    "Motor[1].DesPos": "1",
+    "Motor[1].DesVel": "0",
+    "Motor[1].Desired.Pos": "1",
+    "Motor[1].Desired.Vel": "0",
+    "Motor[1].Desired.TimerEnabled": "0",
+    "Motor[1].Pos": "1",
+    "Motor[1].ActPos": "1",
+    "Motor[1].ActVel": "0",
+    "Motor[1].InPos": "1"
+  },
+  "samples": [
+    {
+      "Motor[1].JogPos": "3",
+      "Motor[1].DesPos": "3",
+      "Motor[1].DesVel": "0",
+      "Motor[1].Desired.Pos": "3",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "3",
+      "Motor[1].ActPos": "3",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 6.277957374928519
+    },
+    {
+      "Motor[1].JogPos": "3",
+      "Motor[1].DesPos": "3",
+      "Motor[1].DesVel": "0",
+      "Motor[1].Desired.Pos": "3",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "3",
+      "Motor[1].ActPos": "3",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 9.787938582943752
+    },
+    {
+      "Motor[1].JogPos": "3",
+      "Motor[1].DesPos": "3",
+      "Motor[1].DesVel": "0",
+      "Motor[1].Desired.Pos": "3",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "3",
+      "Motor[1].ActPos": "3",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 13.3345377498772
+    }
+  ],
+  "completed": true,
+  "stdout": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n",
+  "stderr": ""
+}

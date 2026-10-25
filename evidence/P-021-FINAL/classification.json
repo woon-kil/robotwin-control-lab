@@ -1,0 +1,33 @@
+{
+  "classification": "PF-1",
+  "classification_name": "FULL_RECOVERY_PASS",
+  "confidence": "MEDIUM",
+  "causal_claim": "live adapter recovery lifecycle completed on this run",
+  "confirmed": false,
+  "final_pass_declared": false,
+  "acceptance_checklist": {
+    "precondition_live_motion_completed": true,
+    "adapter_disconnect_verified": true,
+    "disconnected_motion_rejected": true,
+    "command_sent_false": true,
+    "simulator_process_remained_alive": true,
+    "reconnect_successful": true,
+    "fresh_motor_read_back_performed": true,
+    "readiness_recovery_verified": true,
+    "post_recovery_new_target_used": true,
+    "jogpos_reached_new_target": true,
+    "despos_reached_new_target": true,
+    "pos_reached_new_target": true,
+    "actpos_reached_new_target": true,
+    "final_result_completed": true,
+    "no_fault": true,
+    "scripted_fault_regression": true,
+    "failed_recovery_blocking": true,
+    "e_fixed_1_virtual_calls_0": true,
+    "e_fixed_1_pmac_calls_0": true,
+    "no_forbidden_writes": true,
+    "full_regression": true
+  },
+  "acceptance_complete": true,
+  "validator_ok": true
+}

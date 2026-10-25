@@ -1,0 +1,10 @@
+{
+  "writes_performed": [
+    "#1j=1",
+    "#1j=3"
+  ],
+  "forbidden_writes": [],
+  "configuration_modifications": [],
+  "simulator_restart_performed": false,
+  "live_fault_injection": "NOT_TESTED"
+}

@@ -1,0 +1,65 @@
+{
+  "PRECONDITION": {
+    "performed": true,
+    "communication": "HEALTHY",
+    "readiness": "RECOVERED",
+    "motion_completed": true
+  },
+  "DISCONNECT": {
+    "performed": true,
+    "adapter_disconnected": true
+  },
+  "BLOCK": {
+    "performed": true,
+    "requested_target": 2,
+    "result": "REJECTED",
+    "command_sent": false
+  },
+  "RECONNECT": {
+    "performed": true,
+    "communication": "HEALTHY"
+  },
+  "READBACK": {
+    "performed": true,
+    "fresh_state": {
+      "Motor[1].ServoCtrl": "1",
+      "Motor[1].ClosedLoop": "1",
+      "Motor[1].AmpEna": "1",
+      "Motor[1].JogPos": "1",
+      "Motor[1].DesPos": "1",
+      "Motor[1].Pos": "1",
+      "Motor[1].ActPos": "1",
+      "Motor[1].DesVel": "0",
+      "Motor[1].DesVelZero": "1",
+      "Motor[1].Desired.Pos": "1",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].InPos": "1",
+      "Motor[1].FeFatal": "0",
+      "Motor[1].FeWarn": "0",
+      "Motor[1].AmpFault": "0",
+      "Motor[1].LimitStop": "0",
+      "Motor[1].Status[0]": "$7800",
+      "Motor[1].Status[1]": "$0"
+    },
+    "readiness": "RECOVERED"
+  },
+  "RECOVERY": {
+    "performed": true,
+    "activation_required": false,
+    "actions": [],
+    "verification": "RECOVERED"
+  },
+  "NEW_COMMAND": {
+    "performed": true,
+    "target": 3
+  },
+  "EXECUTION": {
+    "performed": true,
+    "JogPos": "3",
+    "DesPos": "3",
+    "Pos": "3",
+    "ActPos": "3"
+  },
+  "FINAL": "PF-1"
+}

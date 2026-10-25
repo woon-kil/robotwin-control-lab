@@ -1,0 +1,10 @@
+{
+  "performed": true,
+  "required": false,
+  "candidate": "READINESS_CANDIDATE",
+  "actions": [],
+  "readbacks": [],
+  "post_readiness": "RECOVERED",
+  "post_state": null,
+  "note": "Fresh read is a readiness candidate. #1J/ was not sent before the new motion."
+}
