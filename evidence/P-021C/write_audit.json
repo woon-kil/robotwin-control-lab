@@ -1,14 +1,23 @@
 {
   "writes_performed": [
+    "#1j=1",
+    "Motor[1].ServoCtrl=1",
+    "#1J/",
     "#1j=1"
   ],
   "allowed_writes": [
+    "#1j=1",
+    "Motor[1].ServoCtrl=1",
+    "#1J/",
     "#1j=1"
   ],
   "forbidden_writes": [],
   "configuration_modifications": [],
-  "activation_writes": [],
-  "simulator_process_stopped": false,
-  "qemu_process_restarted": false,
+  "activation_writes": [
+    "Motor[1].ServoCtrl=1",
+    "#1J/"
+  ],
+  "simulator_process_stopped": true,
+  "qemu_process_restarted": true,
   "transport_reconnect_used_as_restart": false
 }

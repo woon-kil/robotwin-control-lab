@@ -1,6 +1,7 @@
 {
-  "classification": "WAITING_FOR_MANUAL_RESTART",
+  "classification": "RC-S3",
+  "classification_name": "RESTART_CHANGES_ACTIVATION_STATE",
   "confidence": "LOW",
-  "causal_claim": "not_run",
+  "causal_claim": "FOLLOW-UP CAUSAL TEST REQUIRED",
   "confirmed": false
 }

@@ -25,21 +25,121 @@
     "completed": false
   },
   "restart": {
-    "method": "not_performed",
-    "successful": false,
-    "transport_reconnect_used_as_restart": false
+    "method": "manual Official Power PMAC Simulator 1.2.1 CK5M shutdown and start",
+    "successful": true,
+    "transport_reconnect_used_as_restart": false,
+    "simulator_process_stopped": true,
+    "qemu_process_restarted": true,
+    "IDE_state": "UI indicators gray; console message: IP용 콘솔 참조 / 콘솔 창 시작됨",
+    "boot_completed": "operator observed Debian 12 ppmac root console; runner checked hostname and eth0",
+    "simulator_IP": "172.20.0.200",
+    "firmware_if_observed": "not queried by this runner; operator observed Official Power PMAC Simulator 1.2.1 CK5M",
+    "operator_configuration_changes": false
   },
   "after_restart_initial": {
-    "performed": false
+    "performed": true,
+    "readiness": "NOT_READY",
+    "state_changes": [
+      {
+        "variable": "Motor[1].ServoCtrl",
+        "before": "1",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].ClosedLoop",
+        "before": "1",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].DesVelZero",
+        "before": "1",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].JogPos",
+        "before": "2",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].JogVel",
+        "before": "32",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].AmpEna",
+        "before": "1",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].InPos",
+        "before": "1",
+        "after": "0",
+        "tag": "RESET_TO_ZERO"
+      },
+      {
+        "variable": "Motor[1].Status[0]",
+        "before": "$7800",
+        "after": "$0",
+        "tag": "CHANGED"
+      }
+    ]
   },
   "activation": {
-    "performed": false,
-    "required": null,
-    "actions": []
+    "required": true,
+    "actions": [
+      "Motor[1].ServoCtrl=1",
+      "#1J/"
+    ],
+    "readbacks": [
+      {
+        "name": "Motor[1].ServoCtrl",
+        "value": "1",
+        "returncode": 1
+      },
+      {
+        "name": "Motor[1].ClosedLoop",
+        "value": "0",
+        "returncode": 1
+      },
+      {
+        "name": "Motor[1].ClosedLoop",
+        "value": "1",
+        "returncode": 1
+      }
+    ],
+    "post_activation_readiness": "RECOVERED"
   },
   "after_restart": {
-    "performed": false
+    "performed": true,
+    "target": 1,
+    "JogPos": [
+      "1",
+      "1",
+      "1"
+    ],
+    "DesPos": [
+      "1",
+      "1",
+      "1"
+    ],
+    "Pos": [
+      "1",
+      "1",
+      "1"
+    ],
+    "ActPos": [
+      "1",
+      "1",
+      "1"
+    ],
+    "completed": true
   },
-  "classification": "WAITING_FOR_MANUAL_RESTART",
-  "causal_claim": "not_run"
+  "classification": "RC-S3",
+  "causal_claim": "FOLLOW-UP CAUSAL TEST REQUIRED"
 }

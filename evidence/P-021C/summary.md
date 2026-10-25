@@ -1,32 +1,46 @@
 # P-021C summary
 
-측정: 2026-10-25T14:45:21.190371+00:00
+측정: 2026-10-25T14:59:52.806902+00:00
 
-이 문서는 Simulator session-reset A/B의 restart 전 측정이다. P-021 FINAL PASS를 선언하지 않는다. P-022는 시작하지 않는다.
+Official Power PMAC Simulator session-reset A/B experiment only. P-021 FINAL PASS를 선언하지 않는다. P-022는 시작하지 않는다.
 
-classification: WAITING_FOR_MANUAL_RESTART
-causal_claim: not_run
+classification: RC-S3 RESTART_CHANGES_ACTIVATION_STATE
+confidence: LOW
+causal_claim: FOLLOW-UP CAUSAL TEST REQUIRED
+confirmed: False
+
 before readiness: RECOVERED
 before command: #1j=1 completed: False
-ack: True error: False returncode: 1
-T0 JogPos/DesPos/Pos/ActPos: 2/0/0/0
-T1 t_s 4.4740220417734236 JogPos 1 DesPos 0 DesVel 0 Pos 0 ActPos 0 TimerEnabled 0
-T2 t_s 7.453280666843057 JogPos 1 DesPos 0 DesVel 0 Pos 0 ActPos 0 TimerEnabled 0
-T3 t_s 9.861730749951676 JogPos 1 DesPos 0 DesVel 0 Pos 0 ActPos 0 TimerEnabled 0
+before T0 JogPos/DesPos/Pos/ActPos: 2/0/0/0
+before T1 t_s 4.4740220417734236 JogPos 1 DesPos 0 Pos 0 ActPos 0 TimerEnabled 0
+before T2 t_s 7.453280666843057 JogPos 1 DesPos 0 Pos 0 ActPos 0 TimerEnabled 0
+before T3 t_s 9.861730749951676 JogPos 1 DesPos 0 Pos 0 ActPos 0 TimerEnabled 0
 
+after initial readiness: NOT_READY
 identity: ppmac / Linux
-restart: not performed. SSH session is the ppmac guest. QEMU/Windows Simulator process was not stopped.
-transport reconnect was not used as a restart.
+priority Motor[1].ServoCtrl: 1 -> 0 RESET_TO_ZERO
+priority Motor[1].ClosedLoop: 1 -> 0 RESET_TO_ZERO
+priority Motor[1].JogPos: 2 -> 0 RESET_TO_ZERO
+priority Motor[1].AmpEna: 1 -> 0 RESET_TO_ZERO
+priority Motor[1].Status[0]: $7800 -> $0 CHANGED
+state difference is recorded. It is not declared the root cause.
+activation required: True actions: ['Motor[1].ServoCtrl=1', '#1J/'] blocked: False
+post-activation readiness: RECOVERED
+after command: #1j=1 completed: True ack: True error: False returncode: 1
+after T0 JogPos/DesPos/Pos/ActPos: 0/0/0/0
+after T1 t_s 5.739892584038898 JogPos 1 DesPos 1 DesVel 0 Pos 1 ActPos 1 TimerEnabled 0
+after T2 t_s 9.134135499829426 JogPos 1 DesPos 1 DesVel 0 Pos 1 ActPos 1 TimerEnabled 0
+after T3 t_s 12.337829041993245 JogPos 1 DesPos 1 DesVel 0 Pos 1 ActPos 1 TimerEnabled 0
 
-ServoCtrl 1 ClosedLoop 1 JogTa -10 JogTs -50 Status[0] $7800
+Optional C test는 수행하지 않았다. `#1j=1` 전에 `Motor[1].ServoCtrl=1`과 `#1J/`가 실행되어 restart와 reactivation이 분리되지 않았다.
 
 ## Regression
 
 `python3 -m pytest -q tests/unit`
 
-148 passed in 54.25s
+148 passed in 54.12s
 
-P-021C unit: `6 passed in 0.01s`
+P-021C unit tests are included in that run. The file contains 6 tests.
 
 ## Claim boundary
 

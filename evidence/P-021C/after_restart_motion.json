@@ -1,4 +1,71 @@
 {
-  "performed": false,
-  "reason": "WAITING_FOR_MANUAL_RESTART"
+  "performed": true,
+  "target": 1,
+  "units": "pmac_motor_unit",
+  "command": "#1j=1",
+  "ack_present": true,
+  "error_present": false,
+  "returncode": 1,
+  "ack_is_motion_completion": false,
+  "timeline_note": "SSH/gpascii sample times are not a high-frequency servo trace",
+  "before": {
+    "Motor[1].JogPos": "0",
+    "Motor[1].DesPos": "0",
+    "Motor[1].DesVel": "0",
+    "Motor[1].DesVelZero": "1",
+    "Motor[1].Desired.Pos": "0",
+    "Motor[1].Desired.Vel": "0",
+    "Motor[1].Desired.TimerEnabled": "0",
+    "Motor[1].Pos": "0",
+    "Motor[1].ActPos": "0",
+    "Motor[1].ActVel": "0",
+    "Motor[1].InPos": "1"
+  },
+  "samples": [
+    {
+      "Motor[1].JogPos": "1",
+      "Motor[1].DesPos": "1",
+      "Motor[1].DesVel": "0",
+      "Motor[1].DesVelZero": "1",
+      "Motor[1].Desired.Pos": "1",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "1",
+      "Motor[1].ActPos": "1",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 5.739892584038898
+    },
+    {
+      "Motor[1].JogPos": "1",
+      "Motor[1].DesPos": "1",
+      "Motor[1].DesVel": "0",
+      "Motor[1].DesVelZero": "1",
+      "Motor[1].Desired.Pos": "1",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "1",
+      "Motor[1].ActPos": "1",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 9.134135499829426
+    },
+    {
+      "Motor[1].JogPos": "1",
+      "Motor[1].DesPos": "1",
+      "Motor[1].DesVel": "0",
+      "Motor[1].DesVelZero": "1",
+      "Motor[1].Desired.Pos": "1",
+      "Motor[1].Desired.Vel": "0",
+      "Motor[1].Desired.TimerEnabled": "0",
+      "Motor[1].Pos": "1",
+      "Motor[1].ActPos": "1",
+      "Motor[1].ActVel": "0",
+      "Motor[1].InPos": "1",
+      "t_s": 12.337829041993245
+    }
+  ],
+  "completed": true,
+  "stdout": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n",
+  "stderr": ""
 }

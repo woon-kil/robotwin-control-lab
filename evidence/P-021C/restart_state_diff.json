@@ -1,4 +1,294 @@
 {
-  "performed": false,
-  "reason": "WAITING_FOR_MANUAL_RESTART"
+  "performed": true,
+  "rows": [
+    {
+      "variable": "Motor[1].ServoCtrl",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].ClosedLoop",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].Pos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].ActPos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].DesPos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].DesVel",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].DesVelZero",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].JogPos",
+      "before": "2",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].ProgJogPos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].JogVel",
+      "before": "32",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].JogSpeed",
+      "before": "32",
+      "after": "32",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].JogTa",
+      "before": "-10",
+      "after": "-10",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].JogTs",
+      "before": "-50",
+      "after": "-50",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].MaxSpeed",
+      "before": "32",
+      "after": "32",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].Desired.Pos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].Desired.Vel",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].Desired.TimerEnabled",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].AmpEna",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].AmpFault",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].FeFatal",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].FeWarn",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].LimitStop",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].PlusLimit",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].MinusLimit",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].MaxPos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].MinPos",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].SoftLimit",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].SoftPlusLimit",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].SoftMinusLimit",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].SoftLimitDir",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].InPos",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    {
+      "variable": "Motor[1].Coord",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].Ctrl",
+      "before": "Sys.ServoCtrl",
+      "after": "Sys.ServoCtrl",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Motor[1].Status[0]",
+      "before": "$7800",
+      "after": "$0",
+      "tag": "CHANGED"
+    },
+    {
+      "variable": "Motor[1].Status[1]",
+      "before": "$0",
+      "after": "$0",
+      "tag": "UNCHANGED"
+    },
+    {
+      "variable": "Coord[0].ProgRunning",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    }
+  ],
+  "priority": {
+    "Motor[1].ServoCtrl": {
+      "variable": "Motor[1].ServoCtrl",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    "Motor[1].ClosedLoop": {
+      "variable": "Motor[1].ClosedLoop",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    "Motor[1].JogPos": {
+      "variable": "Motor[1].JogPos",
+      "before": "2",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    "Motor[1].JogSpeed": {
+      "variable": "Motor[1].JogSpeed",
+      "before": "32",
+      "after": "32",
+      "tag": "UNCHANGED"
+    },
+    "Motor[1].JogTa": {
+      "variable": "Motor[1].JogTa",
+      "before": "-10",
+      "after": "-10",
+      "tag": "UNCHANGED"
+    },
+    "Motor[1].JogTs": {
+      "variable": "Motor[1].JogTs",
+      "before": "-50",
+      "after": "-50",
+      "tag": "UNCHANGED"
+    },
+    "Motor[1].Desired.TimerEnabled": {
+      "variable": "Motor[1].Desired.TimerEnabled",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    "Motor[1].AmpEna": {
+      "variable": "Motor[1].AmpEna",
+      "before": "1",
+      "after": "0",
+      "tag": "RESET_TO_ZERO"
+    },
+    "Motor[1].Coord": {
+      "variable": "Motor[1].Coord",
+      "before": "0",
+      "after": "0",
+      "tag": "UNCHANGED"
+    },
+    "Motor[1].Status[0]": {
+      "variable": "Motor[1].Status[0]",
+      "before": "$7800",
+      "after": "$0",
+      "tag": "CHANGED"
+    },
+    "Motor[1].Status[1]": {
+      "variable": "Motor[1].Status[1]",
+      "before": "$0",
+      "after": "$0",
+      "tag": "UNCHANGED"
+    }
+  },
+  "counts": {
+    "RESET_TO_ZERO": 7,
+    "UNCHANGED": 28,
+    "CHANGED": 1
+  }
 }
