@@ -1,0 +1,7 @@
+{
+  "command": "python3 -m pytest -q tests/unit",
+  "exit_code": 0,
+  "summary": "109 passed in 51.51s",
+  "p019c_unit_command": "python3 -m pytest -q tests/unit/test_p019c_motor.py",
+  "p019c_unit_summary": "9 passed in 0.01s"
+}

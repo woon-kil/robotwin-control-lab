@@ -9,6 +9,13 @@ get_state().controller_state는 DISCONNECTED 또는 CONNECTED만 반환한다.
 
 from __future__ import annotations
 
+from controller.power_pmac_motor import (
+    MotorState,
+    SingleMotorResult,
+    SingleMotorSession,
+    TransportExecutor,
+    disconnected_result,
+)
 from controller.power_pmac_transport import (
     PowerPmacError,
     PowerPmacTransport,
@@ -26,14 +33,22 @@ _UNMEASURED_POSE = {
 
 
 class PowerPmacControllerAdapter:
-    """Official Power PMAC Simulator와의 통신 경계.
+    """P-018 communication boundary와 P-019C Motor[1] test seam.
 
-    motor motion, servo enable, trajectory는 여기서 보내지 않는다.
+    execute_command, servo_on, step, reset은 PMAC motor command를 보내지 않는다.
+    enable_test_motor, read_test_motor_state, move_test_motor는 Motor[1] 검증 seam이다.
+    6축 robot API가 아니다. ExecutionGate는 이 seam을 호출하지 않는다.
     """
 
-    def __init__(self, transport: PowerPmacTransport) -> None:
+    def __init__(self, transport: PowerPmacTransport, motor_executor: object | None = None) -> None:
         self._transport = transport
         self._communication = "DISCONNECTED"
+        if motor_executor is not None:
+            self._session: SingleMotorSession | None = SingleMotorSession(motor_executor)
+        elif callable(getattr(transport, "execute_lines", None)):
+            self._session = SingleMotorSession(TransportExecutor(transport))
+        else:
+            self._session = None
 
     @property
     def communication_state(self) -> str:
@@ -118,6 +133,25 @@ class PowerPmacControllerAdapter:
 
     def reset(self) -> None:
         self._refuse_motion()
+
+    def read_test_motor_state(self) -> MotorState:
+        session = self._require_session()
+        return session.read_test_motor_state()
+
+    def enable_test_motor(self) -> SingleMotorResult:
+        if self._communication != "HEALTHY" or self._session is None:
+            return disconnected_result()
+        return self._session.enable_test_motor()
+
+    def move_test_motor(self, target: object, motor_id: int = 1) -> SingleMotorResult:
+        if self._communication != "HEALTHY" or self._session is None:
+            return disconnected_result()
+        return self._session.move_test_motor(target, motor_id)
+
+    def _require_session(self) -> SingleMotorSession:
+        if self._communication != "HEALTHY" or self._session is None:
+            raise PowerPmacError("DISCONNECTED", "single-motor seam is disconnected")
+        return self._session
 
     def _require_healthy(self) -> None:
         if self._communication == "DISCONNECTED":

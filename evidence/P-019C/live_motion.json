@@ -1,0 +1,136 @@
+{
+  "connect": true,
+  "enable": {
+    "result": "COMPLETED",
+    "error_code": null,
+    "stages": [
+      "COMPLETED"
+    ],
+    "command": null,
+    "command_sent": false,
+    "commands_sent": [
+      "Motor[1].ServoCtrl",
+      "Motor[1].ClosedLoop",
+      "Motor[1].Pos",
+      "Motor[1].ActPos",
+      "Motor[1].DesPos",
+      "Motor[1].DesVelZero",
+      "Motor[1].FeFatal",
+      "Motor[1].FeWarn",
+      "Motor[1].AmpFault",
+      "Motor[1].LimitStop",
+      "Motor[1].InPos",
+      "Motor[1].Status[0]",
+      "Motor[1].Status[1]"
+    ],
+    "state": {
+      "motor_id": 1,
+      "raw": {
+        "Motor[1].ServoCtrl": "1",
+        "Motor[1].ClosedLoop": "1",
+        "Motor[1].Pos": "2",
+        "Motor[1].ActPos": "2",
+        "Motor[1].DesPos": "2",
+        "Motor[1].DesVelZero": "1",
+        "Motor[1].FeFatal": "0",
+        "Motor[1].FeWarn": "0",
+        "Motor[1].AmpFault": "0",
+        "Motor[1].LimitStop": "0",
+        "Motor[1].InPos": "1",
+        "Motor[1].Status[0]": "$7800",
+        "Motor[1].Status[1]": "$0"
+      },
+      "normalized": {
+        "servo_ctrl": 1.0,
+        "closed_loop": true,
+        "pos": 2.0,
+        "actual_pos": 2.0,
+        "desired_pos": 2.0,
+        "desired_velocity_zero": true,
+        "in_position": true,
+        "following_error_fatal": false,
+        "following_error_warning": false,
+        "amp_fault": false,
+        "limit_stop": false,
+        "faulted": false,
+        "status_0": "$7800",
+        "status_1": "$0",
+        "status_bits_decoded": false,
+        "warning_is_fatal": false
+      },
+      "complete": true,
+      "missing": [],
+      "fault_code": null,
+      "status_bits_decoded": false
+    },
+    "poll_count": 0,
+    "elapsed_s": 1.9397759579587728,
+    "response_text": "",
+    "activation_write": false,
+    "enable_command_sent": false,
+    "elapsed_note": "SSH + portproxy + gpascii + polling. Not controller or servo latency."
+  },
+  "moves": [
+    {
+      "label": "A",
+      "target": 0,
+      "pre": {
+        "pos": "2",
+        "actual_pos": "2",
+        "desired_pos": "2"
+      },
+      "result": "COMPLETED",
+      "error_code": null,
+      "command": "#1j=0",
+      "command_sent": true,
+      "stages": [
+        "ACCEPTED",
+        "COMPLETED"
+      ],
+      "poll_count": 1,
+      "elapsed_s": 6.673904957948253,
+      "elapsed_note": "SSH + portproxy + gpascii + polling. Not controller or servo latency.",
+      "response_text": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+      "pos": "0",
+      "actual_pos": "0",
+      "desired_pos": "0",
+      "closed_loop": true,
+      "in_position": true,
+      "following_error_fatal": false,
+      "following_error_warning": false,
+      "amp_fault": false,
+      "limit_stop": false
+    },
+    {
+      "label": "B",
+      "target": 3,
+      "pre": {
+        "pos": "0",
+        "actual_pos": "0",
+        "desired_pos": "0"
+      },
+      "result": "COMPLETED",
+      "error_code": null,
+      "command": "#1j=3",
+      "command_sent": true,
+      "stages": [
+        "ACCEPTED",
+        "COMPLETED"
+      ],
+      "poll_count": 1,
+      "elapsed_s": 5.845785166835412,
+      "elapsed_note": "SSH + portproxy + gpascii + polling. Not controller or servo latency.",
+      "response_text": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+      "pos": "3",
+      "actual_pos": "3",
+      "desired_pos": "3",
+      "closed_loop": true,
+      "in_position": true,
+      "following_error_fatal": false,
+      "following_error_warning": false,
+      "amp_fault": false,
+      "limit_stop": false
+    }
+  ],
+  "error": null
+}

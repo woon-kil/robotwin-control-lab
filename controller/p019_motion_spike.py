@@ -172,11 +172,12 @@ def run_spike(execute: Execute, sleep: Sleep = time.sleep, observation_delay_s: 
 
 
 def live_execute(lines: list[str]) -> dict[str, object]:
-    remote = remote_command(lines)
+    guard_lines(lines)
     transport = SshGpasciiTransport(P017_TEST_CONFIG)
     started = time.perf_counter()
     try:
-        stdout, stderr, returncode = transport._run(remote, None)
+        exchange = transport.execute_lines(lines)
+        stdout, stderr, returncode = exchange.stdout, exchange.stderr, exchange.returncode
     except PowerPmacError as exc:
         return {
             "ok": False,

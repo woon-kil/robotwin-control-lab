@@ -1,0 +1,45 @@
+{
+  "source": "parser check using the P-019B observed token shapes",
+  "status_bits_decoded": false,
+  "warning_is_fatal": false,
+  "state": {
+    "motor_id": 1,
+    "raw": {
+      "Motor[1].ServoCtrl": "1",
+      "Motor[1].ClosedLoop": "1",
+      "Motor[1].Pos": "1",
+      "Motor[1].ActPos": "1",
+      "Motor[1].DesPos": "1",
+      "Motor[1].DesVelZero": "1",
+      "Motor[1].FeFatal": "0",
+      "Motor[1].FeWarn": "0",
+      "Motor[1].AmpFault": "0",
+      "Motor[1].LimitStop": "0",
+      "Motor[1].InPos": "1",
+      "Motor[1].Status[0]": "$7800",
+      "Motor[1].Status[1]": "$0"
+    },
+    "normalized": {
+      "servo_ctrl": 1.0,
+      "closed_loop": true,
+      "pos": 1.0,
+      "actual_pos": 1.0,
+      "desired_pos": 1.0,
+      "desired_velocity_zero": true,
+      "in_position": true,
+      "following_error_fatal": false,
+      "following_error_warning": false,
+      "amp_fault": false,
+      "limit_stop": false,
+      "faulted": false,
+      "status_0": "$7800",
+      "status_1": "$0",
+      "status_bits_decoded": false,
+      "warning_is_fatal": false
+    },
+    "complete": true,
+    "missing": [],
+    "fault_code": null,
+    "status_bits_decoded": false
+  }
+}

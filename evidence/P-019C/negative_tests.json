@@ -1,0 +1,102 @@
+{
+  "cases": [
+    {
+      "name": "nan",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "positive infinity",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "negative infinity",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "newline injection",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "separator injection",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "command injection",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "INVALID_TARGET",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "unsupported motor",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "UNSUPPORTED_MOTOR",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "disconnect",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "DISCONNECTED",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "malformed response",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "PROTOCOL_ERROR",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "enable failure",
+      "ok": true,
+      "result": "REJECTED",
+      "error_code": "ENABLE_FAILED",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "pre-motion fault",
+      "ok": true,
+      "result": "FAULTED",
+      "error_code": "AMP_FAULT",
+      "command_sent": false,
+      "motion_commands": []
+    },
+    {
+      "name": "timeout",
+      "ok": true,
+      "result": "FAULTED",
+      "error_code": "TIMEOUT",
+      "command_sent": true,
+      "motion_commands": [
+        "#1j=2"
+      ]
+    }
+  ]
+}

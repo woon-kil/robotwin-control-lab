@@ -54,6 +54,16 @@ class VariableRead:
     text: str
 
 
+@dataclass(frozen=True)
+class GpasciiExchange:
+    stdout: str
+    stderr: str
+    returncode: int
+
+
+_TOKEN_RE = re.compile(r"[#\[\]0-9A-Za-z.=/+-]+")
+
+
 def require_read_name(name: str) -> None:
     if name not in READ_NAMES:
         raise PowerPmacError("PROTOCOL_ERROR", "variable is outside the P-018 harmless set")
@@ -88,6 +98,17 @@ def interpret(stdout: str, stderr: str, returncode: int, variable: str, marker: 
     if not matches:
         _raise_unparsed(combined, returncode)
     return matches[-1]
+
+
+def format_gpascii_remote(lines: list[str]) -> str:
+    if not lines:
+        raise PowerPmacError("PROTOCOL_ERROR", "gpascii command list is empty")
+    quoted: list[str] = []
+    for line in lines:
+        if _TOKEN_RE.fullmatch(line) is None:
+            raise PowerPmacError("PROTOCOL_ERROR", "gpascii token is not safe")
+        quoted.append("'" + line + "'")
+    return "printf '%s\\n' " + " ".join(quoted) + " | gpascii"
 
 
 def redact(text: str, secret: str) -> str:
@@ -145,7 +166,10 @@ class SshGpasciiTransport:
     def close(self) -> None:
         return None
 
-    def _run(self, remote: str, timeout_s: float | None) -> tuple[str, str, int]:
+    def execute_lines(self, lines: list[str], timeout_s: float | None = None) -> GpasciiExchange:
+        return self.run_remote(format_gpascii_remote(lines), timeout_s)
+
+    def run_remote(self, remote: str, timeout_s: float | None = None) -> GpasciiExchange:
         timeout = self._config.timeout_s if timeout_s is None else timeout_s
         command = _ssh_command(self._config, remote)
         env = os.environ.copy()
@@ -168,7 +192,11 @@ class SshGpasciiTransport:
                 askpass.unlink(missing_ok=True)
         stdout = completed.stdout if isinstance(completed.stdout, str) else ""
         stderr = completed.stderr if isinstance(completed.stderr, str) else ""
-        return redact(stdout, secret), redact(stderr, secret), int(completed.returncode)
+        return GpasciiExchange(redact(stdout, secret), redact(stderr, secret), int(completed.returncode))
+
+    def _run(self, remote: str, timeout_s: float | None) -> tuple[str, str, int]:
+        exchange = self.run_remote(remote, timeout_s)
+        return exchange.stdout, exchange.stderr, exchange.returncode
 
 
 def _ssh_command(config: PowerPmacConfig, remote: str) -> list[str]:
