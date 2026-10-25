@@ -1,0 +1,10 @@
+{
+  "status": "NOT RUN",
+  "label": "PROJECT COMMUNICATION SPIKE LATENCY",
+  "mean_ms": null,
+  "p50_ms": null,
+  "p95_ms": null,
+  "p99_ms": null,
+  "max_ms": null,
+  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened."
+}

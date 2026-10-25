@@ -1,0 +1,3 @@
+NOT RUN
+Motor[x].ActPos was not read.
+Physical encoder read: NOT TESTED

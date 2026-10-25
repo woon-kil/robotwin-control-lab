@@ -1,0 +1,11 @@
+{
+  "status": "NOT RUN",
+  "attempts": 0,
+  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened.",
+  "measured": false,
+  "success": null,
+  "failure": null,
+  "timeout": null,
+  "invalid_response": null,
+  "iterations": []
+}

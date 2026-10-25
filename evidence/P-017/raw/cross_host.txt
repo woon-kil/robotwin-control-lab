@@ -1,0 +1,4 @@
+BLOCKED
+Ubuntu p620 was reachable.
+Windows Power PMAC Simulator was not running.
+No cross-host session was opened.

@@ -1,0 +1,18 @@
+{
+  "probed_at": "2026-10-25T08:36:23.198821+00:00",
+  "local_os": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "sw_vers_returncode": 0,
+  "sw_vers": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83",
+  "p620_ssh_returncode": 0,
+  "p620_pretty_name": "Ubuntu 24.04.4 LTS",
+  "windows_app_installed": true,
+  "windows_vm_tools": {
+    "parallels": false,
+    "utm": false,
+    "virtualbox": false
+  },
+  "local_pmac_paths": [],
+  "simulator_process": null,
+  "status": "BLOCKED",
+  "reason": "No Windows host with an installed Power PMAC Simulator was found. No protocol session was opened."
+}

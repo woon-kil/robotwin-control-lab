@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "ubuntu_host": "p620",
+  "ubuntu_os": "Ubuntu 24.04.4 LTS",
+  "windows_host": null,
+  "simulator_listen_address": null,
+  "port": null,
+  "protocol": null,
+  "firewall_rule": "NOT RUN",
+  "connection_result": "NOT RUN",
+  "reason": "Windows Power PMAC Simulator 1.2.1 was not running, so the Ubuntu path was not attempted."
+}

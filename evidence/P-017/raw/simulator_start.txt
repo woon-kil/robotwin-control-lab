@@ -1,0 +1,4 @@
+BLOCKED
+Power PMAC Simulator process was not started.
+local_pmac_paths=[]
+windows_vm_tools={'parallels': False, 'utm': False, 'virtualbox': False}
