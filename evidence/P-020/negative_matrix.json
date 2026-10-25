@@ -1,0 +1,566 @@
+{
+  "cases": [
+    {
+      "scenario": "invalid_nan",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "NON_FINITE",
+          "fault": null,
+          "input": "NaN"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "INVALID_TARGET",
+          "jog_count": 0,
+          "input": "NaN"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Invalid input is rejected before motion on both backends. Error tokens are not required to match.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_nan",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "NON_FINITE",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "INVALID_TARGET",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_nan",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_positive_infinity",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "NON_FINITE",
+          "fault": null,
+          "input": "+Inf"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "INVALID_TARGET",
+          "jog_count": 0,
+          "input": "+Inf"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Invalid input is rejected before motion on both backends. Error tokens are not required to match.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_positive_infinity",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "NON_FINITE",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "INVALID_TARGET",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_positive_infinity",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_negative_infinity",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "NON_FINITE",
+          "fault": null,
+          "input": "-Inf"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "INVALID_TARGET",
+          "jog_count": 0,
+          "input": "-Inf"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Invalid input is rejected before motion on both backends. Error tokens are not required to match.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_negative_infinity",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "NON_FINITE",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "INVALID_TARGET",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_negative_infinity",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_non_numeric",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "NON_FINITE",
+          "fault": null,
+          "input": "non-numeric"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "INVALID_TARGET",
+          "jog_count": 0,
+          "input": "non-numeric"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Invalid input is rejected before motion on both backends. Error tokens are not required to match.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_non_numeric",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "NON_FINITE",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "INVALID_TARGET",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "invalid_non_numeric",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "unsupported",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "UNSUPPORTED_COMMAND",
+          "fault": null,
+          "input": "MOVE_TCP / motor 2"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "UNSUPPORTED_MOTOR",
+          "jog_count": 0,
+          "input": "MOVE_TCP / motor 2"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Unsupported scope is rejected. Virtual uses MOVE_TCP. PMAC uses motor_id 2. Error tokens may differ.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "unsupported",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "UNSUPPORTED_COMMAND",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "UNSUPPORTED_MOTOR",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "unsupported",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "disconnect",
+      "semantic": "command_rejected",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "ILLEGAL_STATE",
+          "fault": null,
+          "input": "disconnected"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "DISCONNECTED",
+          "jog_count": 0,
+          "input": "disconnected"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Disconnect blocks execution. The simulator process is not stopped. Error tokens may differ.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "disconnect",
+      "semantic": "error_code",
+      "virtual": {
+        "result": "ILLEGAL_STATE",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "DISCONNECTED",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "Error tokens stay different when the contracts use different names.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "disconnect",
+      "semantic": "fault_not_created",
+      "virtual": {
+        "result": "NO_FAULT",
+        "state": {
+          "fault": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NO_FAULT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Rejection must not invent a fault.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "disconnect",
+      "semantic": "disconnected_state",
+      "virtual": {
+        "result": "DISCONNECTED",
+        "state": {
+          "controller_state": "DISCONNECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "DISCONNECTED",
+        "state": {
+          "communication_required": "HEALTHY"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Both sides report a disconnected condition. Live simulator shutdown is not required.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "fault",
+      "semantic": "fault_detected",
+      "virtual": {
+        "result": "DETECTED",
+        "state": {
+          "fault": "TEST_FAULT",
+          "controller_state": "ERROR",
+          "error_code": "ILLEGAL_STATE"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "DETECTED",
+        "state": {
+          "result": "FAULTED",
+          "error_code": "AMP_FAULT",
+          "fault_code": "AMP_FAULT"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Fault detection does not require the same error token.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "fault",
+      "semantic": "command_not_executed",
+      "virtual": {
+        "result": "NOT_SENT",
+        "state": {
+          "result": "REJECTED"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NOT_SENT",
+        "state": {
+          "jog_count": 0
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "A fault before motion blocks the command on both backends.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "fault",
+      "semantic": "not_completed",
+      "virtual": {
+        "result": "NOT_COMPLETED",
+        "state": {
+          "execution_state": null
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "NOT_COMPLETED",
+        "state": {
+          "result": "FAULTED"
+        },
+        "command_sent": false
+      },
+      "comparison": "MATCH",
+      "reason": "Fault must not be reported as completion.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "fault",
+      "semantic": "result_token",
+      "virtual": {
+        "result": "REJECTED",
+        "state": {
+          "error_code": "ILLEGAL_STATE"
+        },
+        "command_sent": false
+      },
+      "power_pmac": {
+        "result": "FAULTED",
+        "state": {
+          "error_code": "AMP_FAULT"
+        },
+        "command_sent": false
+      },
+      "comparison": "DIFFERENT",
+      "reason": "REJECTED and FAULTED are different tokens. The block semantics are compared on the other fault rows.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    },
+    {
+      "scenario": "timeout",
+      "semantic": "timeout",
+      "virtual": {
+        "result": "NOT_PRESENT",
+        "state": {
+          "reason": "VirtualPmacController has no command-layer timeout"
+        },
+        "command_sent": null
+      },
+      "power_pmac": {
+        "result": "TIMEOUT",
+        "state": {
+          "result": "FAULTED",
+          "completed": false,
+          "command_sent": true,
+          "jog_count": 1,
+          "stages": [
+            "ACCEPTED"
+          ]
+        },
+        "command_sent": true
+      },
+      "comparison": "NOT_COMPARABLE",
+      "reason": "VirtualPmacController steps a deterministic plant until completion. A timeout was not added. The PMAC seam timed out and did not complete.",
+      "virtual_source": "VirtualPmacController",
+      "power_pmac_source": "scripted_exchange"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "virtual": {
+    "operation": "MOVE_JOINT",
+    "configuration": "A-zero",
+    "units": "radian",
+    "target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "connected_token": "CONNECTED",
+    "ready_token": "READY",
+    "submit_result": "ACCEPTED",
+    "submit_error": null,
+    "execution_state": "COMPLETED",
+    "accepted": true,
+    "completed": true,
+    "command_sent": true,
+    "motion_started": true,
+    "target_observable": true,
+    "actual_observable": true,
+    "target_state": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actual_state": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fault": null,
+    "fault_free": true,
+    "trace": [
+      "ACCEPTED",
+      "EXECUTING",
+      "COMPLETED"
+    ],
+    "steps": 1,
+    "controller_state": "READY"
+  },
+  "power_pmac": {
+    "ok": true,
+    "source": "official_simulator",
+    "target": 0,
+    "pre": {
+      "pos": "3",
+      "actual_pos": "3",
+      "desired_pos": "3"
+    },
+    "result": "COMPLETED",
+    "error_code": null,
+    "command": "#1j=0",
+    "response_text": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+    "poll_count": 1,
+    "elapsed_s": 6.262350667035207,
+    "elapsed_note": "SSH + portproxy + gpascii + polling. Not controller or servo latency.",
+    "observation": {
+      "communication_state": "HEALTHY",
+      "ready": true,
+      "result": "COMPLETED",
+      "error_code": null,
+      "stages": [
+        "ACCEPTED",
+        "COMPLETED"
+      ],
+      "accepted": true,
+      "completed": true,
+      "command_sent": true,
+      "command": "#1j=0",
+      "target_observable": true,
+      "actual_observable": true,
+      "fault_free": true,
+      "desired_pos": 0.0,
+      "pos": 0.0,
+      "actual_pos": 0.0,
+      "units": "pmac_motor_unit",
+      "response_text": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+      "poll_count": 1,
+      "elapsed_s": 6.262350667035207,
+      "closed_loop": true,
+      "in_position": true,
+      "fault_code": null,
+      "raw_pos": "0",
+      "raw_act": "0",
+      "raw_des": "0",
+      "fe_fatal": false,
+      "fe_warn": false,
+      "amp_fault": false,
+      "limit_stop": false,
+      "servo_ctrl": 1.0,
+      "activation_write": false,
+      "enable_command_sent": false
+    },
+    "rows": [
+      {
+        "step": "connect",
+        "communication_state": "HEALTHY"
+      },
+      {
+        "step": "enable",
+        "result": "COMPLETED",
+        "error_code": null,
+        "activation_write": false,
+        "enable_command_sent": false
+      },
+      {
+        "step": "move",
+        "target": 0,
+        "pre_pos": "3",
+        "pre_act": "3",
+        "pre_des": "3",
+        "command": "#1j=0",
+        "result": "COMPLETED",
+        "response": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+        "poll_count": 1,
+        "elapsed_s": 6.262350667035207
+      }
+    ],
+    "error": null
+  }
+}

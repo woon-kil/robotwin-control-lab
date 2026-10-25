@@ -1,0 +1,20 @@
+{
+  "scenario": "E-fixed-1",
+  "validator_result": "REJECT",
+  "blocking_reason_codes": [
+    "COLLISION"
+  ],
+  "collision_result": "FAIL",
+  "involved_objects": [
+    {
+      "a": "wrist_3_link",
+      "b": "bolt_panel"
+    }
+  ],
+  "execution_gate_submit_count": 0,
+  "virtual_backend_calls": 0,
+  "harness_virtual_calls": 0,
+  "pmac_backend_calls": 0,
+  "released": false,
+  "acceptance_criterion_changed": false
+}

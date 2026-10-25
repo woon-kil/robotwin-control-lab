@@ -1,0 +1,74 @@
+{
+  "values_compared": false,
+  "rows": [
+    {
+      "semantic": "CONNECTED",
+      "virtual": "CONNECTED",
+      "power_pmac": "HEALTHY",
+      "same_token": false,
+      "comparison": "MATCH",
+      "note": "Both expose connection. HEALTHY is communication state, not servo state."
+    },
+    {
+      "semantic": "READY",
+      "virtual": "READY",
+      "power_pmac": {
+        "servo_ctrl": 1.0,
+        "closed_loop": true
+      },
+      "same_token": false,
+      "comparison": "MATCH",
+      "note": "PMAC ready is ServoCtrl>0 and ClosedLoop==1 from named variables."
+    },
+    {
+      "semantic": "TARGET",
+      "virtual": "target_joint_position",
+      "power_pmac": "DesPos",
+      "values_compared": false,
+      "comparison": "NOT_COMPARABLE",
+      "note": "Field correspondence only. Radian and motor unit are not equal."
+    },
+    {
+      "semantic": "ACTUAL",
+      "virtual": "joint_position",
+      "power_pmac": "Pos / ActPos",
+      "values_compared": false,
+      "comparison": "NOT_COMPARABLE",
+      "note": "ActPos is simulator virtual feedback on the live path, not a physical encoder."
+    },
+    {
+      "semantic": "COMPLETED",
+      "virtual": "COMPLETED",
+      "power_pmac": "COMPLETED",
+      "comparison": "MATCH"
+    },
+    {
+      "semantic": "FAULT",
+      "virtual": {
+        "fault": "TEST_FAULT",
+        "controller_state": "ERROR",
+        "error_code": "ILLEGAL_STATE"
+      },
+      "power_pmac": {
+        "result": "FAULTED",
+        "error_code": "AMP_FAULT",
+        "fault_code": "AMP_FAULT"
+      },
+      "comparison": "MATCH",
+      "note": "Named PMAC fault variables only. Status bits are not decoded."
+    },
+    {
+      "semantic": "DISCONNECTED",
+      "virtual": "DISCONNECTED",
+      "power_pmac": "DISCONNECTED",
+      "comparison": "MATCH"
+    },
+    {
+      "semantic": "RESET",
+      "virtual": "reset_fault",
+      "power_pmac": "NOT_PRESENT",
+      "comparison": "NOT_COMPARABLE",
+      "note": "No PMAC fault-clear command was added."
+    }
+  ]
+}
