@@ -1,0 +1,194 @@
+{
+  "live_fault_injection": "NOT_TESTED",
+  "reason": "AmpFault, FeFatal, LimitStop were not injected on the live simulator. pAmpFault, encoder pointers, limits, and Sys.SimConfigOk were not changed.",
+  "virtual": {
+    "source": "VirtualPmacController existing reset_fault",
+    "same_recovery_implementation": false,
+    "blocked_command_id": "p021-virtual-blocked",
+    "blocked_result": "REJECTED",
+    "blocked_sent": false,
+    "before_ready_result": "REJECTED",
+    "before_ready_sent": false,
+    "after_reset_state": "CONNECTED",
+    "post_command_id": "p021-virtual-after",
+    "post_result": "COMPLETED",
+    "post_trace": [
+      "ACCEPTED",
+      "EXECUTING",
+      "COMPLETED"
+    ],
+    "steps": 23,
+    "phases": [
+      {
+        "order": 0,
+        "phase": "BASELINE_READY",
+        "communication_state": "CONNECTED",
+        "controller_state": "READY",
+        "fault_code": null,
+        "command_sent": false,
+        "result": "READY",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 1,
+        "phase": "FAILURE_INJECTED",
+        "communication_state": "CONNECTED",
+        "controller_state": "ERROR",
+        "fault_code": "TEST_FAULT",
+        "command_sent": false,
+        "result": "FAULTED",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 2,
+        "phase": "EXECUTION_BLOCKED",
+        "communication_state": "CONNECTED",
+        "controller_state": "ERROR",
+        "fault_code": "TEST_FAULT",
+        "command_sent": false,
+        "result": "REJECTED",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 3,
+        "phase": "RECOVERY_ATTEMPTED",
+        "communication_state": "CONNECTED",
+        "controller_state": "CONNECTED",
+        "fault_code": null,
+        "command_sent": false,
+        "result": "RESET",
+        "recovery_action": "reset_fault",
+        "read_back": true
+      },
+      {
+        "order": 4,
+        "phase": "FAILURE_DETECTED",
+        "communication_state": "CONNECTED",
+        "controller_state": "CONNECTED",
+        "fault_code": null,
+        "command_sent": false,
+        "result": "REJECTED",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 5,
+        "phase": "READY_AGAIN",
+        "communication_state": "CONNECTED",
+        "controller_state": "READY",
+        "fault_code": null,
+        "command_sent": false,
+        "result": "READY",
+        "recovery_action": "servo_on",
+        "read_back": true
+      },
+      {
+        "order": 6,
+        "phase": "POST_RECOVERY_COMMAND",
+        "communication_state": "CONNECTED",
+        "controller_state": "RUNNING",
+        "fault_code": null,
+        "command_sent": true,
+        "result": "ACCEPTED",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 7,
+        "phase": "POST_RECOVERY_COMPLETED",
+        "communication_state": "CONNECTED",
+        "controller_state": "READY",
+        "fault_code": null,
+        "command_sent": true,
+        "result": "COMPLETED",
+        "recovery_action": null,
+        "read_back": true
+      }
+    ]
+  },
+  "scripted_detection": [
+    {
+      "fault": "AmpFault",
+      "result": "FAULTED",
+      "error_code": "AMP_FAULT",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    },
+    {
+      "fault": "FeFatal",
+      "result": "FAULTED",
+      "error_code": "FE_FATAL",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    },
+    {
+      "fault": "LimitStop",
+      "result": "FAULTED",
+      "error_code": "LIMIT_STOP",
+      "command_sent": false,
+      "jog_count": 0,
+      "completed": false
+    }
+  ],
+  "scripted_recovery": {
+    "source": "scripted AmpFault",
+    "live_fault_injection": "NOT_TESTED",
+    "blocked_result": "FAULT_PRESENT",
+    "blocked_sent": false,
+    "verification": "RECOVERED",
+    "post_command": "#1j=2",
+    "post_result": "COMPLETED",
+    "jog_count": 1,
+    "phases": [
+      {
+        "order": 0,
+        "phase": "FAILURE_DETECTED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": "AMP_FAULT",
+        "command_sent": false,
+        "result": "FAULT_PRESENT",
+        "recovery_action": "recover_test_motor",
+        "read_back": true
+      },
+      {
+        "order": 1,
+        "phase": "EXECUTION_BLOCKED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": "AMP_FAULT",
+        "command_sent": false,
+        "result": "FAULT_PRESENT",
+        "recovery_action": null,
+        "read_back": true
+      },
+      {
+        "order": 2,
+        "phase": "RECOVERY_VERIFIED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": null,
+        "command_sent": false,
+        "result": "RECOVERED",
+        "recovery_action": "recover_test_motor",
+        "read_back": true
+      },
+      {
+        "order": 3,
+        "phase": "POST_RECOVERY_COMPLETED",
+        "communication_state": "HEALTHY",
+        "controller_state": null,
+        "fault_code": null,
+        "command_sent": true,
+        "result": "COMPLETED",
+        "recovery_action": null,
+        "read_back": true
+      }
+    ]
+  }
+}

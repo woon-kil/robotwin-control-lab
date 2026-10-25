@@ -462,6 +462,38 @@ def target_reached(state: MotorState, token: str) -> bool:
     )
 
 
+def assess_test_motor_readiness(state: MotorState) -> str:
+    """Read-back으로만 readiness를 계산한다. jog나 fault clear를 보내지 않는다."""
+    if not state.complete:
+        return "PROTOCOL_ERROR"
+    if state.fault_code is not None:
+        return "FAULT_PRESENT"
+    servo = state.normalized.get("servo_ctrl")
+    if isinstance(servo, bool) or not isinstance(servo, (int, float)) or servo <= 0:
+        return "NOT_READY"
+    if state.normalized.get("closed_loop") is not True:
+        return "NOT_READY"
+    return "RECOVERED"
+
+
+def readiness_result(token: str, state: MotorState | None = None) -> SingleMotorResult:
+    recovered = token == "RECOVERED"
+    return SingleMotorResult(
+        result=token,
+        error_code=None if recovered else token,
+        stages=("RECOVERY_VERIFIED",) if recovered else ("RECOVERY_BLOCKED",),
+        command=None,
+        command_sent=False,
+        commands_sent=(),
+        state=state,
+        poll_count=0,
+        elapsed_s=0.0,
+        response_text="",
+        activation_write=False,
+        enable_command_sent=False,
+    )
+
+
 def disconnected_result() -> SingleMotorResult:
     return SingleMotorResult(
         result="REJECTED",

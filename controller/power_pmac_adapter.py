@@ -14,7 +14,9 @@ from controller.power_pmac_motor import (
     SingleMotorResult,
     SingleMotorSession,
     TransportExecutor,
+    assess_test_motor_readiness,
     disconnected_result,
+    readiness_result,
 )
 from controller.power_pmac_transport import (
     PowerPmacError,
@@ -37,6 +39,8 @@ class PowerPmacControllerAdapter:
 
     execute_command, servo_on, step, reset은 PMAC motor command를 보내지 않는다.
     enable_test_motor, read_test_motor_state, move_test_motor는 Motor[1] 검증 seam이다.
+    reconnect_and_verify와 recover_test_motor는 software test recovery다.
+    hardware fault reset, safety reset, amplifier reset이 아니다.
     6축 robot API가 아니다. ExecutionGate는 이 seam을 호출하지 않는다.
     """
 
@@ -148,6 +152,28 @@ class PowerPmacControllerAdapter:
             return disconnected_result()
         return self._session.move_test_motor(target, motor_id)
 
+    def reconnect_and_verify(self) -> SingleMotorResult:
+        """connect 성공을 READY로 두지 않는다. 접속 후 Motor[1]을 다시 읽는다."""
+        try:
+            self.connect()
+        except PowerPmacError as exc:
+            return readiness_result(_recovery_error(exc.code))
+        return self._verify_test_motor("reconnect_and_verify")
+
+    def recover_test_motor(self) -> SingleMotorResult:
+        """현재 Motor[1] state를 다시 읽는다. fault flag를 쓰지 않는다."""
+        if self._communication != "HEALTHY" or self._session is None:
+            return readiness_result("DISCONNECTED")
+        return self._verify_test_motor("recover_test_motor")
+
+    def _verify_test_motor(self, action: str) -> SingleMotorResult:
+        del action
+        try:
+            state = self.read_test_motor_state()
+        except PowerPmacError as exc:
+            return readiness_result(_recovery_error(exc.code))
+        return readiness_result(assess_test_motor_readiness(state), state)
+
     def _require_session(self) -> SingleMotorSession:
         if self._communication != "HEALTHY" or self._session is None:
             raise PowerPmacError("DISCONNECTED", "single-motor seam is disconnected")
@@ -163,3 +189,11 @@ class PowerPmacControllerAdapter:
         if self._communication == "DISCONNECTED":
             raise PowerPmacError("DISCONNECTED", "controller is disconnected")
         raise PowerPmacError("MOTION_NOT_IN_SCOPE", "P-018 does not command PMAC servo or motor motion")
+
+
+def _recovery_error(code: str) -> str:
+    if code in {"CONNECTION_UNREACHABLE", "AUTHENTICATION_FAILURE", "DISCONNECTED", "TIMEOUT"}:
+        return "DISCONNECTED"
+    if code == "PROTOCOL_ERROR":
+        return "PROTOCOL_ERROR"
+    return "RECOVERY_FAILED"

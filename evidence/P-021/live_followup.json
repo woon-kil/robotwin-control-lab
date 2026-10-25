@@ -1,0 +1,45 @@
+{
+  "note": "Recorded after the official post-recovery poll. No simulator configuration was written.",
+  "later_read": {
+    "pos": "0",
+    "actual_pos": "0",
+    "desired_pos": "0",
+    "servo_ctrl": 1,
+    "closed_loop": 1,
+    "in_position": true,
+    "desired_velocity_zero": true,
+    "fe_warn": false,
+    "fault_code": null,
+    "status_0": "$7800",
+    "status_1": "$0",
+    "status_bits_decoded": false,
+    "jog_speed": 32,
+    "max_speed": 32,
+    "home_pos": 0,
+    "amp_ena": 1,
+    "coord": 0
+  },
+  "same_session_jog": {
+    "command": "#1j=2",
+    "error_text_present": false,
+    "desired_pos": "0",
+    "pos": "0",
+    "actual_pos": "0",
+    "closed_loop": 1,
+    "fe_fatal": 0,
+    "amp_fault": 0,
+    "limit_stop": 0
+  },
+  "additional_read": {
+    "plus_limit": 0,
+    "minus_limit": 0,
+    "jog_ta": -10,
+    "jog_ts": -50,
+    "coord": 0,
+    "amp_ena": 1,
+    "ctrl": "Sys.ServoCtrl",
+    "fe_assignment_present": false,
+    "values_written": false,
+    "cause_claimed": false
+  }
+}

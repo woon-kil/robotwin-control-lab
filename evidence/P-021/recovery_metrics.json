@@ -1,0 +1,11 @@
+{
+  "metric_scope": "project controller execution invariant",
+  "physical_safety_claim": false,
+  "recovery_scenarios_attempted": 9,
+  "recovery_scenarios_recovered": 4,
+  "failed_recovery_correctly_blocked": 5,
+  "post_recovery_commands_completed": 3,
+  "blocked_state_command_submissions": 10,
+  "false_recovery": 0,
+  "false_completion": 0
+}

@@ -1,0 +1,42 @@
+{
+  "virtual": {
+    "command_id": "p021-virtual-after",
+    "result": "COMPLETED",
+    "trace": [
+      "ACCEPTED",
+      "EXECUTING",
+      "COMPLETED"
+    ]
+  },
+  "scripted_fault": {
+    "command": "#1j=2",
+    "result": "COMPLETED"
+  },
+  "scripted_disconnect": {
+    "command": "#1j=2",
+    "result": "COMPLETED"
+  },
+  "live": {
+    "target": 2,
+    "units": "pmac_motor_unit",
+    "command": "#1j=2",
+    "result": "FAULTED",
+    "error_code": "TIMEOUT",
+    "response_text": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n\n",
+    "command_sent": true,
+    "poll_count": 4,
+    "elapsed_s": 13.178414833033457,
+    "elapsed_note": "SSH + portproxy + gpascii + polling. Not controller or servo latency.",
+    "servo_ctrl": 1.0,
+    "closed_loop": true,
+    "pos": "0",
+    "actual_pos": "0",
+    "desired_pos": "0",
+    "in_position": true,
+    "fe_fatal": false,
+    "fe_warn": false,
+    "amp_fault": false,
+    "limit_stop": false,
+    "fault_code": null
+  }
+}

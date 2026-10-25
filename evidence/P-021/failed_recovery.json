@@ -1,0 +1,37 @@
+{
+  "fault_remains": {
+    "result": "FAULT_PRESENT",
+    "post_result": "FAULT_PRESENT",
+    "command_sent": false,
+    "jog_count": 0
+  },
+  "fault_cleared_not_ready": {
+    "result": "NOT_READY",
+    "post_result": "NOT_READY",
+    "command_sent": false,
+    "jog_count": 0,
+    "activation_count": 0,
+    "enable_count": 0
+  },
+  "reconnect_failure": {
+    "result": "DISCONNECTED",
+    "command_sent": false,
+    "jog_count": 0,
+    "communication": "DISCONNECTED"
+  },
+  "malformed_response": {
+    "result": "PROTOCOL_ERROR",
+    "command_sent": false,
+    "jog_count": 0
+  },
+  "reconnect_not_ready": {
+    "cached_ready": "RECOVERED",
+    "communication": "HEALTHY",
+    "result": "NOT_READY",
+    "read_after_reconnect": true,
+    "servo_ctrl": 0.0,
+    "closed_loop": false,
+    "command_sent": false,
+    "jog_count": 0
+  }
+}
