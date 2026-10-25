@@ -1,0 +1,12 @@
+{
+  "writes_performed": [
+    "#1j=2",
+    "#1j=1",
+    "#1j=2"
+  ],
+  "forbidden_writes": [],
+  "configuration_modifications": [],
+  "restart_performed": false,
+  "windows_restart_performed": false,
+  "ide_restart_performed": false
+}

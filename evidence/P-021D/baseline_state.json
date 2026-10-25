@@ -1,0 +1,43 @@
+{
+  "performed": true,
+  "values": {
+    "Motor[1].ServoCtrl": "1",
+    "Motor[1].ClosedLoop": "1",
+    "Motor[1].AmpEna": "1",
+    "Motor[1].JogPos": "1",
+    "Motor[1].ProgJogPos": "0",
+    "Motor[1].JogVel": "32",
+    "Motor[1].JogSpeed": "32",
+    "Motor[1].JogTa": "-10",
+    "Motor[1].JogTs": "-50",
+    "Motor[1].MaxSpeed": "32",
+    "Motor[1].DesPos": "1",
+    "Motor[1].DesVel": "0",
+    "Motor[1].DesVelZero": "1",
+    "Motor[1].Desired.Pos": "1",
+    "Motor[1].Desired.Vel": "0",
+    "Motor[1].Desired.TimerEnabled": "0",
+    "Motor[1].Pos": "1",
+    "Motor[1].ActPos": "1",
+    "Motor[1].ActVel": "0",
+    "Motor[1].InPos": "1",
+    "Motor[1].FeFatal": "0",
+    "Motor[1].FeWarn": "0",
+    "Motor[1].AmpFault": "0",
+    "Motor[1].LimitStop": "0",
+    "Motor[1].PlusLimit": "0",
+    "Motor[1].MinusLimit": "0",
+    "Motor[1].Coord": "0",
+    "Coord[0].ProgRunning": "0",
+    "Motor[1].Status[0]": "$7800",
+    "Motor[1].Status[1]": "$0"
+  },
+  "raw": "STDIN Open for ASCII Input\nMotor[1].ServoCtrl=1\n\u0006\nMotor[1].ClosedLoop=1\n\u0006\nMotor[1].AmpEna=1\n\u0006\nMotor[1].JogPos=1\n\u0006\nMotor[1].ProgJogPos=0\n\u0006\nMotor[1].JogVel=32\n\u0006\nMotor[1].JogSpeed=32\n\u0006\nMotor[1].JogTa=-10\n\u0006\nMotor[1].JogTs=-50\n\u0006\nMotor[1].MaxSpeed=32\n\u0006\nMotor[1].DesPos=1\n\u0006\nMotor[1].DesVel=0\n\u0006\nMotor[1].DesVelZero=1\n\u0006\nMotor[1].Desired.Pos=1\n\u0006\nMotor[1].Desired.Vel=0\n\u0006\nMotor[1].Desired.TimerEnabled=0\n\u0006\nMotor[1].Pos=1\n\u0006\nMotor[1].ActPos=1\n\u0006\nMotor[1].ActVel=0\n\u0006\nMotor[1].InPos=1\n\u0006\nMotor[1].FeFatal=0\n\u0006\nMotor[1].FeWarn=0\n\u0006\nMotor[1].AmpFault=0\n\u0006\nMotor[1].LimitStop=0\n\u0006\nMotor[1].PlusLimit=0\n\u0006\nMotor[1].MinusLimit=0\n\u0006\nMotor[1].Coord=0\n\u0006\nCoord[0].ProgRunning=0\n\u0006\nMotor[1].Status[0]=$7800\n\u0006\nMotor[1].Status[1]=$0\n\u0006\n// *** exit \n",
+  "returncode": 1,
+  "activation": {
+    "servo_ok": true,
+    "closed_loop_ok": true,
+    "fault_present": false,
+    "complete": true
+  }
+}

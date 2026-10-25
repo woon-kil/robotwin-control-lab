@@ -1,0 +1,21 @@
+{
+  "precondition": {
+    "performed": true,
+    "ServoCtrl": "1",
+    "ClosedLoop": "1",
+    "faults": 0
+  },
+  "stall": {
+    "performed": false
+  },
+  "intervention": {
+    "performed": false,
+    "command": null
+  },
+  "restart": false,
+  "configuration_change": false,
+  "recovery": {
+    "performed": false
+  },
+  "classification": "RD-4"
+}

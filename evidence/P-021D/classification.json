@@ -1,0 +1,8 @@
+{
+  "classification": "RD-4",
+  "classification_name": "NO_STALL_OBSERVED",
+  "confidence": "MEDIUM",
+  "causal_claim": "P021D_WAITING_FOR_STALL",
+  "confirmed": false,
+  "operational_state": "P021D_WAITING_FOR_STALL"
+}
