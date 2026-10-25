@@ -1,0 +1,25 @@
+{
+  "method": "git grep of controller and tests at the P-021A commit, separating live gpascii writes from scripted test doubles and evidence read-back text",
+  "configuration_writes_found": [],
+  "motion_writes": [
+    "#1J/",
+    "#1j=<pmac motor unit>"
+  ],
+  "activation_writes": [
+    "Motor[1].ServoCtrl=1 only when the read-back ServoCtrl is not greater than 0"
+  ],
+  "test_variable_writes": [
+    "P100=<int>"
+  ],
+  "rejected_by_guard_not_sent": [
+    "Sys.SimConfigOk=1",
+    "Motor[2] commands",
+    "j+",
+    "j-"
+  ],
+  "scripted_only": [
+    "ExchangeMotor AmpFault, FeFatal, LimitStop, ServoCtrl, and ClosedLoop mutations"
+  ],
+  "persistent_state_candidates_from_repository_writes": [],
+  "jog_ta_assignment_in_repository": "JogTa=-10 appears as a read-back in evidence/P-021A. No live writer assigns JogTa or JogTs."
+}

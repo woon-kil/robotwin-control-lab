@@ -1,0 +1,60 @@
+{
+  "command": "#1j=2",
+  "ack_present": true,
+  "error_present": false,
+  "returncode": 1,
+  "ack_is_motion_completion": false,
+  "command_return_s": 1.8922885411884636,
+  "before": {
+    "JogPos": "1",
+    "DesPos": "0",
+    "DesVel": "0",
+    "DesVelZero": "1",
+    "Pos": "0",
+    "ActPos": "0",
+    "ActVel": "0",
+    "Desired.TimerEnabled": "0"
+  },
+  "samples": [
+    {
+      "JogPos": "2",
+      "DesPos": "0",
+      "DesVel": "0",
+      "DesVelZero": "1",
+      "Pos": "0",
+      "ActPos": "0",
+      "ActVel": "0",
+      "Desired.TimerEnabled": "0",
+      "t_s": 5.048473875038326,
+      "returncode": 1
+    },
+    {
+      "JogPos": "2",
+      "DesPos": "0",
+      "DesVel": "0",
+      "DesVelZero": "1",
+      "Pos": "0",
+      "ActPos": "0",
+      "ActVel": "0",
+      "Desired.TimerEnabled": "0",
+      "t_s": 7.433833916205913,
+      "returncode": 1
+    },
+    {
+      "JogPos": "2",
+      "DesPos": "0",
+      "DesVel": "0",
+      "DesVelZero": "1",
+      "Pos": "0",
+      "ActPos": "0",
+      "ActVel": "0",
+      "Desired.TimerEnabled": "0",
+      "t_s": 11.094978916225955,
+      "returncode": 1
+    }
+  ],
+  "classification": "RB-1",
+  "motion_completed": false,
+  "stdout": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n",
+  "stderr": ""
+}

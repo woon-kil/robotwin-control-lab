@@ -1,0 +1,174 @@
+{
+  "note": "P-019B values are the post-enable, pre-#1j=1 state. P-019C values are the enable snapshot before the completed moves. P-020 values are the pre-#1j=0 state. Missing keys stay NOT_MEASURED.",
+  "columns": {
+    "P-019B_before_successful_jog": {
+      "ServoCtrl": "1",
+      "ClosedLoop": "1",
+      "Pos": "0",
+      "ActPos": "0",
+      "DesPos": "0",
+      "DesVelZero": "1",
+      "AmpFault": "0",
+      "FeFatal": "0",
+      "FeWarn": "0",
+      "LimitStop": "0",
+      "InPos": "1",
+      "Status[0]": "$7800",
+      "Status[1]": "$0"
+    },
+    "P-019C_enable_snapshot": {
+      "ServoCtrl": "1",
+      "ClosedLoop": "1",
+      "Pos": "2",
+      "ActPos": "2",
+      "DesPos": "2",
+      "DesVelZero": "1",
+      "AmpFault": "0",
+      "FeFatal": "0",
+      "FeWarn": "0",
+      "LimitStop": "0",
+      "InPos": "1",
+      "Status[0]": "$7800",
+      "Status[1]": "$0"
+    },
+    "P-020_before_successful_jog": {
+      "ServoCtrl": "1",
+      "ClosedLoop": "1",
+      "Pos": "3",
+      "ActPos": "3",
+      "DesPos": "3",
+      "AmpFault": "0",
+      "FeFatal": "0",
+      "FeWarn": "0",
+      "LimitStop": "0",
+      "InPos": "1"
+    }
+  },
+  "matrix": {
+    "ServoCtrl": {
+      "P-019B_before_successful_jog": "1",
+      "P-019C_enable_snapshot": "1",
+      "P-020_before_successful_jog": "1"
+    },
+    "ClosedLoop": {
+      "P-019B_before_successful_jog": "1",
+      "P-019C_enable_snapshot": "1",
+      "P-020_before_successful_jog": "1"
+    },
+    "JogPos": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "ProgJogPos": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "JogSpeed": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "JogTa": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "JogTs": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "MaxSpeed": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "Pos": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "2",
+      "P-020_before_successful_jog": "3"
+    },
+    "ActPos": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "2",
+      "P-020_before_successful_jog": "3"
+    },
+    "DesPos": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "2",
+      "P-020_before_successful_jog": "3"
+    },
+    "DesVel": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "DesVelZero": {
+      "P-019B_before_successful_jog": "1",
+      "P-019C_enable_snapshot": "1",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "AmpEna": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "AmpFault": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "0",
+      "P-020_before_successful_jog": "0"
+    },
+    "FeFatal": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "0",
+      "P-020_before_successful_jog": "0"
+    },
+    "FeWarn": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "0",
+      "P-020_before_successful_jog": "0"
+    },
+    "PlusLimit": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "MinusLimit": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "LimitStop": {
+      "P-019B_before_successful_jog": "0",
+      "P-019C_enable_snapshot": "0",
+      "P-020_before_successful_jog": "0"
+    },
+    "InPos": {
+      "P-019B_before_successful_jog": "1",
+      "P-019C_enable_snapshot": "1",
+      "P-020_before_successful_jog": "1"
+    },
+    "Coord": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "Ctrl": {
+      "P-019B_before_successful_jog": "NOT_MEASURED",
+      "P-019C_enable_snapshot": "NOT_MEASURED",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "Status[0]": {
+      "P-019B_before_successful_jog": "$7800",
+      "P-019C_enable_snapshot": "$7800",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    },
+    "Status[1]": {
+      "P-019B_before_successful_jog": "$0",
+      "P-019C_enable_snapshot": "$0",
+      "P-020_before_successful_jog": "NOT_MEASURED"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{"step": "current_state", "returncode": 1}
+{"step": "T1", "t_s": 5.048473875038326, "sample": {"JogPos": "2", "DesPos": "0", "DesVel": "0", "DesVelZero": "1", "Pos": "0", "ActPos": "0", "ActVel": "0", "Desired.TimerEnabled": "0", "t_s": 5.048473875038326, "returncode": 1}}
+{"step": "T2", "t_s": 7.433833916205913, "sample": {"JogPos": "2", "DesPos": "0", "DesVel": "0", "DesVelZero": "1", "Pos": "0", "ActPos": "0", "ActVel": "0", "Desired.TimerEnabled": "0", "t_s": 7.433833916205913, "returncode": 1}}
+{"step": "T3", "t_s": 11.094978916225955, "sample": {"JogPos": "2", "DesPos": "0", "DesVel": "0", "DesVelZero": "1", "Pos": "0", "ActPos": "0", "ActVel": "0", "Desired.TimerEnabled": "0", "t_s": 11.094978916225955, "returncode": 1}}

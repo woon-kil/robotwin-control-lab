@@ -1,0 +1,37 @@
+{
+  "elements": [
+    {
+      "name": "Motor[1].Desired.TimerEnabled",
+      "source": "Power PMAC Software Reference Manual index; Omron forum topic 6049",
+      "source_url": "https://forums.automation.omron.com/topic/6049-jog-behavior-in-motion-programs/",
+      "why_inspected": "Vendor description says this bit is 1 while a definite jog section is executing.",
+      "read_result": "0 at the state read and at T1, T2, and T3"
+    },
+    {
+      "name": "Motor[1].Desired.Pos",
+      "source": "Power PMAC Software Reference Manual index; Omron forum topic 4880",
+      "source_url": "https://forums.automation.omron.com/topic/4880-motors-commanded-position/",
+      "why_inspected": "Vendor description says this is the start position of the present trajectory section.",
+      "read_result": "0"
+    },
+    {
+      "name": "Motor[1].Desired.Vel",
+      "source": "Power PMAC Software Reference Manual index",
+      "why_inspected": "Present-section commanded velocity beside DesVel.",
+      "read_result": "0"
+    },
+    {
+      "name": "Motor[1].JogVel",
+      "source": "Power PMAC Software Reference Manual index, page listed beside JogPos",
+      "why_inspected": "Jog velocity element paired with the stored jog target.",
+      "read_result": "32"
+    },
+    {
+      "name": "Coord[0].ProgRunning",
+      "source": "Omron forum topic 5310, steve.milici",
+      "source_url": "https://forums.automation.omron.com/topic/5310-waiting-between-stopping-motion-program-and-a-jog/",
+      "why_inspected": "A running motion program can reject a jog.",
+      "read_result": "0"
+    }
+  ]
+}

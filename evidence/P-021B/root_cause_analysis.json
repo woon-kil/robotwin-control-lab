@@ -1,0 +1,14 @@
+{
+  "classification": "RB-1",
+  "classification_name": "COMMAND_TARGET_ONLY",
+  "confidence": "MEDIUM",
+  "confirmed": false,
+  "p021a_conclusion_changed": false,
+  "motion_completed": false,
+  "jog_ta_ts_class": "NOT_ENOUGH_EVIDENCE",
+  "remaining_unknown": "Which simulator condition accepts JogPos and does not start DesPos is not isolated.",
+  "current_jog_ta": "-10",
+  "current_jog_ts": "-50",
+  "desired_timer_enabled_in_current_read": "0",
+  "coord0_prog_running": "0"
+}

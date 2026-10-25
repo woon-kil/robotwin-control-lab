@@ -1,0 +1,63 @@
+[
+  {
+    "candidate": "JogTa/JogTs",
+    "historical_difference": "NOT_MEASURED in P-019B, P-019C, and P-020",
+    "official_relevance": "Omron forum, Curt Wilson: negative JogTa/JogTs selects rate mode and is recommended. It is not documented there as a jog reject.",
+    "official_url": "https://forums.automation.omron.com/topic/5177-sending-consecutive-jog-commmands/",
+    "current_evidence": {
+      "JogTa": "-10",
+      "JogTs": "-50"
+    },
+    "class": "NOT_ENOUGH_EVIDENCE",
+    "intervention_allowed": false,
+    "confidence": "LOW"
+  },
+  {
+    "candidate": "Status[0]",
+    "historical_difference": "P-019B successful jog state is $7800. P-019C enable snapshot is $7800.",
+    "official_relevance": "Raw word matches the successful P-019B motion state. Bits were not decoded.",
+    "current_evidence": "$7800",
+    "class": "ELIMINATED",
+    "intervention_allowed": false,
+    "confidence": "MEDIUM"
+  },
+  {
+    "candidate": "active software position limit",
+    "historical_difference": "NOT_MEASURED in P-019B and P-020",
+    "official_relevance": "2011 On-Line Command Specification: SoftPlusLimit is active when MaxPos is greater than MinPos.",
+    "official_url": "http://svn.code.sf.net/p/tango-ds/code/DeviceClasses/BeamlineComponents/Mirrors/TurboPMAC/tags/release_0_6_5/doc/Power%20PMAC%20On-Line%20Command%20Specification%202011-01.pdf",
+    "current_evidence": {
+      "MaxPos": "0",
+      "MinPos": "0",
+      "SoftLimit": "0"
+    },
+    "class": "ELIMINATED",
+    "intervention_allowed": false,
+    "confidence": "MEDIUM"
+  },
+  {
+    "candidate": "Coord motion ownership",
+    "historical_difference": "Coord and ProgRunning were NOT_MEASURED during P-019B and P-020",
+    "official_relevance": "Vendor forum: a jog is rejected while Coord[x].ProgRunning is true. Coord=0 is not treated as the cause by itself.",
+    "current_evidence": {
+      "Coord": "0",
+      "Coord[0].ProgRunning": "0"
+    },
+    "class": "NOT_ENOUGH_EVIDENCE",
+    "intervention_allowed": false,
+    "confidence": "LOW"
+  },
+  {
+    "candidate": "closed-loop activation",
+    "historical_difference": "P-019B and P-020 successful motion had ServoCtrl 1 and ClosedLoop 1",
+    "official_relevance": "j/ closes the loop. The successful jogs already had ClosedLoop 1.",
+    "current_evidence": {
+      "ServoCtrl": "1",
+      "ClosedLoop": "1",
+      "AmpEna": "1"
+    },
+    "class": "ELIMINATED",
+    "intervention_allowed": false,
+    "confidence": "MEDIUM"
+  }
+]
