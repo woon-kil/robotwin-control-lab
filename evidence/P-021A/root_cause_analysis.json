@@ -1,0 +1,31 @@
+{
+  "classification": "RC-3",
+  "classification_name": "BASELINE_NO_LONGER_REPRODUCIBLE",
+  "confidence": "MEDIUM",
+  "trajectory_cause_confidence": "LOW",
+  "fresh_baseline_reproducible": false,
+  "reconnect_failure_reproducible": false,
+  "candidate_variables": [
+    "Motor[1].JogTa",
+    "Motor[1].JogTs"
+  ],
+  "eliminated_candidates": [
+    "reconnect",
+    "ACK as motion completion",
+    "Motor[1].MaxPos/MinPos active software limit",
+    "Motor[1].PlusLimit",
+    "Motor[1].MinusLimit",
+    "Motor[1].LimitStop",
+    "Motor[1].FeFatal",
+    "Motor[1].AmpFault"
+  ],
+  "unexplained_differences": [
+    "Trial 1 JogPos changed 2 to 1 while DesPos, Pos, ActPos, and DesVel stayed 0",
+    "Trial 2 JogPos stayed 1 and DesPos, Pos, ActPos stayed 0"
+  ],
+  "intervention_performed": false,
+  "intervention_result": null,
+  "forbidden_configuration_write": false,
+  "root_cause_confirmed": false,
+  "next_action": "HOLD. Fresh baseline failed twice, so the P-021 stall is not attributed to reconnect. The stored jog target does not become DesPos. Do not write JogTa, JogTs, limits, or the forbidden configuration set in this gate."
+}

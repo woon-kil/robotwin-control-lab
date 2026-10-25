@@ -1,0 +1,9 @@
+python3 -m pytest -q tests/unit/test_p021a_investigation.py
+......                                                                   [100%]
+6 passed in 0.01s
+
+python3 -m pytest -q tests/unit
+........................................................................ [ 52%]
+................................................................         [100%]
+136 passed in 53.70s
+exit_code: 0

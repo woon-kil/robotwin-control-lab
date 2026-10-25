@@ -1,0 +1,75 @@
+{
+  "source_note": "Values are copied from immutable evidence files. P-021A did not rewrite them.",
+  "P-019B": {
+    "command": "#1j=1",
+    "before": {
+      "pos": "0",
+      "actpos": "0",
+      "despos": "0"
+    },
+    "after": {
+      "pos": "1",
+      "actpos": "1",
+      "despos": "1"
+    },
+    "ack_present": true,
+    "error_present": false,
+    "returncode": 1,
+    "positions_changed": true
+  },
+  "P-020": {
+    "command": "#1j=0",
+    "before": {
+      "pos": "3",
+      "actpos": "3",
+      "despos": "3"
+    },
+    "after": {
+      "pos": "0",
+      "actpos": "0",
+      "despos": "0"
+    },
+    "ack_present": true,
+    "error_present": false,
+    "result": "COMPLETED",
+    "poll_count": 1,
+    "elapsed_s": 6.262350667035207,
+    "positions_changed": true
+  },
+  "P-021": {
+    "command": "#1j=2",
+    "before": {
+      "pos": "0",
+      "actpos": "0",
+      "despos": "0"
+    },
+    "after": {
+      "pos": "0",
+      "actpos": "0",
+      "despos": "0"
+    },
+    "ack_present": true,
+    "error_present": false,
+    "result": "FAULTED",
+    "error_code": "TIMEOUT",
+    "poll_count": 4,
+    "elapsed_s": 13.178414833033457,
+    "positions_changed": false
+  },
+  "P-021A": [
+    {
+      "trial": 1,
+      "fresh_command": "#1j=1",
+      "fresh_reached": false,
+      "reconnect_command": null,
+      "reconnect_reached": null
+    },
+    {
+      "trial": 2,
+      "fresh_command": "#1j=1",
+      "fresh_reached": false,
+      "reconnect_command": null,
+      "reconnect_reached": null
+    }
+  ]
+}
