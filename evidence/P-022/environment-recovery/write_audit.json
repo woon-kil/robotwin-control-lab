@@ -1,0 +1,16 @@
+{
+  "writes_before_snapshot": [],
+  "writes_performed": [
+    "Motor[1].ServoCtrl=1",
+    "#1J/",
+    "#1j=1"
+  ],
+  "allowed_writes": [
+    "Motor[1].ServoCtrl=1",
+    "#1J/",
+    "#1j=1"
+  ],
+  "forbidden_writes": [],
+  "configuration_writes": [],
+  "p100_write": false
+}

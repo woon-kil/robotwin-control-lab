@@ -1,0 +1,26 @@
+{
+  "performed": true,
+  "required": true,
+  "actions": [
+    "Motor[1].ServoCtrl=1",
+    "#1J/"
+  ],
+  "readbacks": [
+    {
+      "command": "Motor[1].ServoCtrl=1",
+      "name": "Motor[1].ServoCtrl",
+      "value": "1",
+      "returncode": 1
+    },
+    {
+      "command": "#1J/",
+      "name": "Motor[1].ClosedLoop",
+      "value": "1",
+      "returncode": 1
+    }
+  ],
+  "servo_write": true,
+  "servo_readback": "1",
+  "close_command": true,
+  "closed_loop_readback": "1"
+}

@@ -1,0 +1,12 @@
+{
+  "performed": true,
+  "variable": "Sys.ServoCount",
+  "value": "221417",
+  "numeric": true,
+  "timeout": false,
+  "protocol_error": false,
+  "returncode": 1,
+  "stdout": "STDIN Open for ASCII Input\nSys.ServoCount=221417\n\u0006\n// *** exit \n",
+  "stderr": "",
+  "servo_state_claim": false
+}

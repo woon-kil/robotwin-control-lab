@@ -1,0 +1,9 @@
+{
+  "classification": "BR-1",
+  "classification_name": "BASELINE_READY",
+  "confidence": "MEDIUM",
+  "confirmed": false,
+  "p022_final_pass_declared": false,
+  "incident": "SIMULATOR_RUNTIME_FAILURE",
+  "root_cause": "NOT_CONFIRMED"
+}
