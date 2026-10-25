@@ -1,0 +1,203 @@
+{
+  "started_at": "2026-10-25T12:11:01.230888+00:00",
+  "phase": "MOTION_ATTEMPT",
+  "gate_authorized": true,
+  "gate_reasons": [],
+  "executed": true,
+  "command_sent": true,
+  "command": "#1j=1",
+  "response": {
+    "ok": true,
+    "code": null,
+    "returncode": 1,
+    "elapsed_ms": 2795.9631248377264,
+    "command_error": false,
+    "stdout": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n",
+    "stderr": "",
+    "lines": [
+      "#1j=1"
+    ]
+  },
+  "observation_delay_s": 1.0,
+  "observation_note": "Delay between the immediate read and the later read. Not a servo settling measurement and not hard real-time.",
+  "before": {
+    "complete": true,
+    "communication_ok": true,
+    "missing": [],
+    "values": {
+      "Motor[1].ServoCtrl": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].ClosedLoop": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Pos": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].ActPos": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].DesPos": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].DesVelZero": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].FeFatal": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].FeWarn": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].AmpFault": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].LimitStop": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].InPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Status[0]": {
+        "raw": "$7800",
+        "number": 30720.0
+      },
+      "Motor[1].Status[1]": {
+        "raw": "$0",
+        "number": 0.0
+      }
+    },
+    "comparison": null
+  },
+  "immediate": {
+    "complete": true,
+    "communication_ok": true,
+    "missing": [],
+    "values": {
+      "Motor[1].ServoCtrl": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].ClosedLoop": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Pos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].ActPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].DesPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].DesVelZero": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].FeFatal": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].FeWarn": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].AmpFault": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].LimitStop": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].InPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Status[0]": {
+        "raw": "$7800",
+        "number": 30720.0
+      },
+      "Motor[1].Status[1]": {
+        "raw": "$0",
+        "number": 0.0
+      }
+    },
+    "comparison": null
+  },
+  "observation": {
+    "complete": true,
+    "communication_ok": true,
+    "missing": [],
+    "values": {
+      "Motor[1].ServoCtrl": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].ClosedLoop": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Pos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].ActPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].DesPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].DesVelZero": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].FeFatal": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].FeWarn": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].AmpFault": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].LimitStop": {
+        "raw": "0",
+        "number": 0.0
+      },
+      "Motor[1].InPos": {
+        "raw": "1",
+        "number": 1.0
+      },
+      "Motor[1].Status[0]": {
+        "raw": "$7800",
+        "number": 30720.0
+      },
+      "Motor[1].Status[1]": {
+        "raw": "$0",
+        "number": 0.0
+      }
+    },
+    "comparison": null
+  }
+}

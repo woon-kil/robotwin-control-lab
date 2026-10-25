@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-10-25T12:11:01.230888+00:00",
+  "phase": "PRE_STATE",
+  "complete": true,
+  "communication_ok": true,
+  "missing": [],
+  "values": {
+    "Motor[1].ServoCtrl": {
+      "raw": "1",
+      "number": 1.0
+    },
+    "Motor[1].ClosedLoop": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].Pos": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].ActPos": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].DesPos": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].DesVelZero": {
+      "raw": "1",
+      "number": 1.0
+    },
+    "Motor[1].FeFatal": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].FeWarn": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].AmpFault": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].LimitStop": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].InPos": {
+      "raw": "0",
+      "number": 0.0
+    },
+    "Motor[1].Status[0]": {
+      "raw": "$4000",
+      "number": 16384.0
+    },
+    "Motor[1].Status[1]": {
+      "raw": "$0",
+      "number": 0.0
+    }
+  },
+  "comparison": null
+}

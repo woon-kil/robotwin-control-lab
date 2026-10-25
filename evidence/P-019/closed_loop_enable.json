@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-10-25T12:11:01.230888+00:00",
+  "phase": "CLOSED_LOOP_ENABLE",
+  "command": "#1J/",
+  "sent": true,
+  "result": {
+    "ok": true,
+    "code": null,
+    "returncode": 1,
+    "elapsed_ms": 2753.279165830463,
+    "command_error": false,
+    "stdout": "STDIN Open for ASCII Input\n\u0006\n// *** exit \n",
+    "stderr": "",
+    "lines": [
+      "#1J/"
+    ]
+  }
+}
