@@ -1,0 +1,14 @@
+{
+  "writes_performed": [
+    "#1j=1"
+  ],
+  "allowed_writes": [
+    "#1j=1"
+  ],
+  "forbidden_writes": [],
+  "configuration_modifications": [],
+  "activation_writes": [],
+  "simulator_process_stopped": false,
+  "qemu_process_restarted": false,
+  "transport_reconnect_used_as_restart": false
+}
