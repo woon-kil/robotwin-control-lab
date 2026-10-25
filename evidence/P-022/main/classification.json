@@ -1,0 +1,24 @@
+{
+  "classification": "DT-1",
+  "classification_name": "FULL_INTEGRATION_PASS",
+  "confidence": "MEDIUM",
+  "confirmed": false,
+  "p022_final_pass_declared": false,
+  "regression_passed": true,
+  "acceptance_complete": true,
+  "acceptance_checklist": {
+    "precondition_ready": true,
+    "three_cycles_completed": true,
+    "fresh_post": true,
+    "jog_des_pos_act_at_target": true,
+    "tracking_error_zero_pmac_motor_unit": true,
+    "fault_false": true,
+    "observation_valid": true,
+    "negative_scripted_pass": true,
+    "live_fault_injection": "NOT_TESTED",
+    "robot_joint_mapping": "NOT_DEFINED",
+    "unit_conversion": "NOT_DEFINED",
+    "activation_writes": false,
+    "full_regression": true
+  }
+}

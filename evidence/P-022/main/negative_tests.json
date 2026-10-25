@@ -1,0 +1,13 @@
+{
+  "live_fault_injection": "NOT_TESTED",
+  "scripted": true,
+  "cases": {
+    "disconnected": true,
+    "malformed": true,
+    "incomplete": true,
+    "fault": true,
+    "stale": true,
+    "unit_mismatch": true
+  },
+  "passed": true
+}

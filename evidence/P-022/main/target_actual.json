@@ -1,0 +1,32 @@
+{
+  "domain": "controller",
+  "rows": [
+    {
+      "cycle": 1,
+      "command_target": 2.0,
+      "desired_position": 2.0,
+      "actual_position": 2.0,
+      "tracking_error": 0.0,
+      "unit": "pmac_motor_unit",
+      "robot_accuracy_claim": false
+    },
+    {
+      "cycle": 2,
+      "command_target": 3.0,
+      "desired_position": 3.0,
+      "actual_position": 3.0,
+      "tracking_error": 0.0,
+      "unit": "pmac_motor_unit",
+      "robot_accuracy_claim": false
+    },
+    {
+      "cycle": 3,
+      "command_target": 1.0,
+      "desired_position": 1.0,
+      "actual_position": 1.0,
+      "tracking_error": 0.0,
+      "unit": "pmac_motor_unit",
+      "robot_accuracy_claim": false
+    }
+  ]
+}

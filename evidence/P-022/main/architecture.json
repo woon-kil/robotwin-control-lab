@@ -1,0 +1,26 @@
+{
+  "flow": [
+    "PowerPmacControllerAdapter",
+    "Official Power PMAC Simulator",
+    "Motor[1]",
+    "ControllerAxisObservation",
+    "ControllerObservationBridge",
+    "RoboTwin Digital Twin Observation",
+    "Controller Target vs Actual"
+  ],
+  "robot_domain": "rad / meter",
+  "controller_domain": "pmac_motor_unit",
+  "robot_domain_monitor": "DigitalTwinMonitor remains joint-radian only",
+  "bridge_actions": [
+    "read",
+    "normalize",
+    "publish"
+  ],
+  "bridge_excluded": [
+    "unit conversion",
+    "robot-joint mapping",
+    "motion generation",
+    "activation",
+    "fault reset"
+  ]
+}

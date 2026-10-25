@@ -1,0 +1,15 @@
+{
+  "writes_performed": [
+    "#1j=2",
+    "#1j=3",
+    "#1j=1"
+  ],
+  "allowed_writes": [
+    "#1j=2",
+    "#1j=3",
+    "#1j=1"
+  ],
+  "activation_writes": [],
+  "forbidden_writes": [],
+  "configuration_writes": []
+}

@@ -1,0 +1,23 @@
+{
+  "fields": [
+    "controller_id",
+    "axis_id",
+    "command_target",
+    "desired_position",
+    "actual_position",
+    "unit",
+    "closed_loop",
+    "in_position",
+    "faulted",
+    "fault_code",
+    "communication_state",
+    "observed_at",
+    "source",
+    "valid",
+    "invalid_reason"
+  ],
+  "controller_id": "power_pmac_simulator",
+  "axis_id": "Motor[1]",
+  "unit": "pmac_motor_unit",
+  "source": "official_power_pmac_simulator"
+}
