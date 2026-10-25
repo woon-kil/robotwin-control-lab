@@ -1,0 +1,5 @@
+{"step": "connect", "ok": true, "communication_state": "HEALTHY"}
+{"step": "health", "ok": true, "value": 2388872}
+{"step": "read", "ok": true, "value": 17119}
+{"step": "write_read_back", "ok": true, "value": 18018}
+{"step": "disconnect", "ok": true, "error_code": "DISCONNECTED"}

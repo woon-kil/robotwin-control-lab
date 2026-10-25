@@ -1,0 +1,10 @@
+{
+  "variable": "P100",
+  "read": true,
+  "write": true,
+  "read_back": true,
+  "expected_equals_actual": true,
+  "read_value": 17119,
+  "test_value": 18018,
+  "read_back_value": 18018
+}

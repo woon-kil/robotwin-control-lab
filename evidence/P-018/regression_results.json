@@ -1,0 +1,17 @@
+{
+  "command": "python3 -m pytest -q tests/unit",
+  "exit_code": 0,
+  "passed": 95,
+  "failed": 0,
+  "result_line": "95 passed in 51.27s",
+  "historical_evidence_rewritten": false,
+  "covered": [
+    "tests/unit/test_p006_controller.py",
+    "tests/unit/test_p008_validator.py",
+    "tests/unit/test_p008_fix2_acceptance.py",
+    "tests/unit/test_p009_monitor.py",
+    "tests/unit/test_p010_hmi.py",
+    "tests/unit/test_p011_reliability.py",
+    "tests/unit/test_p018_adapter.py"
+  ]
+}

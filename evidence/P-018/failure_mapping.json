@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-25T11:02:02.085535+00:00",
+  "cases": [
+    {
+      "name": "authentication failure",
+      "ok": true,
+      "code": "AUTHENTICATION_FAILURE",
+      "exception": "PowerPmacError",
+      "subprocess_leaked": false
+    },
+    {
+      "name": "connection refused",
+      "ok": true,
+      "code": "CONNECTION_UNREACHABLE",
+      "exception": "PowerPmacError",
+      "subprocess_leaked": false
+    },
+    {
+      "name": "timeout",
+      "ok": true,
+      "code": "TIMEOUT",
+      "exception": "PowerPmacError",
+      "subprocess_leaked": false
+    },
+    {
+      "name": "malformed response",
+      "ok": true,
+      "code": "PROTOCOL_ERROR",
+      "exception": "PowerPmacError",
+      "subprocess_leaked": false
+    },
+    {
+      "name": "disconnected operation",
+      "ok": true,
+      "code": "DISCONNECTED",
+      "exception": "CommandResult",
+      "subprocess_leaked": false
+    },
+    {
+      "name": "read-back mismatch",
+      "ok": true,
+      "code": "READBACK_MISMATCH",
+      "exception": "PowerPmacError",
+      "subprocess_leaked": false
+    }
+  ]
+}

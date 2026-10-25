@@ -1,0 +1,9 @@
+{
+  "connect": true,
+  "health_probe": true,
+  "health_variable": "Sys.ServoCount",
+  "health_value": 2388872,
+  "health_claim": "parsed Sys.ServoCount; not a verified servo or motor state",
+  "path": "MacBook -> 192.168.0.146:22022 -> 172.20.0.200:22 -> gpascii",
+  "interface": "SSH + gpascii"
+}

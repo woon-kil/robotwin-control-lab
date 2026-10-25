@@ -1,0 +1,10 @@
+{
+  "disconnect": true,
+  "post_disconnect_reject": true,
+  "controller_state_during_session": "CONNECTED",
+  "communication_state_during_session": "HEALTHY",
+  "motion_sent": false,
+  "post_disconnect_result": "REJECTED",
+  "post_disconnect_error_code": "DISCONNECTED",
+  "post_disconnect_read_rejected": true
+}
