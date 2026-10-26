@@ -27,13 +27,15 @@ digital_twin.monitor.DigitalTwinMonitor
 hmi.view_model
 ```
 
-`IRobotController`는 `controller/virtual_pmac.py`의 Protocol이다. 구현된 motion backend는 `VirtualPmacController` 하나다.
+`IRobotController`는 `controller/virtual_pmac.py`의 Protocol이다. Employment MVP의 실행 motion backend는 `VirtualPmacController`다. `ExecutionGate`는 `submit`과 `trace`를 호출하고, `PowerPmacControllerAdapter`를 호출하지 않는다.
 
 `ros2_adapter.Ros2ControllerAdapter`는 ROS 2 Jazzy transport다. Canonical command를 받아 같은 virtual controller로 전달하고 target과 actual을 분리해 publish한다. 별도의 실물 모터 backend가 아니다.
 
+`PowerPmacControllerAdapter`는 Official Power PMAC Simulator 1.2.1용 두 번째 backend다. 경로는 SSH와 `gpascii`이고, 검증된 motion 범위는 software virtual `Motor[1]`이다. `execute_command`는 PMAC motor command를 보내지 않는다. Motor[1]은 UR10e joint가 아니고, PMAC motor unit은 radian이 아니다. `robot_joint_mapping`과 `unit_conversion`은 `NOT_DEFINED`다.
+
 Unity 프로젝트와 Isaac Sim script는 nominal UR10e와 workcell을 독립적으로 실행한다. 둘 다 `IRobotController` 구현이 아니다. Cross-sim 수치는 그 두 scene의 TCP를 독립 FK와 비교한 PROJECT TEST다.
 
-Real PMAC adapter, real robot adapter, RL policy, domain randomization은 없다.
+Real Power PMAC hardware adapter, real robot adapter, RL policy, domain randomization은 없다.
 
 ## Vocabulary that stays
 

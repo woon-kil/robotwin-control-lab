@@ -4,7 +4,7 @@
 
 ## 20-second introduction
 
-산업용 로봇 명령을 바로 Controller로 보내지 않고 Digital Twin에서 충돌과 실행 가능성을 먼저 검증한 뒤, 승인된 명령만 실행시키는 제어 플랫폼을 만들었습니다. 실행 중에는 Target과 Actual을 추적하고, Unity, Isaac, ROS 2, Virtual Controller를 독립적인 evidence로 검증했습니다.
+산업용 로봇 명령을 바로 Controller로 보내지 않고 Digital Twin에서 충돌과 실행 가능성을 먼저 검증한 뒤, 승인된 명령만 실행시키는 제어 플랫폼을 만들었습니다. 실행 중에는 Target과 Actual을 추적하고, Unity, Isaac, ROS 2, Virtual Controller를 독립적인 evidence로 검증했습니다. Controller abstraction은 Official Power PMAC Simulator의 software virtual Motor[1]까지 확장했고, 그 결과는 robot joint 검증과 별도입니다.
 
 ## Problem
 
@@ -28,7 +28,7 @@ Did the system converge?
 
 `RobotCommand` → Pre-Execution Validator → `REJECT` 또는 `SAFE_TO_ATTEMPT` → Controller Abstraction → Target / Actual → Digital Twin Monitor → Operator HMI.
 
-Motion backend는 `VirtualPmacController`다. ROS 2 Adapter는 그 controller로의 transport다. Unity와 Isaac Sim은 같은 nominal UR10e의 독립 검증이며 controller backend가 아니다. 정본은 `docs/ARCHITECTURE.md`, 구현 범위는 `docs/PORTFOLIO_ARCHITECTURE.md`다.
+Employment MVP motion backend는 `VirtualPmacController`다. ROS 2 Adapter는 그 controller로의 transport다. `PowerPmacControllerAdapter`는 Official Power PMAC Simulator backend이며 ExecutionGate가 호출하지 않는다. Unity와 Isaac Sim은 같은 nominal UR10e의 독립 검증이며 controller backend가 아니다. 정본은 `docs/ARCHITECTURE.md`, 구현 범위는 `docs/PORTFOLIO_ARCHITECTURE.md`다.
 
 Golden Reference는 official nominal UR10e, commit `7ce98d8c3512b9d0239da93b75de68ea64f61bd6`이다.
 
@@ -39,6 +39,8 @@ Golden Reference는 official nominal UR10e, commit `7ce98d8c3512b9d0239da93b75de
 3. 500-cycle deterministic project workload는 500/500 correct다. Fault recovery는 primary 500과 별도로 10/10이다.
 
 함께 말할 수 있는 transport 수치는 ROS 2 P95 `1.0901190034928732 ms`다. Project test transport latency이며 hard real-time latency가 아니다.
+
+Power PMAC Simulator extension의 별도 수치는 Motor[1] 100/100 motion, reconnect 5/5, false submission 0, tracking error `0 PMAC motor unit`이다. P-023 regression baseline은 `197 passed in 54.94s`다. 상세는 `docs/power-pmac-validation.md`다.
 
 ## Strongest failure story
 
@@ -77,7 +79,9 @@ unsafe submission = 0
 
 ```text
 No real robot validation
-No real Power PMAC validation
+No real Power PMAC hardware
+Official Power PMAC Simulator only
+Motor[1] is not a robot joint
 No industrial safety certification
 UR10e model is nominal reference
 Tracking metrics are project virtual-controller results
@@ -97,6 +101,6 @@ NOT VERIFIED AGAINST REAL POWER PMAC.
 
 **SAFE_TO_ATTEMPT는 안전 인증인가.** 아니다. 실행 전 검사 통과이며, 체결 성공이 아니다.
 
-**Power PMAC를 검증했는가.** 아니다. Virtual PMAC와 PMAC-compatible semantics다.
+**Power PMAC hardware를 검증했는가.** 아니다. Official Power PMAC Simulator의 software virtual Motor[1]을 검증했다. Real hardware, encoder, EtherCAT, industrial reliability는 검증하지 않았다. ACK는 completion이 아니다. 설명은 `docs/interview-notes.md`다.
 
 **Target과 Actual은 왜 다른가.** 승인된 이동 중 controller target과 actual joint를 따로 기록한다. 거절된 명령은 tracking을 시작하지 않는다. Fault는 `COMPLETED`와 `SETTLED`로 표시하지 않는다.
