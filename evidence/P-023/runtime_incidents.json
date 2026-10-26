@@ -1,0 +1,6 @@
+{
+  "prior": "SIMULATOR_RUNTIME_FAILURE",
+  "root_cause": "NOT_CONFIRMED",
+  "qemu_console_visible_to_runner": false,
+  "this_run": []
+}

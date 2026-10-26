@@ -1,0 +1,9 @@
+{
+  "reconnect_trials": 5,
+  "reconnect_success": 5,
+  "reconnect_failure": 0,
+  "blocked_while_disconnected": 5,
+  "false_submission_count": 0,
+  "post_reconnect_motion_completed": 5,
+  "post_reconnect_motion_failed": 0
+}

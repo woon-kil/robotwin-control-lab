@@ -1,0 +1,25 @@
+{
+  "performed": true,
+  "values": {
+    "Motor[1].ServoCtrl": "1",
+    "Motor[1].ClosedLoop": "1",
+    "Motor[1].AmpEna": "1",
+    "Motor[1].JogPos": "3",
+    "Motor[1].DesPos": "3",
+    "Motor[1].Pos": "3",
+    "Motor[1].ActPos": "3",
+    "Motor[1].DesVel": "0",
+    "Motor[1].InPos": "1",
+    "Motor[1].FeFatal": "0",
+    "Motor[1].FeWarn": "0",
+    "Motor[1].AmpFault": "0",
+    "Motor[1].LimitStop": "0",
+    "Motor[1].Status[0]": "$7800",
+    "Motor[1].Status[1]": "$0"
+  },
+  "raw": "STDIN Open for ASCII Input\nMotor[1].ServoCtrl=1\n\u0006\nMotor[1].ClosedLoop=1\n\u0006\nMotor[1].AmpEna=1\n\u0006\nMotor[1].JogPos=3\n\u0006\nMotor[1].DesPos=3\n\u0006\nMotor[1].Pos=3\n\u0006\nMotor[1].ActPos=3\n\u0006\nMotor[1].DesVel=0\n\u0006\nMotor[1].InPos=1\n\u0006\nMotor[1].FeFatal=0\n\u0006\nMotor[1].FeWarn=0\n\u0006\nMotor[1].AmpFault=0\n\u0006\nMotor[1].LimitStop=0\n\u0006\nMotor[1].Status[0]=$7800\n\u0006\nMotor[1].Status[1]=$0\n\u0006\n// *** exit \n",
+  "returncode": 1,
+  "ready": true,
+  "initial_pos": "1",
+  "final_pos": "3"
+}

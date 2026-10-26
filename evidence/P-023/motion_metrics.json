@@ -1,0 +1,35 @@
+{
+  "attempted": 100,
+  "completed": 100,
+  "failed": 0,
+  "completion_rate": 1.0,
+  "tracking_error": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0
+  },
+  "tracking_error_unit": "pmac_motor_unit",
+  "tracking_error_meaning": "controller-domain virtual tracking error",
+  "elapsed": {
+    "mean": 6.123954141624272,
+    "p50": 6.044619083404541,
+    "p95": 6.684887102525681,
+    "p99": 7.457175435689279,
+    "max": 7.590398291125894
+  },
+  "elapsed_meaning": "SSH + Windows portproxy + gpascii + polling을 포함한 observed integration elapsed time. servo latency, controller cycle time, real-time latency, PMAC execution latency가 아니다.",
+  "timeouts": 0,
+  "disconnects": 0,
+  "protocol_errors": 0,
+  "faults": 0,
+  "nonfinite": 0,
+  "malformed": 0,
+  "tracking_mismatch": 0,
+  "stale_observation": 0,
+  "unexpected_state": 0,
+  "runtime_failures": 0,
+  "state_leakage_or_external_change": 0,
+  "industrial_reliability_claimed": false
+}

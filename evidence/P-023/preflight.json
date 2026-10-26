@@ -1,0 +1,25 @@
+{
+  "ssh": "PASS",
+  "hostname": "ppmac",
+  "os": "Linux",
+  "eth0": "2: eth0    inet 172.20.0.200/24 brd 172.20.0.255 scope global eth0\\       valid_lft forever preferred_lft forever",
+  "gpascii": "PASS",
+  "Sys.ServoCount": "1195524",
+  "ready": true,
+  "values": {
+    "Motor[1].ServoCtrl": "1",
+    "Motor[1].ClosedLoop": "1",
+    "Motor[1].AmpEna": "1",
+    "Motor[1].JogPos": "1",
+    "Motor[1].DesPos": "1",
+    "Motor[1].Pos": "1",
+    "Motor[1].ActPos": "1",
+    "Motor[1].DesVel": "0",
+    "Motor[1].InPos": "1",
+    "Motor[1].FeFatal": "0",
+    "Motor[1].FeWarn": "0",
+    "Motor[1].AmpFault": "0",
+    "Motor[1].LimitStop": "0"
+  },
+  "activation_performed": false
+}

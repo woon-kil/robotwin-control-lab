@@ -1,0 +1,64 @@
+{
+  "trials": [
+    {
+      "trial": 1,
+      "blocked_target": 3,
+      "blocked": true,
+      "command_sent": false,
+      "fresh_read": true,
+      "plan": "NEW_MOTION",
+      "activation": [],
+      "renewed_target": 1,
+      "motion": "COMPLETED",
+      "result": "COMPLETED"
+    },
+    {
+      "trial": 2,
+      "blocked_target": 2,
+      "blocked": true,
+      "command_sent": false,
+      "fresh_read": true,
+      "plan": "NEW_MOTION",
+      "activation": [],
+      "renewed_target": 3,
+      "motion": "COMPLETED",
+      "result": "COMPLETED"
+    },
+    {
+      "trial": 3,
+      "blocked_target": 1,
+      "blocked": true,
+      "command_sent": false,
+      "fresh_read": true,
+      "plan": "NEW_MOTION",
+      "activation": [],
+      "renewed_target": 2,
+      "motion": "COMPLETED",
+      "result": "COMPLETED"
+    },
+    {
+      "trial": 4,
+      "blocked_target": 3,
+      "blocked": true,
+      "command_sent": false,
+      "fresh_read": true,
+      "plan": "NEW_MOTION",
+      "activation": [],
+      "renewed_target": 1,
+      "motion": "COMPLETED",
+      "result": "COMPLETED"
+    },
+    {
+      "trial": 5,
+      "blocked_target": 2,
+      "blocked": true,
+      "command_sent": false,
+      "fresh_read": true,
+      "plan": "NEW_MOTION",
+      "activation": [],
+      "renewed_target": 3,
+      "motion": "COMPLETED",
+      "result": "COMPLETED"
+    }
+  ]
+}

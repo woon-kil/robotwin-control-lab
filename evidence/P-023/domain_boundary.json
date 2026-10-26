@@ -1,0 +1,9 @@
+{
+  "Motor[1]": "controller_axis_only",
+  "robot_joint_mapping": "NOT_DEFINED",
+  "UR10e_mapping": "NOT_DEFINED",
+  "pmac_motor_unit_to_rad": "NOT_DEFINED",
+  "pmac_motor_unit_to_degree": "NOT_DEFINED",
+  "physical_encoder": "NOT_PRESENT",
+  "physical_robot": "NOT_PRESENT"
+}
